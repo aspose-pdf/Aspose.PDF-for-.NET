@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Pdf xml:space="preserve" TabStopPosition="21" IsCoreFontUsed="false" IsPageNumberForDocument="true" xmlns="Aspose.Pdf">
+  <Section PageWidth="792" PageHeight="612" PageMarginTop="54" PageMarginBottom="72" PageMarginLeft="72" PageMarginRight="72" IsNewPage="true">
+    <Footer MarginBottom="36">
+      <Text IsSpaced="true" Alignment="Center" LineSpacing="1.2">
+        <TabStops>
+          <TabStop Position="216" AlignmentType="Center" />
+          <TabStop Position="431" AlignmentType="Right" />
+        </TabStops>
+        <Segment FontName="Tahoma" IsUnicode="true" Color="rgb 128 128 128" FontSize="8">Page </Segment>
+        <Segment FontName="Tahoma" IsUnicode="true" Color="rgb 128 128 128" FontSize="8">$p</Segment>
+        <Segment FontName="Tahoma" IsUnicode="true" Color="rgb 128 128 128" FontSize="8"> of </Segment>
+        <Segment FontName="Tahoma" IsUnicode="true" Color="rgb 128 128 128" FontSize="8">$P</Segment>
+      </Text>
+    </Footer>
+    <Text IsSpaced="true" LineSpacing="1.8">
+      <Segment FontName="Times New Roman" IsUnicode="true" Color="rgb 255 0 0" IsTrueTypeFontBold="true" FontSize="12">Evaluation only, garbage text in the document is part of the evaluation watermark. Created with Aspose.Words. Copyright 2003-2006 Aspose Pty Ltd.</Segment>
+    </Text>
+    <Heading Level="1" LabelWidth="0" MarginTop="24" MarginBottom="3" IsSpaced="true" IsKeptWithNext="true" LineSpacing="2.1" ID="paraId_1">
+      <Segment FontName="Tahoma" IsUnicode="true" FontSize="14"> </Segment>
+    </Heading>
+    <FloatingBox Width="396.75" Height="114.25" BoxHorizontalAlignment="None" BoxHorizontalPositioning="Column" BoxVerticalAlignment="None" BoxVerticalPositioning="Paragraph" Left="8.25" Top="41.75" ReferenceParagraphID="paraId_1" PaddingTop="3.6" PaddingLeft="7.2" PaddingBottom="3.6" PaddingRight="7.2">
+      <Text MarginBottom="9" IsSpaced="true" LineSpacing="2.4">
+        <Segment FontName="Tahoma" IsUnicode="true" Color="rgb 120 145 110" FontSize="16">Assessment of Condition of Rental Property </Segment>
+      </Text>
+      <Text MarginBottom="6" IsSpaced="true" LineSpacing="1.5">
+        <Segment FontName="Tahoma" IsUnicode="true" FontSize="10">This checklist will help you protect your initial deposit. Using the key below, fill in the letter that best describes the condition of your unit when you begin your lease, and then give </Segment>
+        <Segment FontName="Tahoma" IsUnicode="true" FontSize="10">a copy of </Segment>
+        <Segment FontName="Tahoma" IsUnicode="true" FontSize="10">this checklist to your landlord to be filed away. When you move out, request this checklist from your landlord, fill in the “End of Lease” column, and then return it to your landlord. Your landlord may want to corroborate your assessment using the “Landlord’s end-of-lease assessment” column.</Segment>
+      </Text>
+    </FloatingBox>
+    <Table ColumnWidths="99 27 " MarginLeft="522" DefaultCellPaddingLeft="5.75" DefaultCellPaddingRight="5.75" IsRowBroken="true" IsFirstRowRepeated="false">
+      <Row>
+        <Cell VerticalAlignment="Center" BackgroundColor="rgb 240 235 220">
+          <Border>
+            <Top Color="rgb 120 145 110" LineWidth="0.5" />
+            <Left Color="rgb 120 145 110" LineWidth="0.5" />
+            <Bottom Color="rgb 120 145 110" LineWidth="0.5" />
+          </Border>
+          <Heading Level="2" LabelWidth="0" MarginTop="3" MarginBottom="3" IsSpaced="true" IsKeptWithNext="true" LineSpacing="2.1">
+            <Segment FontName="Tahoma" IsUnicode="true" Color="rgb 120 145 110" FontSize="14">Key</Segment>
+          </Heading>
+        </Cell>
+        <Cell VerticalAlignment="Center" BackgroundColor="rgb 240 235 220">
+          <Border>
+            <Top Color="rgb 120 145 110" LineWidth="0.5" />
+            <Bottom Color="rgb 120 145 110" LineWidth="0.5" />
+            <Right Color="rgb 120 145 110" LineWidth="0.5" />
+          </Border>
+          <Heading Level="3" LabelWidth="0" MarginTop="1" MarginBottom="1" IsSpaced="true" IsKeptWithNext="true" LineSpacing="1.5">
+            <Segment FontName="Tahoma" IsUnicode="true" Color="rgb 120 145 110" IsTrueTypeFontBold="true" FontSize="10"> </Segment>
+          </Heading>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell VerticalAlignment="Center">
+          <Border>
+            <Top Color="rgb 120 145 110" LineWidth="0.5" />
+            <Left Color="rgb 128 128 128" LineWidth="0.5" />
+            <Bottom Color="rgb 128 128 128" LineWidth="0.5" />
+            <Right Color="rgb 128 128 128" LineWidth="0.5" />
+          </Border>
+          <Text MarginTop="1" MarginBottom="1" IsSpaced="true" LineSpacing="1.2">
+            <Segment FontName="Tahoma" IsUnicode="true" CharSpace="0.2" FontSize="8">Missing</Segment>
+          </Text>
+        </Cell>
+        <Cell VerticalAlignment="Center">
+          <Border>
+            <Top Color="rgb 120 145 110" LineWidth="0.5" />
+            <Left Color="rgb 128 128 128" LineWidth="0.5" />
+            <Bottom Color="rgb 128 128 128" LineWidth="0.5" />
+            <Right Color="rgb 128 128 128" LineWidth="0.5" />
+          </Border>
+          <Text MarginTop="1" MarginBottom="1" IsSpaced="true" Alignment="Center" IsKeptWithNext="true" LineSpacing="1.5">
+            <Segment FontName="Tahoma" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10">M</Segment>
+          </Text>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell VerticalAlignment="Center">
+          <Border>
+            <Top Color="rgb 128 128 128" LineWidth="0.5" />
+            <Left Color="rgb 128 128 128" LineWidth="0.5" />
+            <Bottom Color="rgb 128 128 128" LineWidth="0.5" />
+            <Right Color="rgb 128 128 128" LineWidth="0.5" />
+          </Border>
+          <Text MarginTop="1" MarginBottom="1" IsSpaced="true" LineSpacing="1.2">
+            <Segment FontName="Tahoma" IsUnicode="true" CharSpace="0.2" FontSize="8">Good condition</Segment>
+          </Text>
+        </Cell>
+        <Cell VerticalAlignment="Center">
+          <Border>
+            <Top Color="rgb 128 128 128" LineWidth="0.5" />
+            <Left Color="rgb 128 128 128" LineWidth="0.5" />
+            <Bottom Color="rgb 128 128 128" LineWidth="0.5" />
+            <Right Color="rgb 128 128 128" LineWidth="0.5" />
+          </Border>
+          <Text MarginTop="1" MarginBottom="1" IsSpaced="true" Alignment="Center" IsKeptWithNext="true" LineSpacing="1.5">
+            <Segment FontName="Tahoma" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10">G</Segment>
+          </Text>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell VerticalAlignment="Center">
+          <Border>
+            <Top Color="rgb 128 128 128" LineWidth="0.5" />
+            <Left Color="rgb 128 128 128" LineWidth="0.5" />
+            <Bottom Color="rgb 128 128 128" LineWidth="0.5" />
+            <Right Color="rgb 128 128 128" LineWidth="0.5" />
+          </Border>
+          <Text MarginTop="1" MarginBottom="1" IsSpaced="true" LineSpacing="1.2">
+            <Segment FontName="Tahoma" IsUnicode="true" CharSpace="0.2" FontSize="8">Scratched</Segment>
+          </Text>
+        </Cell>
+        <Cell VerticalAlignment="Center">
+          <Border>
+            <Top Color="rgb 128 128 128" LineWidth="0.5" />
+            <Left Color="rgb 128 128 128" LineWidth="0.5" />
+            <Bottom Color="rgb 128 128 128" LineWidth="0.5" />
+            <Right Color="rgb 128 128 128" LineWidth="0.5" />
+          </Border>
+          <Text MarginTop="1" MarginBottom="1" IsSpaced="true" Alignment="Center" IsKeptWithNext="true" LineSpacing="1.5">
+            <Segment FontName="Tahoma" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10">S</Segment>
+          </Text>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell VerticalAlignment="Center">
+          <Border>
+            <Top Color="rgb 128 128 128" LineWidth="0.5" />
+            <Left Color="rgb 128 128 128" LineWidth="0.5" />
+            <Bottom Color="rgb 128 128 128" LineWidth="0.5" />
+            <Right Color="rgb 128 128 128" LineWidth="0.5" />
+          </Border>
+          <Text MarginTop="1" MarginBottom="1" IsSpaced="true" LineSpacing="1.2">
+            <Segment FontName="Tahoma" IsUnicode="true" CharSpace="0.2" FontSize="8">Damaged</Segment>
+          </Text>
+        </Cell>
+        <Cell VerticalAlignment="Center">
+          <Border>
+            <Top Color="rgb 128 128 128" LineWidth="0.5" />
+            <Left Color="rgb 128 128 128" LineWidth="0.5" />
+            <Bottom Color="rgb 128 128 128" LineWidth="0.5" />
+            <Right Color="rgb 128 128 128" LineWidth="0.5" />
+          </Border>
+          <Text MarginTop="1" MarginBottom="1" IsSpaced="true" Alignment="Center" IsKeptWithNext="true" LineSpacing="1.5">
+            <Segment FontName="Tahoma" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10">D</Segment>
+          </Text>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell VerticalAlignment="Center">
+          <Border>
+            <Top Color="rgb 128 128 128" LineWidth="0.5" />
+            <Left Color="rgb 128 128 128" LineWidth="0.5" />
+            <Bottom Color="rgb 128 128 128" LineWidth="0.5" />
+            <Right Color="rgb 128 128 128" LineWidth="0.5" />
+          </Border>
+          <Text MarginTop="1" MarginBottom="1" IsSpaced="true" LineSpacing="1.2">
+            <Segment FontName="Tahoma" IsUnicode="true" CharSpace="0.2" FontSize="8">Broken</Segment>
+          </Text>
+        </Cell>
+        <Cell VerticalAlignment="Center">
+          <Border>
+            <Top Color="rgb 128 128 128" LineWidth="0.5" />
+            <Left Color="rgb 128 128 128" LineWidth="0.5" />
+            <Bottom Color="rgb 128 128 128" LineWidth="0.5" />
+            <Right Color="rgb 128 128 128" LineWidth="0.5" />
+          </Border>
+          <Text MarginTop="1" MarginBottom="1" IsSpaced="true" Alignment="Center" IsKeptWithNext="true" LineSpacing="1.5">
+            <Segment FontName="Tahoma" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10">B</Segment>
+          </Text>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell VerticalAlignment="Center">
+          <Border>
+            <Top Color="rgb 128 128 128" LineWidth="0.5" />
+            <Left Color="rgb 128 128 128" LineWidth="0.5" />
+            <Bottom Color="rgb 128 128 128" LineWidth="0.5" />
+            <Right Color="rgb 128 128 128" LineWidth="0.5" />
+          </Border>
+          <Text MarginTop="1" MarginBottom="1" IsSpaced="true" LineSpacing="1.2">
+            <Segment FontName="Tahoma" IsUnicode="true" CharSpace="0.2" FontSize="8">Repair needed</Segment>
+          </Text>
+        </Cell>
+        <Cell VerticalAlignment="Center">
+          <Border>
+            <Top Color="rgb 128 128 128" LineWidth="0.5" />
+            <Left Color="rgb 128 128 128" LineWidth="0.5" />
+            <Bottom Color="rgb 128 128 128" LineWidth="0.5" />
+            <Right Color="rgb 128 128 128" LineWidth="0.5" />
+          </Border>
+          <Text MarginTop="1" MarginBottom="1" IsSpaced="true" Alignment="Center" IsKeptWithNext="true" LineSpacing="1.5">
+            <Segment FontName="Tahoma" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10">R</Segment>
+          </Text>
+        </Cell>
+      </Row>
+    </Table>
+    <Text MarginTop="3" MarginBottom="3" IsSpaced="true" LineSpacing="1.8">
+      <Segment FontName="Times New Roman" IsUnicode="true" FontSize="12"> </Segment>
+    </Text>
+    <Table ID = "Content" ColumnWidths="126.1 65.5 47.25 133.65 275.5 " MarginLeft="0" DefaultCellPaddingLeft="5.75" DefaultCellPaddingRight="5.75" IsRowBroken="true" IsFirstRowRepeated="true">
+      <Row>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0" BackgroundColor="rgb 245 245 220">
+          <Border>
+            <Top Color="rgb 120 145 110" LineWidth="0.5" />
+            <Left Color="rgb 120 145 110" LineWidth="0.5" />
+            <Bottom Color="rgb 120 145 110" LineWidth="0.5" />
+            <Right Color="rgb 120 145 110" LineWidth="0.5" />
+          </Border>
+          <Heading Level="2" LabelWidth="0" MarginTop="3" MarginBottom="3" IsSpaced="true" IsKeptWithNext="true" LineSpacing="2.1">
+            <Segment FontName="Tahoma" IsUnicode="true" Color="rgb 120 145 110" FontSize="14">Exterior</Segment>
+          </Heading>
+        </Cell>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0" BackgroundColor="rgb 245 245 220">
+          <Border>
+            <Top Color="rgb 120 145 110" LineWidth="0.5" />
+            <Left Color="rgb 120 145 110" LineWidth="0.5" />
+            <Bottom Color="rgb 120 145 110" LineWidth="0.5" />
+            <Right Color="rgb 120 145 110" LineWidth="0.5" />
+          </Border>
+          <Heading Level="3" LabelWidth="0" MarginTop="1" MarginBottom="1" IsSpaced="true" Alignment="Center" IsKeptWithNext="true" LineSpacing="1.5">
+            <Segment FontName="Tahoma" IsUnicode="true" Color="rgb 120 145 110" IsTrueTypeFontBold="true" FontSize="10">Beginning of lease</Segment>
+          </Heading>
+        </Cell>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0" BackgroundColor="rgb 245 245 220">
+          <Border>
+            <Top Color="rgb 120 145 110" LineWidth="0.5" />
+            <Left Color="rgb 120 145 110" LineWidth="0.5" />
+            <Bottom Color="rgb 120 145 110" LineWidth="0.5" />
+            <Right Color="rgb 120 145 110" LineWidth="0.5" />
+          </Border>
+          <Heading Level="3" LabelWidth="0" MarginTop="1" MarginBottom="1" IsSpaced="true" Alignment="Center" IsKeptWithNext="true" LineSpacing="1.5">
+            <Segment FontName="Tahoma" IsUnicode="true" Color="rgb 120 145 110" IsTrueTypeFontBold="true" FontSize="10">End of lease</Segment>
+          </Heading>
+        </Cell>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0" BackgroundColor="rgb 245 245 220">
+          <Border>
+            <Top Color="rgb 120 145 110" LineWidth="0.5" />
+            <Left Color="rgb 120 145 110" LineWidth="0.5" />
+            <Bottom Color="rgb 120 145 110" LineWidth="0.5" />
+            <Right Color="rgb 120 145 110" LineWidth="0.5" />
+          </Border>
+          <Heading Level="3" LabelWidth="0" MarginTop="1" MarginBottom="1" IsSpaced="true" Alignment="Center" IsKeptWithNext="true" LineSpacing="1.5">
+            <Segment FontName="Tahoma" IsUnicode="true" Color="rgb 120 145 110" IsTrueTypeFontBold="true" FontSize="10">Landlord’s end-of-lease</Segment>
+            <Segment FontName="Tahoma" IsUnicode="true" Color="rgb 120 145 110" IsTrueTypeFontBold="true" FontSize="10"> </Segment>
+            <Segment FontName="Tahoma" IsUnicode="true" Color="rgb 120 145 110" IsTrueTypeFontBold="true" FontSize="10">assessment</Segment>
+          </Heading>
+        </Cell>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0" BackgroundColor="rgb 245 245 220">
+          <Border>
+            <Top Color="rgb 120 145 110" LineWidth="0.5" />
+            <Left Color="rgb 120 145 110" LineWidth="0.5" />
+            <Bottom Color="rgb 120 145 110" LineWidth="0.5" />
+            <Right Color="rgb 120 145 110" LineWidth="0.5" />
+          </Border>
+          <Heading Level="3" LabelWidth="0" MarginTop="1" MarginBottom="1" IsSpaced="true" Alignment="Center" IsKeptWithNext="true" LineSpacing="1.5">
+            <Segment FontName="Tahoma" IsUnicode="true" Color="rgb 120 145 110" IsTrueTypeFontBold="true" FontSize="10">Comments</Segment>
+          </Heading>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 120 145 110" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text MarginTop="1" MarginBottom="1" IsSpaced="true" LineSpacing="1.2">
+            <Segment FontName="Tahoma" IsUnicode="true" FontSize="8">Front door</Segment>
+          </Text>
+        </Cell>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 120 145 110" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 120 145 110" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+        <Cell PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 120 145 110" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+        <Cell PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 120 145 110" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text MarginTop="1" MarginBottom="1" IsSpaced="true" LineSpacing="1.2">
+            <Segment FontName="Tahoma" IsUnicode="true" FontSize="8">Front screen door</Segment>
+          </Text>
+        </Cell>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+        <Cell PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+        <Cell PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text MarginTop="1" MarginBottom="1" IsSpaced="true" LineSpacing="1.2">
+            <Segment FontName="Tahoma" IsUnicode="true" FontSize="8">Back door</Segment>
+          </Text>
+        </Cell>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+        <Cell PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+        <Cell PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text MarginTop="1" MarginBottom="1" IsSpaced="true" LineSpacing="1.2">
+            <Segment FontName="Tahoma" IsUnicode="true" FontSize="8">Back screen door</Segment>
+          </Text>
+        </Cell>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+        <Cell PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" IsTrueTypeFontBold="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+        <Cell PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" LineSpacing="1.2">
+            <Segment FontName="Times New Roman" IsUnicode="true" FontSize="8">Screens and storm windows</Segment>
+          </Text>
+        </Cell>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+        <Cell VerticalAlignment="Center" PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+        <Cell PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text IsSpaced="true" Alignment="Center" LineSpacing="1.5">
+            <Segment FontName="Times New Roman" IsUnicode="true" FontSize="10"> </Segment>
+          </Text>
+        </Cell>
+        <Cell PaddingLeft="0" PaddingRight="0">
+          <Border>
+            <Top Color="rgb 153 153 153" LineWidth="0.5" />
+            <Left Color="rgb 153 153 153" LineWidth="0.5" />
+            <Bottom Color="rgb 153 153 153" LineWidth="0.5" />
+            <Right Color="rgb 153 153 153" LineWidth="0.5" />
+          </Border>
+          <Text MarginTop="1" MarginBottom="1" IsSpaced="true" Alignment="Center" LineSpacing="1.2">
+            <Segment FontName="Tahoma" IsUnicode="true" FontSize="8"> </Segment>
+          </Text>
+        </Cell>
+      </Row>
+    </Table>
+    <Text MarginTop="3" MarginBottom="3" IsSpaced="true" LineSpacing="1.8">
+      <Segment FontName="Times New Roman" IsUnicode="true" FontSize="12"> </Segment>
+    </Text>
+  </Section>
+</Pdf>

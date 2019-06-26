@@ -1,0 +1,32 @@
+﻿@using MVC5.Helpers
+@using Mvc5.SampleProject.Models
+
+@model IEnumerable<GroupViewModel<string, ApartmentView>>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>City</th>
+            <th>Address</th>
+            <th>Total Area</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var group in Model)
+        {
+            <tr><th colspan="3" class="text-primary">Region: @group.Key</th></tr>
+            foreach (ApartmentView apartment in group.Values)
+            {
+                <tr>
+                    <td>@apartment.City</td>
+                    <td>@apartment.Address</td>
+                    <td class="text-right">@apartment.TotalArea.ToString("N2") m&sup2;</td>
+                </tr>
+            }
+            <tr>
+                <td colspan="2" class="text-primary text-right"></td>
+                <td><strong>Totals: @group.Values.Sum(a => a.TotalArea) m&sup2;</strong></td>
+            </tr>
+        }
+    </tbody>
+</table>

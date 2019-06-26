@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+  <Pdf xmlns="Aspose.Pdf"> 
+   <Section ID="Section1"> 
+        <Table ID="Table1" ColumnWidths="100 100"> 
+         <DefaultCellBorder> 
+                 <All LineWidth="0.1" /> 
+         </DefaultCellBorder> 
+         <Row> 
+          <Cell> 
+           <Text>
+                   <Segment ID="Item">item 1</Segment>
+           </Text> 
+          </Cell> 
+          <Cell> 
+           <Text>
+                   <Segment ID="Item">some content</Segment>
+           </Text> 
+          </Cell> 
+         </Row> 
+        </Table> 
+   </Section> 
+  </Pdf>

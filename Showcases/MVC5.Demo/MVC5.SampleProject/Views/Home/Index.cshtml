@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Mvc5.SampleProject.Models.Tenant>
+
+@{
+    ViewBag.Title = "View";
+}
+<div class="row">
+
+    <h2 class="col-md-6">Tenants</h2> <div class="col-md-6" style="padding-top:5px">@Html.ActionLink("Print this view", "PrintIndex",null,new { @class = "pull-right btn btn-primary hidden-print" })</div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RentalPropertyAddress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MoveInDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LeaseEndDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MonthlyPayment)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RentalPropertyAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MoveInDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LeaseEndDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MonthlyPayment)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
+  <f href="" />
+  <ids original="9CD7C1CE4C59784A803EC9CC584A60F7" modified="35432D35432D32332D30362D31312D31" />
+  <annots>
+    <freetext page="0" flags="print" rect="50,50,150,150">
+      <defaultstyle>font: Helv 12pt;color: #000000</defaultstyle>
+      <contents>Sample content</contents>
+      <defaultappearance>/Helv 12 Tf
+ 0 0 0 rg
+ 0.000 0.000 0.000 RG
+ </defaultappearance>
+    </freetext>
+  </annots>
+</xfdf>

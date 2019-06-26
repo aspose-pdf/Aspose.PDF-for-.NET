@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fields>
+  <field name="textfield">
+    <value />
+  </field>
+  <field name="checkboxfield">
+    <value>Off</value>
+  </field>
+  <field name="comboboxfield">
+    <value />
+  </field>
+  <field name="listboxfield">
+    <value />
+  </field>
+</fields>

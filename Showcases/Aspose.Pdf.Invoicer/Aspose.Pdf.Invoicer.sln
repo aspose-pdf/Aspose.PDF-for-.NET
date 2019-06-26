@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aspose.Pdf.Invoicer", "Aspose.Pdf.Invoicer\Aspose.Pdf.Invoicer.csproj", "{4B40A1BF-0254-497B-89A5-2551901EFB87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleDemo", "ConsoleDemo\ConsoleDemo.csproj", "{9A52677F-0871-4B66-9641-45E724997CFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B40A1BF-0254-497B-89A5-2551901EFB87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B40A1BF-0254-497B-89A5-2551901EFB87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B40A1BF-0254-497B-89A5-2551901EFB87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B40A1BF-0254-497B-89A5-2551901EFB87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A52677F-0871-4B66-9641-45E724997CFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A52677F-0871-4B66-9641-45E724997CFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A52677F-0871-4B66-9641-45E724997CFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A52677F-0871-4B66-9641-45E724997CFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {515CC554-8730-4EE2-8EDE-E904AD3DB38D}
+	EndGlobalSection
+EndGlobal

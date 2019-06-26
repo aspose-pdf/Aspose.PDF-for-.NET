@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Document xmlns="Aspose.Pdf">
+  <Page id="mainSection">
+    <PageInfo IsLandscape="true">
+      <Margin Left="20" Right="20" Top="10" Bottom="30" />
+    </PageInfo>
+    <Header>
+      <Margin Top="20" />
+      <Table ColumnAdjustment="AutoFitToWindow">
+        <Row>
+          <Cell Alignment="1">
+            <Image File="logo.png"  Id = "testImg"></Image>
+          </Cell>
+          <Cell Alignment="3">
+            <TextFragment>
+              <TextSegment>Page $p / $P</TextSegment>
+            </TextFragment>
+          </Cell>
+        </Row>
+      </Table>
+    </Header>
+
+    <Table ColumnAdjustment="AutoFitToWindow" ColumnWidths="8 10">
+      <DefaultCellPadding Top="0" Left="0" Right="0" Bottom="0" />
+      <Margin Top="15" />
+      <Row>
+        <Cell Alignment="1">
+          <!--Logo-->
+          <TextFragment>
+            <TextSegment> Request ID</TextSegment>
+            <TextState FontSize="14" ForegroundColor="#0e4f9c" FontStyle="1" />            
+          </TextFragment>
+          <TextFragment>
+            <TextSegment>#$TAB</TextSegment>
+          </TextFragment>
+          <TextFragment>
+            <TextSegment id="boldtext">2017/000001</TextSegment> <!-- request identifier -->
+            <TextState FontSize="14" FontStyle="1"></TextState>
+          </TextFragment>
+        </Cell>
+      </Row>
+    </Table>
+  </Page>
+</Document>

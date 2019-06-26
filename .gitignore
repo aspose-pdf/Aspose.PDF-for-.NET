@@ -1,0 +1,25 @@
+
+Temp/
+obj/
+classes/
+generated/
+*.suo
+bin/
+* Out*
+*_out_*
+*_out*
+* out*
+*.ldb
+Thumbs.db
+_ReSharper*/
+out/
+*.lic
+*.user
+Out/
+Out*/
+TestResults/
+*.vsmdi
+test-results/
+*.userprefs
+.vs/
+*.nupkg

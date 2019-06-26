@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+     <Pdf xmlns="Aspose.Pdf"> 
+         <Section> 
+             <Table ID="table1" ColumnWidths="50 50 50"> 
+                 <DefaultCellBorder> 
+                     <All LineWidth="0.1"></All> 
+                 </DefaultCellBorder> 
+                 <Row> 
+                     <Cell> 
+                         <Text> 
+                             <Segment>col1</Segment> 
+                         </Text> 
+                     </Cell> 
+                     <Cell> 
+                         <Text> 
+                             <Segment>col2</Segment> 
+                         </Text> 
+                     </Cell> 
+                             <Cell> 
+                          <Text> 
+                              <Segment>col3</Segment> 
+                          </Text> 
+                     </Cell> 
+                 </Row> 
+              <Row> 
+                 <Cell> 
+                    <Text> 
+                        <Segment>item1</Segment> 
+                    </Text> 
+                </Cell> 
+                <Cell> 
+                    <Text> 
+                        <Segment>item2</Segment> 
+                    </Text> 
+                </Cell> 
+                <Cell> 
+                    <Text> 
+                       <Segment>item3</Segment> 
+                    </Text> 
+                </Cell> 
+             </Row> 
+         </Table> 
+     </Section> 
+ </Pdf>

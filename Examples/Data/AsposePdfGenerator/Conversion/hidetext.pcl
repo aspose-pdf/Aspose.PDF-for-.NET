@@ -1,0 +1,94 @@
+E 
+
+                               (s0p3b10h12VHIDETEXT.PCL
+
+
+This page demonstrates the various ways you can provide text data for indexing,
+bursting, routing, filenaming, bookmarking or any other purpose during a 
+PCL transformation by PCLXForm using it's script programming language. 
+
+
+To see what the PCL code looks like, run this file through the PCLCodes.exe 
+program for a PCL to readable text dump of the file.
+
+
+																	   
+
+(s0p3b10h12VExternal File Method:(s0p0b10h12V  PCLXForm can extract whatever text you place in 
+an external file.  A script can parse the external file while transforming the
+PCL and utilize the extracted text, images, barcodes, etc. 
+
+
+
+
+
+(s0p3b10h12VBanner Page Method:(s0p0b10h12V  PCLXForm can extract whatever text you place on a 
+banner page inserted into the printstream.  It can then skip over the
+inserted banner page and use the information for indexing, bursting, 
+routing, filenaming or bookmarkings. 
+
+
+
+
+&f7X
+&f0y0X
+Macro ID #0 - Sample Hidden Text
+&f1X
+
+(s0p3b10h12VUncalled Macro Method:(s0p0b10h12V  PCLXForm can find the text hidden in a macro that
+is not called.  The Uncalled Macro code is just above this text.
+
+
+
+
+(8U(s0P(s10H(s12V(s0S(s0B(s3T&l0O&l6D&l0E&l0L&f0S*v1T(s0p10h12V
+*p300x300Y##$$Printer Resident 12pt Courier Text Sample of hidden text$$##
+*v0T&f1S
+
+(s0p3b10h12VReverse Text Method:(s0p0b10h12V  PCLXForm can find the text hidden as reverse text.
+To be sure the text is not "scrambled" by the latest Windows printer drivers
+you should use the printer resident 12pt Courier font for the hidden text.
+The Reverse Text code is just above this text.
+
+											   
+
+
+(s066666Z
+
+(s0p3b10h12VConfidential PCL ID Method:(s0p0b10h12V  PCLXForm and PTC32.DLL can detect the presense of
+this undocumented comment PCL escape code of a unique number that is not printed
+by the printer. 
+
+
+This code is assigned by PageTech and is mainly used to restrict the use of
+our products for just those PCL files that contain this unique 5-digit number
+code on the first page of each print stream.  We can generate the RUNCODE to 
+shutdown the PTC32.DLL if the correct code is not detected.
+The Confidential PCL ID code is just above this sentence.
+
+
+
+
+
+*v1o1T&a40r0C##$$Sample text in under an opaque transparency pattern$$##*v0o0T
+
+(s0p3b10h12VOpaque Text Method:(s0p0b10h12V  PCLXForm can detect the presense of text hidden under 
+an opaque transparency pattern.
+The Opaque Text code is just above this sentence.
+
+
+
+
+
+(s0p3b10h12VColor Text Method:(s0p0b10h12V  When we re-activate support color text commands in 
+PTC32.DLL, you will be able to hide text by setting the color to white.
+
+  
+&v0SBLACK
+&v1SRED
+&v2SGREEN
+&v3SYELLOW
+&v4SBLUE
+&v5SMAGENTA
+&v6SCYAN
+&v7SWHITE&v0S <-"white" 

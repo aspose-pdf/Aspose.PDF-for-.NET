@@ -1,0 +1,16 @@
+<Pdf xmlns="Aspose.Pdf">
+  <Section PageMarginRight="25" PageMarginTop="25" PageMarginLeft="25" 
+   PageMarginBottom="25" PageWidth="816"   PageHeight="1050" >
+    <Text IsHtmlTagSupported="true" TextWidth="588" Top="120" Left="120" 
+       Alignment="left" PositioningType="PageRelative">
+      <Segment>
+        <b>
+        <font face="Times New Roman" size="18" >HARBIN<sup>[1234]</sup> : 
+  An unexpected stoppage of water<sub>[abcd]</sub>  supply sparked <sup>
+  rumours of a contaminated river</sup> and led to a run on city <sub>supermarkets 
+  storing bottled water</sub> yesterday.</font> 
+		</b> 
+      </Segment> 
+    </Text>
+  </Section>
+ </Pdf>

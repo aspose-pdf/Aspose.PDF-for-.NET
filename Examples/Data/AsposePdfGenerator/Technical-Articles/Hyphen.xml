@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+  <Pdf xmlns="Aspose.Pdf" IsAutoHyphenated="true" >
+   <Section>
+    <Heading Level="1">
+     <Segment IsAutoHyphenated="true">hyphen test1</Segment> 
+    </Heading>
+    <Text>
+     <Segment IsAutoHyphenated="false">hyphen test2</Segment> 
+    </Text>
+   </Section>
+  </Pdf>

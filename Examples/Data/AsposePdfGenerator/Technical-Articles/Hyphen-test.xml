@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<HyphenationInfo xmlns="AsposePdf.Hyphen">
+  <HyphenChar Value="-" /> 
+  <Word Name="networks">net-works</Word> 
+  <Word Name="simulation">simu-la-tion</Word> 
+  <Word Name="unfortunately">un-for-tu-nately</Word> 
+  <Word Name="authentication">au-then-ti-ca-tion</Word>
+</HyphenationInfo>
