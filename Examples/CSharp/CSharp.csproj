@@ -261,6 +261,7 @@
     <Compile Include="AsposePDF\Annotations\DeleteParticularAnnotation.cs" />
     <Compile Include="AsposePDF\Annotations\GetAllAnnotationsFromPage.cs" />
     <Compile Include="AsposePDF\Annotations\GetParticularAnnotation.cs" />
+    <Compile Include="AsposePDF\Annotations\SetCalloutProperty.cs" />
     <Compile Include="AsposePDF\Annotations\StrikeOutWords.cs" />
     <Compile Include="AsposePDF\Annotations\RedactPage.cs" />
     <Compile Include="AsposePDF\Annotations\UpdateFreeTextAnnotation.cs" />
@@ -285,6 +286,7 @@
     <Compile Include="AsposePDF\DocumentConversion\CGMToPDF.cs" />
     <Compile Include="AsposePDF\DocumentConversion\EPUBToPDF.cs" />
     <Compile Include="AsposePDF\DocumentConversion\PageOrientationAccordingImageDimensions.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\MarkdownToPDF.cs" />
     <Compile Include="AsposePDF\DocumentConversion\PDFToPNGFontHinting.cs" />
     <Compile Include="AsposePDF\DocumentConversion\PostscriptToPDF.cs" />
     <Compile Include="AsposePDF\DocumentConversion\RemoveHyperlinksAfterConvertingFromHtml.cs" />
@@ -369,6 +371,8 @@
     <Compile Include="AsposePDF\Images\CreateThumbnailImages.cs" />
     <Compile Include="AsposePDF\Images\FastShrinkImages.cs" />
     <Compile Include="AsposePDF\Images\FlateDecodeCompression.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\SetDefaultFontName.cs" />
+    <Compile Include="AsposePDF\Images\StoreImageInXImageCollection.cs" />
     <Compile Include="AsposePDF\Images\ResizeImages.cs" />
     <Compile Include="AsposePDF\Images\SetImageSize.cs" />
     <Compile Include="AsposePDF\Images\BradleyAlgorithm.cs" />
@@ -545,7 +549,11 @@
     <Compile Include="AsposePDF\Working-Document\AllowResusePageContent.cs" />
     <Compile Include="AsposePDF\Working-Document\ConvertFromRGBToGrayscale.cs" />
     <Compile Include="AsposePDF\Working-Document\EmbedFontsUsingSubsetStrategy.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\CreateTableElement.cs" />
     <Compile Include="AsposePDF\Working-with-TaggedPDFs\SetupLanguageAndTitle.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\StyleTableCell.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\StyleTableElement.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\StyleTableRow.cs" />
     <Compile Include="AsposePDF\Working-With-XML-XSLT\BreakfastMenuUsingXmlAndXslt.cs" />
     <Compile Include="AsposePDF\Working-With-XML-XSLT\HelloWorldPDFUsingXmlAndXslt.cs" />
     <Compile Include="AsposePDF\Working-Document\CreateMultilayerPDFFirstApproach.cs" />
