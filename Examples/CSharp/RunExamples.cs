@@ -47,6 +47,7 @@ using Aspose.Pdf.Examples.CSharp.AsposePDFFacades.Pages.ManipulatePageProperties
 using Aspose.Pdf.Examples.CSharp.AsposePDFFacades.TechnicalArticles;
 using Aspose.Pdf.Examples.CSharp.AsposePDF.Working_with_TaggedPDFs;
 using Aspose.Pdf.Examples.CSharp.AsposePdfFacades.Security_Signatures;
+using Aspose.Pdf.Examples.CSharp.AsposePDF.Working_With_XML_XSLT;
 
 namespace Aspose.Pdf.Examples.CSharp
 {
@@ -144,6 +145,7 @@ namespace Aspose.Pdf.Examples.CSharp
             // ShrinkImages.Run();
             // FastShrinkImages.Run();
             // ResizeImages.Run();
+            // StoreImageInXImageCollection.Run();
 
             //// Stamps-Watermarks
             //// =====================================================   
@@ -250,6 +252,7 @@ namespace Aspose.Pdf.Examples.CSharp
             // AddStructureElementIntoElement.Run();
             // TagImageInExistingPDF.Run();
             // CreateNoteStructureElement.Run();
+            // SetupLanguageAndTitle.Run();
 
             //// Bookmarks
             //// =====================================================   
@@ -387,6 +390,11 @@ namespace Aspose.Pdf.Examples.CSharp
             //// =====================================================   
             // ApplyNumberStyle.Run();
 
+            //// XML And XLST
+            //// =====================================================   
+            //HelloWorldPDFUsingXmlAndXslt.Run();
+            //BreakfastMenuUsingXmlAndXslt.Run();
+
             //  DocumentConversion
             // =====================================================   
             // PDFToPDFA.Run();
@@ -418,6 +426,7 @@ namespace Aspose.Pdf.Examples.CSharp
             // PCLToPDF.Run();
             // PCLToPDF.PCLstream();
             // Stop before exiting
+
             Console.WriteLine("\n\nProgram Finished. Press any key to exit....");
             Console.ReadKey();
         }
