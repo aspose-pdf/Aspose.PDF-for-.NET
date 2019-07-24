@@ -48,8 +48,9 @@
     <Reference Include="Aspose.Cells, Version=18.7.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
       <HintPath>..\packages\Aspose.Cells.18.7.0\lib\net40\Aspose.Cells.dll</HintPath>
     </Reference>
-    <Reference Include="Aspose.PDF, Version=19.6.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.PDF.19.6.0\lib\net4.0\Aspose.PDF.dll</HintPath>
+    <Reference Include="Aspose.PDF, Version=19.7.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.PDF.19.7.0\lib\net4.0\Aspose.PDF.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Ionic.Zip.Reduced, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.Reduced.1.9.1.8\lib\net20\Ionic.Zip.Reduced.dll</HintPath>
@@ -554,6 +555,7 @@
     <Compile Include="AsposePDF\Working-with-TaggedPDFs\StyleTableCell.cs" />
     <Compile Include="AsposePDF\Working-with-TaggedPDFs\StyleTableElement.cs" />
     <Compile Include="AsposePDF\Working-with-TaggedPDFs\StyleTableRow.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\ValidatePDF.cs" />
     <Compile Include="AsposePDF\Working-With-XML-XSLT\BreakfastMenuUsingXmlAndXslt.cs" />
     <Compile Include="AsposePDF\Working-With-XML-XSLT\HelloWorldPDFUsingXmlAndXslt.cs" />
     <Compile Include="AsposePDF\Working-Document\CreateMultilayerPDFFirstApproach.cs" />

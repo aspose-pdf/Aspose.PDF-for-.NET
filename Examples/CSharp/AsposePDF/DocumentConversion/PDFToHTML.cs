@@ -19,6 +19,37 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.DocumentConversion
             pdfDocument.Save(dataDir + "output_out.html", SaveFormat.Html);
             // ExEnd:PDFToHTML
         }
+        public static void ExcludeFontResources()
+        {
+            // ExStart:ExcludeFontResources
+            // The path to the documents directory.
+            string dataDir = RunExamples.GetDataDir_AsposePdf_DocumentConversion();
+
+            string inFile = dataDir + "PDFToHTML.pdf";
+            string outMainHtmlFile = dataDir + "ExcludeFontResources.pdf";
+            // Initialize htmlOptions
+            HtmlSaveOptions htmlOptions = new HtmlSaveOptions
+            {
+                ExplicitListOfSavedPages = new[] { 1 },
+                FixedLayout = true,
+                CompressSvgGraphicsIfAny = false,
+                SaveTransparentTexts = true,
+                SaveShadowedTextsAsTransparentTexts = true,
+                //FontSavingMode = HtmlSaveOptions.FontSavingModes.DontSave,
+                ExcludeFontNameList = new[] { "ArialMT", "SymbolMT" },
+                DefaultFontName = "Comic Sans MS",
+                UseZOrder = true,
+                LettersPositioningMethod = HtmlSaveOptions.LettersPositioningMethods.UseEmUnitsAndCompensationOfRoundingErrorsInCss,
+                PartsEmbeddingMode = HtmlSaveOptions.PartsEmbeddingModes.NoEmbedding,
+                RasterImagesSavingMode = HtmlSaveOptions.RasterImagesSavingModes.AsEmbeddedPartsOfPngPageBackground,
+                SplitIntoPages = false
+            };
+
+            Document pdfDocument = new Document(inFile);
+            // Save
+            pdfDocument.Save(outMainHtmlFile, htmlOptions);
+            // ExEnd:ExcludeFontResources
+        }
         public static void MultiPageHTML()
         {
             // ExStart:MultiPageHTML

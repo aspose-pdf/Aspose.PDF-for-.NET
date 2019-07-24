@@ -256,7 +256,9 @@ namespace Aspose.Pdf.Examples.CSharp
             // CreateTableElement.Run();
             // StyleTableElement.Run();
             // StyleTableRow.Run();
-            // StyleTableCell.Run();
+            // StyleTableCell.Run()
+            //ValidatePDF.Run();
+;
 
             //// Bookmarks
             //// =====================================================   
@@ -417,6 +419,8 @@ namespace Aspose.Pdf.Examples.CSharp
             // PDFToTeX.Run();
             // PDFAToPDF.Run();
             // PDFToPNGFontHinting.Run();
+            // PDFToHTML.Run();
+            // PDFToHTML.ExcludeFontResources();
 
 
             // AddAttachmentToPDFA.Run();
@@ -436,6 +440,10 @@ namespace Aspose.Pdf.Examples.CSharp
             // PCLToPDF.PCLstream();
             // MarkdownToPDF.Run();
             // SetDefaultFontName.Run();
+            // HTMLToPDF.Run();
+            // HTMLToPDF.RenderContentToSamePage();
+            // HTMLToPDF.RenderHTMLwithSVGData();
+            
 
             // Stop before exiting
 
