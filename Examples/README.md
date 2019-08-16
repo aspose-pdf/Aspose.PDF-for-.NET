@@ -10,11 +10,14 @@ This repository contains C# examples for [Aspose.PDF for .NET](http://https://pr
 
 ## How to Run the Examples?
 
-After you have downloaded the ZIP file from the [Download ZIP](https://github.com/aspose-pdf/Aspose.PDF-for-.NET/archive/master.zip) link above, please check the following link with detailed instructions on how to run these Source Code Examples.
+The package contains C# examples. Follow the given steps to proceed with project build:
 
-[How to Run the Examples](http://www.aspose.com/docs/display/pdfnet/How+to+Run+the+Examples)
+* Extract the downloaded project and open the solution file in Visual Studio
+* Right click on solution and press "Enable NuGet package Restore"
+* Build the project
 
-Please feel free to contact us if you have any question, issue or suggestion.
+For more details, see [How to Run the Examples](http://www.aspose.com/docs/display/pdfnet/How+to+Run+the+Examples)
+
 
 
 
