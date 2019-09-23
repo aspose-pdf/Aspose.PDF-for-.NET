@@ -1,6 +1,7 @@
 using System.IO;
 using Aspose.Pdf;
 using System;
+using Aspose.Pdf.Text;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.StampsWatermarks
 {
@@ -50,6 +51,42 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.StampsWatermarks
             pdfDocument.Pages[1].AddStamp(imageStamp);
             pdfDocument.Save(dataDir + "ControlImageQuality_out.pdf");
             // ExEnd:ControlImageQuality
+        }
+
+        public static void AddImageStampAsBackgroundInFloatingBox()
+        {
+            //ExStart: AddImageStampAsBackgroundInFloatingBox
+            // The path to the documents directory.
+            string dataDir = RunExamples.GetDataDir_AsposePdf_StampsWatermarks();
+
+            // Instantiate Document object
+            Document doc = new Document();
+            // Add page to PDF document
+            Page page = doc.Pages.Add();
+            // Create FloatingBox object
+            FloatingBox aBox = new FloatingBox(200, 100);
+            // Set left position for FloatingBox
+            aBox.Left = 40;
+            // Set Top position for FloatingBox
+            aBox.Top = 80;
+            // Set the Horizontal alignment for FloatingBox
+            aBox.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
+            // Add text fragment to paragraphs collection of FloatingBox
+            aBox.Paragraphs.Add(new TextFragment("main text"));
+            // Set border for FloatingBox
+            aBox.Border = new BorderInfo(BorderSide.All, Aspose.Pdf.Color.Red);
+            // Add background image
+            aBox.BackgroundImage = new Image
+            {
+                File = dataDir + "aspose-logo.jpg"
+            };
+            // Set background color for FloatingBox
+            aBox.BackgroundColor = Aspose.Pdf.Color.Yellow;
+            // Add FloatingBox to paragraphs collection of page object
+            page.Paragraphs.Add(aBox);
+            // Save the PDF document
+            doc.Save(dataDir + "AddImageStampAsBackgroundInFloatingBox_out.pdf");
+            //ExEnd: AddImageStampAsBackgroundInFloatingBox
         }
     }
 }
