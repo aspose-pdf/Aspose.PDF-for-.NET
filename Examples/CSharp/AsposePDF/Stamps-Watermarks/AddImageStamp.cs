@@ -35,6 +35,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.StampsWatermarks
             Console.WriteLine("\nImage stamp added successfully.\nFile saved at " + dataDir);
             
         }
+
         public static void ControlImageQuality()
         {
             // ExStart:ControlImageQuality
