@@ -73,6 +73,7 @@ namespace Aspose.Pdf.Examples.CSharp
             // LoadLicenseFromStreamObject.Run();
             // SetLicenseUsingEmbeddedResource.Run();
 
+            #region Text
             //// Text
             //// =====================================================            
             // Aspose.Pdf.Examples.CSharp.AsposePDF.Text.ExtractTextPage.Run();
@@ -120,7 +121,10 @@ namespace Aspose.Pdf.Examples.CSharp
             // RemoveAllTextFromPDF.Run();
             // AddTextWithShadingColors.Run();
             // MulticolumnParagraphs.Run();
+            //UseLatexScript3.Run();
+            #endregion
 
+            #region Images
             //// Images
             //// =====================================================   
             // Aspose.Pdf.Examples.CSharp.AsposePDF.Images.AddImage.Run();   
@@ -146,7 +150,9 @@ namespace Aspose.Pdf.Examples.CSharp
             // FastShrinkImages.Run();
             // ResizeImages.Run();
             // StoreImageInXImageCollection.Run();
+            #endregion
 
+            #region Stamps-Watermarks
             //// Stamps-Watermarks
             //// =====================================================   
             // AddTextStamp.Run();
@@ -165,7 +171,10 @@ namespace Aspose.Pdf.Examples.CSharp
             // PageNumberinHeaderFooterUsingFloatingBox.Run();
             // TableInHeaderFooterSection.Run();
             // FillStrokeText.Run();
+            //AddImageStamp.AddImageStampAsBackgroundInFloatingBox();
+            #endregion
 
+            #region Attachments
             //// Attachments
             //// =====================================================   
             // Aspose.Pdf.Examples.CSharp.AsposePDF.Attachments.AddAttachment.Run();
@@ -173,7 +182,9 @@ namespace Aspose.Pdf.Examples.CSharp
             // GetIndividualAttachment.Run();
             // GetAttachmentInfo.Run();
             // DisableFilesCompression.Run();
+            #endregion
 
+            #region Pages
             //// Pages
             //// =====================================================   
             // GetNumberofPages.Run();
@@ -191,8 +202,9 @@ namespace Aspose.Pdf.Examples.CSharp
             // DeterminePageColor.Run(); 
             // ChangeOrientation.Run();
             // ZoomToPageContents.Run();
+            #endregion
 
-            //// Working-Document
+            #region Working-Document
             //// =====================================================   
             // SetDocumentWindow.Run();
             // GetDocumentWindow.Run();
@@ -231,8 +243,9 @@ namespace Aspose.Pdf.Examples.CSharp
             // FlattenAnnotation.Run();
             // CreateThumbnailImages.Run();
             // HelloWorldPDFUsingXmlAndXslt.Run();
+            #endregion
 
-            //// Working-with-Tagged PDFs
+            #region Working-with-Tagged PDFs
             //// ===================================================== 
             // CreatePDFwithTaggedText.Run();
             // CreatePDFwithTaggedImage.Run();
@@ -258,9 +271,9 @@ namespace Aspose.Pdf.Examples.CSharp
             // StyleTableRow.Run();
             // StyleTableCell.Run()
             //ValidatePDF.Run();
-;
+            #endregion
 
-            //// Bookmarks
+            #region Bookmarks
             //// =====================================================   
             // Aspose.Pdf.Examples.CSharp.AsposePDF.Bookmarks.AddBookmark.Run();
             // Aspose.Pdf.Examples.CSharp.AsposePDF.Bookmarks.AddChildBookmark.Run();
@@ -272,8 +285,9 @@ namespace Aspose.Pdf.Examples.CSharp
             // UpdateChildBookmarks.Run();
             // InheritZoom.Run();
             // ExpandBookmarks.Run();
+            #endregion
 
-            //// Annotations
+            #region Annotations
             //// =====================================================   
             // AddAnnotation.Run();
             // InvisibleAnnotation.Run();
@@ -290,8 +304,9 @@ namespace Aspose.Pdf.Examples.CSharp
             // GetResourceOfAnnotation.Run();
             // SetCalloutProperty.Run();
             // SetCalloutProperty.SetCalloutPropertyXFDF();
+            #endregion
 
-            //// Forms
+            #region Forms
             //// =====================================================   
             // TextBox.Run();
             // RadioButtonWithOptions.Run();
@@ -317,14 +332,16 @@ namespace Aspose.Pdf.Examples.CSharp
             // GroupedCheckBoxes.Run();
             // SetRadioButtonCaption.Run();
             // FlattenForms.Run();
+            #endregion
 
-            //// TechnicalArticles
+            #region TechnicalArticles
             //// =====================================================            
             // CreatePDFPortfolio.Run();
             // ExtractFilesFromPortfolio.Run();
             // RemoveFilesFromPortfolio.Run();
+            #endregion
 
-            //// Links-Actions
+            #region Links-Actions
             //// =====================================================   
             // CreateApplicationLink.Run();
             // CreateDocumentLink.Run();
@@ -338,8 +355,9 @@ namespace Aspose.Pdf.Examples.CSharp
             // GetHyperlinkDestinations.Run();
             // GetHyperlinkText.Run();
             // CreateLocalHyperlink.Run();
+            #endregion
 
-            //// Security-Signatures
+            #region Security -Signatures
             //// =====================================================   
             // Encrypt.Run();
             // Decrypt.Run();
@@ -350,20 +368,23 @@ namespace Aspose.Pdf.Examples.CSharp
             // SetPrivileges.Run();
             // SignWithSmartCardUsingSignatureField.Run();
             // SignWithSmartCardUsingPdfFileSignature.Run();
+            #endregion
 
-            //// Operators
+            #region Operators
             //// =====================================================   
             // DrawXFormOnPage.Run();
             // PDFOperators.Run();
             // RemoveGraphicsObjects.Run();
+            #endregion
 
-            //// Miscellaneous
+            #region Miscellaneous
             //// =====================================================   
             // GetBuildInformation.Run();
             // UseMeasureWithLineAnnotation.Run();
             // UseMeasureWithPolylineAnnotation.Run();
+            #endregion
 
-            //// Tables
+            #region Tables
             //// =====================================================  
             // AddImageinATableCell.Run();
             // AddTable.Run();
@@ -383,8 +404,9 @@ namespace Aspose.Pdf.Examples.CSharp
             // RemoveMultipleTables.Run();
             // ReplaceTable.Run();
             // GetTableWidth.Run();
+            #endregion
 
-            //// Graphs
+            #region Graphs
             //// =====================================================   
             // CreateFilledRectangle.Run();
             // AddLineObject.Run();
@@ -393,17 +415,20 @@ namespace Aspose.Pdf.Examples.CSharp
             // CreateRectangleWithAlphaColor.Run();
             // AddDrawing.Run();
             // ControlRectangleZOrder.Run();
+            #endregion
 
-            //// Headings
+            #region Headings
             //// =====================================================   
             // ApplyNumberStyle.Run();
+            #endregion
 
-            //// XML And XLST
+            #region XML And XLST
             //// =====================================================   
             //HelloWorldPDFUsingXmlAndXslt.Run();
             //BreakfastMenuUsingXmlAndXslt.Run();
+            #endregion
 
-            //  Document Conversion
+            #region  Document Conversion
             // ===================================================== 
 
             // PDFToEPUB.Run();
@@ -443,7 +468,7 @@ namespace Aspose.Pdf.Examples.CSharp
             // HTMLToPDF.Run();
             // HTMLToPDF.RenderContentToSamePage();
             // HTMLToPDF.RenderHTMLwithSVGData();
-            
+            #endregion
 
             // Stop before exiting
 
