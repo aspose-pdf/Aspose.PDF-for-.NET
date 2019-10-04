@@ -339,6 +339,7 @@
     <Compile Include="AsposePDF\Forms\ArabicTextFilling.cs" />
     <Compile Include="AsposePDF\Forms\PreserveRights.cs" />
     <Compile Include="AsposePDF\Forms\GetCoordinates.cs" />
+    <Compile Include="AsposePDF\Forms\RetrieveFormFieldInTabOrder.cs" />
     <Compile Include="AsposePDF\Forms\SetFieldLimit.cs" />
     <Compile Include="AsposePDF\Forms\SelectRadioButton.cs" />
     <Compile Include="AsposePDF\Forms\RadioButtonWithOptions.cs" />
@@ -359,6 +360,7 @@
     <Compile Include="AsposePDF\Forms\SetJavaScript.cs" />
     <Compile Include="AsposePDF\Forms\FillXFAFields.cs" />
     <Compile Include="AsposePDF\Forms\GetXFAProperties.cs" />
+    <Compile Include="AsposePDF\Graphs\AddDrawingWithGradientFill.cs" />
     <Compile Include="AsposePDF\Graphs\ControlRectangleZOrder.cs" />
     <Compile Include="AsposePDF\Graphs\CreateRectangleWithAlphaColor.cs" />
     <Compile Include="AsposePDF\Graphs\AddDrawing.cs" />
@@ -488,9 +490,12 @@
     <Compile Include="AsposePDF\Tables\InsertPageBreak.cs" />
     <Compile Include="AsposePDF\Tables\SetBorder.cs" />
     <Compile Include="AsposePDF\Tables\MarginsOrPadding.cs" />
+    <Compile Include="AsposePDF\Tables\TextAlignmentForTableRowContent.cs" />
     <Compile Include="AsposePDF\TechnicalArticles\RemoveFilesFromPortfolio.cs" />
     <Compile Include="AsposePDF\TechnicalArticles\ExtractFilesFromPortfolio.cs" />
     <Compile Include="AsposePDF\TechnicalArticles\CreatePDFPortfolio.cs" />
+    <Compile Include="AsposePDF\Text\AccessTextFragementAndTextSegmentElementsFromXMLFile.cs" />
+    <Compile Include="AsposePDF\Text\AddAndSearchHiddenText.cs" />
     <Compile Include="AsposePDF\Text\AddHTMLOrderedListIntoDocuments.cs" />
     <Compile Include="AsposePDF\Text\AddHTMLUsingDOMAndOverwrite.cs" />
     <Compile Include="AsposePDF\Text\AddSubsequentLinesIndent.cs" />
@@ -502,6 +507,7 @@
     <Compile Include="AsposePDF\Text\ExtractParagraphs.cs" />
     <Compile Include="AsposePDF\Text\ExtractParagraphsByDrawingBorder.cs" />
     <Compile Include="AsposePDF\Stamps-Watermarks\FillStrokeText.cs" />
+    <Compile Include="AsposePDF\Text\GetWidthOfTextDynamically.cs" />
     <Compile Include="AsposePDF\Text\HiddenTextBlock.cs" />
     <Compile Include="AsposePDF\Text\MulticolumnParagraphs.cs" />
     <Compile Include="AsposePDF\Text\PlacingTextAroundImage.cs" />
@@ -533,6 +539,7 @@
     <Compile Include="AsposePDF\Text\AddText.cs" />
     <Compile Include="AsposePDF\Text\ReplaceTextAll.cs" />
     <Compile Include="AsposePDF\Text\SpecifyLineSpacing.cs" />
+    <Compile Include="AsposePDF\Text\TextAlignmentForFloatingBoxContents.cs" />
     <Compile Include="AsposePDF\Text\TextAndImageAsParagraph.cs" />
     <Compile Include="AsposePDF\Text\SearchTextAndAddHyperlink.cs" />
     <Compile Include="AsposePDF\Text\ReplaceTextPage.cs" />
@@ -546,6 +553,8 @@
     <Compile Include="AsposePDF\Text\UseLatexScript.cs" />
     <Compile Include="AsposePDF\Text\UseLatexScript2.cs" />
     <Compile Include="AsposePDF\Text\UseLatexScript3.cs" />
+    <Compile Include="AsposePDF\Working-Document\GetWarningsForFontSubstitution.cs" />
+    <Compile Include="AsposePDF\Working-Document\SetPropertiesForPrintDialog.cs" />
     <Compile Include="AsposePDF\Working-with-TaggedPDFs\AccessChildrenElements.cs" />
     <Compile Include="AsposePDF\Working-Document\AllowResusePageContent.cs" />
     <Compile Include="AsposePDF\Working-Document\ConvertFromRGBToGrayscale.cs" />

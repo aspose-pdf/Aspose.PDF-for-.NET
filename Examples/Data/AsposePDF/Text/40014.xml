@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<Document xmlns="Aspose.Pdf">
+<Page id="mainSection">
+<TextFragment><TextSegment id="boldHtml">segment1</TextSegment></TextFragment>
+<TextFragment><TextSegment id="strongHtml">segment2</TextSegment></TextFragment>
+</Page>
+</Document>

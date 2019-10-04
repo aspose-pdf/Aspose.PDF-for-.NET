@@ -10,6 +10,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Text
         public static void Run()
         {
             //ExStart: UseLatexScript3
+            var dataDir = RunExamples.GetDataDir_AsposePdf_Text();
             var s = @"
             \usepackage{amsmath,amsthm}
             \begin{document}
@@ -28,7 +29,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Text
             var latex = new LatexFragment(s);
 
             page.Paragraphs.Add(latex);
-            doc.Save(@"Script.pdf");
+            doc.Save(dataDir + "Script_out.pdf");
             //ExEnd: UseLatexScript3
         }
     }
