@@ -45,5 +45,24 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Images
             // ExEnd:AddImage
             Console.WriteLine("\nImage added successfully.\nFile saved at " + dataDir); 
         }
+
+        public static void AddDicomImage()
+        {
+            //ExStart: AddDicomImage
+            // The path to the documents directory.
+            string dataDir = RunExamples.GetDataDir_AsposePdf_Images();
+
+            using (Document pdfDocument = new Document())
+            {
+                pdfDocument.Pages.Add();
+                Aspose.Pdf.Image image = new Aspose.Pdf.Image();
+                image.FileType = ImageFileType.Dicom;
+                image.ImageStream = new FileStream(dataDir + "0002.dcm", FileMode.Open, FileAccess.Read);
+                pdfDocument.Pages[1].Paragraphs.Add(image);
+                // Save output as PDF format
+                pdfDocument.Save(dataDir + "PdfWithDicomImage_out.pdf");
+            }
+            //ExEnd: AddDicomImage
+        }
     }
 }
