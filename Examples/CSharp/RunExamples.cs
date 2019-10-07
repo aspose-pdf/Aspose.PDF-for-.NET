@@ -133,6 +133,7 @@ namespace Aspose.Pdf.Examples.CSharp
             // PDFAToPDF.Run();
             // PDFToDOC.Run();
             // PDFToEPUB.Run();
+            // PDFToHTML.CreatingHtmlWithFullContentWidth();
             // PDFToHTML.ExcludeFontResources();
             // PDFToHTML.LayersRendering();
             // PDFToHTML.Run();
