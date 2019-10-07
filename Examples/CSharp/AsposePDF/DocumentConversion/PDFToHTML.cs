@@ -172,5 +172,18 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.DocumentConversion
             doc.Save(dataDir + "LayersRendering_out.html", htmlOptions);
             // ExEnd:LayersRendering
         }
+        public static void CreatingHtmlWithFullContentWidth()
+        {
+            //ExStart: CreatingHtmlWithFullContentWidth
+            // The path to the documents directory.
+            string dataDir = RunExamples.GetDataDir_AsposePdf_DocumentConversion();
+
+            HtmlSaveOptions saveOptions = new HtmlSaveOptions();
+            saveOptions.FixedLayout = (false);
+            saveOptions.FlowLayoutParagraphFullWidth = true;
+            Document doc = new Document(dataDir + "FlowLayoutParagraphFullWidth.Pdf");
+            doc.Save(dataDir + "FlowLayoutParagraphFullWidth_out.html", saveOptions);
+            //ExEnd: CreatingHtmlWithFullContentWidth
+        }
     }
 }
