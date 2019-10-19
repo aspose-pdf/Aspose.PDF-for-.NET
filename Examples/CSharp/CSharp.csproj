@@ -48,8 +48,8 @@
     <Reference Include="Aspose.Cells, Version=19.9.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
       <HintPath>..\packages\Aspose.Cells.19.9.0\lib\net40\Aspose.Cells.dll</HintPath>
     </Reference>
-    <Reference Include="Aspose.PDF, Version=19.9.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.PDF.19.9.0\lib\net4.0\Aspose.PDF.dll</HintPath>
+    <Reference Include="Aspose.PDF, Version=19.10.0.0, Culture=neutral, PublicKeyToken=f0262d67fe233d63, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.PDF.19.10.0\lib\net4.0\Aspose.PDF.dll</HintPath>
     </Reference>
     <Reference Include="Ionic.Zip.Reduced, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.Reduced.1.9.1.8\lib\net20\Ionic.Zip.Reduced.dll</HintPath>
@@ -527,6 +527,7 @@
     <Compile Include="AsposePDF\Text\ExtractColumnsText.cs" />
     <Compile Include="AsposePDF\Text\CustomTabStops.cs" />
     <Compile Include="AsposePDF\Text\SearchTextAndDrawRectangle.cs" />
+    <Compile Include="AsposePDF\Text\SearchTextWithDotNetRegex.cs" />
     <Compile Include="AsposePDF\Text\SetHTMLStringFormatting.cs" />
     <Compile Include="AsposePDF\Text\SpecifyCharacterSpacing.cs" />
     <Compile Include="AsposePDF\Text\FootAndEndNotes.cs" />

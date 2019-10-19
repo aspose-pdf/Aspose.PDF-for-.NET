@@ -384,6 +384,7 @@ namespace Aspose.Pdf.Examples.CSharp
             // SearchTextAndAddHyperlink.Run();
             // SearchTextAndDrawRectangle.Run();
             // SearchTextSegmentsPage.Run();
+            // SearchTextWithDotNetRegex.Run();
             // SetHTMLStringFormatting.Run();
             // SpecifyCharacterSpacing.Run();
             // SpecifyLineSpacing.Run();
@@ -393,7 +394,7 @@ namespace Aspose.Pdf.Examples.CSharp
             // Aspose.Pdf.Examples.CSharp.AsposePDF.Text.ExtractTextPage.Run();
 
             #endregion
-            
+
             #region Working-Document
             //// =====================================================   
             // AddJavaScriptToPage.Run();
@@ -465,13 +466,13 @@ namespace Aspose.Pdf.Examples.CSharp
             // TextStructureElements.Run();
             // ValidatePDF.Run();
             #endregion
-            
+
             #region XML And XLST
             //// =====================================================   
             //BreakfastMenuUsingXmlAndXslt.Run();
             //HelloWorldPDFUsingXmlAndXslt.Run();
             #endregion
-            
+
             // Stop before exiting
 
             Console.WriteLine("\n\nProgram Finished. Press any key to exit....");
