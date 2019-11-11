@@ -185,5 +185,23 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.DocumentConversion
             doc.Save(dataDir + "FlowLayoutParagraphFullWidth_out.html", saveOptions);
             //ExEnd: CreatingHtmlWithFullContentWidth
         }
+        public static void CenterAlignText()
+        {
+            //ExStart: CenterAlignText
+            HtmlSaveOptions htmlOptions = new HtmlSaveOptions();
+
+            // init MarginPartStyle with margin in 20 points
+            var commonMargin = new SaveOptions.MarginPartStyle(20);
+            // init MarginPartStyle with margin value auto
+            var autoMargin = new SaveOptions.MarginPartStyle(true);
+
+            // set commonMargin to every page side
+            htmlOptions.PageMarginIfAny = new HtmlSaveOptions.MarginInfo(commonMargin);
+
+            // set horizontal page align to center
+            htmlOptions.PageMarginIfAny.LeftMarginIfAny = autoMargin;
+            htmlOptions.PageMarginIfAny.RightMarginIfAny = autoMargin;
+            //ExEnd: CenterAlignText
+        }
     }
 }
