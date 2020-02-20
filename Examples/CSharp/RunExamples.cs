@@ -48,6 +48,7 @@ using Aspose.Pdf.Examples.CSharp.AsposePDFFacades.TechnicalArticles;
 using Aspose.Pdf.Examples.CSharp.AsposePDF.Working_with_TaggedPDFs;
 using Aspose.Pdf.Examples.CSharp.AsposePdfFacades.Security_Signatures;
 using Aspose.Pdf.Examples.CSharp.AsposePDF.Working_With_XML_XSLT;
+using Aspose.Pdf.Examples.CSharp.AsposePDF.Stamps_Watermarks;
 
 namespace Aspose.Pdf.Examples.CSharp
 {
@@ -307,6 +308,7 @@ namespace Aspose.Pdf.Examples.CSharp
             // AddPDFPageStamp.Run();
             // AddTextStamp.Run();
             // DefineAlignment.Run();
+            // ExtractTextFromStampAnnotation.Run();
             // FillStrokeText.Run();
             // ImageandPageNumberinHeaderFootersection.Run();
             // ImageandPageNumberinHeaderFootersectionInline.Run();
