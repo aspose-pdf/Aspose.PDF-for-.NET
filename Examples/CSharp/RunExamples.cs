@@ -416,6 +416,7 @@ namespace Aspose.Pdf.Examples.CSharp
             // CreateMultilayerPDFFirstApproach.Run();
             // CreateMultilayerPDFSecondApproach.Run();
             // CreatePDFA1WithAsposePdf.Run();
+            CustomizePageNumbesWhileAddingTOC.Run();
             // CreateThumbnailImages.Run();
             // EmbedFontsUsingSubsetStrategy.Run();
             // EmbedFontWhileDocCreation.Run();

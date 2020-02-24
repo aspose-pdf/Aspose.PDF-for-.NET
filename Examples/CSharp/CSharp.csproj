@@ -555,6 +555,7 @@
     <Compile Include="AsposePDF\Text\UseLatexScript.cs" />
     <Compile Include="AsposePDF\Text\UseLatexScript2.cs" />
     <Compile Include="AsposePDF\Text\UseLatexScript3.cs" />
+    <Compile Include="AsposePDF\Working-Document\CustomizePageNumbesWhileAddingTOC.cs" />
     <Compile Include="AsposePDF\Working-Document\GetWarningsForFontSubstitution.cs" />
     <Compile Include="AsposePDF\Working-Document\SetPropertiesForPrintDialog.cs" />
     <Compile Include="AsposePDF\Working-with-TaggedPDFs\AccessChildrenElements.cs" />
