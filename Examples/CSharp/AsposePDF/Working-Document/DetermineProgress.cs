@@ -30,7 +30,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.WorkingDocuments
                 case ProgressEventType.TotalProgress:
                     Console.WriteLine(String.Format("{0}  - Conversion progress : {1}% .", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString()));
                     break;
-                case ProgressEventType.SourcePageAnalized:
+                case ProgressEventType.SourcePageAnalysed:
                     Console.WriteLine(String.Format("{0}  - Source page {1} of {2} analyzed.", DateTime.Now.ToLongTimeString(), eventInfo.Value.ToString(), eventInfo.MaxValue.ToString()));
                     break;
                 case ProgressEventType.ResultPageCreated:

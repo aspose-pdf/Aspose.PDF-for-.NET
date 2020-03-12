@@ -11,11 +11,6 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Working_Document
         public static void Run()
         {
             //ExStart: CustomizePageNumbesWhileAddingTOC
-            //Sometimes when we add TOC into PDF document it is required to customize the page numbering in the TOC.
-            //For exapmle we need add some prefix before page number like "P1, P2, P3 ...".
-            // For such case Aspose.PDF for .NET provides PageNumbersPrefix property of TocInfo class.  
-            //Code snippet below shows how to use this feature.
-
             string inFile = RunExamples.GetDataDir_AsposePdf_WorkingDocuments() + "42824.pdf";
             string outFile = RunExamples.GetDataDir_AsposePdf_WorkingDocuments() + "42824_out.pdf";
             // Load an existing PDF files
