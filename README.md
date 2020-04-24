@@ -2,7 +2,7 @@
 
 [Aspose.PDF for .NET](http://https://products.aspose.com/pdf/net) is a set of PDF APIs for document creation and manipulation that enables your .NET applications to read, write and manipulate existing PDF documents without using Adobe Acrobat. It also allows you to create forms and manage form fields embedded in a PDF document.
 
-This repository contains [Examples](Examples), [Plugins](Plugins) and [Showcase](Showcases) projects for [Aspose.PDF for .NET](https://products.aspose.com/pdf/net) to help you learn and write your own applications.
+This repository contains [Examples](Examples), [LiveDemos](LiveDemos), [Plugins](Plugins) and [Showcase](Showcases) projects for [Aspose.PDF for .NET](https://products.aspose.com/pdf/net) to help you learn and write your own applications.
 
 <p align="center">
 
@@ -14,6 +14,7 @@ This repository contains [Examples](Examples), [Plugins](Plugins) and [Showcase]
 Directory | Description
 --------- | -----------
 [Examples](Examples)  | A collection of .NET examples that help you learn the product features
+[LiveDemos](LiveDemos)  | Aspose.PDF for .NET Live Demos Source Code
 [Showcases](Showcases)  | Standalone ready-to-use applications that demonstrate some specific use cases
 [Plugins](Plugins)  | Plugins that will demonstrate one or more features of Aspose.PDF for .NET
 
