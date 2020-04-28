@@ -70,6 +70,16 @@ namespace Aspose.Pdf.Live.Demos.UI
 				 new { controller = "Merger", action = "Merger" }
 			);
 			routes.MapRoute(
+				"AsposePDFRemoveAnnotationRoute",
+				"annotation/remove",
+				 new { controller = "Annotation", action = "Remove" }
+			);
+			routes.MapRoute(
+				"AsposePDFComparisonRoute",
+				"{product}/comparison",
+				 new { controller = "Comparison", action = "Comparison" }
+			);
+			routes.MapRoute(
 				"AsposePDFUnlockRoute",
 				"{product}/unlock",
 				 new { controller = "Unlock", action = "Unlock" }
@@ -93,6 +103,16 @@ namespace Aspose.Pdf.Live.Demos.UI
 				"AsposePDFParserRoute",
 				"{product}/parser",
 				 new { controller = "Parser", action = "Parser" }
+			);
+			routes.MapRoute(
+				"AsposePDFAnnotationRoute",
+				"{product}/annotation",
+				 new { controller = "Annotation", action = "Annotation" }
+			);
+			routes.MapRoute(
+				"AsposePDFRedactionRoute",
+				"{product}/redaction",
+				 new { controller = "Redaction", action = "Redaction" }
 			);
 			routes.MapPageRoute(
 			  "AsposePDFDefaultViewerRoute",

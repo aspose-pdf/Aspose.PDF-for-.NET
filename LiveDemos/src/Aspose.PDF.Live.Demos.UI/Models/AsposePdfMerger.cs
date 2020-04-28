@@ -17,31 +17,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Models
 	///</Summary>
 	public class AsposePdfMerger : AsposePdfBase
 	{
-		/////<Summary>
-		///// Merge method to merge pdf document
-		/////</Summary>
 		
-		//public Response Merge(DocumentInfo[] docs, string sourceFolder, string inputType, string outputType)
-		//{
-		//	if (string.IsNullOrEmpty(inputType))
-		//		return BadDocumentResponse;
-		//	if (inputType.ToLower().Equals("pdf") || inputType.ToLower().Equals("cgm"))
-		//	{
-		//		return  MergePdfsToOne(docs, inputType, outputType);
-		//	}
-		//	else if (inputType.ToLower().Equals("jpg")
-		//	         || inputType.ToLower().Equals("png")
-		//	         || inputType.ToLower().Equals("bmp")
-		//	         || inputType.ToLower().Equals("tiff"))
-		//	{
-		//		return  MergeImagesToFormats(outputType);
-		//	}
-		//	else
-		//	{
-		//		return BadDocumentResponse;
-		//	}
-		//}
-
 		public Response MergePdfsToOne(string sourceFolder, DocumentInfo[] docs,  string inputType, string outputType)
 		{
 			var outType = outputType.Trim().ToLower();

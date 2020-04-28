@@ -571,10 +571,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AnnotationController.cs" />
     <Compile Include="Controllers\AsposePdfSignatureController.cs" />
     <Compile Include="Controllers\AsposePdfViewerController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="Controllers\ComparisonController.cs" />
+    <Compile Include="Controllers\RedactionController.cs" />
     <Compile Include="Controllers\XFAController.cs" />
     <Compile Include="Controllers\MergerController.cs" />
     <Compile Include="Controllers\ParserController.cs" />
@@ -588,12 +591,24 @@
     <Compile Include="FileProcessing\CustomSingleOrZipFileProcessor.cs" />
     <Compile Include="FileProcessing\FileProcessor.cs" />
     <Compile Include="FileProcessing\SingleOrZipFileProcessor.cs" />
+    <Compile Include="Helpers\Action.cs" />
     <Compile Include="Helpers\Extenders.cs" />
+    <Compile Include="Helpers\HtmlDiff.cs" />
     <Compile Include="Helpers\HttpHelper.cs" />
+    <Compile Include="Helpers\Match.cs" />
+    <Compile Include="Helpers\MatchFinder.cs" />
+    <Compile Include="Helpers\MatchOptions.cs" />
+    <Compile Include="Helpers\Mode.cs" />
     <Compile Include="Helpers\MultipartFormDataStreamProviderSafe.cs" />
+    <Compile Include="Helpers\Operation.cs" />
     <Compile Include="Helpers\PathSafe.cs" />
+    <Compile Include="Helpers\Utils.cs" />
+    <Compile Include="Helpers\WordSplitter.cs" />
+    <Compile Include="Models\AsposePdfAnnotation.cs" />
+    <Compile Include="Models\AsposePdfComparison.cs" />
     <Compile Include="Models\AsposePdfMerger.cs" />
     <Compile Include="Models\AsposePdfParser.cs" />
+    <Compile Include="Models\AsposePdfRedaction.cs" />
     <Compile Include="Models\AsposePdfSearch.cs" />
     <Compile Include="Models\AsposePdfSplitter.cs" />
     <Compile Include="Models\AsposePdfUnlock.cs" />

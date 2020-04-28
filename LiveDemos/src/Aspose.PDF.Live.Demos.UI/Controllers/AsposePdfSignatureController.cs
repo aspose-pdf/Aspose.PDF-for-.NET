@@ -10,8 +10,6 @@ using Aspose.Pdf;
 using Aspose.Pdf.Facades;
 using Aspose.Pdf.Text;
 using Aspose.Pdf.Live.Demos.UI.Models;
-
-
 using Document = Aspose.Pdf.Document;
 using SaveFormat = Aspose.Pdf.SaveFormat;
 

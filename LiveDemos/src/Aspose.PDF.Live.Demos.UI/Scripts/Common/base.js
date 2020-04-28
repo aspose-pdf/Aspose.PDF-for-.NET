@@ -349,14 +349,17 @@ function requestMetadata(data) {
 		});
 	}
 }
+
 function requestRedaction() {
 	if (!validateSearch())
 		return;
+
 	let data = fileDrop.prepareFormData();
 	if (data === null)
 		return;
-	let url = o.UIBasePath + 'Redaction/Redaction?outputType=' + $('#saveAs').val() +
-		'&searchQuery=' + encodeURI($('#searchQuery').val()) +
+
+	let url = o.UIBasePath + 'Redaction/Redaction?' +
+		'searchQuery=' + encodeURI($('#searchQuery').val()) +
 		'&replaceText=' + encodeURI($('#replaceText').val()) +
 		'&caseSensitive=' + $('#caseSensitive').prop('checked') +
 		'&text=' + $('#text').prop('checked') +
@@ -364,6 +367,7 @@ function requestRedaction() {
 		'&metadata=' + $('#metadata').prop('checked');
 	request(url, data);
 }
+
 function validateSearch() {
 	if ($("#searchQuery").val().length)
 		return true;

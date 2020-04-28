@@ -254,6 +254,83 @@
 	<res name="HowtoXfaFeature2">Your document files will be uploaded and will be converted to document format.</res>
 	<res name="HowtoXfaFeature3">Download link of document file will be available instantly after convert.</res>
 	<res name="XfaViewer">VIEW DOCUMENT</res>
+
+	<res name="HowtoComparisonTitle">How to Compare {0} files using {1}</res>
+	<res name="HowtoComparisonFeature1">Click inside the file drop area to upload file or drag &amp; drop file.</res>
+	<res name="HowtoComparisonFeature2">Likewise, upload second document file or drag &amp; drop it.</res>
+	<res name="HowtoComparisonFeature3">Click the "COMPARE NOW" button to start comparison of both files.</res>
+
+	<res name="pdfComparisonPageTitle">Online diff tool that allows compare two PDF documents.</res>
+	<res name="pdfComparisonMetaDescription">Free application for content comparison of PDF documents online to highlight the differences.</res>
+	<res name="pdfComparisonTitle">Online diff of PDF files</res>
+	<res name="pdfComparisonSubTitle">Free application for content comparison of PDF documents online to highlight the differences.</res>
+
+	<res name="wordsComparisonLiFeature1">Quickly compare two versions of a document and view the difference</res>
+	<res name="wordsComparisonLiFeature2">Compare different file formats</res>
+
+	<res name="ComparisonButton">COMPARE NOW</res>
+
+	<res name="ComparisonDownloadNow">DOWNLOAD DIFF FILE</res>
+	<res name="ComparisonFeature1">Fast and Easy Document Comparison</res>
+	<res name="ComparisonFeature1Description">Upload your documents and click on “COMPARE” button. You will get the pdf-file as soon as the comparison is performed</res>
+	<res name="ComparisonFeature2">Compare Documents from Anywhere</res>
+	<res name="ComparisonFeature2Description">It works from all platforms including Windows, Mac, Android and iOS. All files are processed on our servers. No plugin or software installation required for you</res>
+	<res name="ComparisonFeature3">Compare Documents Quality</res>
+	<res name="ComparisonAnotherFile">Compare other documents</res>
+	<res name="ComparisonSuccessMessage">Your files have been processed successfully</res>
+
+	<res name="ComparisonViewer">VIEW DIFFERENCES</res>
+	<res name="HowtoRedactionTitle">How to Redact Text in PDF Document using {1}</res>
+	<res name="HowtoRedactionFeature1">Click inside the file drop area to upload a document file or drag &amp; drop a document file.</res>
+	<res name="HowtoRedactionFeature2">Click on "REDACT NOW" button, file will be automatically uploaded to redact.</res>
+	<res name="HowtoRedactionFeature3">Download link of document file will be available instantly after redact.</res>
+	<res name="pdfRedactionPageTitle">Search and Replace Text in PDF documents using RegEx</res>
+	<res name="pdfRedactionMetaDescription">Search and replace sensitive information in PDF documents using plain text or RegEx based search.</res>
+	<res name="pdfRedactionTitle">PDF editor</res>
+	<res name="pdfRedactionSubTitle">PDF modifier. Search and replace sensitive information in PDF documents using plain text or RegEx based search.</res>
+	<res name="pdfRedactionLiFeature1">Search and replace in multiple files</res>
+	<res name="pdfRedactionLiFeature2">Search with regular expression</res>
+	<res name="pdfRedactionLiFeature3">Parse words and change them easily</res>
+	<res name="RedactionAnotherFile">Redact other document</res>
+	<res name="RedactionSuccessMessage">Your file has been processed successfully</res>
+	<res name="CaseSensitive">Case sensitive</res>
+	<res name="Comments">Comments</res>
+	<res name="Text">Text</res>
+	<res name="Metadata">Metadata</res>
+	<res name="RedactionViewer">VIEW RESULTS</res>
+	<res name="RedactionSearchPlaceholder">Type text or regular expression</res>
+	<res name="RedactionSearchErrorMessage">Search query can&apos;t be empty</res>
+	<res name="RedactionReplacePlaceholder">Type replace text</res>
+	<res name="RedactionAction">Search and replace text in</res>
+	<res name="RedactionFeature1">Fast and Easy Redaction</res>
+	<res name="RedactionFeature1Description">Upload your document and click on “REDACT NOW” button. You will get the document file as soon as the redaction is performed</res>
+	<res name="RedactionFeature2">Redact from Anywhere</res>
+	<res name="RedactionFeature2Description">It works from all platforms including Windows, Mac, Android and iOS. All files are processed on our servers. No plugin or software installation required for you</res>
+	<res name="RedactionFeature3">Redaction Quality</res>
+	<res name="RedactionButton">REDACT NOW</res>
+
+	<res name="pdfAnnotationPageTitle">Remove annotation from PDF document</res>
+	<res name="pdfAnnotationMetaDescription">Annotation removal tool for Portable Document Format (PDF). Removal all annotations on a single click.</res>
+	<res name="pdfAnnotationTitle">Remove annotation from PDF document</res>
+	<res name="pdfAnnotationSubTitle">Annotation removal tool for Portable Document Format (PDF). Removal all annotations on a single click.</res>
+	<res name="pdfAnnotationValidationExpression">.pdf</res>
+
+	<res name="HowtoAnnotationTitle">How to remove annotations from PDF document using {1}</res>
+	<res name="HowtoAnnotationFeature1">Click inside the file drop area to upload a document file or drag &amp; drop a document file.</res>
+	<res name="HowtoAnnotationFeature2">Your document file will be rendered automatically to remove annotations.</res>
+	<res name="HowtoAnnotationFeature3">Download link of document file will be available instantly after remove annotations.</res>
+	<res name="AnnotationFeature1">Fast and Easy Annotation</res>
+	<res name="AnnotationFeature1Description">Upload your document and click on “REMOVE” button. You will get the download link as soon as the annotations are removed.</res>
+	<res name="AnnotationFeature1DescriptionChoice">Upload your document and click on “{0}” button. You will get the download link as soon as the annotations are removed.</res>
+	<res name="AnnotationFeature2">Remove Annotations from Anywhere</res>
+	<res name="AnnotationFeature2Choice">{0} Annotations from Anywhere</res>
+	<res name="AnnotationFeature2Description">It works from all platforms including Windows, Mac, Android and iOS. All files are processed on our servers. No plugin or software installation required for you</res>
+	<res name="AnnotationFeature3">Annotation Quality</res>
+	<res name="pdfAnnotationLiFeature1">Fast and Easy Remove Annotation</res>
+
+	<res name="AnnotationAnotherFile">Remove annotations from other documents</res>
+	<res name="AnnotationSuccessMessage">Annotations removed successfully</res>
+	<res name="AnnotationButton">REMOVE</res>
 </resources>
 
 
