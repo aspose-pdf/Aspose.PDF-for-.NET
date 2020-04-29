@@ -31,10 +31,7 @@ namespace Aspose.Pdf.Live.Demos.UI
 
 			ProductTitleSub.InnerText = "Edit PDF document online";
 
-			ProductImage.Src = "~/img/aspose-" + Product + "-app.png";
-
-			string EditorValidationExpression = ".pdf";
-            //SetValidationExpression(EditorValidationExpression, ValidateFileType);
+			ProductImage.Src = "~/img/aspose-" + Product + "-app.png";			
 
             
         }
