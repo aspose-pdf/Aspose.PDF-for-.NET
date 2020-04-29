@@ -213,6 +213,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Editor\Editor.aspx" />
+    <Content Include="Editor\EditorControl.ascx" />
+    <Content Include="img\Test.png" />
+    <Content Include="Scripts\PdfEditor\Editor.js" />
+    <Content Include="Watermark\AddWatermarkPdf.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -537,7 +542,6 @@
     <Content Include="ViewerApp\Resources\common\webfonts\fa-solid-900.woff" />
     <Content Include="ViewerApp\Resources\common\webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Comparison\Comparison.cshtml" />
-    <Content Include="Views\Editor\Editor.cshtml" />
     <Content Include="Views\Unlock\Unlock.cshtml" />
     <Content Include="Views\Unlock\UnlockControls.cshtml" />
     <Content Include="Views\Annotation\Annotation.cshtml" />
@@ -570,6 +574,40 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AsposePDFEditorController.cs" />
+    <Compile Include="Editor\Editor.aspx.cs">
+      <DependentUpon>Editor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editor\Editor.aspx.designer.cs">
+      <DependentUpon>Editor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\EditorControl.ascx.cs">
+      <DependentUpon>EditorControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editor\EditorControl.ascx.designer.cs">
+      <DependentUpon>EditorControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AsposePdfWatermark.cs" />
+    <Compile Include="Models\PdfEditor\DeletePageModel.cs" />
+    <Compile Include="Models\PdfEditor\DocStatModel.cs" />
+    <Compile Include="Models\PdfEditor\FileAttachmentsModel.cs" />
+    <Compile Include="Models\PdfEditor\MovePagesModel.cs" />
+    <Compile Include="Models\PdfEditor\RemoveAttachmentModel.cs" />
+    <Compile Include="Models\PdfEditor\ReplaceTextModel.cs" />
+    <Compile Include="Models\PdfEditor\SaveDocModel.cs" />
+    <Compile Include="Models\PdfEditor\SavePdfData.cs" />
+    <Compile Include="Models\PdfEditor\SearchDataModel.cs" />
+    <Compile Include="Models\PdfEditor\ShapeModel.cs" />
+    <Compile Include="Models\PdfEditor\UploadPicModel.cs" />
+    <Compile Include="Watermark\AddWatermarkPdf.aspx.cs">
+      <DependentUpon>AddWatermarkPdf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Watermark\AddWatermarkPdf.aspx.designer.cs">
+      <DependentUpon>AddWatermarkPdf.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AnnotationController.cs" />
     <Compile Include="Controllers\AsposePdfSignatureController.cs" />

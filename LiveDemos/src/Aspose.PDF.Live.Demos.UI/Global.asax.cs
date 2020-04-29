@@ -84,6 +84,11 @@ namespace Aspose.Pdf.Live.Demos.UI
 				"{product}/unlock",
 				 new { controller = "Unlock", action = "Unlock" }
 			);
+			routes.MapPageRoute(
+				"AsposePdfWatermarkRoute",
+				"pdf/watermark",
+				"~/Watermark/AddWatermarkPdf.aspx"
+			);
 			routes.MapRoute(
 				"AsposePDFViewerRoute",
 				"{product}/viewer",
@@ -99,6 +104,11 @@ namespace Aspose.Pdf.Live.Demos.UI
 				"{product}/xfa",
 				 new { controller = "XFA", action = "XFA" }
 			);
+			routes.MapPageRoute(
+			   "AsposePdfEditorRoute",
+			   "pdf/editor",
+			   "~/Editor/Editor.aspx"
+		   );
 			routes.MapRoute(
 				"AsposePDFParserRoute",
 				"{product}/parser",

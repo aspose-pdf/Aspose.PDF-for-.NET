@@ -6,6 +6,7 @@
 	<res name="btnViewNow">VIEW NOW</res>
 	<res name="ViewerAction">View</res>
 	<res name="HomePageTitle">Home</res>
+	<res name="Watermarkh4">Watermark</res>
 	<res name="DownloadFileLinkTitle">Download your file</res>
 	<res name="SplitterNumberException">Please, enter number in the field</res>
 	<res name="SplitterRangeException">Please, enter valid page range in the field</res>
@@ -16,10 +17,24 @@
 	<res name="FileAmountMessageLessTen">Please select less than ten files</res>
 	<res name="DropOrUploadImageFile">Drop or upload your image</res>
 	<res name="btnConvertNow">CONVERT NOW</res>
+	<res name="AddWatermarkFeature1Description">Upload your file, enter watermark text and click on “Add Watermark” button. You will get the download link as soon as the watermark text is added.</res>
 	<res name="AsposePDF">Aspose.PDF</res>
 	<res name="EditorReturnQuestion">Are you sure you want to return?</res>
 	<res name="AddSignatureImageFileExtenstions">.jpg|.jpeg|.png|.bmp</res>
+	<res name="HowtoWatermarkTitle">How to Add Watermark in {0} file using {1}</res>
+	<res name="HowtoWatermarkFeature1">Click inside the file drop area to upload a {0} file or drag &amp; drop a {0} file.</res>
+	<res name="HowtoWatermarkFeature2">Your {0} file will be rendered automatically to add watermark.</res>
+	<res name="HowtoWatermarkFeature3">Download link of {0} file will be available instantly after add watermark.</res>
+	<res name="HowtoWatermarkFeature4">You can also send a link to the {0} file to your email address.</res>
+	<res name="WatermarkFeature2">{0} Watermark from Anywhere</res>
+	<res name="WatermarkFeature3">Watermark Quality</res>
 	<res name="AsposePdf">Aspose.PDF</res>
+	<res name="HowtoEditorTitle">How to view, edit and download a {0} file using {1}</res>
+	<res name="HowtoEditorFeature1">Click inside the file drop area to upload a {0} file or drag &amp; drop a {0} file.</res>
+	<res name="HowtoEditorFeature2">File will be automatically rendered for you to view, edit &amp; download instantly.</res>
+	<res name="HowtoEditorFeature3">Download the original or edited {0} file.</res>
+	<res name="HowtoEditorFeature4">Convert &amp; download the edited {0} file as PDF.</res>
+	<res name="HowtoEditorFeature5">Convert &amp; download the edited {0} file as HTML.</res>
 	<res name="PageNotFound">404 Page not found</res>
 	<res name="BrokenLinkTitle">The link you followed probably broken or the page has been moved</res>
 	<res name="btnBackHome">Back to Home</res>
@@ -227,17 +242,22 @@
 	<res name="HowtoParserFeature1">Click inside the file drop area to upload file or drag &amp; drop file.</res>
 	<res name="HowtoParserFeature2">Click on "PARSE NOW" button, file will be automatically uploaded to parse.</res>
 	<res name="HowtoParserFeature3">Download link of document file will be available instantly after parse.</res>
-
-
 	
+	<res name="ImageStampButton">Add Image Stamp</res>
+	
+	<res name="RotateAngleLabel">Rotate Angle</res>
+	<res name="ZoomFactorLabel">Zoom factor</res>
+	<res name="GrayscaledLabel">Gray scaled</res>
+	<res name="SelectorDropFileMessage">Drop or upload your file</res>
+	<res name="pdfWatermarkSaveAsOptions">Pdf,Doc,Docx,PPTX</res>
+	<res name="ColoredLabel">Colored</res>	
 	<res name="pdfXfaPageTitle">Convert PDF XFA form to acroform</res>
 	<res name="pdfXfaMetaDescription">Free online PDF Xfa converter app. Convert PDF XFA form to PDF acroform.</res>
 	<res name="pdfXfaTitle">PDF Xfa conversion</res>
 	<res name="pdfXfaSubTitle">Free online PDF Xfa converter app. Convert PDF XFA form to PDF acroform.</res>
 	<res name="pdfXfaValidationExpression">.pdf</res>
 	<res name="pdfXfaLiFeature1">Easily save PDF document with Xfa form as PDF Acroform</res>
-	<res name="pdfXfaLiFeature2">Convert PDF Xfa document</res>
-	
+	<res name="pdfXfaLiFeature2">Convert PDF Xfa document</res>	
 	<res name="pdfXfaButton">Convert</res>
 	<res name="XfaFeature1">Fast and Easy Conversion XFA form to Acroform</res>
 	<res name="XfaFeature1Description">Drag &amp; drop a PDF file with XFA form. You will get the download link as soon as the file is converted</res>
@@ -247,7 +267,21 @@
 	<res name="XfaLiFeature1">Instantly download or send output file as an email</res>
 	<res name="XfaAnotherFile">Convert other document</res>
 	<res name="XfaSuccessMessage">Your file has been processed successfully</res>
+	<res name="WatermarkTextMessage">Please enter watermark text</res>
+	<res name="AddTextStampURL">add</res>
+	<res name="AddTextStamptoPDFSubPageTitle2">Add PDF stamp. Set text formatting such as color, font, size or rotation angle and image's zoom &amp; color space.</res>
+	<res name="WatermarkAddedSuccessMessage">Watermark added successfully</res>
+	<res name="AddWatermkinAnotherFile">{0} Watermark in another file</res>
+	<res name="AddTextStamptoPDFPageTitle2">Add Image or Text Watermark to PDF Documents</res>
+	<res name="WatermarkFeature1">Fast and Easy {0}</res>
+	<res name="WatermarkAddText">Add</res>
+	<res name="BackButton">Back</res>
+	<res name="TextStampButton">Add Text Stamp</res>
 	
+	<res name="btnAddWatermark">{0} Watermark</res>
+
+	<res name="SupportedDocuments">Supported Documents: {0}</res>
+	<res name="AddWatermarkTextPlaceholder">Add Watermark Text</res>
 	<res name="XfaAction">Convert</res>
 	<res name="HowtoXfaTitle">How to Parse PDF files using {1}</res>
 	<res name="HowtoXfaFeature1">Click inside the file drop area to upload file or drag &amp; drop file.</res>

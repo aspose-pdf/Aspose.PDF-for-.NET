@@ -246,6 +246,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Config
 			var list = new Collection<FileUploadResponse>(uploadResult);
 			return list;
 		}
+		
 		protected void ShowErrorMessage(HtmlGenericControl control, string message)
 		{
 			if(message.ToLower().Contains("password"))
