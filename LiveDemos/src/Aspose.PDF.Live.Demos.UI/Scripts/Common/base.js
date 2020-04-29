@@ -330,7 +330,7 @@ function requestMetadata(data) {
 
 	var response = data.split('|');
 	if (response.length > 0) {
-		let url = o.UIBasePath + 'api/AsposeWordsMetadata/properties?folderName=' + response[2] + "&fileName=" + response[1];
+		let url = o.UIBasePath + 'api/AsposePdfMetadata/properties?folderName=' + response[2] + "&fileName=" + response[1];
 		$.ajax({
 			type: 'POST',
 			url: url,			

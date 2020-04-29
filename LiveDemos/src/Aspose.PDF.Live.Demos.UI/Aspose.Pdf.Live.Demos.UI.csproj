@@ -575,6 +575,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AsposePDFEditorController.cs" />
+    <Compile Include="Controllers\AsposePdfMetadataController.cs" />
+    <Compile Include="Controllers\MetadataController.cs" />
     <Compile Include="Editor\Editor.aspx.cs">
       <DependentUpon>Editor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -7,6 +7,9 @@
 	<res name="ViewerAction">View</res>
 	<res name="HomePageTitle">Home</res>
 	<res name="Watermarkh4">Watermark</res>
+	<res name="Save">Save</res>
+	<res name="Cancel">Cancel</res>
+	<res name="MetadataViewer">VIEW DOCUMENT</res>
 	<res name="DownloadFileLinkTitle">Download your file</res>
 	<res name="SplitterNumberException">Please, enter number in the field</res>
 	<res name="SplitterRangeException">Please, enter valid page range in the field</res>
@@ -365,6 +368,30 @@
 	<res name="AnnotationAnotherFile">Remove annotations from other documents</res>
 	<res name="AnnotationSuccessMessage">Annotations removed successfully</res>
 	<res name="AnnotationButton">REMOVE</res>
+<res name="HowtoMetadataTitle">How to edit document metadata using {1}</res>
+	<res name="HowtoMetadataFeature1">Click inside the file drop area to upload files or drag &amp; drop files.</res>
+	<res name="HowtoMetadataFeature2">File will be automatically rendered for you to view &amp; edit metadata instantly.</res>
+	<res name="HowtoMetadataFeature3">Download updated document file with metadata.</res>
+
+<res name="MetadataFeature1">Fast and Easy Metadata</res>
+  <res name="MetadataFeature1Description">Upload your document, update the Metadata and click on "Save" button. You will get the download link as soon as the file is saved</res>
+  <res name="MetadataFeature2">Edit Metadata from Anywhere</res>
+  <res name="MetadataFeature2Description">It works from all platforms including Windows, Mac, Android and iOS. All files are processed on our servers. No plugin or software installation required by you</res>
+  <res name="MetadataFeature3">Metadata Quality</res>
+  <res name="QualityDescMetadata">All files are processed using Aspose APIs, which are being used by many Fortune 100 companies across 114 countries</res>
+  <res name="btnViewMetadata">View Metadata</res>
+  <res name="MetadataSuccessMessage">Metadata has been saved successfully</res>
+  <res name="FindAndEdit">View and edit metadata information in</res>
+  
+  <res name="MetadataAction">Edit metadata in</res>
+  <res name="MetadataAnotherFile">Edit metadata in another document</res>
+  <res name="MetadataClearButton">Clear All</res>
+	<res name="pdfMetadataValidationExpression">.pdf</res>
+	
+	<res name="pdfMetadataPageTitle">Edit Metadata in PDF Document Online</res>
+	<res name="pdfMetadataMetaDescription">Edit PDF document properties. Metadata viewer and editor.</res>
+	<res name="pdfMetadataTitle">Online PDF metadata editor</res>
+	<res name="pdfMetadataSubTitle">View or edit Word document properties, known as metadata.</res>
 </resources>
 
 

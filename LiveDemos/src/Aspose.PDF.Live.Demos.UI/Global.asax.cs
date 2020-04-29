@@ -63,7 +63,11 @@ namespace Aspose.Pdf.Live.Demos.UI
 				"{product}/search",
 				 new { controller = "Search", action = "Search" }
 			);
-			
+			routes.MapRoute(
+				"AsposePDFMetadataRoute",
+				"{product}/metadata",
+				 new { controller = "Metadata", action = "Metadata" }
+			);
 			routes.MapRoute(
 				"AsposePDFMergerRoute",
 				"{product}/merger",
