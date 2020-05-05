@@ -17,8 +17,8 @@ namespace Aspose.Pdf.Live.Demos.UI.Controllers
 
 		public ActionResult Default()
 		{
-			ViewBag.PageTitle = "Free C# MVC Word Document Processing APPs - aspose.app";
-			ViewBag.MetaDescription = "100% free apps for DOC, DOCX, DOT, DOTX, RTF, ODT, OTT, TXT, HTML, XHTML, MHTML files. View, convert, split, compare, sign, watermark, merge or redact content from Word Processing files.";
+			ViewBag.PageTitle = "Apps, On Premise &amp; Cloud Solution for PDF File Formats";
+			ViewBag.MetaDescription = "Create PDF file manipulation applications using On Premise or Cloud APIs, or simply use cross-platform apps to view, compare, inspect or convert PDF files.";
 			var model = new LandingPageModel(this);
 
 			return View(model);
