@@ -1,0 +1,34 @@
+name: Hugo-CI
+on:
+  push:
+    branches: [ develop ]
+    paths:
+      - 'Docs/**'
+
+jobs:
+  job-one:
+    name: Deploy
+    runs-on: [self-hosted, linux, x64, dev4-pdf]
+    steps:
+      - name: hugo build
+        run: |
+          cd aspose-pdf-docs
+          git clone https://github.com/aspose-pdf/Aspose.PDF-for-.NET.git || (cd Aspose.PDF-for-.NET && git pull)
+          git clone --single-branch --branch master https://git.dev.dynabic.com/containerize-hugo/lutsk-aspose-prototype.git || (cd lutsk-aspose-prototype && git pull)
+          cd lutsk-aspose-prototype
+          git clone --single-branch --branch master https://git.dev.dynabic.com/containerize-hugo/lutsk-aspose-theme.git themes/lutsk-aspose-theme || (cd themes/lutsk-aspose-theme && git pull)
+          sudo npm install -D --save autoprefixer
+          sudo npm install -D --save postcss-cli
+          cp -R ${{ secrets.PROJECTPATH }} content/net
+          hugo --baseURL https://docs.aspose.com/pdf
+          scp -r public/net/* ${{ secrets.TRANSFERPATH }}
+      - name: hugo deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSHKEY }}
+          port: ${{ secrets.SSHPORT }}
+          script: |
+            sudo cp -fR ${{ secrets.PUBLICCONTENTPATH }} ${{ secrets.DEPLOYPATH }}
+            sudo nginx -s reload
