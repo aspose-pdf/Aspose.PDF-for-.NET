@@ -1,7 +1,7 @@
 ---
 title: Aspose.PDF for .NET 20.8 Release Notes
 type: docs
-weight: 60
+weight: 50
 url: /net/aspose-pdf-for-net-20-8-release-notes/
 ---
 
@@ -47,6 +47,7 @@ This page contains release notes information for Aspose.PDF for .NET 20.8.
 |PDFNET-48551|	PDF to PDF/A - Output document is not valid [Regression]|	Bug|
 |PDFNET-48569|	NullReferenceException is thrown when calling Document.Form.Flatten()|	Bug|
 |PDFNET-48572| API is taking long time while saving the document at Save() method|Bug|
+|PDFNET-48554| Abnormalities while generating PDF/X-1a documents|Bug|
 
 ## Public API and Backward Incompatible Changes ##
 
@@ -56,6 +57,7 @@ This page contains release notes information for Aspose.PDF for .NET 20.8.
  * Method Aspose.Pdf.XForm.GetResources
 
 ### Changed APIs ###
+Default values were changed in ExcelSaveOptions for the following properties:
  * ConversionEngines: NewEngine (instead of LegacyEngine)
  * ExcelFormat: XLSX (instead of XMLSpreadSheet2003)
  * InsertBlankColumnAtFirst:= false (instead of true)
