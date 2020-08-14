@@ -5,11 +5,11 @@ weight: 210
 url: /net/exploring-features-of-pdfannotationeditor-class/
 ---
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
-[Aspose.Pdf.Facades namespace](https://docs-qa.aspose.com/display/pdftemp/Aspose.Pdf.Facades+namespace) has introduced a new class named [PdfAnnotationEditor](http://www.aspose.com/api/net/pdf/aspose.pdf.facades/pdfannotationeditor). This class is used to manipulate or edit existing annotations in a PDF document. In this article, we’ll focus on this particular class, and explore the features provided by this class.
+[Aspose.Pdf.Facades namespace](https://apireference.aspose.com/pdf/net/aspose.pdf.facades) has introduced a new class named [PdfAnnotationEditor](http://www.aspose.com/api/net/pdf/aspose.pdf.facades/pdfannotationeditor). This class is used to manipulate or edit existing annotations in a PDF document. In this article, we’ll focus on this particular class, and explore the features provided by this class.
 
-{{% /alert %}} 
+{{% /alert %}}
 ## **Implementation details**
 We can add annotations of different types using [PdfContentEditor](http://www.aspose.com/api/net/pdf/aspose.pdf.facades/pdfcontenteditor) class, but when it comes to edit the annotations, [Aspose.Pdf.Facades namespace](https://docs-qa.aspose.com/display/pdftemp/Aspose.Pdf.Facades+namespace) includes a complete set of methods in a separate class called [PdfAnnotationEditor](http://www.aspose.com/api/net/pdf/aspose.pdf.facades/pdfannotationeditor). We can perform variety of functions on annotations, like Modify, Delete, Import, Export, Flatten, and Extract, using this class.
 

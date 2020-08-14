@@ -29,7 +29,7 @@ A PDF page may comprise of one or more TextFragment objects, where each TextFrag
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Text-AddText-AddHyperlinkToTextSegment.cs" >}}
 ### **Use OTF Font**
-Aspose.PDF for .NET offers the feature to use Custom/TrueType fonts while creating/manipulating PDF file contents so that file contents are displayed using contents other than default system fonts. Starting release of [Aspose.PDF for .NET 10.3.0](http://www.aspose.com/community/files/51/.net-components/aspose.pdf-for-.net/entry620071.aspx), we have provided the support for Open Type Fonts.
+Aspose.PDF for .NET offers the feature to use Custom/TrueType fonts while creating/manipulating PDF file contents so that file contents are displayed using contents other than default system fonts. Starting release of [Aspose.PDF for .NET 10.3.0](https://downloads.aspose.com/pdf/net), we have provided the support for Open Type Fonts.
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Text-AddText-OTFFont.cs" >}}
 ## **Add HTML String using DOM**
@@ -70,7 +70,7 @@ The following example demonstrates how to add Footnotes to the bottom of the Pdf
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Text-FootAndEndNotes-CustomLineStyleForFootNote.cs" >}}
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 We can set Footnote Label (note identifier) formatting using TextState object as following:
 
@@ -90,7 +90,7 @@ text.FootNote.TextState.FontStyle = FontStyles.Italic;
 
 {{< /highlight >}}
 
-{{% /alert %}} 
+{{% /alert %}}
 ### **Customize Footnote label**
 By default, the FootNote number is incremental starting from 1. However, we may have a requirement to set a custom FootNote label. In order to accomplish this requirement, please try using the following code snippet
 
@@ -134,9 +134,9 @@ An example is given below to demonstrate the creation of two columns with Graphs
 ## **Working with custom Tab Stops**
 A Tab Stop is a stop point for tabbing. In word processing, each line contains a number of tab stops placed at regular intervals (for example, every half inch). They can be changed, however, as most word processors allow you to set tab stops wherever you want. When you press the Tab key, the cursor or insertion point jumps to the next tab stop, which itself is invisible. Although tab stops do not exist in the text file, the word processor keeps track of them so that it can react correctly to the Tab key.
 
-[Aspose.PDF for .NET](/pdf/net/) allows developers to use custom tab stops in PDF documents. The *Aspose.Pdf.Text.TabStop class is used to set custom TAB stops in the [TextFragment](https://apireference.aspose.com/net/pdf/aspose.pdf.text/textfragment) class.
+[Aspose.PDF for .NET](/pdf/net/) allows developers to use custom tab stops in PDF documents. The [Aspose.Pdf.Text.TabStop](https://apireference.aspose.com/pdf/net/aspose.pdf.text/tabstop) class is used to set custom TAB stops in the [TextFragment](https://apireference.aspose.com/net/pdf/aspose.pdf.text/textfragment) class.
 
-[Aspose.PDF for .NET](/pdf/net/) also offers some pre-defined tab leader types as an enumeration named, [TabLeaderType](http://www.aspose.com/api/net/pdf/aspose.pdf.generator/tableadertype) whose pre-defined values and their descriptions are given below:
+[Aspose.PDF for .NET](/pdf/net/) also offers some pre-defined tab leader types as an enumeration named, [TabLeaderType](https://apireference.aspose.com/pdf/net/aspose.pdf.text/tableadertype) whose pre-defined values and their descriptions are given below:
 
 |**Tab Leader Type**|**Description**|
 | :- | :- |
@@ -144,6 +144,7 @@ A Tab Stop is a stop point for tabbing. In word processing, each line contains a
 |Solid|Solid tab leader|
 |Dash|Dash tab leader|
 |Dot|Dot tab leader|
+
 Here is an example of how to set custom TAB stops.
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Text-CustomTabStops-CustomTabStops.cs" >}}

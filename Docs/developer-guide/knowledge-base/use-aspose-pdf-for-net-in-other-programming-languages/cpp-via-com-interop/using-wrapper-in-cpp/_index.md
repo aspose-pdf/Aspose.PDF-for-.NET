@@ -16,7 +16,7 @@ Please register Aspose.PDF for .NET with COM Interop, kindly check the article n
 
 {{% alert color="primary" %}}
 
-We will use a [wrapper](http://www.aspose.com/docs/display/pdfnet/Creating+a+Wrapper+Assembly) to retrieve text from PDF documents.
+We will use a [wrapper](https://docs.aspose.com/pdf/net/creating-a-wrapper-assembly/) to retrieve text from PDF documents.
 
 **C++**
 

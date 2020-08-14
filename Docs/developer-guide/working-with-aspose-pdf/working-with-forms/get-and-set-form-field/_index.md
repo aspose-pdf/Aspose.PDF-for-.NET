@@ -6,7 +6,7 @@ url: /net/get-and-set-form-field/
 ---
 
 ## **Get Values from all the Fields of PDF Document**
-To get values from all the fields IN a PDF document, you need to navigate through all the form fields and then get the value using the Value property. Get each field from the Form collection, in the base field type called Field and access its Value property.
+To get values from all the fields in a PDF document, you need to navigate through all the form fields and then get the value using the Value property. Get each field from the Form collection, in the base field type called Field and access its Value property.
 
 The following code snippets show how to get the values of all the fields from a PDF document.
 
@@ -77,7 +77,7 @@ To add validation of user entry, the AFNumber_Keystroke and AFNumber_Format Java
 ## **Retrieve Form Fields in Tab Order**
 Sometimes we need to change the order of form fields while proceeding with our PDF document. By default when you iterate through the form fields, the fields are returned in the order in which they were created. In order to retrieve form fields in tab orders, Aspose.PDF offers the following two properties:
 
-1. **Field.TabOrder** - the tab order of the field which allows to set or get tab order of the field on the page. 
+1. **Field.TabOrder** - the tab order of the field which allows to set or get tab order of the field on the page.
 2. **Page.FieldsInTabOrder** - returns a list of fields in the tab order
 
 The following code snippet shows how to use this feature.

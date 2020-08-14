@@ -5,13 +5,13 @@ weight: 280
 url: /net/working-with-the-pdfcontenteditor-class/
 ---
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 This article will help you view the [PdfContentEditor](http://www.aspose.com/api/net/pdf/aspose.pdf.facades/PdfContentEditor) class in a broader sense. After reading this article, you’ll be able to have a better idea that what kinds of features are supported in this class. It’ll also point you to the right direction regarding the usage of this class.
 
-{{% /alert %}} 
+{{% /alert %}}
 ## **Implementation details**
-[PdfContentEditor](http://www.aspose.com/api/net/pdf/aspose.pdf.facades/PdfContentEditor) class allows you to manipulate variety of contents. It helps you create different annotations; twenty four annotation types are supported in [Aspose.Pdf.Facades namespace](https://docs-qa.aspose.com/display/pdftemp/Aspose.Pdf.Facades+namespace). We’ll show you a simple example to help you understand how the variety of annotations can be added in a PDF file.
+[PdfContentEditor](http://www.aspose.com/api/net/pdf/aspose.pdf.facades/PdfContentEditor) class allows you to manipulate variety of contents. It helps you create different annotations; twenty four annotation types are supported in [Aspose.Pdf.Facades namespace](https://apireference.aspose.com/pdf/net/aspose.pdf.facades). We’ll show you a simple example to help you understand how the variety of annotations can be added in a PDF file.
 
 
 

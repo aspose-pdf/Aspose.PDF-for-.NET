@@ -5,11 +5,11 @@ weight: 270
 url: /net/improved-and-flexible-pdf-signing-mechanism/
 ---
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
-[Aspose.Pdf.Facades namespace](https://docs-qa.aspose.com/display/pdftemp/Aspose.Pdf.Facades+namespace) in [Aspose.PDF for .NET](/pdf/net/) has introduced an improved and flexible PDF signing mechanism. It allows you to sign the PDF file using different signature types. It also allows you to add signature fields and sign the PDF file using multiple signatures. You can verify the signatures as well.
+[Aspose.Pdf.Facades namespace](https://apireference.aspose.com/pdf/net/aspose.pdf.facades) in [Aspose.PDF for .NET](/pdf/net/) has introduced an improved and flexible PDF signing mechanism. It allows you to sign the PDF file using different signature types. It also allows you to add signature fields and sign the PDF file using multiple signatures. You can verify the signatures as well.
 
-{{% /alert %}} 
+{{% /alert %}}
 ## **Implementation details**
 You can sign a PDF file using any of the following three types of signatures: PKCS#1, PKCS#7 and PKCS#7 Detached. These three types of signatures have been supported using two new classes: **Pkcs1Signature** and **Pkcs7Signature**. A property named **Detached**, defined in the **Pkcs7Signature** class, can be used to specify the PKCS#7 Detached signature type. Both of these classes have been inherited from **Signature** class.
 
@@ -55,10 +55,10 @@ pdfSign.Save();
 
 {{< /highlight >}}
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 You can also sign a PDF file using multiple signatures. For that matter, you can add multiple signature fields using **FormEditor** class and then add signatures in those fields. You can add the signature using its own name, so that you would be able to access it later using the same name. If you add a signature without a name i.e. without using a signature field, Aspose.PDF for .NET will assign a unique name like “Signature#” i.e. Signature1, Signature2 etc.
-{{% /alert %}} 
+{{% /alert %}}
 
 The following code snippet shows you how to add signature fields and then add signatures:
 
@@ -106,11 +106,11 @@ pdfSign2.Save();
 
 {{< /highlight >}}
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
-Signatures can also be verified using [Aspose.Pdf.Facades namespace](https://docs-qa.aspose.com/display/pdftemp/Aspose.Pdf.Facades+namespace). In the following code snippet, we’ll show you how to find whether a file is signed or to verify a particular signature.
+Signatures can also be verified using [Aspose.Pdf.Facades namespace](https://apireference.aspose.com/pdf/net/aspose.pdf.facades). In the following code snippet, we’ll show you how to find whether a file is signed or to verify a particular signature.
 
-{{% /alert %}} 
+{{% /alert %}}
 
 {{< highlight java >}}
 
@@ -139,8 +139,8 @@ bool isSignatureVerified2 = pdfVerify.VerifySignature("Signature from Alice");
 {{< /highlight >}}
 ## **Conclusion**
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 In this article, we have seen that how conveniently the PDF files can be signed in different ways using [Aspose.PDF for .NET](/pdf/net/)
 
-{{% /alert %}} 
+{{% /alert %}}

@@ -45,7 +45,7 @@ The following code snippet shows how to remove attachments from a PDF document.
 #### **C#**
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Attachments-DeleteAllAttachments-DeleteAllAttachments.cs" >}}
 ## **Get Attachment Information**
-As mentioned in [Get All Annotations from the Page of a PDF Document](), attachment information is held in the [FileSpecification](https://apireference.aspose.com/net/pdf/aspose.pdf/filespecification) object, gathered with other attachments in the Document object's EmbeddedFiles collection. The FileSpecification object provides methods that get information about the attachment, for example:
+As mentioned in [Get All Annotations from the Page of a PDF Document](https://docs.aspose.com/pdf/net/add-delete-and-get-annotation/), attachment information is held in the [FileSpecification](https://apireference.aspose.com/net/pdf/aspose.pdf/filespecification) object, gathered with other attachments in the Document object's EmbeddedFiles collection. The FileSpecification object provides methods that get information about the attachment, for example:
 
 - Name - the file name.
 - Description - the file description.
@@ -60,11 +60,11 @@ The FileSpecification class allows developers to add attachments to PDF document
 
 To allow developers to control file compression the Encoding property has been added to the FileSpecification class. This property determines which encoding will be used for file compression. The property accepts a value from the FileEncoding enumerator. The possible values are FileEncoding.None and FileEncoding.Zip.
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 If Encoding is set to FileEncoding.None, then the attachment is not compressed. The default encoding is FileEncoding.Zip.
 
-{{% /alert %}} 
+{{% /alert %}}
 
 The following code snippet shows how to add an attachment to a PDF document.
 #### **C#**

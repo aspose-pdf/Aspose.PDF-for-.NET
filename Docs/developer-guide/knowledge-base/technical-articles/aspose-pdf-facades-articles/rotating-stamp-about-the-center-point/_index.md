@@ -5,11 +5,11 @@ weight: 200
 url: /net/rotating-stamp-about-the-center-point/
 ---
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
-[Aspose.Pdf.Facades namespace](https://docs-qa.aspose.com/display/pdftemp/Aspose.Pdf.Facades+namespace) in [Aspose.PDF for .NET](/pdf/net/home-html/) allows you to add a stamp in an existing PDF file. Sometimes, users do need to rotate the stamp. In this article, we’ll see how to rotate a stamp about its center point.
+[Aspose.Pdf.Facades namespace](https://apireference.aspose.com/pdf/net/aspose.pdf.facades) in [Aspose.PDF for .NET](/pdf/net/home-html/) allows you to add a stamp in an existing PDF file. Sometimes, users do need to rotate the stamp. In this article, we’ll see how to rotate a stamp about its center point.
 
-{{% /alert %}} 
+{{% /alert %}}
 ## **Implementation details**
 [Stamp](http://www.aspose.com/api/net/pdf/aspose.pdf/stamp) class allows you to add a watermark in a PDF file. You can specify image to be added as a stamp using **BindImage** method. The **SetOrigin** method allows you to set the origin of the added stamp; this origin is the lower-left coordinates of the stamp. You can also set the size of the image using **SetImageSize** method.
 

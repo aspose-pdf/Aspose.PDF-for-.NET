@@ -6,11 +6,11 @@ url: /net/adding-stamp-in-a-pdf-file/
 ---
 
 ## **Adding Image Stamp in PDF File**
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 You can check how to add a stamp using Aspose.PDF and get the results online at this link:
 
-[products.aspose.app/pdf/watermark](https://products.aspose.app/pdf/watermark) {{% /alert %}} 
+[products.aspose.app/pdf/watermark](https://products.aspose.app/pdf/watermark) {{% /alert %}}
 
 You can use the ImageStamp class to add an image stamp to a PDF file. The ImageStamp class provides the properties necessary for creating an image-based stamp, such as height, width, opacity and so on.
 
@@ -35,17 +35,17 @@ You can use **PageNumber** **Stamp** class to add a page number stamp in a PDF f
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Stamps-Watermarks-PageNumberStamps-PageNumberStamps.cs" >}}
 ## **Adding Date-Time Stamp in PDF**
-You can use **TextStamp** class to add a text stamp in a PDF file. **TextStamp** class provides properties necessary to create a text based stamp like font size, font style, and font color etc. In order to add text stamp, you need to create a **Document** object and a **TextStamp** object using required properties. After that, you can call **AddStamp** method of the **Page** to add the stamp in the PDF. 
+You can use **TextStamp** class to add a text stamp in a PDF file. **TextStamp** class provides properties necessary to create a text based stamp like font size, font style, and font color etc. In order to add text stamp, you need to create a **Document** object and a **TextStamp** object using required properties. After that, you can call **AddStamp** method of the **Page** to add the stamp in the PDF.
 The following code snippet shows you how to add text stamp in the PDF file.
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Stamps-Watermarks-AddDateTimeStamp-AddDateTimeStamp.cs" >}}
 ## **Adding Text Stamp in the PDF File**
-You can use **TextStamp** class to add a text stamp in a PDF file. **TextStamp** class provides properties necessary to create a text based stamp like font size, font style, and font color etc. In order to add text stamp, you need to create a **Document** object and a **TextStamp** object using required properties. After that, you can call **AddStamp** method of the **Page** to add the stamp in the PDF. 
+You can use **TextStamp** class to add a text stamp in a PDF file. **TextStamp** class provides properties necessary to create a text based stamp like font size, font style, and font color etc. In order to add text stamp, you need to create a **Document** object and a **TextStamp** object using required properties. After that, you can call **AddStamp** method of the **Page** to add the stamp in the PDF.
 The following code snippet shows you how to add text stamp in the PDF file.
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Stamps-Watermarks-AddTextStamp-AddTextStamp.cs" >}}
 ## **Define alignment for TextStamp object**
-Adding watermarks to PDF documents is one of the frequent demanded features and Aspose.PDF for .NET is fully capable of adding Image as well as Text watermarks. We have a class named TextStamp which provides the feature to add text stamps over the PDF file. Recently there has been a requirement to support the feature to specify the alignment of text when using TextStamp object. So in order to fulfill this requirement, we have introduced **TextAlignment** property in [TextStamp](http://www.aspose.com/api/net/pdf/aspose.pdf/textstamp) class. Using this property, we can specify the Horizontal text alignment.
+Adding watermarks to PDF documents is one of the frequent demanded features and Aspose.PDF for .NET is fully capable of adding Image as well as Text watermarks. We have a class named TextStamp which provides the feature to add text stamps over the PDF file. Recently there has been a requirement to support the feature to specify the alignment of text when using TextStamp object. So in order to fulfill this requirement, we have introduced **TextAlignment** property in [TextStamp](https://apireference.aspose.com/pdf/net/aspose.pdf/textstamp) class. Using this property, we can specify the Horizontal text alignment.
 
 The following code snippets shows an example on how to load an existing PDF document and add TextStamp over it.
 

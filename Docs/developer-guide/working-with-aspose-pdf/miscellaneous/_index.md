@@ -18,11 +18,11 @@ During the implementation of this feature, we did not notice how this informatio
 
 The measure object is created using the existing annotation types: LineAnnotation for linear measure and PolyLineAnnotation for area and perimeter measure. To accomplish the above stated requirement, you may consider using the following code snippets which can be used to create measure objects (distance line and perimeter/area line).
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 The Measure property is added to the LineAnnotation and PolyLineAnnotation classes.
 
-{{% /alert %}} 
+{{% /alert %}}
 ### **Measure class members**
 <br>constructor:
 <br>public Measure(Annotation annotation)
@@ -61,18 +61,22 @@ The FractionStyle enumeration has been added to the NumberFormat class.
 ### **NumberFormatList class**
 The NumberFormatList class has been added to the Measure class and represents list of number formats.
 
-`  `constructor
-`    `public NumberFormatList(Measure measure)
+#### Constructor
+```
+public NumberFormatList(Measure measure)
+```
 #### **NumberFormatList Properties**
 - Item(System.Int32) - Gets or sets number format in list by its index.
 - Count - Count if items in the list.
+
 #### **Methods**
-- public void Add(NumberFormat value)
-  `    `Adds number format to list.
-- public void Insert(int index, NumberFormat value)
-  `    `Inserts number format into list.
-- public void RemoveAt(int index)
-  `    `Removes number format from list.
+```
+public void Add(NumberFormat value) //Adds number format to list.
+
+public void Insert(int index, NumberFormat value //Inserts number format into list.
+
+public void RemoveAt(int index) //Removes number format from list.
+```
 ### **Example Code**
 The following example demonstrates how to use Measure with LineAnnotation.
 

@@ -6,22 +6,22 @@ url: /net/convert-cgm-image-to-pdf/
 ---
 
 ## **Convert CGM Image to PDF**
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 You can check the quality of Aspose.PDF conversion and view the results online at this link:
 
-[products.aspose.app/pdf/merger/cgm-to-pdf](https://products.aspose.app/pdf/merger/cgm-to-pdf) {{% /alert %}} 
+[products.aspose.app/pdf/merger/cgm-to-pdf](https://products.aspose.app/pdf/merger/cgm-to-pdf) {{% /alert %}}
 
 Computer Graphics Metafile (CGM) is a free and open international standard file format for 2D vector graphics, raster graphics, and text defined by ISO/IEC 8632. Aspose.PDF for .NET supports converting CGM files into PDF.
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 Please note that the development is based on ISO 8632-3 (binary encoding) specifications and the binary CGM files defined in ISO/IEC 8632-3 (CGM Levels 1-2-3-4) are supported. We are sorry to share that the current release of Aspose.PDF for .NET does not support clear-text encoding.
-{{% /alert %}} 
+{{% /alert %}}
 
 ### **Supported CGM Commands**
 Please look at the list of CGM commands specified below and their level of support in Aspose.PDF for .NET
 Legend:
-<br> + : supported 
+<br> + : supported
 <br> - : unsupported
 <br> ! : partially supported
 #### **Delimiter Elements: Class 0**
@@ -244,12 +244,12 @@ Some CGM files have very large size (width x height) and there are situations wh
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Images-LargeCGMImageToPDF-LargeCGMImageToPDF.cs" >}}
 #### **Known Issues**
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 - "Restricted Text Command" converted without applying "text path" settings.
 - "Clip Rectangle Command" doesn't work properly with text glyphs.
 
-{{% /alert %}} 
+{{% /alert %}}
 
 Images are often used to clarify or illustrate data and are often shared between colleagues. Sharing images in PDF format is a convenient way to ensure that everyone can view them. To this end, Aspose.PDF for .NET supports converting images to PDF. The following table shows the image formats that Aspose.PDF can convert to PDF.
 
@@ -267,4 +267,3 @@ Images are often used to clarify or illustrate data and are often shared between
 |WMF|Windows Meta File is a device independent image format aimed to take both vector and raster graphics.|
 |MemoryBmp|MemoryBmp type|
 |Unknown|Unknown file type.|
-
