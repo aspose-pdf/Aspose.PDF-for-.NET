@@ -42,48 +42,48 @@ url: /net/aspose-pdf-for-net-18-1-release-notes/
 ### **Public API changes in Aspose.PDF for .NET 18.1**
 ### **Added APIs:**
 -----
-Method Aspose.Pdf.Facades.Stamp.BindTextState(Aspose.Pdf.Text.TextState)
-Enumeration member Aspose.Pdf.LoadFormat.PS
-Class Aspose.Pdf.PsLoadOptions
-Constructor Aspose.Pdf.PsLoadOptions
-Property Aspose.Pdf.PsLoadOptions.FontsFolders
-Class Aspose.Pdf.Text.MarkupParagraph
-Property Aspose.Pdf.Text.MarkupParagraph.Points
-Property Aspose.Pdf.Text.MarkupParagraph.Fragments
-Property Aspose.Pdf.Text.MarkupParagraph.Lines
-Class Aspose.Pdf.Text.MarkupSection
-Property Aspose.Pdf.Text.MarkupSection.Rectangle
-Property Aspose.Pdf.Text.MarkupSection.Fragments
-Property Aspose.Pdf.Text.MarkupSection.Paragraphs
-Class Aspose.Pdf.Text.PageMarkup
-Property Aspose.Pdf.Text.PageMarkup.Number
-Property Aspose.Pdf.Text.PageMarkup.Rectangle
-Property Aspose.Pdf.Text.PageMarkup.Sections
-Property Aspose.Pdf.Text.PageMarkup.Paragraphs
-Property Aspose.Pdf.Text.PageMarkup.TextFragments
-Class Aspose.Pdf.Text.ParagraphAbsorber
-Constructor Aspose.Pdf.Text.ParagraphAbsorber
-Constructor Aspose.Pdf.Text.ParagraphAbsorber(System.Int32)
-Property Aspose.Pdf.Text.ParagraphAbsorber.PageMarkups
-Property Aspose.Pdf.Text.ParagraphAbsorber.SectionsSearchDepth
-Method Aspose.Pdf.Text.ParagraphAbsorber.Visit(Aspose.Pdf.Document)
-Method Aspose.Pdf.Text.ParagraphAbsorber.Visit(Aspose.Pdf.Page)
-Property Aspose.Pdf.Text.TextFormattingOptions.SubsequentLinesIndent
-Property Aspose.Pdf.Text.TextFragmentState.RenderingMode
-Property Aspose.Pdf.Text.TextFragmentState.StrokingColor
-Property Aspose.Pdf.Text.TextFragmentState.DrawTextRectangleBorder
-Enumeration Aspose.Pdf.Text.TextRenderingMode
-Enumeration member Aspose.Pdf.Text.TextRenderingMode.FillText
-Enumeration member Aspose.Pdf.Text.TextRenderingMode.StrokeText
-Enumeration member Aspose.Pdf.Text.TextRenderingMode.FillThenStrokeText
-Enumeration member Aspose.Pdf.Text.TextRenderingMode.Invisible
+Method Aspose.Pdf.Facades.Stamp.BindTextState(Aspose.Pdf.Text.TextState)   
+Enumeration member Aspose.Pdf.LoadFormat.PS   
+Class Aspose.Pdf.PsLoadOptions   
+Constructor Aspose.Pdf.PsLoadOptions   
+Property Aspose.Pdf.PsLoadOptions.FontsFolders   
+Class Aspose.Pdf.Text.MarkupParagraph   
+Property Aspose.Pdf.Text.MarkupParagraph.Points   
+Property Aspose.Pdf.Text.MarkupParagraph.Fragments   
+Property Aspose.Pdf.Text.MarkupParagraph.Lines   
+Class Aspose.Pdf.Text.MarkupSection   
+Property Aspose.Pdf.Text.MarkupSection.Rectangle   
+Property Aspose.Pdf.Text.MarkupSection.Fragments   
+Property Aspose.Pdf.Text.MarkupSection.Paragraphs   
+Class Aspose.Pdf.Text.PageMarkup   
+Property Aspose.Pdf.Text.PageMarkup.Number   
+Property Aspose.Pdf.Text.PageMarkup.Rectangle   
+Property Aspose.Pdf.Text.PageMarkup.Sections   
+Property Aspose.Pdf.Text.PageMarkup.Paragraphs   
+Property Aspose.Pdf.Text.PageMarkup.TextFragments   
+Class Aspose.Pdf.Text.ParagraphAbsorber   
+Constructor Aspose.Pdf.Text.ParagraphAbsorber   
+Constructor Aspose.Pdf.Text.ParagraphAbsorber(System.Int32)   
+Property Aspose.Pdf.Text.ParagraphAbsorber.PageMarkups   
+Property Aspose.Pdf.Text.ParagraphAbsorber.SectionsSearchDepth   
+Method Aspose.Pdf.Text.ParagraphAbsorber.Visit(Aspose.Pdf.Document)   
+Method Aspose.Pdf.Text.ParagraphAbsorber.Visit(Aspose.Pdf.Page)   
+Property Aspose.Pdf.Text.TextFormattingOptions.SubsequentLinesIndent   
+Property Aspose.Pdf.Text.TextFragmentState.RenderingMode   
+Property Aspose.Pdf.Text.TextFragmentState.StrokingColor   
+Property Aspose.Pdf.Text.TextFragmentState.DrawTextRectangleBorder   
+Enumeration Aspose.Pdf.Text.TextRenderingMode   
+Enumeration member Aspose.Pdf.Text.TextRenderingMode.FillText   
+Enumeration member Aspose.Pdf.Text.TextRenderingMode.StrokeText   
+Enumeration member Aspose.Pdf.Text.TextRenderingMode.FillThenStrokeText   
+Enumeration member Aspose.Pdf.Text.TextRenderingMode.Invisible   
 Enumeration member Aspose.Pdf.Text.TextRenderingMode.FillTextAndAddPathToClipping
 Enumeration member Aspose.Pdf.Text.TextRenderingMode.StrokeTextAndAddPathToClipping
-Enumeration member Aspose.Pdf.Text.TextRenderingMode.FillThenStrokeTextAndAddPathToClipping
-Enumeration member Aspose.Pdf.Text.TextRenderingMode.AddPathToClipping
-Property Aspose.Pdf.Text.TextState.RenderingMode
-Property Aspose.Pdf.Text.TextState.StrokingColor
-Constructor Aspose.Pdf.TextStamp(System.String,Aspose.Pdf.Text.TextState)
+Enumeration member Aspose.Pdf.Text.TextRenderingMode.FillThenStrokeTextAndAddPathToClipping   
+Enumeration member Aspose.Pdf.Text.TextRenderingMode.AddPathToClipping   
+Property Aspose.Pdf.Text.TextState.RenderingMode   
+Property Aspose.Pdf.Text.TextState.StrokingColor   
+Constructor Aspose.Pdf.TextStamp(System.String,Aspose.Pdf.Text.TextState)   
 ### **Removed APIs:**
 -----
 Property Aspose.Pdf.HtmlFragment.HtmlLoadOptionsOfInstance
