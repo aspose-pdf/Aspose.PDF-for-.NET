@@ -1,7 +1,7 @@
 name: Hugo-CI
 on:
   push:
-    branches: [ develop ]
+    branches: [ master ]
     paths:
       - 'Docs/**'
 
