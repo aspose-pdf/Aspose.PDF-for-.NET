@@ -5,11 +5,11 @@ weight: 250
 url: /net/working-with-features-of-pdfextractor-class/
 ---
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 In this article, we’ll look into the details of extracting text, images, and attachments from a PDF file. All of these extraction features are provided at one place, in [PdfExtractor](http://www.aspose.com/api/net/pdf/aspose.pdf.facades/pdfextractor) class. We’ll see how to use these features in our code.
 
-{{% /alert %}} 
+{{% /alert %}}
 ## **Implementation details**
 [PdfExtractor](http://www.aspose.com/api/net/pdf/aspose.pdf.facades/pdfextractor) class provides three types of extraction capabilities. These three categories are Text, Images and Attachments. In order to perform extraction under each of these three categories PdfExtractor provide various methods which work together to give you the final output.
 
@@ -17,7 +17,7 @@ For example, in order to extract text you can use three methods i.e. [ExtractTex
 
 When we need to extract images, we can use [ExtractImage, HasNextImage, and GetNextImage](http://www.aspose.com/api/net/pdf/aspose.pdf.facades/pdfextractor/methods/index) methods. Just like text extraction, [ExtractImage](http://www.aspose.com/api/net/pdf/aspose.pdf.facades/pdfextractor/methods/extractimage) method extracts all the images in the memory. After that, [HasNextImage](http://www.aspose.com/api/net/pdf/aspose.pdf.facades/pdfextractor/methods/hasnextimage) checks whether any more images are available or not; if more images are available then [GetNextImage](http://www.aspose.com/api/net/pdf/aspose.pdf.facades/pdfextractor/methods/getnextimage/index) will save the next image in an image file.
 
-The third category under the extraction capabilities of [Aspose.Pdf.Facades namespace](https://docs-qa.aspose.com/display/pdftemp/Aspose.Pdf.Facades+namespace) is the attachment extraction. This category provides a set of methods, which not only help extract the attachments but also provides the methods which can give you the attachment related information i.e. [GetAttachmentInfo](http://www.aspose.com/api/net/pdf/aspose.pdf.facades/pdfextractor/methods/getattachmentinfo) and [GetAttachName](http://www.aspose.com/api/net/pdf/aspose.pdf.facades/pdfextractor/methods/getattachnames) methods provide attachment information and attachment name respectively. In order to extract and then get attachments we use **ExtractAttachment** and **GetAttachment** methods. The following code snippet shows you how to use PdfExtractor methods:
+The third category under the extraction capabilities of [Aspose.Pdf.Facades namespace](https://apireference.aspose.com/pdf/net/aspose.pdf.facades) is the attachment extraction. This category provides a set of methods, which not only help extract the attachments but also provides the methods which can give you the attachment related information i.e. [GetAttachmentInfo](http://www.aspose.com/api/net/pdf/aspose.pdf.facades/pdfextractor/methods/getattachmentinfo) and [GetAttachName](http://www.aspose.com/api/net/pdf/aspose.pdf.facades/pdfextractor/methods/getattachnames) methods provide attachment information and attachment name respectively. In order to extract and then get attachments we use **ExtractAttachment** and **GetAttachment** methods. The following code snippet shows you how to use PdfExtractor methods:
 
 
 

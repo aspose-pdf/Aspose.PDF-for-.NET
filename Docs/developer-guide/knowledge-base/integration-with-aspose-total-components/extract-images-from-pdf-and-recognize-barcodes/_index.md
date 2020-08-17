@@ -5,20 +5,19 @@ weight: 20
 url: /net/extract-images-from-pdf-and-recognize-barcodes/
 ---
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 The PDF documents are usually comprised of Text, Image, Table, Attachments, Graph, Annotation and other related objects. There are cases when Barcodes are embedded inside PDF file and some customers have the requirement to identify the Barcodes present inside the PDF file. The following article explains the steps on how to extract images from PDF pages and identify the Barcodes inside them.
 
-{{% /alert %}} 
+{{% /alert %}}
 
-According to [Document Object Model]() of Aspose.PDF for .NET, a PDF file contains one or more pages where each page contains collection of Images, Forms and Fonts in Resources object. So in order to extract images from PDF file, we will traverse through individual pages of PDF file, get the collection of Images from particular page and save them in MemoryStream object for further processing with BarCodeReader class of Aspose.BarCodeRecognition.
+According to Document Object Model of Aspose.PDF for .NET, a PDF file contains one or more pages where each page contains collection of Images, Forms and Fonts in Resources object. So in order to extract images from PDF file, we will traverse through individual pages of PDF file, get the collection of Images from particular page and save them in MemoryStream object for further processing with BarCodeReader class of Aspose.BarCodeRecognition.
 
 **C#**
 
 {{< highlight csharp >}}
 
  //open document
-
 Aspose.PDF.Document pdfDocument = new Aspose.PDF.Document("source.pdf");
 
 // traverse through individual pages of PDF file
@@ -78,4 +77,4 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 For further details on topics covered in this article, please visit the following links
 
 - Extract Images from the PDF File
-- [Read Barcodes](https://docs-qa.aspose.com/display/barcodenet/Read+Barcodes)
+- [Read Barcodes](https://docs.aspose.com/barcode/net/read-barcodes/)

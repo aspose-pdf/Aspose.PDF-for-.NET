@@ -24,7 +24,7 @@ The following code snippet shows how to add the image in a PDF document.
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Images-AddImage-AddImage.cs" >}}
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 By default, the JPEG quality is set to 100%. To apply better compression and quality, use the following overloads:
 
@@ -33,7 +33,7 @@ By default, the JPEG quality is set to 100%. To apply better compression and qua
 - The Add method overload is added into the XImageCollection class:
   public void Add(Stream stream, int quality)
 
-{{% /alert %}} 
+{{% /alert %}}
 ## **Add Reference of a single Image multiple times in a PDF Document**
 Sometimes we have a requirement to use same image multiple times in a PDF document. Adding a new instance increases the resultant PDF document. We have added a new method XImageCollection.Add(XImage) in Aspose.PDF for .NET 17.1.0. This method allows to add reference to the same PDF object as original image that optimize the PDF Document size.
 
@@ -126,7 +126,7 @@ The image's index returns an [XImage](https://apireference.aspose.com/net/pdf/as
 ## **Get the Resolution and Dimensions of Embedded Images**
 This topic explains how to use the operator classes in the Aspose.PDF namespace which provide the capability to get resolution and dimension information about images without having to extract them.
 
-There are different ways of achieving this. This article explains how to use an [arraylist](/pdf/net/manipulate-images-html/) and [image placement classes](https://apireference.aspose.com/net/pdf/aspose.pdf/imageplacement).
+There are different ways of achieving this. This article explains how to use an `arraylist` and [image placement classes](https://apireference.aspose.com/net/pdf/aspose.pdf/imageplacement).
 ### **Getting Image Information without Extracting the Images**
 Aspose.PDF for .NET lets you [extract images from a PDF file](/pdf/net/manipulate-images/). Once the images are extracted, we can get information about the image's dimensions and resolution. However, there are scenarios where we do not want to extract the images to get this information. When this is the case, we can still using Aspose.PDF for .NET to get the information.
 
@@ -160,7 +160,7 @@ GRestore
 
 
 
-As a result, text is drawn in regular form but some transformations are performed between the text operators. In order to display the image or to draw form objects and images, we need to use the Do operator. 
+As a result, text is drawn in regular form but some transformations are performed between the text operators. In order to display the image or to draw form objects and images, we need to use the Do operator.
 
 We also have a class named [XImage](https://apireference.aspose.com/net/pdf/aspose.pdf/ximage) which provides two properties,l Width and Height, which can be used to get image dimensions.
 

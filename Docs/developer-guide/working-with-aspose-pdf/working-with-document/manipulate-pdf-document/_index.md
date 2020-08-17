@@ -8,11 +8,11 @@ url: /net/manipulate-pdf-document/
 ## **Validate PDF Document for PDF A Standard (A 1A and A 1B)**
 To validate a PDF document for PDF/A-1a or PDF/A-1b compatibility, use the [Document](https://apireference.aspose.com/net/pdf/aspose.pdf/document) class Validate method. This method allows you to specify the name of the file in which the result is to be saved and the required validation type [PdfFormat](https://apireference.aspose.com/net/pdf/aspose.pdf/pdfformat) enumeration : PDF_A_1A or PDF_A_1B.
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 The output XML format is custom Aspose format. The XML contains a collection of tags with the name Problem; each tag contains the details of a particular problem. The Problem tag's ObjectID attribute represents the ID of the particular object this problem is related to. The Clause attribute represents a corresponding rule in the PDF specification.
 
-{{% /alert %}} 
+{{% /alert %}}
 
 The following code snippet shows you how to validate PDF document for PDF/A-1A.
 
@@ -22,11 +22,11 @@ The following code snippet shows you how to validate PDF document for PDF/A-1b.
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Working-Document-ValidatePDFABStandard-ValidatePDFABStandard.cs" >}}
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
-Aspose.PDF for .NET can be used to determine if the loaded document is a valid PDF and also [if its encrypted or not](http://www.aspose.com/docs/display/pdfnet/How+to+-+determine+if+the+source+PDF+is+password+protected). In order to further extend the capabilities of Document class, **IsPdfaCompliant** property is added to determine if the input file is PDF/A compliant and a property named **PdfaFormat** to identify the PDF/A format are introduced.
+Aspose.PDF for .NET can be used to determine if the loaded document is a valid PDF and also [if its encrypted or not](https://docs.aspose.com/pdf/net/set-privileges-encrypt-and-decrypt-pdf-file/). In order to further extend the capabilities of Document class, **IsPdfaCompliant** property is added to determine if the input file is PDF/A compliant and a property named **PdfaFormat** to identify the PDF/A format are introduced.
 
-{{% /alert %}} 
+{{% /alert %}}
 
 ## **Working with TOC**
 ### **Add TOC to Existing PDF**
@@ -110,7 +110,7 @@ Page page = doc.Pages.Add();
 
 for (int Level = 1; Level <= 4; Level++)
 
-{ 
+{
 
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(Level);
 

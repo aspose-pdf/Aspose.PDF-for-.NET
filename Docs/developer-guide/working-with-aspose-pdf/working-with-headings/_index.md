@@ -19,10 +19,6 @@ Headings are the important parts of any document. Writers always try to make hea
 |LettersLowercase|English lower type, for example, a,a.b, ...|
 The **Style** property of **Aspose.PDF.Heading** class is used to set the numbering styles of the headings.
 
-The following figure shows the effect of different numbering styles:
-
-![todo:image_alt_text](http://www.aspose.com/docs/download/attachments/426672417/Apply+Numbering+Style-001.png?version=1&modificationDate=1447505105073)
-
 |**Figure: Pre-defined numbering styles**|
 | :- |
 The source code, to obtain the output shown in the above figure, is given below in the example.

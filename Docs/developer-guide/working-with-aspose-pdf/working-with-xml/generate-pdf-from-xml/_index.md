@@ -6,7 +6,7 @@ url: /net/generate-pdf-from-xml/
 ---
 
 ## **Convert XML file to PDF**
-Aspose.PDF for .NET provides the opportunity to convert an XML file into PDF document requiring that the input XML file must follow the [Aspose.PDF for .NET Schema](https://github.com/aspose-pdf/Aspose.PDF-for-.NET/tree/master/Artifacts).
+Aspose.PDF for .NET provides the opportunity to convert an XML file into PDF document requiring that the input XML file must follow the [Aspose.PDF for .NET Schema](https://docs.aspose.com/pdf/net/supported-xml-schema/).
 ### **Access TextFragement and TextSegment elements from XML file**
 BindXML() method offers the feature to load XML file contents and Document.save() method can be used to save the output in PDF format. However during conversion, we can also access individual elements inside XML and use XML as template. The following code snippet shows the steps to access TextSegments from XML file.
 
@@ -132,7 +132,7 @@ Following XML template contains an <Image> tag in it with an ID "testImg". In ca
 
  				<TextSegment> Request ID</TextSegment>
 
- 				<TextState FontSize="14" ForegroundColor="#0e4f9c" FontStyle="1" /> 
+ 				<TextState FontSize="14" ForegroundColor="#0e4f9c" FontStyle="1" />
 
  			</TextFragment>
 

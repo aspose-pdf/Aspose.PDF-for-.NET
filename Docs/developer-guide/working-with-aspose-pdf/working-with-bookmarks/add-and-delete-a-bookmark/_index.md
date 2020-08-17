@@ -43,7 +43,7 @@ The following code snippets show how to delete all bookmarks from a PDF document
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Bookmarks-DeleteAllBookmarks-DeleteAllBookmarks.cs" >}}
 ## **Delete a Particular Bookmark from a PDF Document**
-[Delete All Attachments from PDF document]() showed how to delete all attachments from a PDF file. It is also possible to only remove specific attachments.
+[Delete All Attachments from PDF document](https://docs.aspose.com/pdf/net/working-with-attachments/) showed how to delete all attachments from a PDF file. It is also possible to only remove specific attachments.
 
 To delete a particular bookmark from a PDF file:
 

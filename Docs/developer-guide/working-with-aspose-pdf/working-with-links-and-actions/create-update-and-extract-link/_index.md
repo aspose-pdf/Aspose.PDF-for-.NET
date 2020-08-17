@@ -36,7 +36,7 @@ The following code snippet shows how to create PDF document link in a PDF file.
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Links-Actions-CreateDocumentLink-CreateDocumentLink.cs" >}}
 ## **Update Links in a PDF File**
-As discussed in [Add Hyperlink in a PDF File](), the [LinkAnnotation](https://apireference.aspose.com/net/pdf/aspose.pdf.annotations/linkannotation) class makes it possible to add links in a PDF file. There's also a similar class used to get existing links from inside PDF files. Use this if you need to update an existing link. To update an existing link:
+As discussed in [Add Hyperlink in a PDF File](https://docs.aspose.com/pdf/net/add-and-get-hyperlink/), the [LinkAnnotation](https://apireference.aspose.com/net/pdf/aspose.pdf.annotations/linkannotation) class makes it possible to add links in a PDF file. There's also a similar class used to get existing links from inside PDF files. Use this if you need to update an existing link. To update an existing link:
 
 1. Load a PDF file.
 1. Go to a specific page in the PDF file.

@@ -5,14 +5,14 @@ weight: 10
 url: /net/convert-pdf-pages-to-images-and-recognize-barcodes/
 ---
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 PDF documents usually comprise text, images, tables, attachments, graphs, annotations and other objects. Some of our customers need to embed barcodes in documents and then identify barcodes in the PDF file. The following article explains how to transform the pages in a PDF file to images and identifying barcodes in the images with Aspose.Barcode for .NET.
 
-{{% /alert %}} 
+{{% /alert %}}
 ### **Converting Pages to Images and Recognizing Barcodes**
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 
 Aspose.PDF for .NET is very powerful product for managing PDF documents. It makes it easy to convert pages in PDF documents to images. Aspose.BarCode for .NET is an equally powerful product for generating and recognizing barcodes.
@@ -25,7 +25,7 @@ When the pages have been converted to an image format, we can use Aspose.BarCode
 
 #### **Using Aspose.PDF.Facades**
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 The PdfConverter class contains a method named GetNextImage which generates the an image from the current PDF page. To specify the output image format, this method accepts an argument from the System.Drawing.Imaging.ImageFormat enumeration.
 
@@ -119,7 +119,7 @@ imageStream.Close();
 
 {{< /highlight >}}
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 In above code snippets the output image is saved to a MemoryStream object. The image can also be saved to disk. To do so, replace the MemorStream object with a string object that represents the file path to the PdfConverter class' GetNextImage method.
 
@@ -131,11 +131,11 @@ In the Aspose.PDF.Devices, is the PngDevice. This class lets you convert pages i
 
 For the purpose of this example, load the source PDF file into the Document] cument's pages into PNG images. When the images have been created, use the BarCodeReader class under the Aspose.BarCodeRecognition to identify and read barcodes in the images.
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 The code samples given here traverses through the pages of the PDF document and tries to identify barcodes on each page.
 
-{{% /alert %}} 
+{{% /alert %}}
 ##### **Programming Samples**
 **C#**
 
@@ -203,13 +203,13 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 
 
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 For further information on topics covered in this article, please go to:
 
 - Convert PDF Pages to Different Image Formats (Facades)
 - Convert all PDF pages to PNG Images
-- [Read Barcodes](https://docs-qa.aspose.com/display/barcodenet/Read+Barcodes)
+- [Read Barcodes](https://docs.aspose.com/barcode/net/read-barcodes/)
 
 
 {{% /alert %}}

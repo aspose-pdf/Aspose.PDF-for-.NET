@@ -14,7 +14,7 @@ Once the object of a particular signature type is created, you can use the **Sig
 
 {{< gist "aspose-pdf" "4a12f0ebd453e7f0d552ed6658ed3253" "Examples-CSharp-AsposePdfFacades-Security-Signatures-DigitallySignature-DigitallySignature.cs" >}}
 ## **Remove Digital Signature from the PDF File**
-When a signature has been added to a PDF files, it is possible to remove it. You can remove either a particular signature, or all signatures in a file. The fastest method for removing the signature also removes the signature field, but it is possible to just [remove the signature](/pdf/net/working-with-signature-in-a-pdf-file/), keeping the signature field so the file can be signed again.
+When a signature has been added to a PDF files, it is possible to remove it. You can remove either a particular signature, or all signatures in a file. The fastest method for removing the signature also removes the signature field, but it is possible to just remove the signature, keeping the signature field so the file can be signed again.
 
 The [PdfFileSignature](https://apireference.aspose.com/net/pdf/aspose.pdf.facades/pdffilesignature) class RemoveSignature method allows you to remove a signature from a PDF file. This method takes the signature name as an input. Either specify the signature name directly, to remove all signatures, get the signature names using the GetSignNames method. The following code snippet shows how to remove digital signature from the PDF file.
 

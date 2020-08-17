@@ -6,7 +6,7 @@ url: /net/add-delete-and-modify-form-field/
 ---
 
 ## **Add Form Field in a PDF Document**
-The [Document](https://docs-qa.aspose.com/display/archived/Aspose.Pdf.Document+Class) class provides a collection named [Form](https://apireference.aspose.com/net/pdf/aspose.pdf/document/properties/form) which helps you manage form fields in a PDF document.
+The [Document](https://apireference.aspose.com/pdf/net/aspose.pdf/document) class provides a collection named [Form](https://apireference.aspose.com/net/pdf/aspose.pdf/document/properties/form) which helps you manage form fields in a PDF document.
 
 To add a form field:
 
@@ -35,7 +35,7 @@ The following code snippets show how to add ComboBox field in a PDF document.
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Forms-ComboBox-ComboBox.cs" >}}
 ## **Add Tooltip to Form Field**
-The [Document](https://docs-qa.aspose.com/display/archived/Aspose.Pdf.Document+Class) class provides a collection named [Form](https://apireference.aspose.com/net/pdf/aspose.pdf/document/properties/form) which manages form fields in a PDF document. To add a tooltip to a form field, use the Field class AlternateName. Adobe Acrobat uses the 'alternate name' as a field tooltip.
+The [Document](https://apireference.aspose.com/pdf/net/aspose.pdf/document) class provides a collection named [Form](https://apireference.aspose.com/net/pdf/aspose.pdf/document/properties/form) which manages form fields in a PDF document. To add a tooltip to a form field, use the Field class AlternateName. Adobe Acrobat uses the 'alternate name' as a field tooltip.
 
 The code snippets that follow show how to add a tooltip to a form field, first using C# and then Visual Basic.
 
@@ -61,7 +61,7 @@ Aspose.PDF for .NET allows you to retrieve information related to form fields in
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Forms-DetermineRequiredField-DetermineRequiredField.cs" >}}
 ## **Delete a Particular Form Field from a PDF Document**
-All the form fields are contained in the [Document](https://docs-qa.aspose.com/display/archived/Aspose.Pdf.Document+Class) object's [Form](https://apireference.aspose.com/net/pdf/aspose.pdf/document/properties/form) collection. This collection provides different methods that manage form fields, including the Delete method. If you want to delete a particular field, pass the field name as a parameter to the Delete method and then save the updated PDF document. The following code snippet shows how to delete a particular field from a PDF document.
+All the form fields are contained in the [Document](https://apireference.aspose.com/pdf/net/aspose.pdf/document) object's [Form](https://apireference.aspose.com/net/pdf/aspose.pdf/document/properties/form) collection. This collection provides different methods that manage form fields, including the Delete method. If you want to delete a particular field, pass the field name as a parameter to the Delete method and then save the updated PDF document. The following code snippet shows how to delete a particular field from a PDF document.
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Forms-DeleteFormField-DeleteFormField.cs" >}}
 ## **Modify Form Field in a PDF Document**
@@ -69,7 +69,7 @@ To modify an existing form field, you can get the field from the Form collection
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Forms-ModifyFormField-ModifyFormField.cs" >}}
 ## **Fill Form Field in a PDF Document**
-To fill a form field, get the field from the [Document](https://docs-qa.aspose.com/display/archived/Aspose.Pdf.Document+Class) object's Form collection. then set the field value using the field's Value property.
+To fill a form field, get the field from the [Document](https://apireference.aspose.com/pdf/net/aspose.pdf/document) object's Form collection. then set the field value using the field's Value property.
 
 This example selects a [TextBoxField](https://apireference.aspose.com/net/pdf/aspose.pdf.forms/textboxfield) and sets its value using the Value property.
 
@@ -83,7 +83,7 @@ Radio buttons can be added in group and following code snippet can be used to se
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Forms-SelectRadioButton-SelectRadioButton.cs" >}}
 ## **Move Form Field to a New Location in a PDF File**
-If you want to move a form field to a new location on a PDF page, first get the field oobject and then specify a new value for its Rect property. A [Rectangle](https://apireference.aspose.com/net/pdf/aspose.pdf/rectangle) object with new coordinates is assigned to the Rect property. Then save the updated PDF using [Document](https://docs-qa.aspose.com/display/archived/Aspose.Pdf.Document+Class) object's [Save](https://apireference.aspose.com/net/pdf/aspose.pdf/document/methods/save) method.
+If you want to move a form field to a new location on a PDF page, first get the field oobject and then specify a new value for its Rect property. A [Rectangle](https://apireference.aspose.com/net/pdf/aspose.pdf/rectangle) object with new coordinates is assigned to the Rect property. Then save the updated PDF using [Document](https://apireference.aspose.com/pdf/net/aspose.pdf/document) object's [Save](https://apireference.aspose.com/net/pdf/aspose.pdf/document/methods/save) method.
 
 The following code snippet shows you how to move a form field to a new location in a PDF file.
 

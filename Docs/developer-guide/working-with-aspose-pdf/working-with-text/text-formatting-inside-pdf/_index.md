@@ -18,7 +18,7 @@ The following code snippet shows you how to add Underline text while creating a 
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Text-AddText-AddUnderlineText.cs" >}}
 ## **Adding a Border Around Added Text**
-You have control over the look and feel of the text you add. The example below shows how to add a border around a piece of text that you have added by drawing a rectangle around it. Find out more about the [PdfContentEditor](http://www.aspose.com/docs/display/pdfnet/Aspose.PDF.Facades.PdfContentEditor+Class) class.
+You have control over the look and feel of the text you add. The example below shows how to add a border around a piece of text that you have added by drawing a rectangle around it. Find out more about the [PdfContentEditor](https://apireference.aspose.com/pdf/net/aspose.pdf.facades/pdfcontenteditor) class.
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Text-AddText-AddingBorderAroundAddedText.cs" >}}
 ## **Adding NewLine feed**
@@ -45,11 +45,11 @@ Text formatting has been further enhanced in the API for text editing scenarios 
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Text-AddTextWithShadingColors-1.cs" >}}
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}}
 
 In order to apply a Radial Gradient, you can set 'PatternColorSpace' property equal to 'Aspose.Pdf.Drawing.GradientRadialShading(startingColor, endingColor)' in the above code snippet.
 
-{{% /alert %}} 
+{{% /alert %}}
 ## **Text Alignment for Floating Box Contents**
 
 

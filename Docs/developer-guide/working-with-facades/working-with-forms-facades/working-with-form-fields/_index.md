@@ -36,8 +36,8 @@ If you want to move a form field to a new location then you can use **MoveField*
 
 {{< gist "aspose-pdf" "4a12f0ebd453e7f0d552ed6658ed3253" "Examples-CSharp-AsposePdfFacades-Forms-MoveField-MoveField.cs" >}}
 ## **Get Value of a Form Field from a PDF Document**
-In order to get value of a form field, you need to create object of **Form** class and call **GetField** method. **GetField** method takes field name as input and returns its value as string. 
-The following code snippet shows you how to get value of a form field. 
+In order to get value of a form field, you need to create object of **Form** class and call **GetField** method. **GetField** method takes field name as input and returns its value as string.
+The following code snippet shows you how to get value of a form field.
 
 
 
@@ -49,10 +49,10 @@ The following code snippet shows you how to get value of a form field.
 
 {{< gist "aspose-pdf" "4a12f0ebd453e7f0d552ed6658ed3253" "Examples-CSharp-AsposePdfFacades-Forms-FlattenAllFields-FlattenAllFields.cs" >}}
 ## **Fill Form fields using DataTable**
-Aspose.PDF for .NET provides great capabilities for create/manipulating form fields inside PDF document. Using this API, you can programmatically fill form fields inside PDF file, fill form fields by [Import Data from FDF into a PDF File ](http://www.aspose.com/docs/display/pdfnet/Import+Data+from+FDF+into+a+PDF+File+%28Facades%29), [Import Data from XFDF into a PDF File](/pdf/net/import-and-export-data/), [Import Data from XML into a PDF File](http://www.aspose.com/docs/display/pdfnet/Import+Data+from+XML+into+a+PDF+File+%28Facades%29) or even you can import data from **System.Data.DataTable** object. If we have a requirement to fill forms fields using data from database/data-source, we can export the data to DataTable and then use **ImportDataTable(..)** method of **Aspose.Pdf.Facades.AutoFiller** class.
+Aspose.PDF for .NET provides great capabilities for create/manipulating form fields inside PDF document. Using this API, you can programmatically fill form fields inside PDF file, fill form fields by [Import Data from FDF into a PDF File ](/pdf/net/import-and-export-data/), [Import Data from XFDF into a PDF File](/pdf/net/import-and-export-data/), [Import Data from XML into a PDF File](/pdf/net/import-and-export-data/) or even you can import data from **System.Data.DataTable** object. If we have a requirement to fill forms fields using data from database/data-source, we can export the data to DataTable and then use **ImportDataTable(..)** method of **Aspose.Pdf.Facades.AutoFiller** class.
 ## **Decorate a Particular Form Field in an Existing PDF File**
-**DecorateField** method present in [FormEditor](https://apireference.aspose.com/net/pdf/aspose.pdf.facades/formeditor) class allows you to decorate a particular form field in a PDF file. If you want to decorate a particular field then you need to pass the field name to this method. However, before calling this method, you need to create objects of **FormEditor** and **FormFieldFacade** classes. You also need to assign the **FormFieldFacade** object to **Facade** property of the **FormEditor** object. After that, you can set any attributes provided by **FormFieldFacade** object. Once you have set the attributes, you can call the **DecorateField** method and finally save the updated PDF using **Save** method of **FormEditor** class. 
-The following code snippet shows you how to decorate a particular form field. 
+**DecorateField** method present in [FormEditor](https://apireference.aspose.com/net/pdf/aspose.pdf.facades/formeditor) class allows you to decorate a particular form field in a PDF file. If you want to decorate a particular field then you need to pass the field name to this method. However, before calling this method, you need to create objects of **FormEditor** and **FormFieldFacade** classes. You also need to assign the **FormFieldFacade** object to **Facade** property of the **FormEditor** object. After that, you can set any attributes provided by **FormFieldFacade** object. Once you have set the attributes, you can call the **DecorateField** method and finally save the updated PDF using **Save** method of **FormEditor** class.
+The following code snippet shows you how to decorate a particular form field.
 
 
 
@@ -64,7 +64,7 @@ In order to set the font, a new property **CustomFont** is added in [FormFieldFa
 
 {{< gist "aspose-pdf" "4a12f0ebd453e7f0d552ed6658ed3253" "Examples-CSharp-AsposePdfFacades-Forms-DecorateParticularField-SetFont.cs" >}}
 ## **Decorate All Fields of a Particular Type in an Existing PDF File**
-**DecorateField** method allows you to decorate all the form fields of a particular type in a PDF file at once. If you want to decorate all fields of a particular type then you need to pass the field type to this method. However, before calling this method, you need to create objects of **FormEditor** and **FormFieldFacade** classes. You also need to assign the **FormFieldFacade** object to **Facade** property of the **FormEditor** object. After that, you can set any attributes provided by **FormFieldFacade** object. Once you have set the attributes, you can call the **DecorateField** method and finally save the updated PDF using **Save** method of **FormEditor** class. The following code snippet shows you how to decorate all the fields of a particular type. 
+**DecorateField** method allows you to decorate all the form fields of a particular type in a PDF file at once. If you want to decorate all fields of a particular type then you need to pass the field type to this method. However, before calling this method, you need to create objects of **FormEditor** and **FormFieldFacade** classes. You also need to assign the **FormFieldFacade** object to **Facade** property of the **FormEditor** object. After that, you can set any attributes provided by **FormFieldFacade** object. Once you have set the attributes, you can call the **DecorateField** method and finally save the updated PDF using **Save** method of **FormEditor** class. The following code snippet shows you how to decorate all the fields of a particular type.
 
 
 

@@ -56,7 +56,7 @@ To find the URL content, you need to work with both annotation and text. The [An
 
 {{< gist "aspose-pdf" "7e1330795d76012fcb04248bb81d45b3" "Examples-CSharp-AsposePDF-Links-Actions-GetHyperlinkText-GetHyperlinkText.cs" >}}
 ## **Remove Document Open Action from a PDF File**
-[How to Specify PDF Page when Viewing Document]() explained how to tell a document to open on a different page than the first. When concatenating several documents, and one or more has a GoTo action set, you probably want to remove them. For example, if combining two documents and the second one has a GoTo action that takes you to the second page, the output document will open on the second page of the second document instead of the first page of the combined document. To avoid this behavior, remove the open action command.
+[How to Specify PDF Page when Viewing Document](https://docs.aspose.com/pdf/net/manipulate-page-in-a-pdf-file/) explained how to tell a document to open on a different page than the first. When concatenating several documents, and one or more has a GoTo action set, you probably want to remove them. For example, if combining two documents and the second one has a GoTo action that takes you to the second page, the output document will open on the second page of the second document instead of the first page of the combined document. To avoid this behavior, remove the open action command.
 
 To remove an open action:
 
