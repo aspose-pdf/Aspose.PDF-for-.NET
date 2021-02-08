@@ -1,3 +1,4 @@
+![Nuget](https://img.shields.io/nuget/v/Aspose.Pdf) ![Nuget](https://img.shields.io/nuget/dt/Aspose.Pdf) ![GitHub](https://img.shields.io/github/license/aspose-pdf/Aspose.Pdf-for-.NET)
 # .NET API to Process & Manipulate PDF Files
 
 Integrate PDF creation, processing, manipulation & conversion features into your own .NET applications without needing Adobe Acrobat®. 
