@@ -1,9 +1,9 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aspose.Pdf.Invoicer", "Aspose.Pdf.Invoicer\Aspose.Pdf.Invoicer.csproj", "{4B40A1BF-0254-497B-89A5-2551901EFB87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aspose.Pdf.Invoicer", "Aspose.Pdf.Invoicer\Aspose.Pdf.Invoicer.csproj", "{4B40A1BF-0254-497B-89A5-2551901EFB87}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleDemo", "ConsoleDemo\ConsoleDemo.csproj", "{9A52677F-0871-4B66-9641-45E724997CFB}"
 EndProject
