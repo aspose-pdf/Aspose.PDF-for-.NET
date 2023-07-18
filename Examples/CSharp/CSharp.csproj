@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>Exe</OutputType>
     <RootNamespace>Aspose.Pdf.Examples.CSharp</RootNamespace>
@@ -12,10 +12,6 @@
   <PropertyGroup>
     <StartupObject>Aspose.Pdf.Examples.CSharp.RunExamples</StartupObject>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System.Security" />
-    <Reference Include="System.Web" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Aspose.Cells" Version="20.1.0" />
     <PackageReference Include="Aspose.PDF" Version="20.3.0" />
