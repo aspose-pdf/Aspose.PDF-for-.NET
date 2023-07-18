@@ -4,10 +4,9 @@ using System;
 using System.Collections;
 using System.IO;
 using System.Net;
-using System.Web.Mvc;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Web;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Aspose.Pdf.Live.Demos.UI.Controllers
 {

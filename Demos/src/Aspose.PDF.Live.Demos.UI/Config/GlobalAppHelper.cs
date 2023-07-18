@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Web;
 using System.Xml;
-using System.Web.Caching;
 using System.IO;
 
 namespace Aspose.Pdf.Live.Demos.UI.Config

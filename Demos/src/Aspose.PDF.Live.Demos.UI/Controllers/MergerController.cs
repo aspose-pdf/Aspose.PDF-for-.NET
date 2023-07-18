@@ -3,8 +3,7 @@ using Aspose.Pdf.Live.Demos.UI.Models;
 using Aspose.Pdf.Live.Demos.UI.Services;
 using System;
 using System.Collections;
-using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Aspose.Pdf.Live.Demos.UI.Controllers
 {

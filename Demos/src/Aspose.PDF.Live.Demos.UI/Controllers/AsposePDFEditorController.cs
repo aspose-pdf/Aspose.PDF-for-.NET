@@ -13,9 +13,8 @@ using System.Text;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web;
-using System.Web.Http;
 using File = System.IO.File;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Aspose.Pdf.Live.Demos.UI.Controllers
 {
@@ -70,7 +69,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Controllers
 
 		[HttpPost]
 		[Route("api/asposepdfeditor/upload")]
-		public IHttpActionResult Upload()
+		public IActionResult Upload()
 		{
 			var httpRequest = HttpContext.Current.Request;
 			var fullPath = Path.Combine(Config.Configuration.WorkingDirectory.Replace("/", "\\"), "Editor", httpRequest.Form["documentId"]);
@@ -140,7 +139,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Controllers
 
 		[HttpPost]
 		[Route("api/asposepdfeditor/upload-pic")]
-		public IHttpActionResult UploadPic(UploadPicModel uploadPicModel)
+		public IActionResult UploadPic(UploadPicModel uploadPicModel)
 		{
 			var fullPath = Path.Combine(Config.Configuration.WorkingDirectory, "Editor", uploadPicModel.documentId);
 			var downloadFileName = "document.pdf";
@@ -330,7 +329,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Controllers
 
 		[HttpPost]
 		[Route("api/asposepdfeditor/export-file/{fileType}/{folder}/")]
-		public IHttpActionResult ExportFile(string fileType, string folder)
+		public IActionResult ExportFile(string fileType, string folder)
 		{
 			var fullPath = string.Format("{0}Editor\\{1}", Config.Configuration.WorkingDirectory.Replace("/", "\\"), folder);
 			var pdfDocumentPath = string.Format("{0}\\document.pdf", fullPath);
@@ -371,7 +370,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Controllers
 
 		[HttpPost]
 		[Route("api/asposepdfeditor/add-page/{folder}")]
-		public IHttpActionResult AddPage(string folder)
+		public IActionResult AddPage(string folder)
 		{
 			var fullPath = string.Format("{0}Editor\\{1}", Config.Configuration.WorkingDirectory.Replace("/", "\\"), folder);
 			var pdfDocumentPath = string.Format("{0}\\document.pdf", fullPath);
@@ -416,7 +415,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Controllers
 
 		[HttpPost]
 		[Route("api/asposepdfeditor/delete-page")]
-		public IHttpActionResult DeletePage(DeletePageModel deletePageModel)
+		public IActionResult DeletePage(DeletePageModel deletePageModel)
 		{
 			var documentFileName = System.IO.Path.Combine(Config.Configuration.WorkingDirectory, "Editor", deletePageModel.documentId, "document.pdf");
 			var imageFileName = System.IO.Path.Combine(Config.Configuration.WorkingDirectory, "Editor", deletePageModel.documentId, deletePageModel.imageName);
@@ -436,7 +435,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Controllers
 
 		[HttpPost]
 		[Route("api/asposepdfeditor/search-data")]
-		public IHttpActionResult SearchData(SearchDataModel searchDataModel)
+		public IActionResult SearchData(SearchDataModel searchDataModel)
 		{
 			//'searchText': moveTo, 'pageList': Npages, 'documentId': documentId            
 			var fullPath = Path.Combine(Config.Configuration.WorkingDirectory.Replace("/", "\\"), "Editor", searchDataModel.documentId);
@@ -470,7 +469,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Controllers
 
 		[HttpPost]
 		[Route("api/asposepdfeditor/search-clear")]
-		public IHttpActionResult SearchClear(SearchDataModel searchDataModel)
+		public IActionResult SearchClear(SearchDataModel searchDataModel)
 		{
 			//'searchText': moveTo, 'pageList': Npages, 'documentId': documentId            
 			var fullPath = Path.Combine(Config.Configuration.WorkingDirectory.Replace("/", "\\"), "Editor", searchDataModel.documentId);
@@ -502,7 +501,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Controllers
 
 		[HttpPost]
 		[Route("api/asposepdfeditor/replace-text")]
-		public IHttpActionResult ReplaceText(ReplaceTextModel replaceTextModel)
+		public IActionResult ReplaceText(ReplaceTextModel replaceTextModel)
 		{
 			var documentFileName = System.IO.Path.Combine(Config.Configuration.WorkingDirectory, "Editor", replaceTextModel.documentId, "document.pdf");
 			try
@@ -559,7 +558,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Controllers
 
 		[HttpPost]
 		[Route("api/asposepdfeditor/move-pages")]
-		public IHttpActionResult MovePages(MovePagesModel movePagesModel)
+		public IActionResult MovePages(MovePagesModel movePagesModel)
 		{
 			var documentFileName = System.IO.Path.Combine(Config.Configuration.WorkingDirectory, "Editor", movePagesModel.documentId, "document.pdf");
 			try
@@ -599,7 +598,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Controllers
 
 		[HttpGet]
 		[Route("api/asposepdfeditor/createNewFile")]
-		public IHttpActionResult CreateNewFile()
+		public IActionResult CreateNewFile()
 		{
 			var guid = Guid.NewGuid().ToString();
 			var tempFolder = string.Format("{0}Editor\\{1}", Config.Configuration.WorkingDirectory.Replace("/", "\\"), guid);
@@ -623,7 +622,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Controllers
 
 		[HttpPost]
 		[Route("api/asposepdfeditor/GetFileAttachments/{folder}")]
-		public IHttpActionResult GetFileAttachments(string folder)
+		public IActionResult GetFileAttachments(string folder)
 		{
 			var fullPath = Path.Combine(Config.Configuration.WorkingDirectory.Replace("/", "\\"), "Editor", folder);
 			var pdfDocumentPath = string.Format("{0}\\document.pdf", fullPath);
@@ -692,7 +691,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Controllers
 
 		[HttpPost]
 		[Route("api/asposepdfeditor/remove-attachment")]
-		public IHttpActionResult RemoveFileAttachment(RemoveAttachmentModel removeAttachmentModel)
+		public IActionResult RemoveFileAttachment(RemoveAttachmentModel removeAttachmentModel)
 		{
 			var httpRequest = HttpContext.Current.Request;
 			var fullPath = Path.Combine(Config.Configuration.WorkingDirectory.Replace("/", "\\"), "Editor", removeAttachmentModel.documentId);

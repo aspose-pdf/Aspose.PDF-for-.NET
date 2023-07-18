@@ -2,8 +2,6 @@ using Aspose.Pdf.Live.Demos.UI.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Web;
-using System.Web.UI;
 
 namespace Aspose.Pdf.Live.Demos.UI.Config
 {

@@ -1,10 +1,10 @@
 using System;
 using System.IO;
-using System.Web.Http;
 using System.Threading.Tasks;
 using System.IO.Compression;
 using System.Drawing;
 using System.Drawing.Imaging;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Aspose.Pdf.Live.Demos.UI.Models
 {
@@ -12,7 +12,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Models
 	/// ModelBase class to have base methods
 	///</Summary>
 
-	public abstract class ModelBase : ApiController
+	public abstract class ModelBase : ControllerBase
 	{
 		
 		///<Summary>

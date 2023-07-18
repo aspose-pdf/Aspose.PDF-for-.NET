@@ -4,9 +4,6 @@ using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Web;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
 using Aspose.Pdf.Live.Demos.UI.Services;
 using Aspose.Pdf.Live.Demos.UI.Models;
 

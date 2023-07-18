@@ -9,13 +9,12 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Web;
-using System.Web.Http;
 using Aspose.Pdf.Live.Demos.UI.Models;
 using Newtonsoft.Json;
 using Document = Aspose.Pdf.Document;
 using File = System.IO.File;
 using SaveFormat = Aspose.Pdf.SaveFormat;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Aspose.Pdf.Live.Demos.UI.Controllers
 {
