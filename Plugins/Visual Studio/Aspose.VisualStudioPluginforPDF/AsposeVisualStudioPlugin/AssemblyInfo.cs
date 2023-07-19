@@ -1,7 +1,32 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("Aspose .NET Visual Studio Plugin for Aspose.Pdf Examples")]
+[assembly: AssemblyDescription("Explore Aspose.Pdf for .NET Examples using Visual Studio Plugin")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Aspose Pty Limited")]
+[assembly: AssemblyProduct("Aspose.Pdf for .NET")]
+[assembly: AssemblyCopyright("Aspose Pty Limited 2001 - 2016")]
 [assembly: AssemblyTrademark("Aspose")]
 [assembly: AssemblyCulture("")]
+
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Revision
+//      Build Number
+//
+// You can specify all the value or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the 

@@ -1,20 +1,642 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D8D9C6BA-A78F-4C66-A596-979B3E39D978}</ProjectGuid>
     <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aspose.Pdf.Examples.CSharp</RootNamespace>
     <AssemblyName>Aspose.Pdf.Examples.CSharp</AssemblyName>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <UseWindowsForms>true</UseWindowsForms>
-    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>Aspose.Pdf.Examples.CSharp.RunExamples</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Aspose.Cells" Version="20.1.0" />
-    <PackageReference Include="Aspose.PDF" Version="20.3.0" />
-    <PackageReference Include="DotNetZip.Reduced" Version="1.9.1.8" />
+    <Reference Include="Aspose.Cells, Version=20.1.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Cells.20.1.0\lib\net40\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.PDF, Version=20.3.0.0, Culture=neutral, PublicKeyToken=f0262d67fe233d63, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.PDF.20.3.0\lib\net4.0\Aspose.PDF.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip.Reduced, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.Reduced.1.9.1.8\lib\net20\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsposePdfFacades\Annotations\AddFreeTextAnnotation.cs" />
+    <Compile Include="AsposePdfFacades\Annotations\CreateFileAnnotation.cs" />
+    <Compile Include="AsposePdfFacades\Annotations\DeleteSpecificAnnotations.cs" />
+    <Compile Include="AsposePdfFacades\Annotations\DeleteAllAnnotations.cs" />
+    <Compile Include="AsposePdfFacades\Annotations\ExportAnnotations.cs" />
+    <Compile Include="AsposePdfFacades\Annotations\ExtractAnnotations.cs" />
+    <Compile Include="AsposePdfFacades\Annotations\ImportAnnotations.cs" />
+    <Compile Include="AsposePdfFacades\Annotations\UpdateAnnotations.cs" />
+    <Compile Include="AsposePdfFacades\Attachments\AddAttachmentStream.cs" />
+    <Compile Include="AsposePdfFacades\Attachments\AddAttachment.cs" />
+    <Compile Include="AsposePdfFacades\Attachments\DeleteAllAttachments.cs" />
+    <Compile Include="AsposePdfFacades\Attachments\ExtractAllAttachments.cs" />
+    <Compile Include="AsposePdfFacades\Attachments\GetAttachmentNames.cs" />
+    <Compile Include="AsposePdfFacades\Bookmarks\AddBookmark.cs" />
+    <Compile Include="AsposePdfFacades\Bookmarks\AddChildBookmark.cs" />
+    <Compile Include="AsposePdfFacades\Bookmarks\CreateBookmarkPageRange.cs" />
+    <Compile Include="AsposePdfFacades\Bookmarks\CreateBookmarkPage.cs" />
+    <Compile Include="AsposePdfFacades\Bookmarks\CreateBookmarksAll.cs" />
+    <Compile Include="AsposePdfFacades\Bookmarks\CreateBookmarksPagesProperties.cs" />
+    <Compile Include="AsposePdfFacades\Bookmarks\DeleteAllBookmarks.cs" />
+    <Compile Include="AsposePdfFacades\Bookmarks\DeleteABookmark.cs" />
+    <Compile Include="AsposePdfFacades\Bookmarks\ExportToXML.cs" />
+    <Compile Include="AsposePdfFacades\Bookmarks\ExtractBookmarks.cs" />
+    <Compile Include="AsposePdfFacades\Bookmarks\GetFromPDF.cs" />
+    <Compile Include="AsposePdfFacades\Bookmarks\ImportFromXML.cs" />
+    <Compile Include="AsposePdfFacades\Bookmarks\UpdateBookmark.cs" />
+    <Compile Include="AsposePdfFacades\Forms\ExportDataToXFDF.cs" />
+    <Compile Include="AsposePdfFacades\Forms\ExportDataToPdf.cs" />
+    <Compile Include="AsposePdfFacades\Forms\ImportDataFromXFDF.cs" />
+    <Compile Include="AsposePdfFacades\Forms\ImportDataFromPdf.cs" />
+    <Compile Include="AsposePdfFacades\Forms\ImportDataFromXML.cs" />
+    <Compile Include="AsposePdfFacades\Forms\SetJSPushButton.cs" />
+    <Compile Include="AsposePdfFacades\Forms\ExportDataToXML.cs" />
+    <Compile Include="AsposePdfFacades\Forms\SetSubmitButtonURL.cs" />
+    <Compile Include="AsposePdfFacades\Forms\DeleteListItem.cs" />
+    <Compile Include="AsposePdfFacades\Forms\AddListItem.cs" />
+    <Compile Include="AsposePdfFacades\Forms\DecorateParticularField.cs" />
+    <Compile Include="AsposePdfFacades\Forms\GetFieldValue.cs" />
+    <Compile Include="AsposePdfFacades\Forms\FlattenAllFields.cs" />
+    <Compile Include="AsposePdfFacades\Forms\MoveField.cs" />
+    <Compile Include="AsposePdfFacades\Forms\DeleteField.cs" />
+    <Compile Include="AsposePdfFacades\Forms\GetFormFieldValue.cs" />
+    <Compile Include="AsposePdfFacades\Forms\GetButtonOptionValue.cs" />
+    <Compile Include="AsposePdfFacades\Forms\FillFormFieldF.cs" />
+    <Compile Include="AsposePdfFacades\Forms\AddFormField.cs" />
+    <Compile Include="AsposePdfFacades\Forms\CopyInnerField.cs" />
+    <Compile Include="AsposePdfFacades\Forms\CopyOuterField.cs" />
+    <Compile Include="AsposePdfFacades\Forms\DecorateFields.cs" />
+    <Compile Include="AsposePdfFacades\Images\AddImage.cs" />
+    <Compile Include="AsposePdfFacades\Images\ConvertPageRegion.cs" />
+    <Compile Include="AsposePdfFacades\Images\ConvertToTIFF.cs" />
+    <Compile Include="AsposePdfFacades\Images\ConvertToTIFFSettings.cs" />
+    <Compile Include="AsposePdfFacades\Images\ConvertPDFPages.cs" />
+    <Compile Include="AsposePdfFacades\Images\DeleteAllImages.cs" />
+    <Compile Include="AsposePdfFacades\Images\DeleteImagesPage.cs" />
+    <Compile Include="AsposePdfFacades\Images\ExtractImageExtractionMode.cs" />
+    <Compile Include="AsposePdfFacades\Images\ExtractImagesPage.cs" />
+    <Compile Include="AsposePdfFacades\Images\ExtractImages.cs" />
+    <Compile Include="AsposePdfFacades\Images\ExtractImagesStream.cs" />
+    <Compile Include="AsposePdfFacades\Images\ReplaceImage.cs" />
+    <Compile Include="AsposePdfFacades\Links-Actions\CreateDocLink.cs" />
+    <Compile Include="AsposePdfFacades\Links-Actions\CreateDocAdditionalAction.cs" />
+    <Compile Include="AsposePdfFacades\Links-Actions\CreateJSLink.cs" />
+    <Compile Include="AsposePdfFacades\Links-Actions\CreateLocalLink.cs" />
+    <Compile Include="AsposePdfFacades\Links-Actions\CreateAppLinkWithColor.cs" />
+    <Compile Include="AsposePdfFacades\Links-Actions\CreateAppLink.cs" />
+    <Compile Include="AsposePdfFacades\Links-Actions\RemoveAction.cs" />
+    <Compile Include="AsposePdfFacades\Pages\Append\AppendArrayOfFilesUsingStream.cs" />
+    <Compile Include="AsposePdfFacades\Pages\Append\AppendFilesUsingStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\Append\AppendArrayOfFiles.cs" />
+    <Compile Include="AsposePdfFacades\Pages\Append\AppendFiles.cs" />
+    <Compile Include="AsposePdfFacades\Pages\ConcatenateDocuments\ConcatenateArrayOfFilesWithPath.cs" />
+    <Compile Include="AsposePdfFacades\Pages\ConcatenateDocuments\ConcatenateArrayOfPdfUsingStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\ConcatenateDocuments\ConcatenateUsingStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\ConcatenateDocuments\ConcatenateBlankPdfUsingStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\ConcatenateDocuments\ConcatenateWithBlankPdf.cs" />
+    <Compile Include="AsposePdfFacades\Pages\ConcatenateDocuments\ConcatenateUsingPath.cs" />
+    <Compile Include="AsposePdfFacades\Pages\DeletePages\DeletePagesUsingStream.cs" />
+    <Compile Include="AsposePdfFacades\Pages\DeletePages\DeletePagesUsingFilePath.cs" />
+    <Compile Include="AsposePdfFacades\Pages\ExtractPages\ExtractArrayOfPagesUsingStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\ExtractPages\ExtractPagesBetweenTwoNumbersUsingStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\ExtractPages\ExtractArrayOfPages.cs" />
+    <Compile Include="AsposePdfFacades\Pages\ExtractPages\ExtractPagesBetweenNumbers.cs" />
+    <Compile Include="AsposePdfFacades\Pages\InsertPages\InsertPagesUsingStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\InsertPages\InsertPagesBetweenNumbersUsingStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\InsertPages\InsertArrayOfPages.cs" />
+    <Compile Include="AsposePdfFacades\Pages\InsertPages\InsertPagesBetweenNumbers.cs" />
+    <Compile Include="AsposePdfFacades\Pages\MakeBooklet\MakeBookletUsingLeftRightPagesAndStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\MakeBooklet\MakeBookletUsingLeftRightPagesAndPaths.cs" />
+    <Compile Include="AsposePdfFacades\Pages\MakeBooklet\MakeBookletUsingPageSizeAndStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\MakeBooklet\MakeBookletUsingPageSizeLeftRightPagesAndStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\MakeBooklet\MakeBookletUsingPageSizeLeftRightPagesAndPaths.cs" />
+    <Compile Include="AsposePdfFacades\Pages\MakeBooklet\MakeBookletUsingPageSizeAndPaths.cs" />
+    <Compile Include="AsposePdfFacades\Pages\MakeBooklet\MakeBookletUsingStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\MakeBooklet\MakeBookletUsingPaths.cs" />
+    <Compile Include="AsposePdfFacades\Pages\MakeNUp\MakeNUpUsingPageSizeAndPaths.cs" />
+    <Compile Include="AsposePdfFacades\Pages\MakeNUp\MakeNUpUsingPageSizeAndStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\MakeNUp\UsingArrayOfFilesAndStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\MakeNUp\MakeNUpUsingStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\MakeNUp\UsingArrayOfFilesAndPaths.cs" />
+    <Compile Include="AsposePdfFacades\Pages\MakeNUp\UsingPageSizeHorizontalVerticalValuesAndStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\MakeNUp\UsingPageSizeHorizontalAndVerticalValues.cs" />
+    <Compile Include="AsposePdfFacades\Pages\MakeNUp\MakeNUpUsingPaths.cs" />
+    <Compile Include="AsposePdfFacades\Pages\ManipulatePageProperties\ResizePageContents.cs" />
+    <Compile Include="AsposePdfFacades\Pages\ManipulatePageProperties\SetPageProperties.cs" />
+    <Compile Include="AsposePdfFacades\Pages\ManipulatePageProperties\GetPageProperties.cs" />
+    <Compile Include="AsposePdfFacades\Pages\SplitPages\SplitPagesToBulkUsingStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\SplitPages\SplitPagesToBulkUsingPaths.cs" />
+    <Compile Include="AsposePdfFacades\Pages\SplitPages\SplitPagesToEndUsingStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\SplitPages\SplitPagesToEndUsingPaths.cs" />
+    <Compile Include="AsposePdfFacades\Pages\SplitPages\SplitToIndividualPagesUsingStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\SplitPages\SplitToIndividualPagesUsingPaths.cs" />
+    <Compile Include="AsposePdfFacades\Pages\SplitPages\SplitPagesUsingStreams.cs" />
+    <Compile Include="AsposePdfFacades\Pages\SplitPages\SplitPagesUsingPaths.cs" />
+    <Compile Include="AsposePdfFacades\Printing\CheckPrintJobStatus.cs" />
+    <Compile Include="AsposePdfFacades\Printing\Impersonator.cs" />
+    <Compile Include="AsposePdfFacades\Printing\PdfToPostScript.cs" />
+    <Compile Include="AsposePdfFacades\Printing\PrintoXPSPrinter.cs" />
+    <Compile Include="AsposePdfFacades\Printing\PrintPages.cs" />
+    <Compile Include="AsposePdfFacades\Printing\PrintToDefaultPrinter.cs" />
+    <Compile Include="AsposePdfFacades\Printing\PrintPageRange.cs" />
+    <Compile Include="AsposePdfFacades\Security-Signatures\ChangeFilePassword.cs" />
+    <Compile Include="AsposePdfFacades\Security-Signatures\ChangeLanguageInDigitalSignText.cs" />
+    <Compile Include="AsposePdfFacades\Security-Signatures\DecryptFile.cs" />
+    <Compile Include="AsposePdfFacades\Security-Signatures\HideDigitallySignedByCaption.cs" />
+    <Compile Include="AsposePdfFacades\Security-Signatures\RemoveRights.cs" />
+    <Compile Include="AsposePdfFacades\Security-Signatures\ExtractImages.cs" />
+    <Compile Include="AsposePdfFacades\Security-Signatures\ExtractSignatureInfo.cs" />
+    <Compile Include="AsposePdfFacades\Security-Signatures\SuppressLocationAndReason.cs" />
+    <Compile Include="AsposePdfFacades\Security-Signatures\VerifyValidSignature.cs" />
+    <Compile Include="AsposePdfFacades\Security-Signatures\VerifySignature.cs" />
+    <Compile Include="AsposePdfFacades\Security-Signatures\RemoveSignature.cs" />
+    <Compile Include="AsposePdfFacades\Security-Signatures\DigitallySignature.cs" />
+    <Compile Include="AsposePdfFacades\Security-Signatures\SetPrivilegesOnFile.cs" />
+    <Compile Include="AsposePdfFacades\Security-Signatures\EncryptFile.cs" />
+    <Compile Include="AsposePdfFacades\Stamps-Watermarks\AddFooter.cs" />
+    <Compile Include="AsposePdfFacades\Stamps-Watermarks\AddHeader.cs" />
+    <Compile Include="AsposePdfFacades\Stamps-Watermarks\AddImageHeader.cs" />
+    <Compile Include="AsposePdfFacades\Stamps-Watermarks\AddImageFooter.cs" />
+    <Compile Include="AsposePdfFacades\Stamps-Watermarks\AddImageStampAll.cs" />
+    <Compile Include="AsposePdfFacades\Stamps-Watermarks\AddImageStampPage.cs" />
+    <Compile Include="AsposePdfFacades\Stamps-Watermarks\AddPageNumber.cs" />
+    <Compile Include="AsposePdfFacades\Stamps-Watermarks\AddPageStampAll.cs" />
+    <Compile Include="AsposePdfFacades\Stamps-Watermarks\AddPageStampPage.cs" />
+    <Compile Include="AsposePdfFacades\Stamps-Watermarks\AddTextStampAll.cs" />
+    <Compile Include="AsposePdfFacades\Stamps-Watermarks\AddTextStampPage.cs" />
+    <Compile Include="AsposePdfFacades\Stamps-Watermarks\ChangeStampPosition.cs" />
+    <Compile Include="AsposePdfFacades\Stamps-Watermarks\ExtractImageImageStamp.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\AddTextImagesUsingPdfFileMend.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\XMLToPdf.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\JustifyText.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\ConcatenatePdfFilesAndCreateTOC.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\IdentifyFormFields.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\PDFToTIFFConversion.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\PDFSigningMechanism.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\PdfExtractorFeatures.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\FormEditorFeatures.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\ConcatenateMultiplePDFUsingMemoryStream.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\PdfAnnotationEditorFeatures.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\RotatingStamp.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\AnnotationsExport.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\AnnotationsImport.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\ConvertPdfToXML.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\CreateNestedBookmarks.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\ChangingFieldAppearance.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\PageRotation.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\CustomPropertiesUsingMeta.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\ConcatenatePDFForms.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\ConcatenatingAllPdfFiles.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\ChangePageSizes.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\PdfContainsTextOrImages.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\EditPdfPages.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\ExtensibleMetadataPlatform.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\PdfFileEditorFeatures.cs" />
+    <Compile Include="AsposePdfFacades\TechnicalArticles\DifferenceBetweenFile.cs" />
+    <Compile Include="AsposePdfFacades\Text\AddText.cs" />
+    <Compile Include="AsposePdfFacades\Text\ExtractTextPage.cs" />
+    <Compile Include="AsposePdfFacades\Text\ExtractText.cs" />
+    <Compile Include="AsposePdfFacades\Text\ExtractTextPageRange.cs" />
+    <Compile Include="AsposePdfFacades\Text\ReplaceText.cs" />
+    <Compile Include="AsposePdfFacades\Text\ReplaceTextPage.cs" />
+    <Compile Include="AsposePdfFacades\Working-Document\GetFileInfo.cs" />
+    <Compile Include="AsposePdfFacades\Working-Document\PageBreak.cs" />
+    <Compile Include="AsposePdfFacades\Working-Document\SetFileInfo.cs" />
+    <Compile Include="AsposePdfFacades\Working-Document\SetViewerPreference.cs" />
+    <Compile Include="AsposePdfFacades\Working-Document\GetXMPMetadata.cs" />
+    <Compile Include="AsposePdfFacades\Working-Document\SetXMPMetadata.cs" />
+    <Compile Include="AsposePDF\Annotations\ExtractHighlightedText.cs" />
+    <Compile Include="AsposePDF\Annotations\GetResourceOfAnnotation.cs" />
+    <Compile Include="AsposePDF\Annotations\lnkAnnotationLineWidth.cs" />
+    <Compile Include="AsposePDF\Annotations\AddlnkAnnotation.cs" />
+    <Compile Include="AsposePDF\Annotations\InvisibleAnnotation.cs" />
+    <Compile Include="AsposePDF\Annotations\AddAnnotation.cs" />
+    <Compile Include="AsposePDF\Annotations\AddSwfFileAsAnnotation.cs" />
+    <Compile Include="AsposePDF\Annotations\DeleteAllAnnotationsFromPage.cs" />
+    <Compile Include="AsposePDF\Annotations\DeleteParticularAnnotation.cs" />
+    <Compile Include="AsposePDF\Annotations\GetAllAnnotationsFromPage.cs" />
+    <Compile Include="AsposePDF\Annotations\GetParticularAnnotation.cs" />
+    <Compile Include="AsposePDF\Annotations\SetCalloutProperty.cs" />
+    <Compile Include="AsposePDF\Annotations\StrikeOutWords.cs" />
+    <Compile Include="AsposePDF\Annotations\RedactPage.cs" />
+    <Compile Include="AsposePDF\Annotations\UpdateFreeTextAnnotation.cs" />
+    <Compile Include="AsposePDF\Annotations\SetFreeTextAnnotationFormatting.cs" />
+    <Compile Include="AsposePDF\Attachments\AddAttachment.cs" />
+    <Compile Include="AsposePDF\Attachments\DeleteAllAttachments.cs" />
+    <Compile Include="AsposePDF\Attachments\DisableFilesCompression.cs" />
+    <Compile Include="AsposePDF\Attachments\GetAlltheAttachments.cs" />
+    <Compile Include="AsposePDF\Attachments\GetIndividualAttachment.cs" />
+    <Compile Include="AsposePDF\Attachments\GetAttachmentInfo.cs" />
+    <Compile Include="AsposePDF\Bookmarks\AddBookmark.cs" />
+    <Compile Include="AsposePDF\Bookmarks\AddChildBookmark.cs" />
+    <Compile Include="AsposePDF\Bookmarks\DeleteAllBookmarks.cs" />
+    <Compile Include="AsposePDF\Bookmarks\DeleteParticularBookmark.cs" />
+    <Compile Include="AsposePDF\Bookmarks\GetBookmarkPageNumber.cs" />
+    <Compile Include="AsposePDF\Bookmarks\GetBookmarks.cs" />
+    <Compile Include="AsposePDF\Bookmarks\GetChildBookmarks.cs" />
+    <Compile Include="AsposePDF\Bookmarks\ExpandBookmarks.cs" />
+    <Compile Include="AsposePDF\Bookmarks\InheritZoom.cs" />
+    <Compile Include="AsposePDF\Bookmarks\UpdateBookmarks.cs" />
+    <Compile Include="AsposePDF\Bookmarks\UpdateChildBookmarks.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\CGMToPDF.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\EPUBToPDF.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PageOrientationAccordingImageDimensions.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\MarkdownToPDF.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToPNGFontHinting.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PostscriptToPDF.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\RemoveHyperlinksAfterConvertingFromHtml.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\ReplaceMissingFonts.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\ProvideCredentialsDuringHTMLToPDF.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\HTMLToPDF.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFAToPDF.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToHTMLFormat\PrefixToImportDirectives.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToHTMLFormat\PrefixForFonts.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToHTMLFormat\PrefixForURLs.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToHTMLFormat\PrefixCSSClassNames.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToHTMLFormat\OutPutToStream.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToHTMLFormat\ProgressDetails.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToHTMLFormat\AvoidSavingImages.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToHTMLFormat\SaveHTMLImageCSS.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToHTMLFormat\SetOutputFileDimensions.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToHTMLFormat\SingleHTML.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToHTMLFormat\SpecifyPrefixForImages.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToHTMLFormat\SaveFonts.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToHTMLFormat\SplitCSSToPages.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToHTMLFormat\SaveImages.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToPPT.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\TIFFtoPDFPerformanceImprovement.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\WebPageToPDF.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\XMLToPDF.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\TextToPDF.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\TeXToPDF.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PCLToPDF.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToDOC.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToSVG.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToXLS.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\MHTToPDF.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToXPS.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToEPUB.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToHTML.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\AddAttachmentToPDFA.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToPDFA3b.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToPDFA.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToTeX.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToXML.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\SVGToPDF.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\XMLToPDFSetImagePath.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\XPSToPDF.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\GetSVGDimensions.cs" />
+    <Compile Include="AsposePDF\Forms\FlattenForms.cs" />
+    <Compile Include="AsposePDF\Forms\GroupedCheckBoxes.cs" />
+    <Compile Include="AsposePDF\Forms\HorizontallyAndVerticallyRadioButtons.cs" />
+    <Compile Include="AsposePDF\Forms\CreateDoc.cs" />
+    <Compile Include="AsposePDF\Forms\ComboBox.cs" />
+    <Compile Include="AsposePDF\Forms\ArabicTextFilling.cs" />
+    <Compile Include="AsposePDF\Forms\PreserveRights.cs" />
+    <Compile Include="AsposePDF\Forms\GetCoordinates.cs" />
+    <Compile Include="AsposePDF\Forms\RetrieveFormFieldInTabOrder.cs" />
+    <Compile Include="AsposePDF\Forms\SetFieldLimit.cs" />
+    <Compile Include="AsposePDF\Forms\SelectRadioButton.cs" />
+    <Compile Include="AsposePDF\Forms\RadioButtonWithOptions.cs" />
+    <Compile Include="AsposePDF\Forms\RadioButton.cs" />
+    <Compile Include="AsposePDF\Forms\SetRadioButtonCaption.cs" />
+    <Compile Include="AsposePDF\Forms\TextBox.cs" />
+    <Compile Include="AsposePDF\Forms\AddTooltipToField.cs" />
+    <Compile Include="AsposePDF\Forms\DeleteFormField.cs" />
+    <Compile Include="AsposePDF\Forms\DetermineRequiredField.cs" />
+    <Compile Include="AsposePDF\Forms\DynamicXFAToAcroForm.cs" />
+    <Compile Include="AsposePDF\Forms\FillFormField.cs" />
+    <Compile Include="AsposePDF\Forms\FormFieldFont14.cs" />
+    <Compile Include="AsposePDF\Forms\GetFieldsFromRegion.cs" />
+    <Compile Include="AsposePDF\Forms\GetValueFromField.cs" />
+    <Compile Include="AsposePDF\Forms\GetValuesFromAllFields.cs" />
+    <Compile Include="AsposePDF\Forms\ModifyFormField.cs" />
+    <Compile Include="AsposePDF\Forms\MoveFormField.cs" />
+    <Compile Include="AsposePDF\Forms\SetJavaScript.cs" />
+    <Compile Include="AsposePDF\Forms\FillXFAFields.cs" />
+    <Compile Include="AsposePDF\Forms\GetXFAProperties.cs" />
+    <Compile Include="AsposePDF\Graphs\AddDrawingWithGradientFill.cs" />
+    <Compile Include="AsposePDF\Graphs\ControlRectangleZOrder.cs" />
+    <Compile Include="AsposePDF\Graphs\CreateRectangleWithAlphaColor.cs" />
+    <Compile Include="AsposePDF\Graphs\AddDrawing.cs" />
+    <Compile Include="AsposePDF\Graphs\DrawingLine.cs" />
+    <Compile Include="AsposePDF\Graphs\DashLength.cs" />
+    <Compile Include="AsposePDF\Graphs\AddLineObject.cs" />
+    <Compile Include="AsposePDF\Graphs\CreateFilledRectangle.cs" />
+    <Compile Include="AsposePDF\Headings\ApplyNumberStyle.cs" />
+    <Compile Include="AsposePDF\Images\AddImage.cs" />
+    <Compile Include="AsposePDF\Images\CreateThumbnailImages.cs" />
+    <Compile Include="AsposePDF\Images\FastShrinkImages.cs" />
+    <Compile Include="AsposePDF\Images\FlateDecodeCompression.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\SetDefaultFontName.cs" />
+    <Compile Include="AsposePDF\Images\StoreImageInXImageCollection.cs" />
+    <Compile Include="AsposePDF\Images\ResizeImages.cs" />
+    <Compile Include="AsposePDF\Images\SetImageSize.cs" />
+    <Compile Include="AsposePDF\Images\BradleyAlgorithm.cs" />
+    <Compile Include="AsposePDF\Images\ConvertImageStreamtoPDF.cs" />
+    <Compile Include="AsposePDF\Images\ConvertToBMP.cs" />
+    <Compile Include="AsposePDF\Images\IdentifyImages.cs" />
+    <Compile Include="AsposePDF\Images\ConvertPageRegionToDOM.cs" />
+    <Compile Include="AsposePDF\Images\LargeCGMImageToPDF.cs" />
+    <Compile Include="AsposePDF\Images\ConvertAllPagesToEMF.cs" />
+    <Compile Include="AsposePDF\Images\ConvertAllPagesToPNG.cs" />
+    <Compile Include="AsposePDF\Images\CGMImageToPDF.cs" />
+    <Compile Include="AsposePDF\Images\PagesToImages.cs" />
+    <Compile Include="AsposePDF\Images\PageToEMF.cs" />
+    <Compile Include="AsposePDF\Images\ImageToPDF.cs" />
+    <Compile Include="AsposePDF\Images\PageToPNG.cs" />
+    <Compile Include="AsposePDF\Images\AllPagesToTIFF.cs" />
+    <Compile Include="AsposePDF\Images\PageToTIFF.cs" />
+    <Compile Include="AsposePDF\Images\DeleteImages.cs" />
+    <Compile Include="AsposePDF\Images\ExtractImages.cs" />
+    <Compile Include="AsposePDF\Images\ImageInformation.cs" />
+    <Compile Include="AsposePDF\Images\ImagePlacements.cs" />
+    <Compile Include="AsposePDF\Images\ReplaceImage.cs" />
+    <Compile Include="AsposePDF\Images\SearchAndGetImages.cs" />
+    <Compile Include="AsposePDF\Images\ShrinkImages.cs" />
+    <Compile Include="AsposePDF\Links-Actions\CreateLocalHyperlink.cs" />
+    <Compile Include="AsposePDF\Links-Actions\AddHyperlink.cs" />
+    <Compile Include="AsposePDF\Links-Actions\CreateApplicationLink.cs" />
+    <Compile Include="AsposePDF\Links-Actions\CreateDocumentLink.cs" />
+    <Compile Include="AsposePDF\Links-Actions\ExtractLinks.cs" />
+    <Compile Include="AsposePDF\Links-Actions\GetHyperlinkText.cs" />
+    <Compile Include="AsposePDF\Links-Actions\RemoveOpenAction.cs" />
+    <Compile Include="AsposePDF\Links-Actions\GetHyperlinkDestinations.cs" />
+    <Compile Include="AsposePDF\Links-Actions\SetTargetLink.cs" />
+    <Compile Include="AsposePDF\Links-Actions\SpecifyPageWhenViewing.cs" />
+    <Compile Include="AsposePDF\Links-Actions\SetDestinationLink.cs" />
+    <Compile Include="AsposePDF\Links-Actions\UpdateLinks.cs" />
+    <Compile Include="AsposePDF\Links-Actions\UpdateLinkTextColor.cs" />
+    <Compile Include="AsposePDF\Miscellaneous\GetBuildInformation.cs" />
+    <Compile Include="AsposePDF\Miscellaneous\ReadMeasure.cs" />
+    <Compile Include="AsposePDF\Miscellaneous\UseMeasureWithPolylineAnnotation.cs" />
+    <Compile Include="AsposePDF\Miscellaneous\UseMeasureWithLineAnnotation.cs" />
+    <Compile Include="AsposePDF\Operators\DrawXFormOnPage.cs" />
+    <Compile Include="AsposePDF\Operators\PDFOperators.cs" />
+    <Compile Include="AsposePDF\Operators\RemoveGraphicsObjects.cs" />
+    <Compile Include="AsposePDF\Pages\ZoomToPageContents.cs" />
+    <Compile Include="AsposePDF\Pages\FitPageContents.cs" />
+    <Compile Include="AsposePDF\Pages\ChangeOrientation.cs" />
+    <Compile Include="AsposePDF\Pages\DeterminePageColor.cs" />
+    <Compile Include="AsposePDF\Pages\GetPageCount.cs" />
+    <Compile Include="AsposePDF\Pages\ImageAsBackground.cs" />
+    <Compile Include="AsposePDF\Pages\ConcatenatePdfFiles.cs" />
+    <Compile Include="AsposePDF\Pages\DeleteParticularPage.cs" />
+    <Compile Include="AsposePDF\Pages\GetNumberofPages.cs" />
+    <Compile Include="AsposePDF\Pages\GetProperties.cs" />
+    <Compile Include="AsposePDF\Pages\GetParticularPage.cs" />
+    <Compile Include="AsposePDF\Pages\InsertEmptyPageAtEnd.cs" />
+    <Compile Include="AsposePDF\Pages\InsertEmptyPage.cs" />
+    <Compile Include="AsposePDF\Pages\SplitToPages.cs" />
+    <Compile Include="AsposePDF\Pages\GetDimensions.cs" />
+    <Compile Include="AsposePDF\Pages\UpdateDimensions.cs" />
+    <Compile Include="AsposePDF\QuickStart\ApplyMeteredLicense.cs" />
+    <Compile Include="AsposePDF\QuickStart\HelloWorld.cs" />
+    <Compile Include="AsposePDF\QuickStart\LoadLicenseFromFile.cs" />
+    <Compile Include="AsposePDF\QuickStart\LoadLicenseFromStreamObject.cs" />
+    <Compile Include="AsposePDF\QuickStart\SecureLicense.cs" />
+    <Compile Include="AsposePDF\QuickStart\SetLicenseUsingEmbeddedResource.cs" />
+    <Compile Include="AsposePDF\Security-Signatures\ChangePassword.cs" />
+    <Compile Include="AsposePDF\Security-Signatures\Decrypt.cs" />
+    <Compile Include="AsposePDF\Security-Signatures\DetermineCorrectPassword.cs" />
+    <Compile Include="AsposePDF\Security-Signatures\DigitallySignWithTimeStamp.cs" />
+    <Compile Include="AsposePDF\Security-Signatures\SetPrivileges.cs" />
+    <Compile Include="AsposePDF\Security-Signatures\IsPasswordProtected.cs" />
+    <Compile Include="AsposePDF\Security-Signatures\DigitallySign.cs" />
+    <Compile Include="AsposePDF\Security-Signatures\Encrypt.cs" />
+    <Compile Include="AsposePDF\Security-Signatures\ExtractingImage.cs" />
+    <Compile Include="AsposePDF\Security-Signatures\ExtractSignatureInfo.cs" />
+    <Compile Include="AsposePDF\Security-Signatures\SignWithSmartCardUsingPdfFileSignature.cs" />
+    <Compile Include="AsposePDF\Security-Signatures\SignWithSmartCardUsingSignatureField.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\AddingDifferentHeaders.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\AddDateTimeStamp.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\CountingArtifacts.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\ExtractTextFromStampAnnotation.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\GetWatermark.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\ImageandPageNumberinHeaderFootersection.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\PageNumberinHeaderFooterUsingFloatingBox.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\ImageandPageNumberinHeaderFootersectionInline.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\ImageInFooter.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\ImageinHeader.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\AddImageStamp.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\AddPDFPageStamp.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\TableInHeaderFooterSection.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\TextinFooter.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\TextinHeader.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\AddTextStamp.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\PageNumberStamps.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\DefineAlignment.cs" />
+    <Compile Include="AsposePDF\Tables\AddImageinATableCell.cs" />
+    <Compile Include="AsposePDF\Tables\AddRepeatingColumn.cs" />
+    <Compile Include="AsposePDF\Tables\AddSVGObject.cs" />
+    <Compile Include="AsposePDF\Tables\ExportExcelWorksheetDataToTable.cs" />
+    <Compile Include="AsposePDF\Tables\GetTableWidth.cs" />
+    <Compile Include="AsposePDF\Tables\HTMLTagsInsideTable.cs" />
+    <Compile Include="AsposePDF\Tables\ManipulateTable.cs" />
+    <Compile Include="AsposePDF\Tables\DetermineTableBreak.cs" />
+    <Compile Include="AsposePDF\Tables\RemoveMultipleTables.cs" />
+    <Compile Include="AsposePDF\Tables\RemoveTable.cs" />
+    <Compile Include="AsposePDF\Tables\ReplaceTable.cs" />
+    <Compile Include="AsposePDF\Tables\RoundedCornerTable.cs" />
+    <Compile Include="AsposePDF\Tables\AutoFitToWindow.cs" />
+    <Compile Include="AsposePDF\Tables\AddTable.cs" />
+    <Compile Include="AsposePDF\Tables\IntegrateWithDatabase.cs" />
+    <Compile Include="AsposePDF\Tables\RenderTable.cs" />
+    <Compile Include="AsposePDF\Tables\ExtractBorder.cs" />
+    <Compile Include="AsposePDF\Tables\InsertPageBreak.cs" />
+    <Compile Include="AsposePDF\Tables\SetBorder.cs" />
+    <Compile Include="AsposePDF\Tables\MarginsOrPadding.cs" />
+    <Compile Include="AsposePDF\Tables\TextAlignmentForTableRowContent.cs" />
+    <Compile Include="AsposePDF\TechnicalArticles\RemoveFilesFromPortfolio.cs" />
+    <Compile Include="AsposePDF\TechnicalArticles\ExtractFilesFromPortfolio.cs" />
+    <Compile Include="AsposePDF\TechnicalArticles\CreatePDFPortfolio.cs" />
+    <Compile Include="AsposePDF\Text\AccessTextFragementAndTextSegmentElementsFromXMLFile.cs" />
+    <Compile Include="AsposePDF\Text\AddAndSearchHiddenText.cs" />
+    <Compile Include="AsposePDF\Text\AddHTMLOrderedListIntoDocuments.cs" />
+    <Compile Include="AsposePDF\Text\AddHTMLUsingDOMAndOverwrite.cs" />
+    <Compile Include="AsposePDF\Text\AddSubsequentLinesIndent.cs" />
+    <Compile Include="AsposePDF\Text\AddTextBorder.cs" />
+    <Compile Include="AsposePDF\Text\AddTextWithShadingColors.cs" />
+    <Compile Include="AsposePDF\Text\AddTooltipToText.cs" />
+    <Compile Include="AsposePDF\Text\DetermineLineBreak.cs" />
+    <Compile Include="AsposePDF\Text\EmbedStandardType1Fonts.cs" />
+    <Compile Include="AsposePDF\Text\ExtractParagraphs.cs" />
+    <Compile Include="AsposePDF\Text\ExtractParagraphsByDrawingBorder.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\FillStrokeText.cs" />
+    <Compile Include="AsposePDF\Text\GetWidthOfTextDynamically.cs" />
+    <Compile Include="AsposePDF\Text\HiddenTextBlock.cs" />
+    <Compile Include="AsposePDF\Text\MulticolumnParagraphs.cs" />
+    <Compile Include="AsposePDF\Text\PlacingTextAroundImage.cs" />
+    <Compile Include="AsposePDF\Text\RemoveAllText.cs" />
+    <Compile Include="AsposePDF\Text\RemoveAllTextFromPDF.cs" />
+    <Compile Include="AsposePDF\Text\RotateTextUsingTextParagraphAndBuilder.cs" />
+    <Compile Include="AsposePDF\Text\RotateTextUsingTextFragmentAndParagraph.cs" />
+    <Compile Include="AsposePDF\Text\RotateTextUsingParagraph.cs" />
+    <Compile Include="AsposePDF\Text\RotateTextUsingTextFragment.cs" />
+    <Compile Include="AsposePDF\Text\CreateMultiColumnPdf.cs" />
+    <Compile Include="AsposePDF\Text\AddHTMLUsingDOM.cs" />
+    <Compile Include="AsposePDF\Text\AddTransparentText.cs" />
+    <Compile Include="AsposePDF\Text\ExtractTextFromPageRegion.cs" />
+    <Compile Include="AsposePDF\Text\ExtractTextAll.cs" />
+    <Compile Include="AsposePDF\Text\ReplaceableSymbolsInHeaderFooter.cs" />
+    <Compile Include="AsposePDF\Text\RenderingReplaceableSymbols.cs" />
+    <Compile Include="AsposePDF\Text\ExtractColumnsText.cs" />
+    <Compile Include="AsposePDF\Text\CustomTabStops.cs" />
+    <Compile Include="AsposePDF\Text\SearchTextAndDrawRectangle.cs" />
+    <Compile Include="AsposePDF\Text\SearchTextWithDotNetRegex.cs" />
+    <Compile Include="AsposePDF\Text\SetHTMLStringFormatting.cs" />
+    <Compile Include="AsposePDF\Text\SpecifyCharacterSpacing.cs" />
+    <Compile Include="AsposePDF\Text\FootAndEndNotes.cs" />
+    <Compile Include="AsposePDF\Text\HighlightCharacterInPDF.cs" />
+    <Compile Include="AsposePDF\Text\RearrangeContentsUsingTextReplacement.cs" />
+    <Compile Include="AsposePDF\Text\ReplaceFonts.cs" />
+    <Compile Include="AsposePDF\Text\RemoveUnusedFonts.cs" />
+    <Compile Include="AsposePDF\Text\ExtractTextUsingTextDevice.cs" />
+    <Compile Include="AsposePDF\Text\ExtractTextPage.cs" />
+    <Compile Include="AsposePDF\Text\AddText.cs" />
+    <Compile Include="AsposePDF\Text\ReplaceTextAll.cs" />
+    <Compile Include="AsposePDF\Text\SpecifyLineSpacing.cs" />
+    <Compile Include="AsposePDF\Text\TextAlignmentForFloatingBoxContents.cs" />
+    <Compile Include="AsposePDF\Text\TextAndImageAsParagraph.cs" />
+    <Compile Include="AsposePDF\Text\SearchTextAndAddHyperlink.cs" />
+    <Compile Include="AsposePDF\Text\ReplaceTextPage.cs" />
+    <Compile Include="AsposePDF\Text\SearchAndGetTextAll.cs" />
+    <Compile Include="AsposePDF\Text\ReplaceFirstOccurrence .cs" />
+    <Compile Include="AsposePDF\Text\SearchRegularExpression.cs" />
+    <Compile Include="AsposePDF\Text\SearchAndGetTextPage.cs" />
+    <Compile Include="AsposePDF\Text\ReplaceTextonRegularExpression.cs" />
+    <Compile Include="AsposePDF\Text\TextSegments.cs" />
+    <Compile Include="AsposePDF\Text\SearchTextSegmentsPage.cs" />
+    <Compile Include="AsposePDF\Text\UseLatexScript.cs" />
+    <Compile Include="AsposePDF\Text\UseLatexScript2.cs" />
+    <Compile Include="AsposePDF\Text\UseLatexScript3.cs" />
+    <Compile Include="AsposePDF\Working-Document\CustomizePageNumbesWhileAddingTOC.cs" />
+    <Compile Include="AsposePDF\Working-Document\GetWarningsForFontSubstitution.cs" />
+    <Compile Include="AsposePDF\Working-Document\SetPropertiesForPrintDialog.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\AccessChildrenElements.cs" />
+    <Compile Include="AsposePDF\Working-Document\AllowResusePageContent.cs" />
+    <Compile Include="AsposePDF\Working-Document\ConvertFromRGBToGrayscale.cs" />
+    <Compile Include="AsposePDF\Working-Document\EmbedFontsUsingSubsetStrategy.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\CreateTableElement.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\SetupLanguageAndTitle.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\StyleTableCell.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\StyleTableElement.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\StyleTableRow.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\ValidatePDF.cs" />
+    <Compile Include="AsposePDF\Working-With-XML-XSLT\BreakfastMenuUsingXmlAndXslt.cs" />
+    <Compile Include="AsposePDF\Working-With-XML-XSLT\HelloWorldPDFUsingXmlAndXslt.cs" />
+    <Compile Include="AsposePDF\Working-Document\CreateMultilayerPDFFirstApproach.cs" />
+    <Compile Include="AsposePDF\Working-Document\CreateMultilayerPDFSecondApproach.cs" />
+    <Compile Include="AsposePDF\Working-Document\CreatePDFA1WithAsposePdf.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\AddStructureElementIntoElement.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\CreateNoteStructureElement.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\CreatePDFwithTaggedImage.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\CreatePDFwithTaggedText.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\CreateStructureElements.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\CreateStructureElementsTree.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\CustomTagName.cs" />
+    <Compile Include="AsposePDF\Working-Document\FlattenAnnotation.cs" />
+    <Compile Include="AsposePDF\Working-Document\GetAllFonts.cs" />
+    <Compile Include="AsposePDF\Working-Document\HidePageNumbersInTOC.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\IllustrationStructureElements.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\InlineStructureElements.cs" />
+    <Compile Include="AsposePDF\Working-Document\LinkDuplicateStreams.cs" />
+    <Compile Include="AsposePDF\Working-Document\RemoveUnusedObjects.cs" />
+    <Compile Include="AsposePDF\Working-Document\RemoveUnusedStreams.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\LinkStructureElements.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\RootStructure.cs" />
+    <Compile Include="AsposePDF\Working-Document\SetDefaultFont.cs" />
+    <Compile Include="AsposePDF\Working-Document\SetExpiryDate.cs" />
+    <Compile Include="AsposePDF\Working-Document\EmbedFontWhileDocCreation.cs" />
+    <Compile Include="AsposePDF\Working-Document\EmbedFont .cs" />
+    <Compile Include="AsposePDF\Working-Document\AddRemoveJavascriptToDoc.cs" />
+    <Compile Include="AsposePDF\Working-Document\AddLayers.cs" />
+    <Compile Include="AsposePDF\Working-Document\AddJavaScriptToPage.cs" />
+    <Compile Include="AsposePDF\Working-Document\ShrinkDocuments.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\StructureElementsProperties.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\StyleTextStructure.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\TaggedPDFContent.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\TagImageInExistingPDF.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\TextBlockStructureElements.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\TextStructureElements.cs" />
+    <Compile Include="AsposePDF\Working-Document\TrimWhiteSpace.cs" />
+    <Compile Include="AsposePDF\Working-Document\AddTOC.cs" />
+    <Compile Include="AsposePDF\Working-Document\GetDocumentWindow.cs" />
+    <Compile Include="AsposePDF\Working-Document\DetermineProgress.cs" />
+    <Compile Include="AsposePDF\Working-Document\GetFileInfo.cs" />
+    <Compile Include="AsposePDF\Working-Document\GetZoomFactor.cs" />
+    <Compile Include="AsposePDF\Working-Document\OptimizeFileSize.cs" />
+    <Compile Include="AsposePDF\Working-Document\SetZoomFactor.cs" />
+    <Compile Include="AsposePDF\Working-Document\GetXMPMetadata.cs" />
+    <Compile Include="AsposePDF\Working-Document\OptimizeDocument.cs" />
+    <Compile Include="AsposePDF\Working-Document\SetDocumentWindow.cs" />
+    <Compile Include="AsposePDF\Working-Document\SetFileInfo.cs" />
+    <Compile Include="AsposePDF\Working-Document\SetXMPMetadata.cs" />
+    <Compile Include="AsposePDF\Working-Document\UnembedFonts.cs" />
+    <Compile Include="AsposePDF\Working-Document\ValidatePDFABStandard.cs" />
+    <Compile Include="AsposePDF\Working-Document\ValidatePDFAStandard.cs" />
+    <Compile Include="AsposePDF\Working-Document\ValidatePDFUAstandard.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RunExamples.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

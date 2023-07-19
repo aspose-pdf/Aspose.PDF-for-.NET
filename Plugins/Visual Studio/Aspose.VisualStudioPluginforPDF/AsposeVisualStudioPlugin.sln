@@ -1,7 +1,7 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2010
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsposeVisualStudioPlugin", "AsposeVisualStudioPlugin\AsposeVisualStudioPlugin.csproj", "{54C786E5-FD14-4036-92AE-E9F25B71534B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsposeVisualStudioPlugin", "AsposeVisualStudioPlugin\AsposeVisualStudioPlugin.csproj", "{54C786E5-FD14-4036-92AE-E9F25B71534B}"
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Installer", "Installer\Installer.wixproj", "{CE553C9B-6E0B-4BEA-B242-17F294FDDE7F}"
 EndProject
