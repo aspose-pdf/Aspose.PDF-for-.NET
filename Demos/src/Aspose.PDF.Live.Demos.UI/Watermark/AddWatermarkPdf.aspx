@@ -62,7 +62,7 @@
                                                     <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanel1">
                                                         <ProgressTemplate>
                                                             <div style="padding-top: 20px;">
-                                                                <img height="59px" width="59px" alt="Please wait..." src="../../img/loader.gif" />
+                                                                <img height="59px" width="59px" alt="Please wait..." src="~/img/loader.gif" />
                                                             </div>
                                                         </ProgressTemplate>
                                                     </asp:UpdateProgress>
@@ -232,7 +232,7 @@
                                             <asp:UpdateProgress ID="UpdateProgress2" runat="server" AssociatedUpdatePanelID="UpdatePanel2">
                                                 <ProgressTemplate>
                                                     <div style="padding-top: 20px;">
-                                                        <img height="59px" width="59px" alt="Please wait..." src="../../img/loader.gif" />
+                                                        <img height="59px" width="59px" alt="Please wait..." src="~/img/loader.gif" />
                                                     </div>
                                                 </ProgressTemplate>
                                             </asp:UpdateProgress>
@@ -311,7 +311,7 @@
                                                 <asp:UpdateProgress ID="UpdateProgress3" runat="server" AssociatedUpdatePanelID="UpdatePanel3">
                                                     <ProgressTemplate>
                                                         <div style="padding-top: 20px;">
-                                                            <img height="59px" width="59px" alt="Please wait..." src="../../img/loader.gif" />
+                                                            <img height="59px" width="59px" alt="Please wait..." src="~/img/loader.gif" />
                                                         </div>
                                                     </ProgressTemplate>
                                                 </asp:UpdateProgress>
@@ -384,7 +384,7 @@
         <div class="container tc pt-5">
             <div class="col-md-4">
                 <div class="imgcircle fasteasy">
-                    <img src="../../img/fast-easy.png" />
+                    <img src="~/img/fast-easy.png" />
                 </div>
                 <h4 id="h2FastEasyHeading" runat="server"></h4>
                 <p id="pFastEasyDesc" runat="server"></p>
@@ -392,7 +392,7 @@
 
             <div class="col-md-4">
                 <div class="imgcircle anywhere">
-                    <img src="../../img/anywhere.png" />
+                    <img src="~/img/anywhere.png" />
                 </div>
                 <h4 id="h2WatermarkFeature2" runat="server"></h4>
                 <p><%= Resources["Feature2Description"] %>.</p>
@@ -400,7 +400,7 @@
 
             <div class="col-md-4">
                 <div class="imgcircle quality">
-                    <img src="../../img/quality.png" />
+                    <img src="~/img/quality.png" />
                 </div>
                 <h4><%= Resources["WatermarkFeature3"] %></h4>
                 <p><%= Resources["PoweredBy"] %> <a runat="server" target="_blank" id="aPoweredBy"></a><%= Resources["Feature3Description"] %>.</p>

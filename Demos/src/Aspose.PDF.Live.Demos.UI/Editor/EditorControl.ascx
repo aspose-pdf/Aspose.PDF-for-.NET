@@ -313,5 +313,5 @@
         <span class="glyphicon glyphicon-remove-sign"></span>
     </button>
 </div>
-<script src="../Scripts/PdfEditor/Editor.js">
+<script src="~/Scripts/PdfEditor/Editor.js">
 </script>
