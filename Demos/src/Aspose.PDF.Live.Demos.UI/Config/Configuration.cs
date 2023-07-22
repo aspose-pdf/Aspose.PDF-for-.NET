@@ -2,6 +2,8 @@ using System;
 using System.Data;
 using System.Configuration;
 using System.Web;
+using System.Web.Http.Routing;
+using System.Net.Http;
 
 /// <summary>
 /// Summary description for Configuration
@@ -11,9 +13,8 @@ namespace Aspose.Pdf.Live.Demos.UI.Config
 	public static class Configuration
 	{		
 		private static string _appName = ConfigurationManager.AppSettings["AppName"].ToString();
-		private static string _asposeAppLiveDemosPath = ConfigurationManager.AppSettings["AsposeAppLiveDemosPath"].ToString();
-		private static string _resourceFileSessionName = ConfigurationManager.AppSettings["ResourceFileSessionName"];	      
-		private static string _fileViewLink = ConfigurationManager.AppSettings["FileViewLink"];		
+		private static string _resourceFileSessionName = ConfigurationManager.AppSettings["ResourceFileSessionName"];
+		private static string _fileViewLink = ConfigurationManager.AppSettings["FileViewLink"];
 		private static string _productsAsposeAppAssetURL = ConfigurationManager.AppSettings["ProductsAsposeAppAssetURL"];
 		private static string _fileDownloadLink = ConfigurationManager.AppSettings["FileDownloadLink"];
 		
@@ -65,7 +66,10 @@ namespace Aspose.Pdf.Live.Demos.UI.Config
         }
         public static string AsposeAppLiveDemosPath
         {
-            get { return _asposeAppLiveDemosPath; }
+            get {
+				HttpRequestMessage httpRequestMessage = HttpContext.Current.Items["MS_HttpRequestMessage"] as HttpRequestMessage;
+                return new UrlHelper(httpRequestMessage).Content("../"); 
+			}
         }
 		public static string FileDownloadLink
 		{

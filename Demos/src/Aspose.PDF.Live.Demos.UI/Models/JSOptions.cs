@@ -15,7 +15,6 @@ namespace Aspose.Pdf.Live.Demos.UI.Models
     public string AppURL => Parent.AppURL;
     public string AppName => Parent.AppName;
 
-    //public string APIBasePath => $"{Configuration.AsposeToolsAPIBasePath}";
     public string UIBasePath => $"{Configuration.AsposeAppLiveDemosPath}";
 
 		public string ViewerPathWF => $"{UIBasePath}/{Parent.Product}/viewer/";
