@@ -14,7 +14,6 @@ namespace Aspose.Pdf.Live.Demos.UI.Config
 	{		
 		private static string _appName = ConfigurationManager.AppSettings["AppName"].ToString();
 		private static string _resourceFileSessionName = ConfigurationManager.AppSettings["ResourceFileSessionName"];
-		private static string _fileDownloadLink = ConfigurationManager.AppSettings["FileDownloadLink"];
 		
 
 		public static string ResourceFileSessionName
@@ -67,7 +66,11 @@ namespace Aspose.Pdf.Live.Demos.UI.Config
         }
 		public static string FileDownloadLink
 		{
-			get { return _fileDownloadLink; }
+			get 
+			{
+                HttpRequestMessage httpRequestMessage = HttpContext.Current.Items["MS_HttpRequestMessage"] as HttpRequestMessage;
+                return new UrlHelper(httpRequestMessage).Content("../common/download");
+            }
 		}
 		
 		public static string FileViewLink
