@@ -294,9 +294,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Models
 					{
 						saveFormat.SaveOptions = new Aspose.Pdf.ExcelSaveOptions()
 						{
-							Format = Aspose.Pdf.ExcelSaveOptions.ExcelFormat.XLSX,
-							ConversionEngine = Aspose.Pdf.ExcelSaveOptions.ConversionEngines.NewEngine
-
+							Format = Aspose.Pdf.ExcelSaveOptions.ExcelFormat.XLSX
 						};
 						saveFormat.SaveType = SaveType.xlsx;
 						break;
