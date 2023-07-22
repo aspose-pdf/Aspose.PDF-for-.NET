@@ -65,12 +65,5 @@
     </form>
 
     <script src="https://products.aspose.app/js/bootstrap.min.js"></script>
-    <script src="https://menu.containerize.com/Scripts/Containerize.Menu.min.js"></script>
-    <script>
-     
-        LoadMenu("AsposeApp");
-     
-    </script>
-
 </body>
 </html>
