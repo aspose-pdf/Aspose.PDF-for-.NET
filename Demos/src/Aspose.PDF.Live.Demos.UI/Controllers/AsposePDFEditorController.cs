@@ -607,7 +607,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Controllers
 			var fullPath = System.IO.Path.Combine(tempFolder, "document.pdf");
 			Document doc = new Document();
 #if DEBUG
-			var debugDocument = new Document(@"C:\Tmp\FormTest1.pdf");
+			var debugDocument = new Document(HttpContext.Current.Server.MapPath("../../Editor/FormTest1.pdf"));
 			doc.Pages.Add(debugDocument.Pages);
 #else
             doc.Pages.Add();

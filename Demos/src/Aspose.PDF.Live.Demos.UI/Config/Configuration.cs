@@ -26,7 +26,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Config
 		public static string WorkingDirectory
 		{
 			get {
-				string sourceFilespath = AppContext.BaseDirectory + "/Assets/SourceFiles/";
+				string sourceFilespath = AppContext.BaseDirectory + "Assets/SourceFiles/";
 				if ( ! System.IO.Directory.Exists(sourceFilespath))
 				{
 					System.IO.Directory.CreateDirectory(sourceFilespath);
