@@ -45,9 +45,14 @@ namespace Aspose.Pdf.Live.Demos.UI
 		{
 			routes.RouteExistingFiles = true;
 			routes.Ignore("{resource}.axd/{*pathInfo}");
-					
 
-			routes.MapRoute(
+            routes.MapRoute(
+                name: "Home",
+                url: "",
+                defaults: new { controller = "Home", action = "Default" }
+            );
+
+            routes.MapRoute(
 				name: "Default",
 				url: "Default",
 				defaults: new { controller = "Home", action = "Default" }
