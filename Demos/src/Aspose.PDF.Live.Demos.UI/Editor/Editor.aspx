@@ -122,7 +122,7 @@
             <div class="container tl dflex">
 
                 <div class="col-md-4 howtosectiongfx">
-                    <img src="https://products.aspose.app/img/howto.png"></div>
+                    <img src="../img/howto.png"></div>
                 <div class="howtosection col-md-8">
                     <div><i class="fa fa-question-circle "></i>
                         <h2 style="color: black"><b><%= string.Format(Resources["HowtoEditorTitle"], ViewState["Extension1"], AsposeProductTitle.InnerText) %></b></h2>

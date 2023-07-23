@@ -13,11 +13,6 @@ namespace Aspose.Pdf.Live.Demos.UI.Controllers
 	{
 		public override string Product => (string)RouteData.Values["product"];
 
-
-		
-		
-
-
 			public ActionResult Viewer()
 		{
 			var model = new ViewModel(this, "Viewer")

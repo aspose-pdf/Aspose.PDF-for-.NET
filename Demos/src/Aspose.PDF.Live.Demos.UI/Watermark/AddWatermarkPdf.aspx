@@ -374,7 +374,7 @@
 <!-- HowTo Section -->
         <div class="col-md-12 tl bg-darkgray howtolist"  id="dvHowToSection" visible="false" runat="server"><div class="container tl dflex">
         
-            <div class="col-md-4 howtosectiongfx"><img src="https://products.aspose.app/img/howto.png"  ></div><div class="howtosection col-md-8"><div><h4><i class="fa fa-question-circle "></i> <b><%= string.Format(Resources["HowtoWatermarkTitle"], ViewState["Extension1"], hAsposeProductTitle.InnerText) %></b></h4><ul>
+            <div class="col-md-4 howtosectiongfx"><img src="~/img/howto.png"  ></div><div class="howtosection col-md-8"><div><h4><i class="fa fa-question-circle "></i> <b><%= string.Format(Resources["HowtoWatermarkTitle"], ViewState["Extension1"], hAsposeProductTitle.InnerText) %></b></h4><ul>
 				<li><%= string.Format(Resources["HowtoWatermarkFeature1"], ViewState["Extension1"], ViewState["Extension1"]) %></li>
 				<li><%= string.Format(Resources["HowtoWatermarkFeature2"], ViewState["Extension1"].ToString()) %></li>
 				<li><%= string.Format(Resources["HowtoWatermarkFeature3"], ViewState["Extension1"].ToString()) %></li>
@@ -472,7 +472,7 @@
 
 
   
-     <link rel="stylesheet" href="https://products.aspose.app/css/colorpicker.css" type="text/css" />
-    <script src="https://products.aspose.app/js/colorpicker.js"></script>
+     <link rel="stylesheet" href="~/css/colorpicker.css" type="text/css" />
+    <script src="~/js/colorpicker.js"></script>
 
 </asp:Content>
