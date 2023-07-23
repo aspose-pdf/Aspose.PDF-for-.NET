@@ -49,9 +49,6 @@
             </Scripts>
         </asp:ScriptManager>
 
-       <div id='DynabicMenuInnerDiv'></div>
-
-
 
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
         </asp:ContentPlaceHolder>
