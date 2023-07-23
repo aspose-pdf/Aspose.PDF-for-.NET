@@ -602,7 +602,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Controllers
 		public IHttpActionResult CreateNewFile()
 		{
 			var guid = Guid.NewGuid().ToString();
-			var tempFolder = string.Format("{0}Editor\\{1}", Config.Configuration.WorkingDirectory.Replace("/", "\\"), guid);
+			var tempFolder = string.Format("{0}/{1}", Config.Configuration.WorkingDirectory.Replace("/", "\\"), guid);
 			System.IO.Directory.CreateDirectory(tempFolder);
 			var fullPath = System.IO.Path.Combine(tempFolder, "document.pdf");
 			Document doc = new Document();
