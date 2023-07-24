@@ -1,19 +1,19 @@
-using  Aspose.Pdf.Live.Demos.UI.Models;
+using Aspose.Pdf.Live.Demos.UI.Models;
 
 namespace Aspose.Pdf.Live.Demos.UI.FileProcessing
 {
-	///<Summary>
-	/// FileProcessor class to process file
-	///</Summary>
-	public abstract class FileProcessor
+    ///<Summary>
+    /// FileProcessor class to process file
+    ///</Summary>
+    public abstract class FileProcessor
     {
-		///<Summary>
-		/// FileProcessor class process method
-		///</Summary>
-		///<param name="inputFolderName"></param>
-		///<param name="inputFileName"></param>
-		///<param name="outputFileName"></param>
-		public virtual Response Process(string inputFolderName, string inputFileName, string outputFileName = null)
+        ///<Summary>
+        /// FileProcessor class process method
+        ///</Summary>
+        ///<param name="inputFolderName"></param>
+        ///<param name="inputFileName"></param>
+        ///<param name="outputFileName"></param>
+        public virtual Response Process(string inputFolderName, string inputFileName, string outputFileName = null)
         {
             var resp = new Response()
             {
@@ -25,13 +25,13 @@ namespace Aspose.Pdf.Live.Demos.UI.FileProcessing
 
             return resp;
         }
-		///<Summary>
-		/// FileProcessor class ProcessFileToResponce method
-		///</Summary>
-		///<param name="inputFolderName"></param>
-		///<param name="inputFileName"></param>
-		///<param name="outputFileName"></param>
-		///<param name="resp"></param>
-		protected abstract void ProcessFileToResponce(Response resp, string inputFolderName, string inputFileName, string outputFileName = null);
+        ///<Summary>
+        /// FileProcessor class ProcessFileToResponce method
+        ///</Summary>
+        ///<param name="inputFolderName"></param>
+        ///<param name="inputFileName"></param>
+        ///<param name="outputFileName"></param>
+        ///<param name="resp"></param>
+        protected abstract void ProcessFileToResponce(Response resp, string inputFolderName, string inputFileName, string outputFileName = null);
     }
 }

@@ -49,7 +49,9 @@ namespace Aspose.Pdf.Live.Demos.UI.Helpers
                 var key = PutNewWord(block, word, _options.BlockSize);
 
                 if (key == null)
+                {
                     continue;
+                }
 
                 List<int> indicies;
                 if (_wordIndices.TryGetValue(key, out indicies))
@@ -67,10 +69,14 @@ namespace Aspose.Pdf.Live.Demos.UI.Helpers
         {
             block.Enqueue(word);
             if (block.Count > blockSize)
+            {
                 block.Dequeue();
+            }
 
             if (block.Count != blockSize)
+            {
                 return null;
+            }
 
             var result = new StringBuilder(blockSize);
             foreach (var s in block)
@@ -89,7 +95,9 @@ namespace Aspose.Pdf.Live.Demos.UI.Helpers
         {
             word = Utils.StripAnyAttributes(word);
             if (_options.IgnoreWhitespaceDifferences && Utils.IsWhiteSpace(word))
+            {
                 return " ";
+            }
 
             return word;
         }
@@ -100,7 +108,9 @@ namespace Aspose.Pdf.Live.Demos.UI.Helpers
             RemoveRepeatingWords();
 
             if (_wordIndices.Count == 0)
+            {
                 return null;
+            }
 
             int bestMatchInOld = _startInOld;
             int bestMatchInNew = _startInNew;
@@ -115,7 +125,9 @@ namespace Aspose.Pdf.Live.Demos.UI.Helpers
                 var index = PutNewWord(block, word, _options.BlockSize);
 
                 if (index == null)
+                {
                     continue;
+                }
 
                 var newMatchLengthAt = new Dictionary<int, int>();
 

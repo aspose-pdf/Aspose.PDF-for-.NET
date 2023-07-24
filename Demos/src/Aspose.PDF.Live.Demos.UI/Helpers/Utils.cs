@@ -15,7 +15,11 @@ namespace Aspose.Pdf.Live.Demos.UI.Helpers
 
         public static bool IsTag(string item)
         {
-            if (SpecialCaseWordTags.Any(re => item != null && item.StartsWith(re))) return false;
+            if (SpecialCaseWordTags.Any(re => item != null && item.StartsWith(re)))
+            {
+                return false;
+            }
+
             return IsOpeningTag(item) || IsClosingTag(item);
         }
 
