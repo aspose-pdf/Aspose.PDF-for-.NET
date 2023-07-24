@@ -21,7 +21,7 @@
 
     <!-- Common CSS -->
     <link rel="stylesheet" href="https://cms.dynabic.com/templates/aspose/css/common.css" type="text/css" />
-    <link rel="stylesheet" href="https://products.aspose.app/css/error404.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/error404.css" type="text/css" />
 
     <!-- Dynabic.Menu CSS -->
     <!-- script src="https://code.jquery.com/jquery-1.10.2.js" -->
@@ -49,9 +49,6 @@
             </Scripts>
         </asp:ScriptManager>
 
-       <div id='DynabicMenuInnerDiv'></div>
-
-
 
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
         </asp:ContentPlaceHolder>
@@ -64,13 +61,6 @@
      <div id='DynabicMenuFooter'></div>
     </form>
 
-    <script src="https://products.aspose.app/js/bootstrap.min.js"></script>
-    <script src="https://menu.containerize.com/Scripts/Containerize.Menu.min.js"></script>
-    <script>
-     
-        LoadMenu("AsposeApp");
-     
-    </script>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

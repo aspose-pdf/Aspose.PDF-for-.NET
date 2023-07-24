@@ -1,59 +1,58 @@
+using Aspose.Pdf.Facades;
 using System;
 using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Web.Http;
-using Aspose.Pdf.Live.Demos.UI.Models;
-using Aspose.Pdf;
-using Aspose.Pdf.Facades;
 
 
 namespace Aspose.Pdf.Live.Demos.UI.Models
 {
-	public class AsposePdfSplitter : AsposePdfBase
-	{
-	    ///<Summary>
-	    /// Split method to split pdf document
-	    ///</Summary>
-	   
-	    public Response Splitter(DocumentInfo[] docs, string sourceFolder)
-	    {
-		    
-		    if (docs == null)
-			    return BadDocumentResponse;
-		    if (docs.Length <= 0 || docs.Length > MaximumUploadFiles)
-			    return MaximumFileLimitsResponse;
+    public class AsposePdfSplitter : AsposePdfBase
+    {
+        ///<Summary>
+        /// Split method to split pdf document
+        ///</Summary>
 
-		    SetDefaultOptions(docs, "");
-		    Opts.AppName = "Splitter";
-		    Opts.MethodName = "Splitter";
-			Opts.FolderName = sourceFolder;
-		    Opts.CreateZip = true;
-		    Opts.ZipFileName = "Splitted document";
-
-		    return  Process((inFilePath, outPath, zipOutFolder) =>
-		    {
-			    foreach (var doc in docs)
-			    {
-				    PdfFileEditor pdfEditor = new PdfFileEditor();
-				    pdfEditor.SplitToPages(doc.FileName, $"{zipOutFolder}\\{Path.GetFileNameWithoutExtension(doc.FileName)}_%NUM%.pdf");
-			    }
-		    });
-	    }
-
-	   
-		
-		public Response SplitIntoSinglePages(string fileName, string folderName)
+        public Response Splitter(DocumentInfo[] docs, string sourceFolder)
         {
-			License.SetAsposePdfLicense();
+
+            if (docs == null)
+            {
+                return BadDocumentResponse;
+            }
+
+            if (docs.Length <= 0 || docs.Length > MaximumUploadFiles)
+            {
+                return MaximumFileLimitsResponse;
+            }
+
+            SetDefaultOptions(docs, "");
+            Opts.AppName = "Splitter";
+            Opts.MethodName = "Splitter";
+            Opts.FolderName = sourceFolder;
+            Opts.CreateZip = true;
+            Opts.ZipFileName = "Splitted document";
+
+            return Process((inFilePath, outPath, zipOutFolder) =>
+            {
+                foreach (var doc in docs)
+                {
+                    PdfFileEditor pdfEditor = new PdfFileEditor();
+                    pdfEditor.SplitToPages(doc.FileName, $"{zipOutFolder}\\{Path.GetFileNameWithoutExtension(doc.FileName)}_%NUM%.pdf");
+                }
+            });
+        }
+
+
+
+        public Response SplitIntoSinglePages(string fileName, string folderName)
+        {
+            License.SetAsposePdfLicense();
             var statusValue = "OK";
             var statusCodeValue = 200;
             var fileProcessingErrorCode = FileProcessingErrorCode.OK;
 
             try
             {
-                return  Process(GetType().Name, fileName, folderName, ".pdf", true, false,
+                return Process(GetType().Name, fileName, folderName, ".pdf", true, false,
                      "Split",
                   (inFilePath, outPath, zipOutFolder) =>
                   {
@@ -67,7 +66,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Models
                               pageDoc.Pages.Add(document.Pages[i]);
                               pageDoc.Save(string.Format(outputNameTemplate, i));
                           }
-                      }                      
+                      }
                   });
             }
             catch (Exception ex)

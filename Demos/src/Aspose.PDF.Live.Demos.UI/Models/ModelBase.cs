@@ -1,170 +1,167 @@
 using System;
 using System.IO;
-using System.Web.Http;
-using System.Threading.Tasks;
 using System.IO.Compression;
-using System.Drawing;
-using System.Drawing.Imaging;
+using System.Web.Http;
 
 namespace Aspose.Pdf.Live.Demos.UI.Models
 {
-	///<Summary>
-	/// ModelBase class to have base methods
-	///</Summary>
+    ///<Summary>
+    /// ModelBase class to have base methods
+    ///</Summary>
 
-	public abstract class ModelBase : ApiController
-	{
-		
-		///<Summary>
-		/// ActionDelegate
-		///</Summary>
-		protected delegate void ActionDelegate(string inFilePath, string outPath, string zipOutFolder);
-		///<Summary>
-		/// inFileActionDelegate
-		///</Summary>
-		protected delegate void inFileActionDelegate(string inFilePath);
-		///<Summary>
-		/// Get File extension
-		///</Summary>
-		protected string GetoutFileExtension(string fileName, string folderName)
-		{
-			string sourceFolder = Aspose.Pdf.Live.Demos.UI.Config.Configuration.WorkingDirectory + folderName;
-			fileName = sourceFolder + "\\" + fileName;
-			return Path.GetExtension(fileName);
-		}
+    public abstract class ModelBase : ApiController
+    {
 
-		protected Response Process(string modelName, string fileName, string folderName, string outFileExtension, bool createZip, bool checkNumberofPages, string methodName, ActionDelegate action,
-	  bool deleteSourceFolder = true, string zipFileName = null)
-		{
+        ///<Summary>
+        /// ActionDelegate
+        ///</Summary>
+        protected delegate void ActionDelegate(string inFilePath, string outPath, string zipOutFolder);
+        ///<Summary>
+        /// inFileActionDelegate
+        ///</Summary>
+        protected delegate void inFileActionDelegate(string inFilePath);
+        ///<Summary>
+        /// Get File extension
+        ///</Summary>
+        protected string GetoutFileExtension(string fileName, string folderName)
+        {
+            string sourceFolder = Aspose.Pdf.Live.Demos.UI.Config.Configuration.WorkingDirectory + folderName;
+            fileName = sourceFolder + "\\" + fileName;
+            return Path.GetExtension(fileName);
+        }
 
-			string guid = Guid.NewGuid().ToString();
-			string outFolder = "";
-			string sourceFolder = Aspose.Pdf.Live.Demos.UI.Config.Configuration.WorkingDirectory + folderName;
-			fileName = sourceFolder + "\\" + fileName;
+        protected Response Process(string modelName, string fileName, string folderName, string outFileExtension, bool createZip, bool checkNumberofPages, string methodName, ActionDelegate action,
+      bool deleteSourceFolder = true, string zipFileName = null)
+        {
 
-			string fileExtension = Path.GetExtension(fileName).ToLower();
-			
+            string guid = Guid.NewGuid().ToString();
+            string outFolder = "";
+            string sourceFolder = Aspose.Pdf.Live.Demos.UI.Config.Configuration.WorkingDirectory + folderName;
+            fileName = sourceFolder + "\\" + fileName;
 
-			// Check word file have more than one number of pages or not to create zip file
-			 if ((checkNumberofPages) && (createZip) && (modelName == "AsposePdfConversion"))
-			{
-				Aspose.Pdf.Document doc = new Aspose.Pdf.Document(fileName);
-				createZip = doc.Pages.Count > 1;
-			}
-			
-			string outfileName = Path.GetFileNameWithoutExtension(fileName) + outFileExtension;
-			string outPath = "";
+            string fileExtension = Path.GetExtension(fileName).ToLower();
 
-			string zipOutFolder = Aspose.Pdf.Live.Demos.UI.Config.Configuration.OutputDirectory + guid;
-			string zipOutfileName, zipOutPath;
-			if (string.IsNullOrEmpty(zipFileName))
-			{
-				zipOutfileName = guid + ".zip";
-				zipOutPath = Aspose.Pdf.Live.Demos.UI.Config.Configuration.OutputDirectory + zipOutfileName;
-			}
-			else
-			{
-				var guid2 = Guid.NewGuid().ToString();
-				outFolder = guid2;
-				zipOutfileName = zipFileName + ".zip";
-				zipOutPath = Aspose.Pdf.Live.Demos.UI.Config.Configuration.OutputDirectory + guid2;
-				if (createZip)
-				{
-					Directory.CreateDirectory(zipOutPath);
-				}
-				zipOutPath += "/" + zipOutfileName;
-			}
 
-			if (createZip)
-			{
-				outfileName = Path.GetFileNameWithoutExtension(fileName) + outFileExtension;
-				outPath = zipOutFolder + "/" + outfileName;
-				Directory.CreateDirectory(zipOutFolder);
-			}
-			else
-			{
-				outFolder = guid;
-				outPath = Aspose.Pdf.Live.Demos.UI.Config.Configuration.OutputDirectory + outFolder;
-				Directory.CreateDirectory(outPath);
+            // Check word file have more than one number of pages or not to create zip file
+            if ((checkNumberofPages) && (createZip) && (modelName == "AsposePdfConversion"))
+            {
+                Aspose.Pdf.Document doc = new Aspose.Pdf.Document(fileName);
+                createZip = doc.Pages.Count > 1;
+            }
 
-				outPath += "/" + outfileName;
-			}
+            string outfileName = Path.GetFileNameWithoutExtension(fileName) + outFileExtension;
+            string outPath = "";
 
-			string statusValue = "OK";
-			int statusCodeValue = 200;
+            string zipOutFolder = Aspose.Pdf.Live.Demos.UI.Config.Configuration.OutputDirectory + guid;
+            string zipOutfileName, zipOutPath;
+            if (string.IsNullOrEmpty(zipFileName))
+            {
+                zipOutfileName = guid + ".zip";
+                zipOutPath = Aspose.Pdf.Live.Demos.UI.Config.Configuration.OutputDirectory + zipOutfileName;
+            }
+            else
+            {
+                var guid2 = Guid.NewGuid().ToString();
+                outFolder = guid2;
+                zipOutfileName = zipFileName + ".zip";
+                zipOutPath = Aspose.Pdf.Live.Demos.UI.Config.Configuration.OutputDirectory + guid2;
+                if (createZip)
+                {
+                    Directory.CreateDirectory(zipOutPath);
+                }
+                zipOutPath += "/" + zipOutfileName;
+            }
 
-			try
-			{
-				action(fileName, outPath, zipOutFolder);
+            if (createZip)
+            {
+                outfileName = Path.GetFileNameWithoutExtension(fileName) + outFileExtension;
+                outPath = zipOutFolder + "/" + outfileName;
+                Directory.CreateDirectory(zipOutFolder);
+            }
+            else
+            {
+                outFolder = guid;
+                outPath = Aspose.Pdf.Live.Demos.UI.Config.Configuration.OutputDirectory + outFolder;
+                Directory.CreateDirectory(outPath);
 
-				if (createZip)
-				{
-					ZipFile.CreateFromDirectory(zipOutFolder, zipOutPath);
-					Directory.Delete(zipOutFolder, true);
-					outfileName = zipOutfileName;
-				}
+                outPath += "/" + outfileName;
+            }
 
-				if (deleteSourceFolder)
-				{
-					System.GC.Collect();
-					System.GC.WaitForPendingFinalizers();
-					Directory.Delete(sourceFolder, true);
-				}
+            string statusValue = "OK";
+            int statusCodeValue = 200;
 
-			}
-			catch (Exception ex)
-			{
-				statusCodeValue = 500;
-				statusValue = "500 " + ex.Message;
+            try
+            {
+                action(fileName, outPath, zipOutFolder);
 
-			}
-			return new Response
-			{
-				FileName = outfileName,
-				FolderName = outFolder,
-				Status = statusValue,
-				StatusCode = statusCodeValue,
-				FileProcessingErrorCode = FileProcessingErrorCode.OK
-			};
-		}
-		///<Summary>
-		/// Process
-		///</Summary>
-		/// <param name="controllerName"></param>
-		/// <param name="fileName"></param>
-		/// <param name="folderName"></param>
-		/// <param name="productName"></param>
-		/// <param name="productFamily"></param>
-		/// <param name="methodName"></param>
-		/// <param name="action"></param>
-		protected Response Process(string controllerName, string fileName, string folderName, string productName, string productFamily, string methodName, inFileActionDelegate action)
-		{
-			string tempFileName = fileName;
-			string sourceFolder = Aspose.Pdf.Live.Demos.UI.Config.Configuration.WorkingDirectory + folderName;
-			fileName = sourceFolder + "/" + fileName;
+                if (createZip)
+                {
+                    ZipFile.CreateFromDirectory(zipOutFolder, zipOutPath);
+                    Directory.Delete(zipOutFolder, true);
+                    outfileName = zipOutfileName;
+                }
 
-			string statusValue = "OK";
-			int statusCodeValue = 200;
+                if (deleteSourceFolder)
+                {
+                    System.GC.Collect();
+                    System.GC.WaitForPendingFinalizers();
+                    Directory.Delete(sourceFolder, true);
+                }
 
-			try
-			{
-				action(fileName);
+            }
+            catch (Exception ex)
+            {
+                statusCodeValue = 500;
+                statusValue = "500 " + ex.Message;
 
-				//Directory.Delete(sourceFolder, true);                
+            }
+            return new Response
+            {
+                FileName = outfileName,
+                FolderName = outFolder,
+                Status = statusValue,
+                StatusCode = statusCodeValue,
+                FileProcessingErrorCode = FileProcessingErrorCode.OK
+            };
+        }
+        ///<Summary>
+        /// Process
+        ///</Summary>
+        /// <param name="controllerName"></param>
+        /// <param name="fileName"></param>
+        /// <param name="folderName"></param>
+        /// <param name="productName"></param>
+        /// <param name="productFamily"></param>
+        /// <param name="methodName"></param>
+        /// <param name="action"></param>
+        protected Response Process(string controllerName, string fileName, string folderName, string productName, string productFamily, string methodName, inFileActionDelegate action)
+        {
+            string tempFileName = fileName;
+            string sourceFolder = Aspose.Pdf.Live.Demos.UI.Config.Configuration.WorkingDirectory + folderName;
+            fileName = sourceFolder + "/" + fileName;
 
-			}
-			catch (Exception ex)
-			{
-				statusCodeValue = 500;
-				statusValue = "500 " + ex.Message;
+            string statusValue = "OK";
+            int statusCodeValue = 200;
 
-			}
-			return new Response
-			{
-				Status = statusValue,
-				StatusCode = statusCodeValue,
-			};
-		}
+            try
+            {
+                action(fileName);
 
-	}
+                //Directory.Delete(sourceFolder, true);                
+
+            }
+            catch (Exception ex)
+            {
+                statusCodeValue = 500;
+                statusValue = "500 " + ex.Message;
+
+            }
+            return new Response
+            {
+                Status = statusValue,
+                StatusCode = statusCodeValue,
+            };
+        }
+
+    }
 }

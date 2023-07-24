@@ -16,26 +16,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-sanitize.min.js"></script>
     
-    <link type="text/css" rel="stylesheet" href="/ViewerApp/resources/common/css/all.min.css">
-    <link type="text/css" rel="stylesheet" href="/ViewerApp/resources/common/css/v4-shims.min.css">
-    <link type="text/css" rel="stylesheet" href="/ViewerApp/resources/common/css/swiper.min.css">
-    <link type="text/css" rel="stylesheet" href="/ViewerApp/resources/common/css/circle-progress.css" />
-    <link type="text/css" rel="stylesheet" href="/ViewerApp/resources/viewer/css/viewer.css" />
-    <link type="text/css" rel="stylesheet" href="/ViewerApp/resources/viewer/css/viewer.mobile.css" />
-    <link type="text/css" rel="stylesheet" href="/ViewerApp/resources/viewer/css/viewer-light.css" />
+    <link type="text/css" rel="stylesheet" href="../ViewerApp/resources/common/css/all.min.css">
+    <link type="text/css" rel="stylesheet" href="../ViewerApp/resources/common/css/v4-shims.min.css">
+    <link type="text/css" rel="stylesheet" href="../ViewerApp/resources/common/css/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="../ViewerApp/resources/common/css/circle-progress.css" />
+    <link type="text/css" rel="stylesheet" href="../ViewerApp/resources/viewer/css/viewer.css" />
+    <link type="text/css" rel="stylesheet" href="../ViewerApp/resources/viewer/css/viewer.mobile.css" />
+    <link type="text/css" rel="stylesheet" href="../ViewerApp/resources/viewer/css/viewer-light.css" />
     <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <script type="text/javascript" src="/ViewerApp/resources/common/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/ViewerApp/resources/common/js/swiper.min.js"></script>
-    <script type="text/javascript" src="/ViewerApp/resources/common/js/es6-promise.auto.js"></script>
-    <script type="text/javascript" src="/ViewerApp/resources/viewer/js/viewer.js"></script>
+    <script type="text/javascript" src="../ViewerApp/resources/common/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../ViewerApp/resources/common/js/swiper.min.js"></script>
+    <script type="text/javascript" src="../ViewerApp/resources/common/js/es6-promise.auto.js"></script>
+    <script type="text/javascript" src="../ViewerApp/resources/viewer/js/viewer.js"></script>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
     <link rel="stylesheet" href="~/css/editor.css" />
 
-    <script src="/ViewerApp/app.js"></script>
-    <script src="/ViewerApp/app.controller.main.js"></script>
+    <script src="../ViewerApp/app.js"></script>
+    <script src="../ViewerApp/app.controller.main.js"></script>
     
   
 </head>
@@ -51,7 +51,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="<%= CallbackURL %>" style="padding: 5px 15px;">
-                        <img src="/ViewerApp/Resources/images/aspose-logo.jpg" alt="Aspose Document Editor App" />
+                        <img src="../ViewerApp/Resources/images/aspose-logo.jpg" alt="Aspose Document Editor App" />
                     </a>
                 </div>
                 <div class="hidden-xs">
@@ -96,7 +96,7 @@
         </div>
 
         <div id="page-loading">
-            <img id="htmlloader" src="/ViewerApp/Resources/images/loader.gif" />
+            <img id="htmlloader" src="../ViewerApp/Resources/images/loader.gif" />
             <div id="loader" style="display: none;"></div>
         </div>
         

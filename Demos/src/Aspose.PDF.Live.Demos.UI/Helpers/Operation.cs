@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using System.Linq;
 
 namespace Aspose.Pdf.Live.Demos.UI.Helpers
@@ -23,7 +22,7 @@ namespace Aspose.Pdf.Live.Demos.UI.Helpers
 
 #if DEBUG
 
-        public void PrintDebugInfo(string[] oldWords, string []newWords)
+        public void PrintDebugInfo(string[] oldWords, string[] newWords)
         {
             var oldText = string.Join("", oldWords.Where((s, pos) => pos >= StartInOld && pos < EndInOld).ToArray());
             var newText = string.Join("", newWords.Where((s, pos) => pos >= StartInNew && pos < EndInNew).ToArray());

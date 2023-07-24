@@ -1,25 +1,25 @@
-using Aspose.Pdf.Live.Demos.UI.Models;
 using Aspose.Pdf.Live.Demos.UI.Config;
+using Aspose.Pdf.Live.Demos.UI.Models;
 using System;
 using System.IO;
 using System.IO.Compression;
 
 namespace Aspose.Pdf.Live.Demos.UI.FileProcessing
 {
-	///<Summary>
-	/// SingleOrZipFileProcessor class to check either to create zip file or not
-	///</Summary>
-	public abstract class SingleOrZipFileProcessor : FileProcessor
+    ///<Summary>
+    /// SingleOrZipFileProcessor class to check either to create zip file or not
+    ///</Summary>
+    public abstract class SingleOrZipFileProcessor : FileProcessor
     {
-		///<Summary>
-		/// ProcessFileToResponce method 
-		///</Summary>
-		/// <param name="resp"></param>
-		/// <param name="inputFolderName"></param>
-		/// <param name="inputFileName"></param>
-		/// <param name="outputFileName"></param>
-		
-		protected override void ProcessFileToResponce(Response resp, string inputFolderName, string inputFileName, string outputFileName = null)
+        ///<Summary>
+        /// ProcessFileToResponce method 
+        ///</Summary>
+        /// <param name="resp"></param>
+        /// <param name="inputFolderName"></param>
+        /// <param name="inputFileName"></param>
+        /// <param name="outputFileName"></param>
+
+        protected override void ProcessFileToResponce(Response resp, string inputFolderName, string inputFileName, string outputFileName = null)
         {
             var inputFolderPath = Path.Combine(Configuration.WorkingDirectory, inputFolderName);
             var inputFilePath = Path.Combine(inputFolderPath, inputFileName);
@@ -58,11 +58,11 @@ namespace Aspose.Pdf.Live.Demos.UI.FileProcessing
                 resp.FolderName = outputZipFolderName;
             }
         }
-		///<Summary>
-		/// ProcessFileToPath method to process file to path
-		///</Summary>
-		/// <param name="inputFilePath"></param>
-		/// <param name="outDirectoryPath"></param>
-		protected abstract void ProcessFileToPath(string inputFilePath, string outDirectoryPath);
+        ///<Summary>
+        /// ProcessFileToPath method to process file to path
+        ///</Summary>
+        /// <param name="inputFilePath"></param>
+        /// <param name="outDirectoryPath"></param>
+        protected abstract void ProcessFileToPath(string inputFilePath, string outDirectoryPath);
     }
 }

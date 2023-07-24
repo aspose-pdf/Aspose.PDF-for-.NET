@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace Aspose.Pdf.Live.Demos.UI.Helpers
@@ -242,11 +241,11 @@ namespace Aspose.Pdf.Live.Demos.UI.Helpers
         /// Finds any blocks that need to be grouped
         /// </summary>
         private static Dictionary<int, int> FindBlocks(
-            string text, 
+            string text,
             IList<Regex> blockExpressions)
         {
             var blockLocations = new Dictionary<int, int>();
-            
+
             if (blockExpressions == null)
             {
                 return blockLocations;

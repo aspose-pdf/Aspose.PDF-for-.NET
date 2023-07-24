@@ -69,7 +69,7 @@
 <div class="modal fade bs-example-modal-sm" tabindex="-1" id="loadingModal" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
-            <img src="/img/framely.gif" />
+            <img src="../img/framely.gif" />
         </div>
     </div>
 </div>
