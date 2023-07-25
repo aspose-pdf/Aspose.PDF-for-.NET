@@ -46,8 +46,8 @@ IIS Express 10.0 is  [available](https://www.microsoft.com/en-us/download/detail
 
 Run Powershell as administrator and enable Windows Features for LocalIIS with the following commands:
 
-> - Enable-WindowsOptionalFeature -Online -FeatureName IIS-WebServerRole
-> - Enable-WindowsOptionalFeature -Online -FeatureName IIS-WebServer
+>	Enable-WindowsOptionalFeature -Online -FeatureName IIS-WebServerRole
+>	Enable-WindowsOptionalFeature -Online -FeatureName IIS-WebServer
 > - Enable-WindowsOptionalFeature -Online -FeatureName IIS-CommonHttpFeatures
 > - Enable-WindowsOptionalFeature -Online -FeatureName IIS-HttpErrors
 > - Enable-WindowsOptionalFeature -Online -FeatureName IIS-HttpRedirect
