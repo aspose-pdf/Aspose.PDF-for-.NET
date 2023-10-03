@@ -1,0 +1,8 @@
+[
+  {
+    "outputFileName": "Resources/js/Editor.min.js",
+    "inputFiles": [
+      "Resources/js/Editor.js"
+    ]
+  }
+]

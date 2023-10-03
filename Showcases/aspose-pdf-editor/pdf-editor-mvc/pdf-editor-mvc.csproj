@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Aspose.PDF.Editor</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="test.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="test.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspose.PDF.Drawing" Version="23.8.0" />
+    <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="13.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.11" />
+    <PackageReference Include="System.IO.Abstractions" Version="19.2.69" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="7.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AppResources\Editor\PdfEditorResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PdfEditorResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="AppResources\Editor\PdfEditorResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PdfEditorResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

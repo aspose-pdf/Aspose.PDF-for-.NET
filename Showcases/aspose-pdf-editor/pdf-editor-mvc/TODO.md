@@ -1,0 +1,51 @@
++1. show error
+2. dialogs style
++3. alert -> message
++4. tblAttach View Attachments
++5. close dialogs
+6. The process cannot access the file '/home/hitesh/Documents/w/aspose-pdf-editor/aspose-pdf-editor/temp/25b7834e-5708-4542-98fc-7b3d855e22ce/document.pdf' because it is being used by another process.
+at Aspose.PDF.Editor.Controllers.AsposePdfEditorController.StorageUpload(String url, Stream s) in /home/hitesh/Documents/w/aspose-pdf-editor/aspose-pdf-editor/Controllers/AsposePdfEditorController.cs:line 73
++7. add text
++8. plus page is empty
+9. search working only on first page
++10. namespace line
+11. remove TODO
+12. Upload API => DocumentService
+13. UploadPic => PrimitiveService
+14. makeItalic all buttons ?
++15. remove try catch
+16. ScaleImage => ImageService
++17. ViewModelBase
++18. camel case props
++19. organization  "2066, Australia"; ?
++20. AdditionalRequestData ?
++21. drop params EditPdf(string FileName, string FolderName, string CallbackURL)
+22. readme
+23. license limitation message
+24. move constans to configuration
+25. System.Exception: No suitable system fonts found
+26. split view model, model
++27. System.Resources.MissingManifestResourceException: Could not find the resource "Aspose.PDF.Editor.AppResources.Editor.PdfEditorResources.resources" among the resources "pdf_editor_mvc.AppResources.Editor.PdfEditorResources.resources" embedded in the assembly "pdf-editor-mvc", nor among the resources in any satellite assemblies for the specified culture. Perhaps the resources were embedded with an incorrect name.
++28. .net 7.0 libs
+29. Privacy page
+30. Upload => uploading, appending, addAttachment
+31. url = documentFileName
++32. page loading hang on secons save
++33. ajax done
++34. GetAttachments is empty
++35. [ApiController]
+36. FileExists => GetThumbnails
+37. UploadPic => AddPrimitives
+38. GetPageImage => GtThumbnail
+39. GetPageImage read page or multiple?
+40. delete all pages, add page -> 1 page
+41. export = download
+42. folder = documentId
++43. clear console
+45. add text dialog buttons
+46. ubdefined docx
+47. append pdf no description internal server error
+48. ad image to page not supported images
+49. text also visible on second page
+50. view attachments => download
+51. remove attachment

@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="TitleSub" xml:space="preserve">
+    <value>Edit PDF. Add text, comments, highlights</value>
+  </data>
+  <data name="LiFeature1" xml:space="preserve">
+    <value>Save edited document to desired format: PDF, Word, HTML and others</value>
+  </data>
+  <data name="HowtoTitle" xml:space="preserve">
+    <value>How to view, edit and download a PDF file</value>
+  </data>
+  <data name="LiFeature3" xml:space="preserve">
+    <value>Add images and texts.</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>PDF Editor</value>
+  </data>
+  <data name="LiFeature2" xml:space="preserve">
+    <value>Edit PDF document online without additional software.</value>
+  </data>
+  <data name="MetaDescription" xml:space="preserve">
+    <value>Edit PDF by adding text, shapes, comments and highlights with advanced WYSIWYG edito. Without registration and captcha. It's secure and private.</value>
+  </data>
+  <data name="PageTitle" xml:space="preserve">
+    <value>PDF Editor | Online and Free | Aspose.PDF</value>
+  </data>
+  <data name="LiFeature4" xml:space="preserve">
+    <value>Insert and manipulate of pages.</value>
+  </data>
+  <data name="RawHtmlOverview" xml:space="preserve">
+    <value>&lt;strong&gt;Free, easy-to-use online service to edit PDF!&lt;/strong&gt;&lt;p&gt;Edit PDF files online anytime and from any device. Edit text, add images, freehand draw, and add circles or rectangles with the best Free PDF Editor.&lt;/p&gt;        &lt;strong&gt;Edit PDF Online Free&lt;/strong&gt;&lt;p&gt;There is an opinion that the PDF document cannot be edited. Today it is a myth! Technology has come a long way. Edit the PDF file by the our tool. With a simple user interface, even a beginner can handle this task.        Get access to all the features of our Online Editor for free. It is the best PDF Text Editor. Add text wherever you want in your document. Edit its font, font size, color, and background. Add, edit and remove text in seconds. Insert images or circles and rectangles into your PDF document. Draw freehand on any place in your file.&lt;/p&gt;        &lt;strong&gt;No downloads required&lt;/strong&gt;&lt;p&gt;No add-ons or extensions are required. PDF Editor works online in your browser. All you need is a device with an internet connection.&lt;/p&gt;&lt;strong&gt;How to edit PDF Pages?&lt;/strong&gt;        &lt;br&gt;Upload your document and you will be redirected to the Editor app with a great user experience and many more features.&lt;ol&gt;&lt;li&gt;Click inside the file drop area to upload a file or drag &amp; drop the one. The file will be automatically rendered for you to view, and edit.&lt;/li&gt;&lt;li&gt;Use the utilities from the editor to modify your document.&lt;/li&gt;        &lt;li&gt;Save the file.&lt;/li&gt;&lt;/ol&gt;&lt;strong&gt;100% Safe and Secure&lt;/strong&gt;&lt;p&gt;We don’t store your information or keep your data on file. If you do not delete the uploaded documents immediately, it will happen automatically after 24 hours. So you can rest easy knowing that your personal documents and privacy are protected.&lt;/p&gt;        &lt;strong&gt;Supports your system&lt;/strong&gt;&lt;p&gt;Your device exactly supports our Online PDF Editor. It works on all platforms including Windows, Mac, Android, and iOS.&lt;/p&gt;</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="HowtoNameFeature1" xml:space="preserve">
+    <value>Upload your PDF file</value>
+  </data>
+  <data name="HowtoNameFeature2" xml:space="preserve">
+    <value>Get your rendered result</value>
+  </data>
+  <data name="HowtoNameFeature3" xml:space="preserve">
+    <value>Download or edited file.</value>
+  </data>
+  <data name="HowtoNameFeature4" xml:space="preserve">
+    <value>Convert &amp; download the edited file as PDF.</value>
+  </data>
+  <data name="HowtoNameFeature5" xml:space="preserve">
+    <value>Convert &amp; download the edited file as HTML.</value>
+  </data>
+  <data name="DefaultVideoId" xml:space="preserve">
+    <value>NMoXtaLy64I</value>
+  </data>
+  <data name="DefaultVideoTitle" xml:space="preserve">
+    <value>Video Tutorial: How to work with PDF Editor?</value>
+  </data>
+  <data name="DefaultVideoDuration" xml:space="preserve">
+    <value>PT1M04S</value>
+  </data>
+  <data name="DefaultVideoCounter" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="HowtoFeature1" xml:space="preserve">
+    <value>Click inside the file drop area to upload a or drag &amp; drop the file.</value>
+  </data>
+  <data name="HowtoFeature2" xml:space="preserve">
+    <value>File will be automatically rendered for you to view, edit &amp; download instantly.</value>
+  </data>
+  <data name="HowtoFeature3" xml:space="preserve">
+    <value>Download the original or edited file.</value>
+  </data>
+  <data name="HowtoFeature4" xml:space="preserve">
+    <value>Convert &amp; download the edited file as PDF.</value>
+  </data>
+  <data name="HowtoFeature5" xml:space="preserve">
+    <value>Convert &amp; download the edited file as HTML.</value>
+  </data>
+  <data name="HowtoImageUrlFeature1" xml:space="preserve">
+    <value>https://products.aspose.app/img/pdf/HowToExample/Step1.png</value>
+  </data>
+  <data name="HowtoImageUrlFeature2" xml:space="preserve">
+    <value>https://products.aspose.app/img/pdf/HowToExample/Step2.png</value>
+  </data>
+  <data name="HowtoImageUrlFeature3" xml:space="preserve">
+    <value>https://products.aspose.app/img/pdf/HowToExample/Step2.png</value>
+  </data>
+  <data name="HowtoImageUrlFeature4" xml:space="preserve">
+    <value>https://products.aspose.app/img/pdf/HowToExample/Step2.png</value>
+  </data>
+  <data name="HowtoImageUrlFeature5" xml:space="preserve">
+    <value>https://products.aspose.app/img/pdf/HowToExample/Step2.png</value>
+  </data>
+  <data name="LiFeature5" xml:space="preserve">
+    <value>Create PDF document online</value>
+  </data>
+  <data name="Title1" xml:space="preserve">
+    <value>Edit PDF online</value>
+  </data>
+  <data name="TitleSub1" xml:space="preserve">
+    <value>Free online PDF document editor</value>
+  </data>
+  <data name="PageTitle1" xml:space="preserve">
+    <value>Edit PDF online</value>
+  </data>
+  <data name="FAQQuestionFeature1" xml:space="preserve">
+    <value>❓ How I can edit PDF?</value>
+  </data>
+  <data name="FAQQuestionFeature2" xml:space="preserve">
+    <value>⏱️ How long it takes to edit PDF?</value>
+  </data>
+  <data name="FAQQuestionFeature3" xml:space="preserve">
+    <value>🛡️ Is it safe to edit PDF using a free editor app?</value>
+  </data>
+  <data name="FAQQuestionFeature4" xml:space="preserve">
+    <value>💻 Can I edit PDF on Mac OS, Android, or Linux?</value>
+  </data>
+  <data name="FAQAnswerFeature1" xml:space="preserve">
+    <value>First, you need to add a file for editing: drag &amp; drop your PDF file or click inside the white area to choose a file. Then edit your file with different tools. When you completed editing the file, you can download the result by clicking the button “Download”.</value>
+  </data>
+  <data name="FAQAnswerFeature2" xml:space="preserve">
+    <value>This editor works fast. The time of editing depends on your changes to the document.</value>
+  </data>
+  <data name="FAQAnswerFeature3" xml:space="preserve">
+    <value>Of course! The download link of the result files will be available instantly after editing. We delete uploaded files after 24 hours and the download links will stop working after this time period. No one has access to your files. PDF editor is absolutely safe.</value>
+  </data>
+  <data name="FAQAnswerFeature4" xml:space="preserve">
+    <value>Yes, you can use a free editor on any operating system that has a web browser. Our PDF editor works online and does not require any software installation.</value>
+  </data>
+  <data name="LiFeatureTryOthers" xml:space="preserve">
+    <value>Try other editors: PDF</value>
+  </data>
+</root>
