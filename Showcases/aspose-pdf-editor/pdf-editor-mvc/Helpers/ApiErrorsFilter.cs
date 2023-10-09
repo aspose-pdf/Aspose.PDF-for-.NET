@@ -15,7 +15,6 @@ public class ApiErrorsFilter : IExceptionFilter
         var exception = context.Exception;
         var httpContext = context.HttpContext;
 
-        // sample response
         var problemDetails = _problemDetailsFactory.CreateProblemDetails(httpContext, statusCode: 500, title: "API error", detail: exception.ToString() );
         context.Result = new ObjectResult(problemDetails){
             StatusCode = problemDetails.Status

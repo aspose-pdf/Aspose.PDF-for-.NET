@@ -30,8 +30,8 @@ public class EditorViewModel
     }
 
     public string this[string key] => RecheckLocalizedValue(Localize(key)) ?? $"NoKey:{"Editor" + key}";
-    
-    public EditorViewModel() 
+
+    public EditorViewModel()
     {
         SetTitles();
     }

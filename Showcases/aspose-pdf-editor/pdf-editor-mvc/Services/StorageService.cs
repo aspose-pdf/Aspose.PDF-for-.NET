@@ -1,3 +1,4 @@
+using Aspose.Pdf;
 using Aspose.PDF.Editor.Services.Interface;
 using System.Runtime.InteropServices;
 
@@ -58,7 +59,11 @@ public class StorageService : IStorageService
 
         if (!File.Exists(path))
         {
-            File.Copy(Path.Combine(_rootDir, "blank.pdf"), path);
+            using (var newDoc = new Document())
+            {
+                newDoc.Pages.Add();
+                newDoc.Save(path);
+            }
         }
 
         var outputStream = new MemoryStream();
