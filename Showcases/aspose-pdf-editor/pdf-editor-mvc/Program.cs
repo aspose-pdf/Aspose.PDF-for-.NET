@@ -32,6 +32,8 @@ builder.Services.AddProblemDetails(
 
 builder.Services.AddLocalization(options => options.ResourcesPath = "AppResources/Editor");
 
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -51,5 +53,8 @@ app.UseMvc();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.Run();

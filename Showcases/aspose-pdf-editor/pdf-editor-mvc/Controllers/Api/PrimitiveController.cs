@@ -12,8 +12,6 @@ namespace Aspose.PDF.Editor.Controllers;
 [Route("api/[controller]")]
 public class PrimitiveController : Controller
 {
-    private const string SearchMarker = "Aspose.PDF Editor Free App Search";
-
     private readonly IStorageService _storageService;
 
     public PrimitiveController(IStorageService storageService)

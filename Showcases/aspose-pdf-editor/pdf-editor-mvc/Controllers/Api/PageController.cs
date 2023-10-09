@@ -10,8 +10,6 @@ namespace Aspose.PDF.Editor.Controllers;
 [Route("api/[controller]")]
 public class PageController : Controller
 {
-    private const string SearchMarker = "Aspose.PDF Editor Free App Search";
-
     private readonly IStorageService _storageService;
     private readonly IImageService _imageService;
 
