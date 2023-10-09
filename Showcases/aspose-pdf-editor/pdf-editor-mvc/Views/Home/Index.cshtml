@@ -1,11 +1,14 @@
 ﻿@using Aspose.PDF.Editor.Models;
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Pdf Editor";
+    ViewData["Title"] = @Localizer["Editor"];
 }
 
 <div class="text-center">
-    <h1 class="display-4">Aspose.PDF Editor</h1>
+    <h1 class="display-4">@Localizer["Editor"]</h1>
     <partial name="_Editor" />
 </div>
 

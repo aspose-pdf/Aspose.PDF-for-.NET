@@ -4,6 +4,7 @@ using Aspose.PDF.Editor.Services;
 using System.IO.Abstractions;
 using Aspose.PDF.Editor.Helpers;
 using System.Text.Json;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +20,9 @@ builder.Services.AddMvc(option => option.EnableEndpointRouting = false)
     .AddJsonOptions(opts =>
     {
         opts.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
-    });
+    })
+    .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+    .AddDataAnnotationsLocalization();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddProblemDetails(
@@ -27,6 +30,8 @@ builder.Services.AddProblemDetails(
         config.CustomizeProblemDetails =
             ctx =>
                 ctx.ProblemDetails.Extensions.Add("request_host", ctx.HttpContext.Request.Host.Value));
+
+builder.Services.AddLocalization(options => options.ResourcesPath = "AppResources/Editor");
 
 var app = builder.Build();
 

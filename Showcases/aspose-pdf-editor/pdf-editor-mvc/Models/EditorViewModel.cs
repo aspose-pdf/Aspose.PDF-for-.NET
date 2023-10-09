@@ -36,7 +36,7 @@ public class EditorViewModel
         SetTitles();
     }
 
-    public string Localize(string key) => PdfEditorResources.ResourceManager.GetString(key);
+    public string Localize(string key) => SeoResources.ResourceManager.GetString(key);
     
     private string RecheckLocalizedValue(string value)
     {
