@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Aspose.PDF.Editor.Models;
 using Aspose.PDF.Editor.Services.Interface;
 using System.Globalization;
+using Microsoft.AspNetCore.Http;
 
 namespace Aspose.PDF.Editor.Controllers;
 
@@ -170,6 +171,37 @@ public class PrimitiveController : Controller
 
         return new DocStatusModel();
     }
+
+    [HttpPost]
+    [Route("upload")]
+    public async Task<DocStatusModel> Upload()
+    {
+        var httpRequest = HttpContext.Request;
+        var documentId = httpRequest.Form.Keys.Contains("documentId") &&
+                         httpRequest.Form["documentId"][0] != null ?
+            httpRequest.Form["documentId"][0] :
+            Guid.NewGuid().ToString();
+        var fullPath = Path.Combine(
+            _storageService.WorkingDirectory,
+            documentId);
+
+        var postedFile = httpRequest.Form.Files.FirstOrDefault();
+
+        var url = Path.Combine(httpRequest.Form["documentId"], postedFile.FileName);
+
+        using (var s = postedFile.OpenReadStream())
+        {
+            await _storageService.Upload(s, url);
+        }
+
+        var model = new DocStatusModel
+        {
+            D = postedFile.FileName,
+            Path = httpRequest.Form["documentId"]
+        };
+        return model;
+    }
+
 
     [HttpPost]
     [Route("image")]

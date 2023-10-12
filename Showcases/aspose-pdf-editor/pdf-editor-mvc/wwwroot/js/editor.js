@@ -1238,6 +1238,8 @@ function fileSelected() {
         case 'addAttachment':
             xhr.open('POST', `${apiBaseUrl}attachment/add`);
         break;
+        default:
+            xhr.open('POST', `${apiBaseUrl}primitive/upload`);
     }
 
     xhr.upload.onprogress = function (event) {
