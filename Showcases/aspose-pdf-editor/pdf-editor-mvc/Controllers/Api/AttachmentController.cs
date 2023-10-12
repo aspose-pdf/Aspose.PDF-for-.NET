@@ -18,7 +18,7 @@ public class AttachmentController : Controller
     }
 
     [HttpPost]
-    public async Task<DocStatusModel> Upload()
+    public async Task<DocStatusModelN> Upload()
     {
         var httpRequest = HttpContext.Request;
         var documentId = httpRequest.Form.Keys.Contains("documentId") &&
@@ -52,7 +52,7 @@ public class AttachmentController : Controller
         var url = Path.Combine(httpRequest.Form["documentId"], "document.pdf");
         await _storageService.Upload(ms, url);
 
-        return new DocStatusModel
+        return new DocStatusModelN
         {
             D = postedFile.FileName,
             Path = httpRequest.Form["documentId"]
@@ -61,7 +61,7 @@ public class AttachmentController : Controller
 
     [HttpPost]
     [Route("all/{folder}")]
-    public async Task<FileAttachmentsModel> GetFileAttachments(string folder)
+    public async Task<FileAttachmentsModelN> GetFileAttachments(string folder)
     {
         var url = Path.Combine(folder, "document.pdf");
         await using Stream docStream = await _storageService.Download(url);
@@ -85,7 +85,7 @@ public class AttachmentController : Controller
             }
         }
 
-        var model = new FileAttachmentsModel
+        var model = new FileAttachmentsModelN
         {
             D = outAttach
         };
@@ -95,7 +95,7 @@ public class AttachmentController : Controller
 
     [HttpPost]
     [Route("remove")]
-    public async Task<FileAttachmentsModel> RemoveFileAttachment([FromBody] RemoveAttachmentModel removeAttachmentModel)
+    public async Task<FileAttachmentsModelN> RemoveFileAttachment([FromBody] RemoveAttachmentModelN removeAttachmentModel)
     {
         var url = Path.Combine(removeAttachmentModel.DocumentId, "document.pdf");
         await using Stream docStream = await _storageService.Download(url);
@@ -111,7 +111,7 @@ public class AttachmentController : Controller
             await _storageService.Upload(ms, url);
         }
 
-        var model = new FileAttachmentsModel
+        var model = new FileAttachmentsModelN
         {
             D = "Success",
             Path = HttpContext.Request.Form["documentId"]

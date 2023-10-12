@@ -21,7 +21,7 @@ public class PageController : Controller
 
     [HttpPost]
     [Route("add/{folder}")]
-    public async Task<DocStatusModel> AddPage(string folder)
+    public async Task<DocStatusModelN> AddPage(string folder)
     {
         var url = Path.Combine(folder, "document.pdf");
         int pageCount = 0;
@@ -45,7 +45,7 @@ public class PageController : Controller
                     pngDevice.Process(doc.Pages[pageCount], imageStream);
 
                     var (height, aspectRatio) =  await _imageService.ScaleImage(imageStream, folder, imageFileName, 1138);
-                    return new DocStatusModel
+                    return new DocStatusModelN
                     {
                         D = $"image{pageCount}.png#{height}#{aspectRatio}",
                         Path = folder,
@@ -58,7 +58,7 @@ public class PageController : Controller
 
     [HttpPost]
     [Route("delete")]
-    public async Task<DeletePageModel> DeletePage([FromBody] DeletePageModel deletePageModel)
+    public async Task<DeletePageModelN> DeletePage([FromBody] DeletePageModelN deletePageModel)
     {
         var url = Path.Combine(deletePageModel.DocumentId, "document.pdf");
         var imgUrl = Path.Combine(deletePageModel.DocumentId, deletePageModel.ImageName);
@@ -78,7 +78,7 @@ public class PageController : Controller
 
     [HttpPost]
     [Route("move")]
-    public async Task<MovePagesModel> MovePages([FromBody] MovePagesModel movePagesModel)
+    public async Task<MovePagesModelN> MovePages([FromBody] MovePagesModelN movePagesModel)
     {
         var url = Path.Combine(movePagesModel.DocumentId, "document.pdf");
 

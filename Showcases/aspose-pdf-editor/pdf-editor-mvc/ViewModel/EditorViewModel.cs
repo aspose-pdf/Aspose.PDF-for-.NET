@@ -1,11 +1,11 @@
 using Aspose.PDF.Editor.AppResources.Editor;
 
-namespace Aspose.PDF.Editor.Models;
+namespace Aspose.PDF.Editor.ViewModel;
 
 public class EditorViewModel
 {
     private const string DefaultName = "PDF";
-    
+
     public string CanonicalTag { get; set; }
 
     public string Title { get; protected set; }
@@ -15,7 +15,7 @@ public class EditorViewModel
     public string PageTitle { get; protected set; }
 
     public string MetaDescription { get; protected set; }
-    
+
     /// <summary>
     /// The full address of the application without query string ready for localization (e.g., /pdf{locale}/conversion)
     /// </summary>
@@ -37,7 +37,7 @@ public class EditorViewModel
     }
 
     public string Localize(string key) => SeoResources.ResourceManager.GetString(key);
-    
+
     private string RecheckLocalizedValue(string value)
     {
         if (value == null) return null;
@@ -52,7 +52,7 @@ public class EditorViewModel
 
         return value;
     }
-    
+
     private string GetCanonicalUrl()
     {
         return $"https://localhost:5031/{AppRouteTemplate}";

@@ -21,7 +21,7 @@ public class PrimitiveController : Controller
 
     [HttpPost]
     [Route("upload-pic")]
-    public async Task<DocStatusModel> UploadPic([FromBody] UploadPicModel uploadPicModel)
+    public async Task<DocStatusModelN> UploadPic([FromBody] UploadPicModelN uploadPicModel)
     {
         var url = Path.Combine(uploadPicModel.DocumentId, "document.pdf");
         await using (Stream docStream = await _storageService.Download(url))
@@ -168,6 +168,6 @@ public class PrimitiveController : Controller
             }
         }
 
-        return new DocStatusModel();
+        return new DocStatusModelN();
     }
 }
