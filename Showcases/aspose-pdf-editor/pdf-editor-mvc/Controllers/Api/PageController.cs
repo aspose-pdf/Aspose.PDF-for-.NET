@@ -19,6 +19,28 @@ public class PageController : Controller
         _imageService = imageService;
     }
 
+    [HttpGet]
+    [Route("preview/{folder}/{filename}")]
+    public async Task<FileContentResult> GetPageImage(string folder, string filename)
+    {
+        //converting Pdf file into bytes array
+        int extensionPosition = filename.LastIndexOf('-');
+        int extensionPosition2 = filename.LastIndexOf('.');
+        if (extensionPosition != -1 && extensionPosition2 < extensionPosition)
+        {
+            filename = filename.Remove(extensionPosition, 1).Insert(extensionPosition, ".");
+        }
+
+        var url = Path.Combine(folder, filename);
+        await using (Stream imgStream = await _storageService.Download(url))
+        {
+            using var bs = new BinaryReader(imgStream);
+            byte[] content = bs.ReadBytes((int)imgStream.Length);
+
+            return File(content, "image/png");
+        }
+    }
+
     [HttpPost]
     [Route("add/{folder}")]
     public async Task<DocStatusModelN> AddPage(string folder)

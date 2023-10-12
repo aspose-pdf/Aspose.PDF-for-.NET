@@ -786,7 +786,7 @@ function DrawPic(imageId) {
     var image1 = '';
     var rand = Math.random();
     
-    image1 = `${apiBaseUrl}Image/${documentId}/${imageId}`;
+    image1 = `${apiBaseUrl}page/preview/${documentId}/${imageId}`;
     $('#imageView').css('background-image', 'url(' + image1 + '?Dummy=' + rand + ')');
 
     return true;
@@ -1380,7 +1380,7 @@ function InsertImages(data, imgLeft, imgTop) {
     let context = canvas.getContext('2d');
 
     let bRect = canvas.getBoundingClientRect();
-    let image1 = `${apiBaseUrl}image/${documentId}/${data}?Dummy=${Math.random()}`;
+    let image1 = `${apiBaseUrl}page/preview/${documentId}/${data}?Dummy=${Math.random()}`;
 
     let imgWidth = 0;
     let imgHeight = 0;
@@ -1769,7 +1769,7 @@ function GetFileExists() {
         
     $.ajax({
         type: 'GET',
-        url: `${apiBaseUrl}document/preview?folder=${folder}&fileName=${file}`,
+        url: `${apiBaseUrl}document/info?folder=${folder}&fileName=${file}`,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (data, textStatus, jqXHR) {

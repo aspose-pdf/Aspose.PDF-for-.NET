@@ -20,8 +20,8 @@ public class DocumentController : Controller
     }
 
     [HttpGet]
-    [Route("preview")]
-    public async Task<DocStatusModel> Preview(string? folder, string? fileName)
+    [Route("info")]
+    public async Task<DocStatusModel> GetDocumentInfo(string? folder, string? fileName)
     {
         if (string.IsNullOrWhiteSpace(folder))
         {
