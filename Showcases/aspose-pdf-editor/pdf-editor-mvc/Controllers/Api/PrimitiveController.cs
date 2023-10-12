@@ -5,6 +5,7 @@ using Aspose.Pdf.Text;
 using Microsoft.AspNetCore.Mvc;
 using Aspose.PDF.Editor.Models;
 using Aspose.PDF.Editor.Services.Interface;
+using System.Globalization;
 
 namespace Aspose.PDF.Editor.Controllers;
 
@@ -29,14 +30,14 @@ public class PrimitiveController : Controller
         {
             foreach (var t in uploadPicModel.Shapes)
             {
-                float shapeX = float.Parse(t.X.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeY = float.Parse(t.Y.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeW = float.Parse(t.W.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeH = float.Parse(t.H.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeX = float.Parse(t.X, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeY = float.Parse(t.Y, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeW = float.Parse(t.W, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeH = float.Parse(t.H, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
 
                 float yaxis = (float)(doc.Pages[int.Parse(t.P)].Rect.URY - (shapeH + shapeY));
 
@@ -97,14 +98,14 @@ public class PrimitiveController : Controller
         {
             foreach (var t in uploadPicModel.Shapes)
             {
-                float shapeX = float.Parse(t.X.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeY = float.Parse(t.Y.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeW = float.Parse(t.W.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeH = float.Parse(t.H.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeX = float.Parse(t.X, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeY = float.Parse(t.Y, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeW = float.Parse(t.W, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeH = float.Parse(t.H, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
 
                 float yaxis = (float)(doc.Pages[int.Parse(t.P)].Rect.URY - (shapeH + shapeY));
 
@@ -117,7 +118,7 @@ public class PrimitiveController : Controller
                     textStamp.XIndent = shapeX;
                     textStamp.YIndent = yaxis;
                     //rotate stamp
-                    textStamp.RotateAngle = 360 - Convert.ToDouble(t.fieldType) * 180 / Math.PI;
+                    textStamp.RotateAngle = 360 - double.Parse(t.fieldType, CultureInfo.InvariantCulture) * 180 / Math.PI;
 
                     //set text properties
                     try
@@ -169,14 +170,14 @@ public class PrimitiveController : Controller
         {
             foreach (var t in uploadPicModel.Shapes)
             {
-                float shapeX = float.Parse(t.X.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeY = float.Parse(t.Y.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeW = float.Parse(t.W.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeH = float.Parse(t.H.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeX = float.Parse(t.X, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeY = float.Parse(t.Y, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeW = float.Parse(t.W, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeH = float.Parse(t.H, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
 
                 float yaxis = (float)(doc.Pages[int.Parse(t.P)].Rect.URY - (shapeH + shapeY));
 
@@ -214,14 +215,14 @@ public class PrimitiveController : Controller
         {
             foreach (var t in uploadPicModel.Shapes)
             {
-                float shapeX = float.Parse(t.X.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeY = float.Parse(t.Y.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeW = float.Parse(t.W.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeH = float.Parse(t.H.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeX = float.Parse(t.X, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeY = float.Parse(t.Y, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeW = float.Parse(t.W, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeH = float.Parse(t.H, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
 
                 float yaxis = (float)(doc.Pages[int.Parse(t.P)].Rect.URY - (shapeH + shapeY));
 
@@ -260,14 +261,14 @@ public class PrimitiveController : Controller
         {
             foreach (var t in uploadPicModel.Shapes)
             {
-                float shapeX = float.Parse(t.X.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeY = float.Parse(t.Y.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeW = float.Parse(t.W.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeH = float.Parse(t.H.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeX = float.Parse(t.X, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeY = float.Parse(t.Y, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeW = float.Parse(t.W, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeH = float.Parse(t.H, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
 
                 float yaxis = (float)(doc.Pages[int.Parse(t.P)].Rect.URY - (shapeH + shapeY));
 
@@ -313,14 +314,14 @@ public class PrimitiveController : Controller
         {
             foreach (var t in uploadPicModel.Shapes)
             {
-                float shapeX = float.Parse(t.X.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeY = float.Parse(t.Y.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeW = float.Parse(t.W.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
-                float shapeH = float.Parse(t.H.Replace(',', '.')) * 72 / 150 /
-                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeX = float.Parse(t.X, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeY = float.Parse(t.Y, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeW = float.Parse(t.W, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
+                float shapeH = float.Parse(t.H, CultureInfo.InvariantCulture) * 72 / 150 /
+                               float.Parse(t.ratio, CultureInfo.InvariantCulture);
 
                 float yaxis = (float)(doc.Pages[int.Parse(t.P)].Rect.URY - (shapeH + shapeY));
 

@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\ApiController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="test.png" />
   </ItemGroup>
 

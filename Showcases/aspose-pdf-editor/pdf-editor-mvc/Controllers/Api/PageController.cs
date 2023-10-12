@@ -56,26 +56,6 @@ public class PageController : Controller
         }
     }
 
-    [HttpDelete]
-    [Route("delete")]
-    public async Task<DeletePageModelN> DeletePage([FromBody] DeletePageModelN deletePageModel)
-    {
-        var url = Path.Combine(deletePageModel.DocumentId, "document.pdf");
-        var imgUrl = Path.Combine(deletePageModel.DocumentId, deletePageModel.ImageName);
-
-        await using (Stream docStream = await _storageService.Download(url))
-        {
-            using Document doc = new Document(docStream);
-            doc.Pages.Delete(Convert.ToInt32(deletePageModel.ImageData));
-            using MemoryStream ms = new MemoryStream();
-            doc.Save(ms);
-            ms.Seek(0, SeekOrigin.Begin);
-            await _storageService.Upload(ms, url);
-            _storageService.Delete(imgUrl);
-            return deletePageModel;
-        }
-    }
-
     [HttpPut]
     [Route("move")]
     public async Task<MovePagesModelN> MovePages([FromBody] MovePagesModelN movePagesModel)
@@ -113,6 +93,26 @@ public class PageController : Controller
             movePagesModel.PageList = str.ToArray();
 
             return movePagesModel;
+        }
+    }
+
+    [HttpDelete]
+    [Route("delete")]
+    public async Task<DeletePageModelN> DeletePage([FromBody] DeletePageModelN deletePageModel)
+    {
+        var url = Path.Combine(deletePageModel.DocumentId, "document.pdf");
+        var imgUrl = Path.Combine(deletePageModel.DocumentId, deletePageModel.ImageName);
+
+        await using (Stream docStream = await _storageService.Download(url))
+        {
+            using Document doc = new Document(docStream);
+            doc.Pages.Delete(Convert.ToInt32(deletePageModel.ImageData));
+            using MemoryStream ms = new MemoryStream();
+            doc.Save(ms);
+            ms.Seek(0, SeekOrigin.Begin);
+            await _storageService.Upload(ms, url);
+            _storageService.Delete(imgUrl);
+            return deletePageModel;
         }
     }
 }

@@ -37,7 +37,7 @@ public class ImageService : IImageService
                 var r = await ScaleImage(imageStream, folder, imgFile, 1138);
 
                 if (pageCount == 1)
-                    fields = CheckFields(doc, pageCount, fields, Convert.ToDouble(r.Item2));
+                    fields = CheckFields(doc, pageCount, fields, double.Parse(r.Item2, CultureInfo.InvariantCulture));
 
                 pages = pages + "," + "image" + pageCount + ".png";
                 ratios = $"{ratios},{r.Item2.Replace(',', '.')}";

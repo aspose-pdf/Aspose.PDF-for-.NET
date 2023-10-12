@@ -1,4 +1,4 @@
-let apiBaseUrl = '/pdf/editor/api/';
+let apiBaseUrl = '/api/';
 let documentId = '';
 let originalFileName = 'document.pdf';
 let ratio = 1;
@@ -1769,7 +1769,7 @@ function GetFileExists() {
         
     $.ajax({
         type: 'GET',
-        url: `${apiBaseUrl}FileExists?folder=${folder}&fileName=${file}`,
+        url: `${apiBaseUrl}document/preview?folder=${folder}&fileName=${file}`,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (data, textStatus, jqXHR) {

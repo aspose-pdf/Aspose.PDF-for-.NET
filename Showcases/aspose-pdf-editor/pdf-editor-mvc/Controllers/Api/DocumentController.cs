@@ -8,13 +8,41 @@ namespace Aspose.PDF.Editor.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ExportController : Controller
+public class DocumentController : Controller
 {
     private readonly IStorageService _storageService;
+    private readonly IImageService _imageService;
 
-    public ExportController(IStorageService storageService)
+    public DocumentController(IStorageService storageService, IImageService imageService)
     {
         _storageService = storageService;
+        _imageService = imageService;
+    }
+
+    [HttpGet]
+    [Route("preview")]
+    public async Task<DocStatusModel> Preview(string? folder, string? fileName)
+    {
+        if (string.IsNullOrWhiteSpace(folder))
+        {
+            folder = Guid.NewGuid().ToString();
+            fileName = "document.pdf";
+        }
+
+        var downloadFileName = "document.pdf";
+
+        var url = Path.Combine(folder, fileName);
+        await using (Stream docStream = await _storageService.Download(url))
+        {
+            var model = new DocStatusModel
+            {
+                D = await _imageService.ImageConverter(docStream, folder, fileName),
+                Path = folder,
+                OriginalFileName = downloadFileName
+            };
+
+            return model;
+        }
     }
 
     [HttpGet]
