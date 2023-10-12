@@ -855,7 +855,7 @@ function AddPage() {
     $('#loadingModal').modal('show');
     $.ajax({
         type: 'POST',
-        url: `${apiBaseUrl}add-page/${documentId}`,
+        url: `${apiBaseUrl}page/add/${documentId}`,
         data: '{ "lastpage" : "' + Npages[Npages.length - 1] + '" }',
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
@@ -886,8 +886,8 @@ function DeletePage() {
 
     var deleteData = JSON.stringify({ 'imageData': currentPage.toString(), 'imageName': Npages[currentPage - 1], 'documentId': documentId });
     return $.ajax({
-        type: 'POST',
-        url: `${apiBaseUrl}delete-page`,
+        type: 'DELETE',
+        url: `${apiBaseUrl}page/delete`,
         data: deleteData,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
@@ -973,8 +973,8 @@ function Move() {
         movedata = JSON.stringify({ 'moveFrom': currentPage.toString(), 'moveTo': moveTo, 'pageList': Npages, 'documentId': documentId });
         $('#loadingModal').modal('show');
         $.ajax({
-            type: 'POST',
-            url: `${apiBaseUrl}move-pages`,
+            type: 'PUT',
+            url: `${apiBaseUrl}page/move`,
             data: movedata,
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
