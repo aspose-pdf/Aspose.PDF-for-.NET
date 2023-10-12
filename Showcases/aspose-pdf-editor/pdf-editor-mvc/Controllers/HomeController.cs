@@ -1,4 +1,4 @@
-﻿using Aspose.PDF.Editor.Models;
+﻿using Aspose.PDF.Editor.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aspose.PDF.Editor.Controllers;

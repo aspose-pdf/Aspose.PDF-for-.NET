@@ -1,4 +1,4 @@
-let apiBaseUrl = '/pdf/editor/api/';
+let apiBaseUrl = '/api/';
 let documentId = '';
 let originalFileName = 'document.pdf';
 let ratio = 1;
@@ -786,7 +786,7 @@ function DrawPic(imageId) {
     var image1 = '';
     var rand = Math.random();
     
-    image1 = `${apiBaseUrl}Image/${documentId}/${imageId}`;
+    image1 = `${apiBaseUrl}page/preview/${documentId}/${imageId}`;
     $('#imageView').css('background-image', 'url(' + image1 + '?Dummy=' + rand + ')');
 
     return true;
@@ -855,7 +855,7 @@ function AddPage() {
     $('#loadingModal').modal('show');
     $.ajax({
         type: 'POST',
-        url: `${apiBaseUrl}add-page/${documentId}`,
+        url: `${apiBaseUrl}page/add/${documentId}`,
         data: '{ "lastpage" : "' + Npages[Npages.length - 1] + '" }',
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
@@ -886,8 +886,8 @@ function DeletePage() {
 
     var deleteData = JSON.stringify({ 'imageData': currentPage.toString(), 'imageName': Npages[currentPage - 1], 'documentId': documentId });
     return $.ajax({
-        type: 'POST',
-        url: `${apiBaseUrl}delete-page`,
+        type: 'DELETE',
+        url: `${apiBaseUrl}page/delete`,
         data: deleteData,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
@@ -950,8 +950,8 @@ function ReplaceText() {
     $('#loadingModal').modal('show');
     // Sending the image data to Server
     $.ajax({
-        type: 'POST',
-        url: `${apiBaseUrl}replace-text`,
+        type: 'PUT',
+        url: `${apiBaseUrl}text/replace`,
         data: movedata,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
@@ -973,8 +973,8 @@ function Move() {
         movedata = JSON.stringify({ 'moveFrom': currentPage.toString(), 'moveTo': moveTo, 'pageList': Npages, 'documentId': documentId });
         $('#loadingModal').modal('show');
         $.ajax({
-            type: 'POST',
-            url: `${apiBaseUrl}move-pages`,
+            type: 'PUT',
+            url: `${apiBaseUrl}page/move`,
             data: movedata,
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
@@ -994,7 +994,7 @@ function Move() {
         // Sending the image data to Server
         $.ajax({
             type: 'POST',
-            url: `${apiBaseUrl}search-data`,
+            url: `${apiBaseUrl}text/search`,
             data: movedata,
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
@@ -1024,8 +1024,8 @@ function appendClick(event) {
 function clearSearchClicked() {
     let cleardata = JSON.stringify({ 'searchText': '', 'pageList': Npages, 'documentId': documentId });
     $.ajax({
-        type: 'POST',
-        url: `${apiBaseUrl}search-clear`,
+        type: 'DELETE',
+        url: `${apiBaseUrl}text/clear`,
         data: cleardata,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
@@ -1114,7 +1114,7 @@ function SavePdf() {
 
     $.ajax({
         type: 'POST',
-        url: `${apiBaseUrl}upload-pic`,
+        url: `${apiBaseUrl}primitive/add`,
         data: wholedata,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
@@ -1227,7 +1227,20 @@ function fileSelected() {
 
     }
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', `${apiBaseUrl}upload`);
+    switch($('#hdnOpp').val())
+    {
+        case 'uploading':
+            xhr.open('PUT', `${apiBaseUrl}document/upload`);
+        break;
+        case 'appending':
+            xhr.open('PUT', `${apiBaseUrl}document/append`);
+        break;
+        case 'addAttachment':
+            xhr.open('POST', `${apiBaseUrl}attachment/add`);
+        break;
+        default:
+            xhr.open('POST', `${apiBaseUrl}primitive/upload`);
+    }
 
     xhr.upload.onprogress = function (event) {
         if (event.lengthComputable) {
@@ -1380,7 +1393,7 @@ function InsertImages(data, imgLeft, imgTop) {
     let context = canvas.getContext('2d');
 
     let bRect = canvas.getBoundingClientRect();
-    let image1 = `${apiBaseUrl}image/${documentId}/${data}?Dummy=${Math.random()}`;
+    let image1 = `${apiBaseUrl}page/preview/${documentId}/${data}?Dummy=${Math.random()}`;
 
     let imgWidth = 0;
     let imgHeight = 0;
@@ -1403,8 +1416,8 @@ function InsertImages(data, imgLeft, imgTop) {
 function ExportByType(fileType, documentId) {
     
     const a = document.createElement('a')
-    a.href = `${apiBaseUrl}download/${fileType}/${documentId}`
-    a.download = `${apiBaseUrl}download/${fileType}/${documentId}`.split('/').pop() + '.' + fileType;
+    a.href = `${apiBaseUrl}document/download/${fileType}/${documentId}`
+    a.download = `${apiBaseUrl}}document/download/${fileType}/${documentId}`.split('/').pop() + '.' + fileType;
     document.body.appendChild(a)
     a.click()
     document.body.removeChild(a);
@@ -1414,7 +1427,7 @@ function ExportFile(fileType) {
     $('#loadingModal').modal('show');
     $.ajax({
         type: 'POST',
-        url: `${apiBaseUrl}exportfile?fileType=${fileType}&folder=${documentId}`,
+        url: `${apiBaseUrl}document/export?fileType=${fileType}&folder=${documentId}`,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (data, textStatus, jqXHR) {
@@ -1680,8 +1693,8 @@ function ManageFields() {
 function GetAttachments() {
     // Sending the image data to Server
     $.ajax({
-        type: 'POST',
-        url: `${apiBaseUrl}GetFileAttachments/${documentId}`,
+        type: 'GET',
+        url: `${apiBaseUrl}attachment/all/${documentId}`,
         data: { 'documentId': documentId },
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
@@ -1742,8 +1755,8 @@ function RemoveAttachment(name, rowId) {
     let removeData = JSON.stringify({ 'attachmentFileName': name, 'documentId': documentId });
     // Sending the image data to Server
     $.ajax({
-        type: 'POST',
-        url: `${apiBaseUrl}remove-attachment`,
+        type: 'DELETE',
+        url: `${apiBaseUrl}attachment/remove`,
         data: removeData,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
@@ -1769,7 +1782,7 @@ function GetFileExists() {
         
     $.ajax({
         type: 'GET',
-        url: `${apiBaseUrl}FileExists?folder=${folder}&fileName=${file}`,
+        url: `${apiBaseUrl}document/info?folder=${folder}&fileName=${file}`,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (data, textStatus, jqXHR) {
@@ -1805,8 +1818,8 @@ function GetFileExists() {
 
 function newFileClick(action) {
     $.ajax({
-        type: 'GET',
-        url: `${apiBaseUrl}createNewFile`,
+        type: 'POST',
+        url: `${apiBaseUrl}document/create`,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (data, textStatus, jqXHR) {
@@ -1857,7 +1870,7 @@ function saveSignature() {
 
     $.ajax({
         type: 'POST',
-        url: `${apiBaseUrl}create-signature`,
+        url: `${apiBaseUrl}primitive/signature`,
         data: signatureData,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',

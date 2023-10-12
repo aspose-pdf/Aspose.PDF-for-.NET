@@ -1,4 +1,3 @@
-using Aspose.PDF.Editor.Controllers;
 using Aspose.PDF.Editor.Services.Interface;
 using Aspose.PDF.Editor.Services;
 using System.IO.Abstractions;
@@ -8,30 +7,37 @@ using Microsoft.AspNetCore.Mvc.Razor;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<IFileSystem, FileSystem>();
-builder.Services.AddSingleton<IStorageService, StorageService>();
-builder.Services.AddControllersWithViews();
-
-builder.Services.AddControllers(options =>options.Filters.Add(typeof(ApiErrorsFilter)));
-
-builder.Services.AddMvc(option => option.EnableEndpointRouting = false)
+builder.Services.AddControllersWithViews()
+    .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+    .AddDataAnnotationsLocalization()
     .AddJsonOptions(opts =>
     {
         opts.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
-    })
-    .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
-    .AddDataAnnotationsLocalization();
+    });
 
-builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddLocalization(options => options.ResourcesPath = "AppResources/Editor");
+
+builder.Services.AddControllers(options =>options.Filters.Add(typeof(ApiErrorsFilter)));
+builder.Services.AddRouting(options =>
+{
+    options.LowercaseUrls = true;
+    options.LowercaseQueryStrings = true;
+});
+
 builder.Services.AddProblemDetails(
     config =>
         config.CustomizeProblemDetails =
             ctx =>
                 ctx.ProblemDetails.Extensions.Add("request_host", ctx.HttpContext.Request.Host.Value));
 
-builder.Services.AddLocalization(options => options.ResourcesPath = "AppResources/Editor");
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+// Add business logic
+builder.Services.AddSingleton<IFileSystem, FileSystem>();
+builder.Services.AddSingleton<IDocumentServicecs, DocumentServicecs>();
+builder.Services.AddSingleton<IStorageService, StorageService>();
+builder.Services.AddSingleton<IImageService, ImageService>();
 
 var app = builder.Build();
 
@@ -44,13 +50,12 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
-app.UseRouting();
 app.UseStatusCodePages();
-app.UseMvc();
+app.UseRouting();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.Run();

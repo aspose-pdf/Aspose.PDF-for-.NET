@@ -49,3 +49,4 @@ at Aspose.PDF.Editor.Controllers.AsposePdfEditorController.StorageUpload(String 
 49. text also visible on second page
 50. view attachments => download
 51. remove attachment
+52. No Document scroll on mobile

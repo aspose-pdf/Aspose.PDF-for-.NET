@@ -1,6 +1,7 @@
 namespace Aspose.PDF.Editor.Models;
 
 public class ShapeModel
+
 {
     public string? X { get; set; }
     
