@@ -950,8 +950,8 @@ function ReplaceText() {
     $('#loadingModal').modal('show');
     // Sending the image data to Server
     $.ajax({
-        type: 'POST',
-        url: `${apiBaseUrl}replace-text`,
+        type: 'PUT',
+        url: `${apiBaseUrl}text/replace`,
         data: movedata,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
@@ -994,7 +994,7 @@ function Move() {
         // Sending the image data to Server
         $.ajax({
             type: 'POST',
-            url: `${apiBaseUrl}search-data`,
+            url: `${apiBaseUrl}text/search`,
             data: movedata,
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
@@ -1024,8 +1024,8 @@ function appendClick(event) {
 function clearSearchClicked() {
     let cleardata = JSON.stringify({ 'searchText': '', 'pageList': Npages, 'documentId': documentId });
     $.ajax({
-        type: 'POST',
-        url: `${apiBaseUrl}search-clear`,
+        type: 'DELETE',
+        url: `${apiBaseUrl}text/clear`,
         data: cleardata,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
@@ -1425,7 +1425,7 @@ function ExportFile(fileType) {
     $('#loadingModal').modal('show');
     $.ajax({
         type: 'POST',
-        url: `${apiBaseUrl}exportfile?fileType=${fileType}&folder=${documentId}`,
+        url: `${apiBaseUrl}document/export?fileType=${fileType}&folder=${documentId}`,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (data, textStatus, jqXHR) {
