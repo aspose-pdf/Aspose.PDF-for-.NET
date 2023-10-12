@@ -1870,7 +1870,7 @@ function saveSignature() {
 
     $.ajax({
         type: 'POST',
-        url: `${apiBaseUrl}create-signature`,
+        url: `${apiBaseUrl}primitive/signature`,
         data: signatureData,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',

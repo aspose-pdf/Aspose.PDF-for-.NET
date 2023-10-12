@@ -204,6 +204,29 @@ public class PrimitiveController : Controller
 
 
     [HttpPost]
+    [Route("signature")]
+    public async Task<DocStatusModel> CreateSignature([FromBody] SignatureModel signatureModel)
+    {
+        Random random = new Random();
+        int rand = random.Next(1000000);
+        string fileNameWitPath = $"sign{rand}.png";
+        var url = Path.Combine(signatureModel.DocumentId, fileNameWitPath);
+
+        byte[] data = Convert.FromBase64String(signatureModel.ImageData);
+        using (MemoryStream fs = new MemoryStream(data))
+        {
+            await _storageService.Upload(fs, url);
+        }
+
+        var model = new DocStatusModel
+        {
+            D = $"sign{rand}.png"
+        };
+
+        return model;
+    }
+
+    [HttpPost]
     [Route("image")]
     public async Task<DocStatusModelN> UploadImage([FromBody] UploadPicModelN uploadPicModel)
     {
