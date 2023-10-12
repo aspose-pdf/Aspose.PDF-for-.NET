@@ -3,6 +3,7 @@ using Aspose.Pdf.Text;
 using Microsoft.AspNetCore.Mvc;
 using Aspose.PDF.Editor.Models;
 using Aspose.PDF.Editor.Services.Interface;
+using Aspose.Pdf.Facades;
 
 namespace Aspose.PDF.Editor.Controllers;
 
@@ -10,18 +11,20 @@ namespace Aspose.PDF.Editor.Controllers;
 [Route("api/[controller]")]
 public class DocumentController : Controller
 {
+    private readonly IDocumentServicecs _documentServicecs;
     private readonly IStorageService _storageService;
     private readonly IImageService _imageService;
 
-    public DocumentController(IStorageService storageService, IImageService imageService)
+    public DocumentController(IDocumentServicecs documentServicecs, IStorageService storageService, IImageService imageService)
     {
+        _documentServicecs = documentServicecs;
         _storageService = storageService;
         _imageService = imageService;
     }
 
     [HttpPost]
     [Route("create")]
-    public async Task<DocStatusModel> CreateNew()
+    public async Task<DocStatusModel> Create()
     {
         var guid = Guid.NewGuid().ToString();
         var url = Path.Combine(guid, "document.pdf");
@@ -45,7 +48,7 @@ public class DocumentController : Controller
 
     [HttpGet]
     [Route("info")]
-    public async Task<DocStatusModel> GetDocumentInfo(string? folder, string? fileName)
+    public async Task<DocStatusModel> GetInfo(string? folder, string? fileName)
     {
         if (string.IsNullOrWhiteSpace(folder))
         {
@@ -64,6 +67,43 @@ public class DocumentController : Controller
                 Path = folder,
                 OriginalFileName = downloadFileName
             };
+
+            return model;
+        }
+    }
+
+    [HttpPut]
+    [Route("upload")]
+    public async Task<DocStatusModel> Upload()
+    {
+        var httpRequest = HttpContext.Request;
+        var postedFile = httpRequest.Form.Files.FirstOrDefault();
+
+        if (postedFile == null)
+            throw new ArgumentException("no files");
+
+        var guid = Guid.NewGuid().ToString();
+        var tempFolder = Path.Combine(_storageService.WorkingDirectory, guid);
+        Directory.CreateDirectory(tempFolder);
+        var filePath = Path.Combine(tempFolder, "document.pdf");
+        await using (var fileStream = new FileStream(filePath, FileMode.CreateNew))
+        {
+            await postedFile.CopyToAsync(fileStream);
+        }
+
+        var url = Path.Combine(guid, "document.pdf");
+
+        await using (var s = postedFile.OpenReadStream())
+        {
+            s.Seek(0, SeekOrigin.Begin);
+            var model = new DocStatusModel
+            {
+                D = await _imageService.ImageConverter(s, guid, "document.pdf"),
+                Path = guid,
+                OriginalFileName = postedFile.FileName
+            };
+            s.Seek(0, SeekOrigin.Begin);
+            await _storageService.Upload(s, url);
 
             return model;
         }

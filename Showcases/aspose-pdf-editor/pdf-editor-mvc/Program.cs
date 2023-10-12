@@ -35,6 +35,7 @@ builder.Services.AddSwaggerGen();
 
 // Add business logic
 builder.Services.AddSingleton<IFileSystem, FileSystem>();
+builder.Services.AddSingleton<IDocumentServicecs, DocumentServicecs>();
 builder.Services.AddSingleton<IStorageService, StorageService>();
 builder.Services.AddSingleton<IImageService, ImageService>();
 

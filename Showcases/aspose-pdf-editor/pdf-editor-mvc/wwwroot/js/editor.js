@@ -1227,7 +1227,7 @@ function fileSelected() {
 
     }
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', `${apiBaseUrl}upload`);
+    xhr.open('PUT', `${apiBaseUrl}document/upload`);
 
     xhr.upload.onprogress = function (event) {
         if (event.lengthComputable) {
