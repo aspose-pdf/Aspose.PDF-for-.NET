@@ -19,7 +19,7 @@ public class AttachmentController : Controller
 
     [HttpPost]
     [Route("add")]
-    public async Task<DocStatusModelN> Upload()
+    public async Task<DocStatusModel> Upload()
     {
         var httpRequest = HttpContext.Request;
         var documentId = httpRequest.Form.Keys.Contains("documentId") &&
@@ -53,7 +53,7 @@ public class AttachmentController : Controller
         var url = Path.Combine(httpRequest.Form["documentId"], "document.pdf");
         await _storageService.Upload(ms, url);
 
-        return new DocStatusModelN
+        return new DocStatusModel
         {
             D = postedFile.FileName,
             Path = httpRequest.Form["documentId"]
@@ -62,7 +62,7 @@ public class AttachmentController : Controller
 
     [HttpGet]
     [Route("all/{folder}")]
-    public async Task<FileAttachmentsModelN> GetFileAttachments(string folder)
+    public async Task<FileAttachmentsModel> GetFileAttachments(string folder)
     {
         var url = Path.Combine(folder, "document.pdf");
         await using Stream docStream = await _storageService.Download(url);
@@ -86,7 +86,7 @@ public class AttachmentController : Controller
             }
         }
 
-        var model = new FileAttachmentsModelN
+        var model = new FileAttachmentsModel
         {
             D = outAttach
         };
@@ -96,7 +96,7 @@ public class AttachmentController : Controller
 
     [HttpDelete]
     [Route("remove")]
-    public async Task<FileAttachmentsModelN> RemoveFileAttachment([FromBody] RemoveAttachmentModelN removeAttachmentModel)
+    public async Task<FileAttachmentsModel> RemoveFileAttachment([FromBody] RemoveAttachmentModel removeAttachmentModel)
     {
         var url = Path.Combine(removeAttachmentModel.DocumentId, "document.pdf");
         await using Stream docStream = await _storageService.Download(url);
@@ -112,7 +112,7 @@ public class AttachmentController : Controller
             await _storageService.Upload(ms, url);
         }
 
-        var model = new FileAttachmentsModelN
+        var model = new FileAttachmentsModel
         {
             D = "Success"
         };

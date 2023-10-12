@@ -193,7 +193,7 @@ public class DocumentController : Controller
 
     [HttpPost]
     [Route("export")]
-    public async Task<DocStatusModelN> Export(string fileType, string folder)
+    public async Task<DocStatusModel> Export(string fileType, string folder)
     {
         var url = Path.Combine(folder, "document.pdf");
         await using Stream docStream = await _storageService.Download(url);
@@ -210,7 +210,7 @@ public class DocumentController : Controller
                 var ms1 = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(extractedText));
                 ms1.Seek(0, SeekOrigin.Begin);
                 await _storageService.Upload(ms1, url6);
-                return new DocStatusModelN
+                return new DocStatusModel
                 {
                     Path = folder,
                     OriginalFileName = "document.txt"
@@ -220,7 +220,7 @@ public class DocumentController : Controller
                 var url1 = Path.Combine(folder, "document.docx");
                 ms.Seek(0, SeekOrigin.Begin);
                 await _storageService.Upload(ms, url1);
-                return new DocStatusModelN
+                return new DocStatusModel
                 {
                     Path = folder,
                     OriginalFileName = "document.docx"
@@ -230,7 +230,7 @@ public class DocumentController : Controller
                 var url2 = Path.Combine(folder, "document.svg");
                 ms.Seek(0, SeekOrigin.Begin);
                 await _storageService.Upload(ms, url2);
-                return new DocStatusModelN
+                return new DocStatusModel
                 {
                     Path = folder,
                     OriginalFileName = "document.svg"
@@ -240,7 +240,7 @@ public class DocumentController : Controller
                 var url3 = Path.Combine(folder, "document.xps");
                 ms.Seek(0, SeekOrigin.Begin);
                 await _storageService.Upload(ms, url3);
-                return new DocStatusModelN
+                return new DocStatusModel
                 {
                     Path = folder,
                     OriginalFileName = "document.xps"
@@ -250,7 +250,7 @@ public class DocumentController : Controller
                 var url4 = Path.Combine(folder, "document.xlsx");
                 ms.Seek(0, SeekOrigin.Begin);
                 await _storageService.Upload(ms, url4);
-                return new DocStatusModelN
+                return new DocStatusModel
                 {
                     Path = folder,
                     OriginalFileName = "document.xlsx"
@@ -266,7 +266,7 @@ public class DocumentController : Controller
                 var url5 = Path.Combine(folder, "document.html");
                 ms.Seek(0, SeekOrigin.Begin);
                 await _storageService.Upload(ms, url5);
-                return new DocStatusModelN
+                return new DocStatusModel
                 {
                     Path = folder,
                     OriginalFileName = "document.html"
@@ -276,7 +276,7 @@ public class DocumentController : Controller
                 var url7 = Path.Combine(folder, "document.pdf");
                 ms.Seek(0, SeekOrigin.Begin);
                 await _storageService.Upload(ms, url7);
-                return new DocStatusModelN
+                return new DocStatusModel
                 {
                     Path = folder,
                     OriginalFileName = "document.pdf"

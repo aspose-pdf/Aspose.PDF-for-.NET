@@ -23,7 +23,7 @@ public class TextController : Controller
 
     [HttpPost]
     [Route("search")]
-    public async Task<DocStatusModelN> SearchData([FromBody] SearchDataModelN searchDataModel)
+    public async Task<DocStatusModel> SearchData([FromBody] SearchDataModel searchDataModel)
     {
         var url = Path.Combine(searchDataModel.DocumentId, "document.pdf");
         await using Stream docStream = await _storageService.Download(url);
@@ -44,7 +44,7 @@ public class TextController : Controller
         using MemoryStream ms = new MemoryStream();
         document.Save(ms);
         ms.Seek(0, SeekOrigin.Begin);
-        var model = new DocStatusModelN
+        var model = new DocStatusModel
         {
             D = await _imageService.ImageConverter(ms, searchDataModel.DocumentId, "document.pdf"),
             Path = searchDataModel.DocumentId,
@@ -58,7 +58,7 @@ public class TextController : Controller
 
     [HttpDelete]
     [Route("clear")]
-    public async Task<DocStatusModelN> SearchClear([FromBody] SearchDataModelN searchDataModel)
+    public async Task<DocStatusModel> SearchClear([FromBody] SearchDataModel searchDataModel)
     {
         var url = Path.Combine(searchDataModel.DocumentId, "document.pdf");
         await using Stream docStream = await _storageService.Download(url);
@@ -80,7 +80,7 @@ public class TextController : Controller
         document.Save(ms);
         ms.Seek(0, SeekOrigin.Begin);
 
-        var model = new DocStatusModelN
+        var model = new DocStatusModel
         {
             D = await _imageService.ImageConverter(ms, searchDataModel.DocumentId, "document.pdf"),
             Path = searchDataModel.DocumentId,
@@ -94,7 +94,7 @@ public class TextController : Controller
 
     [HttpPut]
     [Route("replace")]
-    public async Task<DocStatusModelN> ReplaceText([FromBody] ReplaceTextModelN replaceTextModel)
+    public async Task<DocStatusModel> ReplaceText([FromBody] ReplaceTextModel replaceTextModel)
     {
         var url = Path.Combine(replaceTextModel.DocumentId, "document.pdf");
         await using Stream docStream = await _storageService.Download(url);
@@ -118,7 +118,7 @@ public class TextController : Controller
         using MemoryStream ms = new MemoryStream();
         doc.Save(ms);
         ms.Seek(0, SeekOrigin.Begin);
-        var model = new DocStatusModelN
+        var model = new DocStatusModel
         {
             D = await _imageService.ImageConverter(ms, replaceTextModel.DocumentId, "document.pdf"),
             Path = replaceTextModel.DocumentId

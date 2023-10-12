@@ -228,7 +228,7 @@ public class PrimitiveController : Controller
 
     [HttpPost]
     [Route("image")]
-    public async Task<DocStatusModelN> UploadImage([FromBody] UploadPicModelN uploadPicModel)
+    public async Task<DocStatusModel> UploadImage([FromBody] UploadPicModel uploadPicModel)
     {
         var url = Path.Combine(uploadPicModel.DocumentId, "document.pdf");
         await using (Stream docStream = await _storageService.Download(url))
@@ -291,12 +291,12 @@ public class PrimitiveController : Controller
             }
         }
 
-        return new DocStatusModelN();
+        return new DocStatusModel();
     }
 
     [HttpPost]
     [Route("text")]
-    public async Task<DocStatusModelN> UploadText([FromBody] UploadPicModelN uploadPicModel)
+    public async Task<DocStatusModel> UploadText([FromBody] UploadPicModel uploadPicModel)
     {
         var url = Path.Combine(uploadPicModel.DocumentId, "document.pdf");
         await using (Stream docStream = await _storageService.Download(url))
@@ -363,12 +363,12 @@ public class PrimitiveController : Controller
             }
         }
 
-        return new DocStatusModelN();
+        return new DocStatusModel();
     }
 
     [HttpPost]
     [Route("input")]
-    public async Task<DocStatusModelN> UploadInputField([FromBody] UploadPicModelN uploadPicModel)
+    public async Task<DocStatusModel> UploadInputField([FromBody] UploadPicModel uploadPicModel)
     {
         var url = Path.Combine(uploadPicModel.DocumentId, "document.pdf");
         await using (Stream docStream = await _storageService.Download(url))
@@ -408,12 +408,12 @@ public class PrimitiveController : Controller
             }
         }
 
-        return new DocStatusModelN();
+        return new DocStatusModel();
     }
 
     [HttpPost]
     [Route("checkbox")]
-    public async Task<DocStatusModelN> UploadCheckBoxField([FromBody] UploadPicModelN uploadPicModel)
+    public async Task<DocStatusModel> UploadCheckBoxField([FromBody] UploadPicModel uploadPicModel)
     {
         var url = Path.Combine(uploadPicModel.DocumentId, "document.pdf");
         await using (Stream docStream = await _storageService.Download(url))
@@ -454,12 +454,12 @@ public class PrimitiveController : Controller
             }
         }
 
-        return new DocStatusModelN();
+        return new DocStatusModel();
     }
 
     [HttpPost]
     [Route("radio")]
-    public async Task<DocStatusModelN> UploadRadioField([FromBody] UploadPicModelN uploadPicModel)
+    public async Task<DocStatusModel> UploadRadioField([FromBody] UploadPicModel uploadPicModel)
     {
         var url = Path.Combine(uploadPicModel.DocumentId, "document.pdf");
         await using (Stream docStream = await _storageService.Download(url))
@@ -507,12 +507,12 @@ public class PrimitiveController : Controller
             }
         }
 
-        return new DocStatusModelN();
+        return new DocStatusModel();
     }
 
     [HttpPost]
     [Route("combobox")]
-    public async Task<DocStatusModelN> UploadComboBoxField([FromBody] UploadPicModelN uploadPicModel)
+    public async Task<DocStatusModel> UploadComboBoxField([FromBody] UploadPicModel uploadPicModel)
     {
         var url = Path.Combine(uploadPicModel.DocumentId, "document.pdf");
         await using (Stream docStream = await _storageService.Download(url))
@@ -559,7 +559,7 @@ public class PrimitiveController : Controller
             }
         }
 
-        return new DocStatusModelN();
+        return new DocStatusModel();
     }
 
 }
