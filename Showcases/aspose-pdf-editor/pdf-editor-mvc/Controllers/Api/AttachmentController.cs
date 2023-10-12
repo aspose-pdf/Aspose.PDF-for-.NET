@@ -18,6 +18,7 @@ public class AttachmentController : Controller
     }
 
     [HttpPost]
+    [Route("add")]
     public async Task<DocStatusModelN> Upload()
     {
         var httpRequest = HttpContext.Request;
@@ -113,8 +114,7 @@ public class AttachmentController : Controller
 
         var model = new FileAttachmentsModelN
         {
-            D = "Success",
-            Path = HttpContext.Request.Form["documentId"]
+            D = "Success"
         };
 
         return model;

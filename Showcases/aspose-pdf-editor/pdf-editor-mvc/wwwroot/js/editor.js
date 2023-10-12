@@ -1227,7 +1227,18 @@ function fileSelected() {
 
     }
     var xhr = new XMLHttpRequest();
-    xhr.open('PUT', `${apiBaseUrl}document/upload`);
+    switch($('#hdnOpp').val())
+    {
+        case 'uploading':
+            xhr.open('PUT', `${apiBaseUrl}document/upload`);
+        break;
+        case 'appending':
+            xhr.open('PUT', `${apiBaseUrl}document/append`);
+        break;
+        case 'addAttachment':
+            xhr.open('POST', `${apiBaseUrl}attachment/add`);
+        break;
+    }
 
     xhr.upload.onprogress = function (event) {
         if (event.lengthComputable) {
@@ -1680,8 +1691,8 @@ function ManageFields() {
 function GetAttachments() {
     // Sending the image data to Server
     $.ajax({
-        type: 'POST',
-        url: `${apiBaseUrl}GetFileAttachments/${documentId}`,
+        type: 'GET',
+        url: `${apiBaseUrl}attachment/all/${documentId}`,
         data: { 'documentId': documentId },
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
@@ -1742,8 +1753,8 @@ function RemoveAttachment(name, rowId) {
     let removeData = JSON.stringify({ 'attachmentFileName': name, 'documentId': documentId });
     // Sending the image data to Server
     $.ajax({
-        type: 'POST',
-        url: `${apiBaseUrl}remove-attachment`,
+        type: 'DELETE',
+        url: `${apiBaseUrl}attachment/remove`,
         data: removeData,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',

@@ -46,6 +46,48 @@ public class DocumentController : Controller
         return model;
     }
 
+    [HttpPut]
+    [Route("append")]
+    public async Task<DocStatusModel> Append()
+    {
+        var httpRequest = HttpContext.Request;
+        var documentId = httpRequest.Form.Keys.Contains("documentId") &&
+                         httpRequest.Form["documentId"][0] != null ?
+            httpRequest.Form["documentId"][0] :
+            Guid.NewGuid().ToString();
+        var fullPath = Path.Combine(
+            _storageService.WorkingDirectory,
+            documentId);
+
+        var postedFile = httpRequest.Form.Files.FirstOrDefault();
+
+        string appPages = httpRequest.Form["pages"];
+        string appRatios = httpRequest.Form["ratios"];
+        string appHeights = httpRequest.Form["heights"];
+
+        var url = Path.Combine(httpRequest.Form["documentId"], "document.pdf");
+
+        await using (var s = postedFile.OpenReadStream())
+        {
+            await using (Stream docStream = await _storageService.Download(url))
+            {
+                var model = new DocStatusModel
+                {
+                    D = await _documentServicecs.AppendConverter(
+                        docStream,
+                        s,
+                        httpRequest.Form["documentId"],
+                        appPages,
+                        appRatios,
+                        appHeights),
+                    Path = httpRequest.Form["documentId"]
+                };
+
+                return model;
+            }
+        }
+    }
+
     [HttpGet]
     [Route("info")]
     public async Task<DocStatusModel> GetInfo(string? folder, string? fileName)
