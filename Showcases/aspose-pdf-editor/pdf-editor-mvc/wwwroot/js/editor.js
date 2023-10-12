@@ -1805,8 +1805,8 @@ function GetFileExists() {
 
 function newFileClick(action) {
     $.ajax({
-        type: 'GET',
-        url: `${apiBaseUrl}createNewFile`,
+        type: 'POST',
+        url: `${apiBaseUrl}document/create`,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (data, textStatus, jqXHR) {

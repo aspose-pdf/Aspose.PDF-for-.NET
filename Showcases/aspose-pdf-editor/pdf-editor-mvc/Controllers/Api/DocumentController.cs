@@ -19,6 +19,30 @@ public class DocumentController : Controller
         _imageService = imageService;
     }
 
+    [HttpPost]
+    [Route("create")]
+    public async Task<DocStatusModel> CreateNew()
+    {
+        var guid = Guid.NewGuid().ToString();
+        var url = Path.Combine(guid, "document.pdf");
+
+        using Document doc = new Document();
+        doc.Pages.Add();
+
+        using MemoryStream ms = new MemoryStream();
+        doc.Save(ms);
+        ms.Seek(0, SeekOrigin.Begin);
+        var model = new DocStatusModel
+        {
+            D = await _imageService.ImageConverter(ms, guid, "document.pdf"),
+            Path = guid
+        };
+        ms.Seek(0, SeekOrigin.Begin);
+        await _storageService.Upload(ms, url);
+
+        return model;
+    }
+
     [HttpGet]
     [Route("info")]
     public async Task<DocStatusModel> GetDocumentInfo(string? folder, string? fileName)
