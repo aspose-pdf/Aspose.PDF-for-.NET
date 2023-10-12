@@ -1416,8 +1416,8 @@ function InsertImages(data, imgLeft, imgTop) {
 function ExportByType(fileType, documentId) {
     
     const a = document.createElement('a')
-    a.href = `${apiBaseUrl}download/${fileType}/${documentId}`
-    a.download = `${apiBaseUrl}download/${fileType}/${documentId}`.split('/').pop() + '.' + fileType;
+    a.href = `${apiBaseUrl}document/download/${fileType}/${documentId}`
+    a.download = `${apiBaseUrl}}document/download/${fileType}/${documentId}`.split('/').pop() + '.' + fileType;
     document.body.appendChild(a)
     a.click()
     document.body.removeChild(a);
