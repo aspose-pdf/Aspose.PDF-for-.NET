@@ -56,7 +56,7 @@ public class PageController : Controller
         }
     }
 
-    [HttpPost]
+    [HttpDelete]
     [Route("delete")]
     public async Task<DeletePageModelN> DeletePage([FromBody] DeletePageModelN deletePageModel)
     {
@@ -76,7 +76,7 @@ public class PageController : Controller
         }
     }
 
-    [HttpPost]
+    [HttpPut]
     [Route("move")]
     public async Task<MovePagesModelN> MovePages([FromBody] MovePagesModelN movePagesModel)
     {

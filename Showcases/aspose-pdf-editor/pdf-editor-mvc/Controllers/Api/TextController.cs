@@ -56,7 +56,7 @@ public class TextController : Controller
         return model;
     }
 
-    [HttpPost]
+    [HttpDelete]
     [Route("clear")]
     public async Task<DocStatusModelN> SearchClear([FromBody] SearchDataModelN searchDataModel)
     {
@@ -92,7 +92,7 @@ public class TextController : Controller
         return model;
     }
 
-    [HttpPost]
+    [HttpPut]
     [Route("replace")]
     public async Task<DocStatusModelN> ReplaceText([FromBody] ReplaceTextModelN replaceTextModel)
     {

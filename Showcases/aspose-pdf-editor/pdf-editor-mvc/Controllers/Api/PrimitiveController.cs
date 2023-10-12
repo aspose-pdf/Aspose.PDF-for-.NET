@@ -20,8 +20,8 @@ public class PrimitiveController : Controller
     }
 
     [HttpPost]
-    [Route("upload-pic")]
-    public async Task<DocStatusModelN> UploadPic([FromBody] UploadPicModelN uploadPicModel)
+    [Route("image")]
+    public async Task<DocStatusModelN> UploadImage([FromBody] UploadPicModelN uploadPicModel)
     {
         var url = Path.Combine(uploadPicModel.DocumentId, "document.pdf");
         await using (Stream docStream = await _storageService.Download(url))
@@ -59,7 +59,7 @@ public class PrimitiveController : Controller
                         var url1 = Path.Combine(uploadPicModel.DocumentId, t.imName);
                         stream = await _storageService.Download(url1);
                     }
-                    
+
                     var imageStamp = new ImageStamp(stream)
                     {
                         Background = false,
@@ -75,7 +75,42 @@ public class PrimitiveController : Controller
                     if (stream != null)
                         await stream.DisposeAsync();
                 }
-                else if (t.Itype == "text")
+            }
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                doc.Save(ms);
+                await _storageService.Upload(ms, url);
+            }
+        }
+
+        return new DocStatusModelN();
+    }
+
+    [HttpPost]
+    [Route("text")]
+    public async Task<DocStatusModelN> UploadText([FromBody] UploadPicModelN uploadPicModel)
+    {
+        var url = Path.Combine(uploadPicModel.DocumentId, "document.pdf");
+        await using (Stream docStream = await _storageService.Download(url))
+        using (Document doc = new Document(docStream))
+        {
+            foreach (var t in uploadPicModel.Shapes)
+            {
+                float shapeX = float.Parse(t.X.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeY = float.Parse(t.Y.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeW = float.Parse(t.W.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeH = float.Parse(t.H.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+
+                float yaxis = (float)(doc.Pages[int.Parse(t.P)].Rect.URY - (shapeH + shapeY));
+
+                var isSpecial = true;
+
+                if (t.Itype == "text")
                 {
                     //create text stamp
                     TextStamp textStamp = new TextStamp(t.t);
@@ -112,7 +147,42 @@ public class PrimitiveController : Controller
                     //add stamp to particular page
                     doc.Pages[int.Parse(t.P)].AddStamp(textStamp);
                 }
-                else if (t.Itype == "field" && isSpecial)
+            }
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                doc.Save(ms);
+                await _storageService.Upload(ms, url);
+            }
+        }
+
+        return new DocStatusModelN();
+    }
+
+    [HttpPost]
+    [Route("input")]
+    public async Task<DocStatusModelN> UploadInputField([FromBody] UploadPicModelN uploadPicModel)
+    {
+        var url = Path.Combine(uploadPicModel.DocumentId, "document.pdf");
+        await using (Stream docStream = await _storageService.Download(url))
+        using (Document doc = new Document(docStream))
+        {
+            foreach (var t in uploadPicModel.Shapes)
+            {
+                float shapeX = float.Parse(t.X.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeY = float.Parse(t.Y.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeW = float.Parse(t.W.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeH = float.Parse(t.H.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+
+                float yaxis = (float)(doc.Pages[int.Parse(t.P)].Rect.URY - (shapeH + shapeY));
+
+                var isSpecial = true;
+
+                if (t.Itype == "field" && isSpecial)
                 {
                     if (t.fieldType == "Text")
                     {
@@ -121,7 +191,45 @@ public class PrimitiveController : Controller
                         // Modify field value
                         textBoxField.Value = t.t;
                     }
-                    else if (t.fieldType == "CheckBox")
+                }
+            }
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                doc.Save(ms);
+                await _storageService.Upload(ms, url);
+            }
+        }
+
+        return new DocStatusModelN();
+    }
+
+    [HttpPost]
+    [Route("checkbox")]
+    public async Task<DocStatusModelN> UploadCheckBoxField([FromBody] UploadPicModelN uploadPicModel)
+    {
+        var url = Path.Combine(uploadPicModel.DocumentId, "document.pdf");
+        await using (Stream docStream = await _storageService.Download(url))
+        using (Document doc = new Document(docStream))
+        {
+            foreach (var t in uploadPicModel.Shapes)
+            {
+                float shapeX = float.Parse(t.X.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeY = float.Parse(t.Y.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeW = float.Parse(t.W.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeH = float.Parse(t.H.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+
+                float yaxis = (float)(doc.Pages[int.Parse(t.P)].Rect.URY - (shapeH + shapeY));
+
+                var isSpecial = true;
+
+                if (t.Itype == "field" && isSpecial)
+                {
+                    if (t.fieldType == "CheckBox")
                     {
                         // Get a field
                         CheckboxField? checkBoxField = doc.Form.Fields[Convert.ToInt32(t.imName)] as CheckboxField;
@@ -129,7 +237,45 @@ public class PrimitiveController : Controller
                             // Modify field value
                             checkBoxField.Checked = Convert.ToBoolean(t.t);
                     }
-                    else if (t.fieldType == "Radio")
+                }
+            }
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                doc.Save(ms);
+                await _storageService.Upload(ms, url);
+            }
+        }
+
+        return new DocStatusModelN();
+    }
+
+    [HttpPost]
+    [Route("radio")]
+    public async Task<DocStatusModelN> UploadRadioField([FromBody] UploadPicModelN uploadPicModel)
+    {
+        var url = Path.Combine(uploadPicModel.DocumentId, "document.pdf");
+        await using (Stream docStream = await _storageService.Download(url))
+        using (Document doc = new Document(docStream))
+        {
+            foreach (var t in uploadPicModel.Shapes)
+            {
+                float shapeX = float.Parse(t.X.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeY = float.Parse(t.Y.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeW = float.Parse(t.W.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeH = float.Parse(t.H.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+
+                float yaxis = (float)(doc.Pages[int.Parse(t.P)].Rect.URY - (shapeH + shapeY));
+
+                var isSpecial = true;
+
+                if (t.Itype == "field" && isSpecial)
+                {
+                    if (t.fieldType == "Radio")
                     {
                         RadioButtonOptionField field =
                             (RadioButtonOptionField)doc.Form.Fields[Convert.ToInt32(t.imName)];
@@ -144,7 +290,45 @@ public class PrimitiveController : Controller
                             field.ActiveState = "Off";
                         }
                     }
-                    else if (t.fieldType == "ComboBox")
+                }
+            }
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                doc.Save(ms);
+                await _storageService.Upload(ms, url);
+            }
+        }
+
+        return new DocStatusModelN();
+    }
+
+    [HttpPost]
+    [Route("combobox")]
+    public async Task<DocStatusModelN> UploadComboBoxField([FromBody] UploadPicModelN uploadPicModel)
+    {
+        var url = Path.Combine(uploadPicModel.DocumentId, "document.pdf");
+        await using (Stream docStream = await _storageService.Download(url))
+        using (Document doc = new Document(docStream))
+        {
+            foreach (var t in uploadPicModel.Shapes)
+            {
+                float shapeX = float.Parse(t.X.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeY = float.Parse(t.Y.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeW = float.Parse(t.W.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+                float shapeH = float.Parse(t.H.Replace(',', '.')) * 72 / 150 /
+                               (float)Convert.ToDouble(t.ratio.Replace(',', '.'));
+
+                float yaxis = (float)(doc.Pages[int.Parse(t.P)].Rect.URY - (shapeH + shapeY));
+
+                var isSpecial = true;
+
+                if (t.Itype == "field" && isSpecial)
+                {
+                    if (t.fieldType == "ComboBox")
                     {
                         // Get a field
                         ComboBoxField? comboBoxField = doc.Form.Fields[Convert.ToInt32(t.imName)] as ComboBoxField;
@@ -170,4 +354,5 @@ public class PrimitiveController : Controller
 
         return new DocStatusModelN();
     }
+
 }

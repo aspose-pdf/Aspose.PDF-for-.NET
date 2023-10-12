@@ -59,7 +59,7 @@ public class AttachmentController : Controller
         };
     }
 
-    [HttpPost]
+    [HttpGet]
     [Route("all/{folder}")]
     public async Task<FileAttachmentsModelN> GetFileAttachments(string folder)
     {
@@ -93,7 +93,7 @@ public class AttachmentController : Controller
         return model;
     }
 
-    [HttpPost]
+    [HttpDelete]
     [Route("remove")]
     public async Task<FileAttachmentsModelN> RemoveFileAttachment([FromBody] RemoveAttachmentModelN removeAttachmentModel)
     {
