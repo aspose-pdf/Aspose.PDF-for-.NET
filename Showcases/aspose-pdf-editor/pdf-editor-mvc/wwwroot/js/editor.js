@@ -1114,7 +1114,7 @@ function SavePdf() {
 
     $.ajax({
         type: 'POST',
-        url: `${apiBaseUrl}upload-pic`,
+        url: `${apiBaseUrl}primitive/add`,
         data: wholedata,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
