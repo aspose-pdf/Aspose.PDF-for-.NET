@@ -1,7 +1,7 @@
 namespace Aspose.PDF.Editor.Models;
 
+//TODO: hard for understand
 public class ShapeModel
-
 {
     public string? X { get; set; }
     
@@ -29,9 +29,9 @@ public class ShapeModel
     
     public string? ratio { get; set; }
     
-    public string imName { get; set; }
+    public string ImName { get; set; }
     
-    public string Itype { get; set; }
+    public string IType { get; set; }
     
-    public string fieldType { get; set; }
+    public string FieldType { get; set; }
 }

@@ -1114,7 +1114,7 @@ function SavePdf() {
 
     $.ajax({
         type: 'POST',
-        url: `${apiBaseUrl}primitive/add`,
+        url: `${apiBaseUrl}shape/add`,
         data: wholedata,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
@@ -1239,7 +1239,7 @@ function fileSelected() {
             xhr.open('POST', `${apiBaseUrl}attachment/add`);
         break;
         default:
-            xhr.open('POST', `${apiBaseUrl}primitive/upload`);
+            xhr.open('POST', `${apiBaseUrl}shape/upload`);
     }
 
     xhr.upload.onprogress = function (event) {
@@ -1870,7 +1870,7 @@ function saveSignature() {
 
     $.ajax({
         type: 'POST',
-        url: `${apiBaseUrl}primitive/signature`,
+        url: `${apiBaseUrl}shape/signature`,
         data: signatureData,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',

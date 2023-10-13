@@ -43,7 +43,7 @@ public class PageController : Controller
 
     [HttpPost]
     [Route("add/{folder}")]
-    public async Task<DocStatusModel> AddPage(string folder)
+    public async Task<DocInfoModel> AddPage(string folder)
     {
         var url = Path.Combine(folder, "document.pdf");
         int pageCount = 0;
@@ -67,7 +67,7 @@ public class PageController : Controller
                     pngDevice.Process(doc.Pages[pageCount], imageStream);
 
                     var (height, aspectRatio) =  await _imageService.ScaleImage(imageStream, folder, imageFileName, 1138);
-                    return new DocStatusModel
+                    return new DocInfoModel
                     {
                         D = $"image{pageCount}.png#{height}#{aspectRatio}",
                         Path = folder,

@@ -1,16 +1,14 @@
 namespace Aspose.PDF.Editor.Models;
 
-public class DocStatusModel
+public class DocInfoModel
 {
     public string OriginalFileName { get; set; }
-        
+    
+    //TODO: meaing
     public string D { get; set; }
         
     public string Path { get; set; }
-        
-    public string Pages { get; set; }
-        
-    public string Ratios { get; set; }
-        
+    
+    // TODO: Should be list
     public string Heights { get; set; }
 }

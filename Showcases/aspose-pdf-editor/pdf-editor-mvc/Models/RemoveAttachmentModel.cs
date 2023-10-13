@@ -4,5 +4,5 @@ public class RemoveAttachmentModel
 {
     public string? DocumentId { get; set; }
       
-    public string? AttachmentFileName { get; set; }
+    public string? FileName { get; set; }
 }
