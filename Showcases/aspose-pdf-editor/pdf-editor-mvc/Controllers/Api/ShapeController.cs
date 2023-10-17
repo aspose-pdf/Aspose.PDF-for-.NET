@@ -32,15 +32,15 @@ public class ShapeController : Controller
             foreach (var t in uploadPicModel.Shapes)
             {
                 float shapeX = float.Parse(t.X.Replace(',', '.'), CultureInfo.InvariantCulture) * 72 / 150 /
-                               (float)double.Parse(t.ratio.Replace(',', '.'), CultureInfo.InvariantCulture);
+                               (float)double.Parse(t.Ratio.Replace(',', '.'), CultureInfo.InvariantCulture);
                 float shapeY = float.Parse(t.Y.Replace(',', '.'), CultureInfo.InvariantCulture) * 72 / 150 /
-                               (float)double.Parse(t.ratio.Replace(',', '.'), CultureInfo.InvariantCulture);
-                float shapeW = float.Parse(t.W.Replace(',', '.'), CultureInfo.InvariantCulture) * 72 / 150 /
-                               (float)double.Parse(t.ratio.Replace(',', '.'), CultureInfo.InvariantCulture);
-                float shapeH = float.Parse(t.H.Replace(',', '.'), CultureInfo.InvariantCulture) * 72 / 150 /
-                               (float)double.Parse(t.ratio.Replace(',', '.'), CultureInfo.InvariantCulture);
+                               (float)double.Parse(t.Ratio.Replace(',', '.'), CultureInfo.InvariantCulture);
+                float shapeW = float.Parse(t.TextWidth.Replace(',', '.'), CultureInfo.InvariantCulture) * 72 / 150 /
+                               (float)double.Parse(t.Ratio.Replace(',', '.'), CultureInfo.InvariantCulture);
+                float shapeH = float.Parse(t.FontHeight.Replace(',', '.'), CultureInfo.InvariantCulture) * 72 / 150 /
+                               (float)double.Parse(t.Ratio.Replace(',', '.'), CultureInfo.InvariantCulture);
 
-                float yaxis = (float)(doc.Pages[int.Parse(t.P)].Rect.URY - (shapeH + shapeY));
+                float yaxis = (float)(doc.Pages[int.Parse(t.Page)].Rect.URY - (shapeH + shapeY));
 
                 var isSpecial = true;
 
@@ -72,7 +72,7 @@ public class ShapeController : Controller
                     };
 
                     //Add stamp to particular page
-                    doc.Pages[int.Parse(t.P)].AddStamp(imageStamp);
+                    doc.Pages[int.Parse(t.Page)].AddStamp(imageStamp);
 
                     if (stream != null)
                         await stream.DisposeAsync();
@@ -80,7 +80,7 @@ public class ShapeController : Controller
                 else if (t.IType == "text")
                 {
                     //create text stamp
-                    TextStamp textStamp = new TextStamp(t.t);
+                    TextStamp textStamp = new TextStamp(t.Text);
                     textStamp.XIndent = shapeX;
                     textStamp.YIndent = yaxis;
                     //rotate stamp
@@ -89,29 +89,29 @@ public class ShapeController : Controller
                     //set text properties
                     try
                     {
-                        textStamp.TextState.Font = FontRepository.FindFont(t.n);
+                        textStamp.TextState.Font = FontRepository.FindFont(t.FontText);
                     }
                     catch
                     {
                         //TODO: do something with font
                     }
 
-                    textStamp.TextState.FontSize = Convert.ToInt32(t.s) * 0.75f;
+                    textStamp.TextState.FontSize = Convert.ToInt32(t.FontSize) * 0.75f;
 
-                    if (t.wt == "bold")
+                    if (t.FontWeight == "bold")
                     {
                         textStamp.TextState.FontStyle = FontStyles.Bold;
                     }
 
-                    if (t.st == "italic")
+                    if (t.FontStyle == "italic")
                     {
                         textStamp.TextState.FontStyle = FontStyles.Italic;
                     }
 
-                    textStamp.TextState.ForegroundColor = Color.Parse(t.c);
+                    textStamp.TextState.ForegroundColor = Color.Parse(t.FontColor);
 
                     //add stamp to particular page
-                    doc.Pages[int.Parse(t.P)].AddStamp(textStamp);
+                    doc.Pages[int.Parse(t.Page)].AddStamp(textStamp);
                 }
                 else if (t.IType == "field" && isSpecial)
                 {
@@ -120,15 +120,15 @@ public class ShapeController : Controller
                         // Get a field
                         TextBoxField textBoxField = doc.Form.Fields[Convert.ToInt32(t.ImName)] as TextBoxField;
                         // Modify field value
-                        textBoxField.Value = t.t;
+                        textBoxField.Value = t.Text;
                     }
                     else if (t.FieldType == "CheckBox")
                     {
                         // Get a field
                         CheckboxField? checkBoxField = doc.Form.Fields[Convert.ToInt32(t.ImName)] as CheckboxField;
-                        if (t.t != "")
+                        if (t.Text != "")
                             // Modify field value
-                            checkBoxField.Checked = Convert.ToBoolean(t.t);
+                            checkBoxField.Checked = Convert.ToBoolean(t.Text);
                     }
                     else if (t.FieldType == "Radio")
                     {
@@ -136,7 +136,7 @@ public class ShapeController : Controller
                             (RadioButtonOptionField)doc.Form.Fields[Convert.ToInt32(t.ImName)];
 
                         RadioButtonField rbf = (RadioButtonField)field.Parent;
-                        if (Convert.ToBoolean(t.t))
+                        if (Convert.ToBoolean(t.Text))
                         {
                             rbf.Selected = rbf.Options[field.OptionName].Index;
                         }
@@ -149,7 +149,7 @@ public class ShapeController : Controller
                     {
                         // Get a field
                         ComboBoxField? comboBoxField = doc.Form.Fields[Convert.ToInt32(t.ImName)] as ComboBoxField;
-                        var values = t.t.Split(new[] { "^^^" }, StringSplitOptions.None)[0];
+                        var values = t.Text.Split(new[] { "^^^" }, StringSplitOptions.None)[0];
 
                         foreach (var item in comboBoxField.Options)
                         {
