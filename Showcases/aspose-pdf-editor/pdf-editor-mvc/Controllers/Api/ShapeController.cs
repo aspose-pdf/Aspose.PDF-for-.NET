@@ -181,9 +181,6 @@ public class ShapeController : Controller
                          httpRequest.Form["documentId"][0] != null ?
             httpRequest.Form["documentId"][0] :
             Guid.NewGuid().ToString();
-        var fullPath = Path.Combine(
-            _storageService.WorkingDirectory,
-            documentId);
 
         var postedFile = httpRequest.Form.Files.FirstOrDefault();
 

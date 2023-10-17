@@ -1,8 +1,8 @@
 [
   {
-    "outputFileName": "Resources/js/Editor.min.js",
+    "outputFileName": "wwwroot/js/editor.min.js",
     "inputFiles": [
-      "Resources/js/Editor.js"
+      "wwwroot/js/editor.js"
     ]
   }
 ]

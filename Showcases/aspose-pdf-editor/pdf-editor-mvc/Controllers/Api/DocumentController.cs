@@ -51,13 +51,6 @@ public class DocumentController : Controller
     public async Task<DocInfoModel> Append()
     {
         var httpRequest = HttpContext.Request;
-        var documentId = httpRequest.Form.Keys.Contains("documentId") &&
-                         httpRequest.Form["documentId"][0] != null ?
-            httpRequest.Form["documentId"][0] :
-            Guid.NewGuid().ToString();
-        var fullPath = Path.Combine(
-            _storageService.WorkingDirectory,
-            documentId);
 
         var postedFile = httpRequest.Form.Files.FirstOrDefault();
 
@@ -97,8 +90,6 @@ public class DocumentController : Controller
             folder = Guid.NewGuid().ToString();
             fileName = "document.pdf";
         }
-
-        var downloadFileName = "document.pdf";
 
         var url = Path.Combine(folder, fileName);
         await using (Stream docStream = await _storageService.Download(url))
