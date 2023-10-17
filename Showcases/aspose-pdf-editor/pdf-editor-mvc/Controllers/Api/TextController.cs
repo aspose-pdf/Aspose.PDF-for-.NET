@@ -10,7 +10,7 @@ namespace Aspose.PDF.Editor.Controllers;
 [Route("api/[controller]")]
 public class TextController : Controller
 {
-    private const string SearchMarker = "Aspose.PDF Editor Free App Search";
+    private const string SearchMarker = "Aspose.PDF Editor";
 
     private readonly IStorageService _storageService;
     private readonly IImageService _imageService;
@@ -25,8 +25,8 @@ public class TextController : Controller
     [Route("search")]
     public async Task<DocInfoModel> SearchData([FromBody] SearchDataModel searchDataModel)
     {
-        var url = Path.Combine(searchDataModel.DocumentId, "document.pdf");
-        await using Stream docStream = await _storageService.Download(url);
+        var file = Path.Combine(searchDataModel.DocumentId, "document.pdf");
+        await using Stream docStream = await _storageService.Download(file);
 
         using Document document = new Document(docStream);
         TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(searchDataModel.SearchText);
@@ -50,7 +50,7 @@ public class TextController : Controller
             DocumentId = searchDataModel.DocumentId
         };
         ms.Seek(0, SeekOrigin.Begin);
-        await _storageService.Upload(ms, url);
+        await _storageService.Upload(ms, file);
 
         return model;
     }
@@ -59,8 +59,8 @@ public class TextController : Controller
     [Route("clear")]
     public async Task<DocInfoModel> SearchClear([FromBody] SearchDataModel searchDataModel)
     {
-        var url = Path.Combine(searchDataModel.DocumentId, "document.pdf");
-        await using Stream docStream = await _storageService.Download(url);
+        var file = Path.Combine(searchDataModel.DocumentId, "document.pdf");
+        await using Stream docStream = await _storageService.Download(file);
 
         using Document document = new Document(docStream);
         foreach (var page in document.Pages)
@@ -85,7 +85,7 @@ public class TextController : Controller
             DocumentId = searchDataModel.DocumentId
         };
         ms.Seek(0, SeekOrigin.Begin);
-        await _storageService.Upload(ms, url);
+        await _storageService.Upload(ms, file);
 
         return model;
     }
@@ -94,8 +94,8 @@ public class TextController : Controller
     [Route("replace")]
     public async Task<DocInfoModel> ReplaceText([FromBody] ReplaceTextModel replaceTextModel)
     {
-        var url = Path.Combine(replaceTextModel.DocumentId, "document.pdf");
-        await using Stream docStream = await _storageService.Download(url);
+        var file = Path.Combine(replaceTextModel.DocumentId, "document.pdf");
+        await using Stream docStream = await _storageService.Download(file);
         using Document doc = new Document(docStream);
 
         TextFragmentAbsorber textFragmentAbsorber =
@@ -122,7 +122,7 @@ public class TextController : Controller
             DocumentId = replaceTextModel.DocumentId
         };
         ms.Seek(0, SeekOrigin.Begin);
-        await _storageService.Upload(ms, url);
+        await _storageService.Upload(ms, file);
 
         return model;
     }

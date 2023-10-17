@@ -1756,7 +1756,7 @@ function RemoveAttachment(name, rowId) {
         data: removeData,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
-        success: function (data, textStatus, jqXHR) {
+        success: function () {
             document.getElementById('tblAttach').deleteRow(rowId);
         },
         //call on ajax call failure

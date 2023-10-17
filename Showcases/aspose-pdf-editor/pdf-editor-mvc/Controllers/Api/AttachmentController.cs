@@ -26,36 +26,34 @@ public class AttachmentController : Controller
                          httpRequest.Form["documentId"][0] != null ? 
             httpRequest.Form["documentId"][0] : 
             Guid.NewGuid().ToString();
-        var fullPath = Path.Combine(
-            _storageService.WorkingDirectory,
-            documentId);
 
-        var postedFile = httpRequest.Form.Files.FirstOrDefault();
+        var file = Path.Combine(_storageService.WorkingDirectory, documentId);
 
-        if (postedFile == null)
+        var formFile = httpRequest.Form.Files.FirstOrDefault();
+
+        if (formFile == null)
             throw new ArgumentException("no files");
 
-        var documentFileName = Path.Combine(fullPath, "document.pdf");
+        var documentFileName = Path.Combine(file, "document.pdf");
         using MemoryStream ms = new MemoryStream();
         using (PdfContentEditor contentEditor = new PdfContentEditor())
         {
             contentEditor.BindPdf(documentFileName);
-            await using (var fs = postedFile.OpenReadStream())
+            await using (var fs = formFile.OpenReadStream())
             {
                 contentEditor.AddDocumentAttachment(
                     fs,
-                    postedFile.FileName,
+                    formFile.FileName,
                     "File added by Aspose.PDF Editor");
                 contentEditor.Save(ms);
             }    
         }
 
-        var url = Path.Combine(httpRequest.Form["documentId"], "document.pdf");
-        await _storageService.Upload(ms, url);
+        await _storageService.Upload(ms, file);
 
         return new DocInfoModel
         {
-            Pages = postedFile.FileName,
+            Pages = formFile.FileName,
             DocumentId = httpRequest.Form["documentId"]
         };
     }
@@ -64,8 +62,8 @@ public class AttachmentController : Controller
     [Route("all/{folder}")]
     public async Task<AttachmentModel> GetFileAttachments(string folder)
     {
-        var url = Path.Combine(folder, "document.pdf");
-        await using Stream docStream = await _storageService.Download(url);
+        var file = Path.Combine(folder, "document.pdf");
+        await using Stream docStream = await _storageService.Download(file);
 
         string outAttach = "";
 
@@ -96,10 +94,10 @@ public class AttachmentController : Controller
 
     [HttpDelete]
     [Route("remove")]
-    public async Task<AttachmentModel> RemoveFileAttachment([FromBody] RemoveAttachmentModel removeAttachmentModel)
+    public async Task<StatusCodeResult> RemoveFileAttachment([FromBody] RemoveAttachmentModel removeAttachmentModel)
     {
-        var url = Path.Combine(removeAttachmentModel.DocumentId, "document.pdf");
-        await using Stream docStream = await _storageService.Download(url);
+        var file = Path.Combine(removeAttachmentModel.DocumentId, "document.pdf");
+        await using Stream docStream = await _storageService.Download(file);
 
         // Open document
         using (Document pdfDocument = new Document(docStream))
@@ -109,14 +107,9 @@ public class AttachmentController : Controller
             using MemoryStream ms = new MemoryStream();
             pdfDocument.Save(ms);
             ms.Seek(0, SeekOrigin.Begin);
-            await _storageService.Upload(ms, url);
+            await _storageService.Upload(ms, file);
         }
 
-        var model = new AttachmentModel
-        {
-            Files = "Success"
-        };
-
-        return model;
+        return Ok();
     }
 }

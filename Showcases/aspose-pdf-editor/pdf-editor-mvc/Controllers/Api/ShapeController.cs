@@ -25,8 +25,8 @@ public class ShapeController : Controller
     [Route("add")]
     public async Task<DocInfoModel> AddShapes([FromBody] PrimitivesModel uploadPicModel)
     {
-        var url = Path.Combine(uploadPicModel.DocumentId, "document.pdf");
-        await using (Stream docStream = await _storageService.Download(url))
+        var file = Path.Combine(uploadPicModel.DocumentId, "document.pdf");
+        await using (Stream docStream = await _storageService.Download(file))
         using (Document doc = new Document(docStream))
         {
             foreach (var t in uploadPicModel.Shapes)
@@ -58,8 +58,8 @@ public class ShapeController : Controller
                     }
                     else
                     {
-                        var url1 = Path.Combine(uploadPicModel.DocumentId, t.ImName);
-                        stream = await _storageService.Download(url1);
+                        var file1 = Path.Combine(uploadPicModel.DocumentId, t.ImName);
+                        stream = await _storageService.Download(file1);
                     }
 
                     var imageStamp = new ImageStamp(stream)
@@ -165,7 +165,7 @@ public class ShapeController : Controller
             using (MemoryStream ms = new MemoryStream())
             {
                 doc.Save(ms);
-                await _storageService.Upload(ms, url);
+                await _storageService.Upload(ms, file);
             }
         }
 
@@ -184,11 +184,11 @@ public class ShapeController : Controller
 
         var postedFile = httpRequest.Form.Files.FirstOrDefault();
 
-        var url = Path.Combine(httpRequest.Form["documentId"], postedFile.FileName);
+        var file = Path.Combine(httpRequest.Form["documentId"], postedFile.FileName);
 
         using (var s = postedFile.OpenReadStream())
         {
-            await _storageService.Upload(s, url);
+            await _storageService.Upload(s, file);
         }
 
         var model = new DocInfoModel
@@ -207,12 +207,12 @@ public class ShapeController : Controller
         Random random = new Random();
         int rand = random.Next(1000000);
         string fileNameWitPath = $"sign{rand}.png";
-        var url = Path.Combine(signatureModel.DocumentId, fileNameWitPath);
+        var file = Path.Combine(signatureModel.DocumentId, fileNameWitPath);
 
         byte[] data = Convert.FromBase64String(signatureModel.ImageData);
         using (MemoryStream fs = new MemoryStream(data))
         {
-            await _storageService.Upload(fs, url);
+            await _storageService.Upload(fs, file);
         }
 
         var model = new DocInfoModel
