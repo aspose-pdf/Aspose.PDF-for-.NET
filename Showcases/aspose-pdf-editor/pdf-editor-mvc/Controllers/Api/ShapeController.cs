@@ -23,7 +23,7 @@ public class ShapeController : Controller
 
     [HttpPost]
     [Route("add")]
-    public async Task<DocInfoModel> AddShapes([FromBody] UploadPicModel uploadPicModel)
+    public async Task<DocInfoModel> AddShapes([FromBody] PrimitivesModel uploadPicModel)
     {
         var url = Path.Combine(uploadPicModel.DocumentId, "document.pdf");
         await using (Stream docStream = await _storageService.Download(url))

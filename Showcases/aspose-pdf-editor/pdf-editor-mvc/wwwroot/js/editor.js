@@ -884,7 +884,7 @@ function DeletePage() {
     }
     shapes = shapes.filter(isFromPage);
 
-    var deleteData = JSON.stringify({ 'imageData': currentPage.toString(), 'imageName': Npages[currentPage - 1], 'documentId': documentId });
+    var deleteData = JSON.stringify({ 'pageNumber': currentPage, 'documentId': documentId });
     return $.ajax({
         type: 'DELETE',
         url: `${apiBaseUrl}page/delete`,

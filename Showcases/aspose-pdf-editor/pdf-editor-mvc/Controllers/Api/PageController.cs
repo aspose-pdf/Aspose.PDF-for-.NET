@@ -123,12 +123,12 @@ public class PageController : Controller
     public async Task<DeletePageModel> DeletePage([FromBody] DeletePageModel deletePageModel)
     {
         var url = Path.Combine(deletePageModel.DocumentId, "document.pdf");
-        var imgUrl = Path.Combine(deletePageModel.DocumentId, deletePageModel.ImageName);
+        var imgUrl = Path.Combine(deletePageModel.DocumentId, $"image{deletePageModel.PageNumber}.png");
 
         await using (Stream docStream = await _storageService.Download(url))
         {
             using Document doc = new Document(docStream);
-            doc.Pages.Delete(Convert.ToInt32(deletePageModel.ImageData));
+            doc.Pages.Delete(deletePageModel.PageNumber);
             using MemoryStream ms = new MemoryStream();
             doc.Save(ms);
             ms.Seek(0, SeekOrigin.Begin);
