@@ -70,7 +70,7 @@ public class PageController : Controller
                     return new DocInfoModel
                     {
                         Pages = $"image{pageCount}.png#{height}#{aspectRatio}",
-                        Path = folder,
+                        DocumentId = folder,
                         Heights = height
                     };
                 }

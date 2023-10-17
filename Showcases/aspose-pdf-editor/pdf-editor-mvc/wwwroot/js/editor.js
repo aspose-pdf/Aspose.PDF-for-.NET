@@ -1,6 +1,5 @@
 let apiBaseUrl = '/api/';
 let documentId = '';
-let originalFileName = 'document.pdf';
 let ratio = 1;
 let canvasHeight;
 let canvasWidth;
@@ -1238,8 +1237,6 @@ function fileSelected() {
         case 'addAttachment':
             xhr.open('POST', `${apiBaseUrl}attachment/add`);
         break;
-        default:
-            xhr.open('POST', `${apiBaseUrl}shape/upload`);
     }
 
     xhr.upload.onprogress = function (event) {
@@ -1258,8 +1255,7 @@ function fileSelected() {
             
             data = JSON.parse(xhr.responseText);
             dataLoad = data.pages;
-            documentId = data.path;
-            originalFileName = data.originalFileName;
+            documentId = data.documentId;
             if ($('#hdnOpp').val() === 'appending') {
                 First();
             }
@@ -1787,7 +1783,7 @@ function GetFileExists() {
         dataType: 'json',
         success: function (data, textStatus, jqXHR) {
             dataLoad = data.pages;
-            documentId = data.path;
+            documentId = data.documentId;
             console.log(data);
             for (let i = 0; i < shapes.length; i++) {
                 var shapeDiv = document.getElementById('div_' + shapes[i].imName + '');
@@ -1822,9 +1818,9 @@ function newFileClick(action) {
         url: `${apiBaseUrl}document/create`,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
-        success: function (data, textStatus, jqXHR) {
+        success: function (data) {
             dataLoad = data.pages;
-            documentId = data.path;
+            documentId = data.documentId;
             for (i = 0; i < shapes.length; i++) {
 
                 var shapeDiv = document.getElementById('div_' + shapes[i].imName + '');

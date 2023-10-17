@@ -38,7 +38,7 @@ public class DocumentController : Controller
         var model = new DocInfoModel
         {
             Pages = await _imageService.ImageConverter(ms, guid, "document.pdf"),
-            Path = guid
+            DocumentId = guid
         };
         ms.Seek(0, SeekOrigin.Begin);
         await _storageService.Upload(ms, url);
@@ -80,7 +80,7 @@ public class DocumentController : Controller
                         appPages,
                         appRatios,
                         appHeights),
-                    Path = httpRequest.Form["documentId"]
+                    DocumentId = httpRequest.Form["documentId"]
                 };
 
                 return model;
@@ -106,8 +106,7 @@ public class DocumentController : Controller
             var model = new DocInfoModel
             {
                 Pages = await _imageService.ImageConverter(docStream, folder, fileName),
-                Path = folder,
-                OriginalFileName = downloadFileName
+                DocumentId = folder
             };
 
             return model;
@@ -141,8 +140,7 @@ public class DocumentController : Controller
             var model = new DocInfoModel
             {
                 Pages = await _imageService.ImageConverter(s, guid, "document.pdf"),
-                Path = guid,
-                OriginalFileName = postedFile.FileName
+                DocumentId = guid
             };
             s.Seek(0, SeekOrigin.Begin);
             await _storageService.Upload(s, url);
@@ -212,8 +210,7 @@ public class DocumentController : Controller
                 await _storageService.Upload(ms1, url6);
                 return new DocInfoModel
                 {
-                    Path = folder,
-                    OriginalFileName = "document.txt"
+                    DocumentId = folder
                 };
             case "docx":
                 doc.Save(ms, SaveFormat.DocX);
@@ -222,8 +219,7 @@ public class DocumentController : Controller
                 await _storageService.Upload(ms, url1);
                 return new DocInfoModel
                 {
-                    Path = folder,
-                    OriginalFileName = "document.docx"
+                    DocumentId = folder
                 };
             case "svg":
                 doc.Save(ms, SaveFormat.Svg);
@@ -232,8 +228,7 @@ public class DocumentController : Controller
                 await _storageService.Upload(ms, url2);
                 return new DocInfoModel
                 {
-                    Path = folder,
-                    OriginalFileName = "document.svg"
+                    DocumentId = folder
                 };
             case "xps":
                 doc.Save(ms, SaveFormat.Xps);
@@ -242,8 +237,7 @@ public class DocumentController : Controller
                 await _storageService.Upload(ms, url3);
                 return new DocInfoModel
                 {
-                    Path = folder,
-                    OriginalFileName = "document.xps"
+                    DocumentId = folder
                 };
             case "xls":
                 doc.Save(ms, SaveFormat.Excel);
@@ -252,8 +246,7 @@ public class DocumentController : Controller
                 await _storageService.Upload(ms, url4);
                 return new DocInfoModel
                 {
-                    Path = folder,
-                    OriginalFileName = "document.xlsx"
+                    DocumentId = folder
                 };
             case "html":
                 doc.Save(ms, new HtmlSaveOptions
@@ -268,8 +261,7 @@ public class DocumentController : Controller
                 await _storageService.Upload(ms, url5);
                 return new DocInfoModel
                 {
-                    Path = folder,
-                    OriginalFileName = "document.html"
+                    DocumentId = folder
                 };
             case "pdf":
                 doc.Save(ms, SaveFormat.Pdf);
@@ -278,8 +270,7 @@ public class DocumentController : Controller
                 await _storageService.Upload(ms, url7);
                 return new DocInfoModel
                 {
-                    Path = folder,
-                    OriginalFileName = "document.pdf"
+                    DocumentId = folder
                 };
         }
 

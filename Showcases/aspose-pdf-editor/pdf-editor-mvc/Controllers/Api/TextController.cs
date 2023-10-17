@@ -47,8 +47,7 @@ public class TextController : Controller
         var model = new DocInfoModel
         {
             Pages = await _imageService.ImageConverter(ms, searchDataModel.DocumentId, "document.pdf"),
-            Path = searchDataModel.DocumentId,
-            OriginalFileName = ""
+            DocumentId = searchDataModel.DocumentId
         };
         ms.Seek(0, SeekOrigin.Begin);
         await _storageService.Upload(ms, url);
@@ -83,8 +82,7 @@ public class TextController : Controller
         var model = new DocInfoModel
         {
             Pages = await _imageService.ImageConverter(ms, searchDataModel.DocumentId, "document.pdf"),
-            Path = searchDataModel.DocumentId,
-            OriginalFileName = ""
+            DocumentId = searchDataModel.DocumentId
         };
         ms.Seek(0, SeekOrigin.Begin);
         await _storageService.Upload(ms, url);
@@ -121,7 +119,7 @@ public class TextController : Controller
         var model = new DocInfoModel
         {
             Pages = await _imageService.ImageConverter(ms, replaceTextModel.DocumentId, "document.pdf"),
-            Path = replaceTextModel.DocumentId
+            DocumentId = replaceTextModel.DocumentId
         };
         ms.Seek(0, SeekOrigin.Begin);
         await _storageService.Upload(ms, url);

@@ -56,7 +56,7 @@ public class AttachmentController : Controller
         return new DocInfoModel
         {
             Pages = postedFile.FileName,
-            Path = httpRequest.Form["documentId"]
+            DocumentId = httpRequest.Form["documentId"]
         };
     }
 

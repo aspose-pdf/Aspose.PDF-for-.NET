@@ -197,7 +197,7 @@ public class ShapeController : Controller
         var model = new DocInfoModel
         {
             Pages = postedFile.FileName,
-            Path = httpRequest.Form["documentId"]
+            DocumentId = httpRequest.Form["documentId"]
         };
         return model;
     }
