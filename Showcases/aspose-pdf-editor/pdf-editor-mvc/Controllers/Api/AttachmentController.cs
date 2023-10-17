@@ -55,7 +55,7 @@ public class AttachmentController : Controller
 
         return new DocInfoModel
         {
-            D = postedFile.FileName,
+            Pages = postedFile.FileName,
             Path = httpRequest.Form["documentId"]
         };
     }
@@ -88,7 +88,7 @@ public class AttachmentController : Controller
 
         var model = new AttachmentModel
         {
-            D = outAttach
+            Files = outAttach
         };
 
         return model;
@@ -114,7 +114,7 @@ public class AttachmentController : Controller
 
         var model = new AttachmentModel
         {
-            D = "Success"
+            Files = "Success"
         };
 
         return model;

@@ -46,7 +46,7 @@ public class TextController : Controller
         ms.Seek(0, SeekOrigin.Begin);
         var model = new DocInfoModel
         {
-            D = await _imageService.ImageConverter(ms, searchDataModel.DocumentId, "document.pdf"),
+            Pages = await _imageService.ImageConverter(ms, searchDataModel.DocumentId, "document.pdf"),
             Path = searchDataModel.DocumentId,
             OriginalFileName = ""
         };
@@ -82,7 +82,7 @@ public class TextController : Controller
 
         var model = new DocInfoModel
         {
-            D = await _imageService.ImageConverter(ms, searchDataModel.DocumentId, "document.pdf"),
+            Pages = await _imageService.ImageConverter(ms, searchDataModel.DocumentId, "document.pdf"),
             Path = searchDataModel.DocumentId,
             OriginalFileName = ""
         };
@@ -120,7 +120,7 @@ public class TextController : Controller
         ms.Seek(0, SeekOrigin.Begin);
         var model = new DocInfoModel
         {
-            D = await _imageService.ImageConverter(ms, replaceTextModel.DocumentId, "document.pdf"),
+            Pages = await _imageService.ImageConverter(ms, replaceTextModel.DocumentId, "document.pdf"),
             Path = replaceTextModel.DocumentId
         };
         ms.Seek(0, SeekOrigin.Begin);

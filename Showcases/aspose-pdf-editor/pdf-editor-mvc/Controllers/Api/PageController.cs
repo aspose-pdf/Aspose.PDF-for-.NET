@@ -69,7 +69,7 @@ public class PageController : Controller
                     var (height, aspectRatio) =  await _imageService.ScaleImage(imageStream, folder, imageFileName, 1138);
                     return new DocInfoModel
                     {
-                        D = $"image{pageCount}.png#{height}#{aspectRatio}",
+                        Pages = $"image{pageCount}.png#{height}#{aspectRatio}",
                         Path = folder,
                         Heights = height
                     };

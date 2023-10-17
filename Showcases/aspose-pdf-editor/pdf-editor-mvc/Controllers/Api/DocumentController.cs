@@ -37,7 +37,7 @@ public class DocumentController : Controller
         ms.Seek(0, SeekOrigin.Begin);
         var model = new DocInfoModel
         {
-            D = await _imageService.ImageConverter(ms, guid, "document.pdf"),
+            Pages = await _imageService.ImageConverter(ms, guid, "document.pdf"),
             Path = guid
         };
         ms.Seek(0, SeekOrigin.Begin);
@@ -73,7 +73,7 @@ public class DocumentController : Controller
             {
                 var model = new DocInfoModel
                 {
-                    D = await _documentServicecs.AppendConverter(
+                    Pages = await _documentServicecs.AppendConverter(
                         docStream,
                         s,
                         httpRequest.Form["documentId"],
@@ -105,7 +105,7 @@ public class DocumentController : Controller
         {
             var model = new DocInfoModel
             {
-                D = await _imageService.ImageConverter(docStream, folder, fileName),
+                Pages = await _imageService.ImageConverter(docStream, folder, fileName),
                 Path = folder,
                 OriginalFileName = downloadFileName
             };
@@ -140,7 +140,7 @@ public class DocumentController : Controller
             s.Seek(0, SeekOrigin.Begin);
             var model = new DocInfoModel
             {
-                D = await _imageService.ImageConverter(s, guid, "document.pdf"),
+                Pages = await _imageService.ImageConverter(s, guid, "document.pdf"),
                 Path = guid,
                 OriginalFileName = postedFile.FileName
             };

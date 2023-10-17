@@ -23,7 +23,7 @@ public class ShapeController : Controller
 
     [HttpPost]
     [Route("add")]
-    public async Task<DocInfoModel> UploadPic([FromBody] UploadPicModel uploadPicModel)
+    public async Task<DocInfoModel> AddShapes([FromBody] UploadPicModel uploadPicModel)
     {
         var url = Path.Combine(uploadPicModel.DocumentId, "document.pdf");
         await using (Stream docStream = await _storageService.Download(url))
@@ -174,7 +174,7 @@ public class ShapeController : Controller
 
     [HttpPost]
     [Route("upload")]
-    public async Task<DocInfoModel> Upload()
+    public async Task<DocInfoModel> UploadImage()
     {
         var httpRequest = HttpContext.Request;
         var documentId = httpRequest.Form.Keys.Contains("documentId") &&
@@ -196,7 +196,7 @@ public class ShapeController : Controller
 
         var model = new DocInfoModel
         {
-            D = postedFile.FileName,
+            Pages = postedFile.FileName,
             Path = httpRequest.Form["documentId"]
         };
         return model;
@@ -220,7 +220,7 @@ public class ShapeController : Controller
 
         var model = new DocInfoModel
         {
-            D = $"sign{rand}.png"
+            Pages = $"sign{rand}.png"
         };
 
         return model;

@@ -859,8 +859,8 @@ function AddPage() {
         data: '{ "lastpage" : "' + Npages[Npages.length - 1] + '" }',
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
-        success: function (data, textStatus, jqXHR) {
-            datasplit = data.d.split("#");
+        success: function (data) {
+            datasplit = data.pages.split("#");
             Npages.push(datasplit[0]);
             aRatio.push(datasplit[2]);
             heights.push(datasplit[1]);
@@ -999,7 +999,6 @@ function Move() {
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
-                //searchFolder = data.d;
                 AfterSearch();
             },
             //call on ajax call failure
@@ -1227,6 +1226,7 @@ function fileSelected() {
 
     }
     var xhr = new XMLHttpRequest();
+    console.log($('#hdnOpp').val());
     switch($('#hdnOpp').val())
     {
         case 'uploading':
@@ -1257,7 +1257,7 @@ function fileSelected() {
             }
             
             data = JSON.parse(xhr.responseText);
-            dataLoad = data.d;
+            dataLoad = data.pages;
             documentId = data.path;
             originalFileName = data.originalFileName;
             if ($('#hdnOpp').val() === 'appending') {
@@ -1286,7 +1286,7 @@ function fileSelected() {
                     GetAttachments();
                 }
                 else {
-                    InsertImages(data.d, 50, 50);
+                    InsertImages(data.pages, 50, 50);
                 }
 
             $('.progress-bar').width('100%');
@@ -1699,7 +1699,7 @@ function GetAttachments() {
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (data, textStatus, jqXHR) {
-            Attachments = data.d.split(',');
+            Attachments = data.files.split(',');
             var table = document.getElementById('tblAttach');
             while (table.rows.length > 1) {
                 table.deleteRow(1);
@@ -1786,7 +1786,7 @@ function GetFileExists() {
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (data, textStatus, jqXHR) {
-            dataLoad = data.d;
+            dataLoad = data.pages;
             documentId = data.path;
             console.log(data);
             for (let i = 0; i < shapes.length; i++) {
@@ -1823,7 +1823,7 @@ function newFileClick(action) {
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (data, textStatus, jqXHR) {
-            dataLoad = data.d;
+            dataLoad = data.pages;
             documentId = data.path;
             for (i = 0; i < shapes.length; i++) {
 
@@ -1865,25 +1865,29 @@ function clearSignature() {
 
 function saveSignature() {
     const signatureCanvas = document.querySelector('#signCanvas');
-    const imageData = signatureCanvas.toDataURL('image/png').replace('data:image/png;base64,', '');
-    const signatureData = JSON.stringify({ 'imageData': imageData, 'documentId': documentId });
+    const imageData = signatureCanvas.toDataURL('image/png');
 
-    $.ajax({
-        type: 'POST',
-        url: `${apiBaseUrl}shape/signature`,
-        data: signatureData,
-        contentType: 'application/json; charset=utf-8',
-        dataType: 'json',
-        success: function (data) {
-            InsertImages(data.d, signX, signY);
-            $('#divSignature').css('visibility', 'hidden');
-            currentTools = 'dragging';
-            document.getElementById('btnDrag').click();
-            var e = jQuery.Event('mousedown', { pageX: signX, pageY: signY });
-            $('#imageView').trigger(e);
-        }
-    })
-    .done(function () { $('#loadingModal').modal('hide'); });
+    var form = new FormData();
+    form.append("documentId", documentId);
+    signatureCanvas.toBlob(function (blob) {
+        form.append(imageData, blob, "signature.png");
+        $.ajax({
+            type: 'POST',
+            url: `${apiBaseUrl}shape/upload`,
+            data: form,
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                InsertImages(data.pages, signX, signY);
+                $('#divSignature').css('visibility', 'hidden');
+                currentTools = 'dragging';
+                document.getElementById('btnDrag').click();
+                var e = jQuery.Event('mousedown', { pageX: signX, pageY: signY });
+                $('#imageView').trigger(e);
+            }
+        })
+            .done(function () { $('#loadingModal').modal('hide'); });
+    }, 'image/png');
 }
 
 function closeSignature() {
