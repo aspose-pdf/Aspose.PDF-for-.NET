@@ -1,6 +1,5 @@
 let apiBaseUrl = '/api/';
 let documentId = '';
-let originalFileName = 'document.pdf';
 let ratio = 1;
 let canvasHeight;
 let canvasWidth;
@@ -257,16 +256,16 @@ if (window.addEventListener) {
                     tempShape = {
                         x: tempX,
                         y: tempY,
-                        w: tempW,
-                        h: tempH,
-                        p: currentPage,
+                        textWidth: tempW,
+                        fontHeight: tempH,
+                        page: currentPage,
                         f: Npages[currentPage - 1],
-                        t: '',
-                        n: '',
-                        s: '',
-                        c: '',
-                        wt: '',
-                        st: '',
+                        text: '',
+                        fontText: '',
+                        fontSize: '',
+                        fontColor: '',
+                        fontWeight: '',
+                        fontStyle: '',
                         ratio: aRatio[currentPage - 1],
                         imfile: '',
                         imName: '',
@@ -404,16 +403,16 @@ if (window.addEventListener) {
                                 if (shapes[dragIndex].Itype !== 'text') {
                                     context.strokeStyle = 'brown';
                                     context.setLineDash([6]);
-                                    context.strokeRect(shapes[dragIndex].x, shapes[dragIndex].y, shapes[dragIndex].w, shapes[dragIndex].h);
+                                    context.strokeRect(shapes[dragIndex].x, shapes[dragIndex].y, shapes[dragIndex].textWidth, shapes[dragIndex].fontHeight);
                                 }
 
 
                                 if (shapes[dragIndex].Itype === 'image') {
                                     context.fillStyle = 'rgba(255, 230, 81, 1)';
                                     context.fillRect(shapes[dragIndex].x, shapes[dragIndex].y, 10, 10);
-                                    context.fillRect(shapes[dragIndex].x + shapes[dragIndex].w - 10, shapes[dragIndex].y, 10, 10);
-                                    context.fillRect(shapes[dragIndex].x, (shapes[dragIndex].y + shapes[dragIndex].h) - 10, 10, 10);
-                                    context.fillRect(shapes[dragIndex].x + shapes[dragIndex].w - 10, (shapes[dragIndex].y + shapes[dragIndex].h) - 10, 10, 10);
+                                    context.fillRect(shapes[dragIndex].x + shapes[dragIndex].textWidth - 10, shapes[dragIndex].y, 10, 10);
+                                    context.fillRect(shapes[dragIndex].x, (shapes[dragIndex].y + shapes[dragIndex].fontHeight) - 10, 10, 10);
+                                    context.fillRect(shapes[dragIndex].x + shapes[dragIndex].textWidth - 10, (shapes[dragIndex].y + shapes[dragIndex].fontHeight) - 10, 10, 10);
 
                                 }
                                 else if (shapes[dragIndex].Itype === 'text') {
@@ -486,15 +485,15 @@ if (window.addEventListener) {
                     if (shapes[dragIndex].Itype !== 'text') {
                         context.strokeStyle = 'brown';
                         context.setLineDash([6]);
-                        context.strokeRect(shapes[dragIndex].x, shapes[dragIndex].y, shapes[dragIndex].w, shapes[dragIndex].h);
+                        context.strokeRect(shapes[dragIndex].x, shapes[dragIndex].y, shapes[dragIndex].textWidth, shapes[dragIndex].fontHeight);
                     }
                     if (shapes[dragIndex].Itype === 'image') {
 
                         context.fillStyle = 'rgba(255, 230, 81, 1)';
                         context.fillRect(shapes[dragIndex].x, shapes[dragIndex].y, 10, 10);
-                        context.fillRect((shapes[dragIndex].x + shapes[dragIndex].w) - 10, shapes[dragIndex].y, 10, 10);
-                        context.fillRect(shapes[dragIndex].x, (shapes[dragIndex].y + shapes[dragIndex].h) - 10, 10, 10);
-                        context.fillRect((shapes[dragIndex].x + shapes[dragIndex].w) - 10, (shapes[dragIndex].y + shapes[dragIndex].h) - 10, 10, 10);
+                        context.fillRect((shapes[dragIndex].x + shapes[dragIndex].textWidth) - 10, shapes[dragIndex].y, 10, 10);
+                        context.fillRect(shapes[dragIndex].x, (shapes[dragIndex].y + shapes[dragIndex].fontHeight) - 10, 10, 10);
+                        context.fillRect((shapes[dragIndex].x + shapes[dragIndex].textWidth) - 10, (shapes[dragIndex].y + shapes[dragIndex].fontHeight) - 10, 10, 10);
 
                     }
                     else if (shapes[dragIndex].Itype === 'text') {
@@ -520,8 +519,8 @@ if (window.addEventListener) {
 
                     posY = mouseY - dragHoldY; 
 
-                    var dx = mouseX - shapes[dragIndex].x + (shapes[dragIndex].w) / 2;
-                    var dy = mouseY - shapes[dragIndex].y + (shapes[dragIndex].h) / 2;
+                    var dx = mouseX - shapes[dragIndex].x + (shapes[dragIndex].textWidth) / 2;
+                    var dy = mouseY - shapes[dragIndex].y + (shapes[dragIndex].fontHeight) / 2;
                     var angle = Math.atan2(dy, dx);
                     r = angle;
 
@@ -545,8 +544,8 @@ if (window.addEventListener) {
                     posX = mouseX - dragHoldX;
                     posY = mouseY - dragHoldY;
 
-                    imgWidth = (shapes[dragIndex].x + shapes[dragIndex].w);
-                    imgHeight = (shapes[dragIndex].y + shapes[dragIndex].h);
+                    imgWidth = (shapes[dragIndex].x + shapes[dragIndex].textWidth);
+                    imgHeight = (shapes[dragIndex].y + shapes[dragIndex].fontHeight);
 
                     // resize the image
                     switch (anchorVal) {
@@ -554,32 +553,32 @@ if (window.addEventListener) {
                             //top-left
                             shapes[dragIndex].x = posX;
                             shapes[dragIndex].y = posY;
-                            shapes[dragIndex].w = imgWidth - posX;
-                            shapes[dragIndex].h = imgHeight - posY;
+                            shapes[dragIndex].textWidth = imgWidth - posX;
+                            shapes[dragIndex].fontHeight = imgHeight - posY;
                             break;
                         case 1:
                             //top-right
                             shapes[dragIndex].y = posY;
-                            shapes[dragIndex].w = shapes[dragIndex].w - (imgWidth - mouseX);
-                            shapes[dragIndex].h = imgHeight - posY;
+                            shapes[dragIndex].textWidth = shapes[dragIndex].textWidth - (imgWidth - mouseX);
+                            shapes[dragIndex].fontHeight = imgHeight - posY;
                             break;
                         case 2:
                             //bottom-right
                             shapes[dragIndex].x = posX;
-                            shapes[dragIndex].w = imgWidth - posX;
-                            shapes[dragIndex].h = shapes[dragIndex].h - (imgHeight - mouseY);
+                            shapes[dragIndex].textWidth = imgWidth - posX;
+                            shapes[dragIndex].fontHeight = shapes[dragIndex].fontHeight - (imgHeight - mouseY);
                             break;
                         case 3:
                             //bottom-left
-                            shapes[dragIndex].w = shapes[dragIndex].w - (imgWidth - mouseX);
-                            shapes[dragIndex].h = shapes[dragIndex].h - (imgHeight - mouseY);
+                            shapes[dragIndex].textWidth = shapes[dragIndex].textWidth - (imgWidth - mouseX);
+                            shapes[dragIndex].fontHeight = shapes[dragIndex].fontHeight - (imgHeight - mouseY);
                             break;
 
                     }
 
 
-                    if (shapes[dragIndex].w < 25) { shapes[dragIndex].w = 25; }
-                    if (shapes[dragIndex].h < 25) { shapes[dragIndex].h = 25; }
+                    if (shapes[dragIndex].textWidth < 25) { shapes[dragIndex].textWidth = 25; }
+                    if (shapes[dragIndex].fontHeight < 25) { shapes[dragIndex].fontHeight = 25; }
 
                     canvas.width = canvas.width;
 
@@ -591,7 +590,7 @@ if (window.addEventListener) {
                     if (shapes[dragIndex].Itype !== 'text') {
                         context.strokeStyle = 'brown';
                         context.setLineDash([6]);
-                        context.strokeRect(shapes[dragIndex].x, shapes[dragIndex].y, shapes[dragIndex].w, shapes[dragIndex].h);
+                        context.strokeRect(shapes[dragIndex].x, shapes[dragIndex].y, shapes[dragIndex].textWidth, shapes[dragIndex].fontHeight);
                     }
                     else if (shapes[dragIndex].Itype === 'text') {
 
@@ -602,9 +601,9 @@ if (window.addEventListener) {
 
                         context.fillStyle = 'rgba(255, 230, 81, 1)';
                         context.fillRect(shapes[dragIndex].x, shapes[dragIndex].y, 10, 10);
-                        context.fillRect((shapes[dragIndex].x + shapes[dragIndex].w) - 10, shapes[dragIndex].y, 10, 10);
-                        context.fillRect(shapes[dragIndex].x, (shapes[dragIndex].y + shapes[dragIndex].h) - 10, 10, 10);
-                        context.fillRect((shapes[dragIndex].x + shapes[dragIndex].w) - 10, (shapes[dragIndex].y + shapes[dragIndex].h) - 10, 10, 10);
+                        context.fillRect((shapes[dragIndex].x + shapes[dragIndex].textWidth) - 10, shapes[dragIndex].y, 10, 10);
+                        context.fillRect(shapes[dragIndex].x, (shapes[dragIndex].y + shapes[dragIndex].fontHeight) - 10, 10, 10);
+                        context.fillRect((shapes[dragIndex].x + shapes[dragIndex].textWidth) - 10, (shapes[dragIndex].y + shapes[dragIndex].fontHeight) - 10, 10, 10);
 
                     }
 
@@ -653,11 +652,11 @@ if (window.addEventListener) {
 
                     //find which shape was clicked
                     for (i = 0; i < shapes.length; i++) {
-                        if (shapes[i].t !== '') {
+                        if (shapes[i].text !== '') {
 
                             if (hitTest(shapes[i], textX, textY, context)) {
                                 editText = i;
-                                $('#textareaTest').val(shapes[i].t);
+                                $('#textareaTest').val(shapes[i].text);
                                 break;
                             }
                             else {
@@ -733,16 +732,16 @@ function saveTextFromArea() {
             tempShape =  { 
                 x: textX, 
                 y: textY, 
-                w: ctx.measureText(text).width, 
-                h: parseInt(fontSize), 
-                p: currentPage, 
+                textWidth: ctx.measureText(text).width, 
+                fontHeight: parseInt(fontSize), 
+                page: currentPage, 
                 f: Npages[currentPage - 1], 
-                t: text, 
-                n: fontText, 
-                s: fontSize, 
-                c: fontColor, 
-                wt: fontWeight, 
-                st: fontStyle, 
+                text: text, 
+                fontText: fontText, 
+                fontSize: fontSize, 
+                fontColor: fontColor, 
+                fontWeight: fontWeight, 
+                fontStyle: fontStyle, 
                 ratio: aRatio[currentPage - 1], 
                 imfile: '', 
                 imName: '', 
@@ -754,17 +753,17 @@ function saveTextFromArea() {
         }
         else {
 
-            shapes[editText].t = text;
-            shapes[editText].wt = fontWeight;
-            shapes[editText].s = fontSize;
-            shapes[editText].n = fontText;
-            shapes[editText].st = fontStyle;
-            shapes[editText].c = fontColor;
-            shapes[editText].h = parseInt(fontSize);
+            shapes[editText].text = text;
+            shapes[editText].fontWeight = fontWeight;
+            shapes[editText].fontSize = fontSize;
+            shapes[editText].fontText = fontText;
+            shapes[editText].fontStyle = fontStyle;
+            shapes[editText].fontColor = fontColor;
+            shapes[editText].fontHeight = parseInt(fontSize);
 
             DrawScreen();
             DrawShapes();
-            shapes[editText].w = ctx.measureText(text).width;
+            shapes[editText].textWidth = ctx.measureText(text).width;
         }
         ctx.save();
         ctx.restore();
@@ -859,8 +858,8 @@ function AddPage() {
         data: '{ "lastpage" : "' + Npages[Npages.length - 1] + '" }',
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
-        success: function (data, textStatus, jqXHR) {
-            datasplit = data.d.split("#");
+        success: function (data) {
+            datasplit = data.pages.split("#");
             Npages.push(datasplit[0]);
             aRatio.push(datasplit[2]);
             heights.push(datasplit[1]);
@@ -884,7 +883,7 @@ function DeletePage() {
     }
     shapes = shapes.filter(isFromPage);
 
-    var deleteData = JSON.stringify({ 'imageData': currentPage.toString(), 'imageName': Npages[currentPage - 1], 'documentId': documentId });
+    var deleteData = JSON.stringify({ 'pageNumber': currentPage, 'documentId': documentId });
     return $.ajax({
         type: 'DELETE',
         url: `${apiBaseUrl}page/delete`,
@@ -916,7 +915,7 @@ function updateIndexesDelete() {
 
 function DeleteShapes() {
     for (let i = 0; i < shapes.length; i++) {
-        if (shapes[i].p === Npages[currentPage - 1]) {
+        if (shapes[i].Page === Npages[currentPage - 1]) {
 
             shapes.splice(i, 1);
         }
@@ -999,7 +998,6 @@ function Move() {
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
             success: function (data, textStatus, jqXHR) {
-                //searchFolder = data.d;
                 AfterSearch();
             },
             //call on ajax call failure
@@ -1067,7 +1065,7 @@ function MoveUpdate() {
         for (var j = 0; j < shapes.length; j++) {
 
             if (Npages[i] === shapes[j].f) {
-                shapes[j].p = i + 1;
+                shapes[j].page = i + 1;
             }
         }
 
@@ -1091,16 +1089,16 @@ function SavePdf() {
         tempShape = {
             x: shapes[i].x.toString(),
             y: shapes[i].y.toString(),
-            w: shapes[i].w.toString(),
-            h: shapes[i].h.toString(),
-            p: shapes[i].p.toString(),
+            textWidth: shapes[i].textWidth.toString(),
+            fontHeight: shapes[i].fontHeight.toString(),
+            page: shapes[i].page.toString(),
             f: shapes[i].f.toString(),
-            t: shapes[i].t.toString(),
-            n: shapes[i].n.toString(),
-            s: shapes[i].s.toString(),
-            c: shapes[i].c.toString(),
-            wt: shapes[i].wt.toString(),
-            st: shapes[i].st.toString(),
+            text: shapes[i].text.toString(),
+            fontText: shapes[i].fontText.toString(),
+            fontSize: shapes[i].fontSize.toString(),
+            fontColor: shapes[i].fontColor.toString(),
+            fontWeight: shapes[i].fontWeight.toString(),
+            fontStyle: shapes[i].fontStyle.toString(),
             ratio: shapes[i].ratio.toString(),
             imfile: '',
             imName: shapes[i].imName,
@@ -1114,7 +1112,7 @@ function SavePdf() {
 
     $.ajax({
         type: 'POST',
-        url: `${apiBaseUrl}primitive/add`,
+        url: `${apiBaseUrl}shape/add`,
         data: wholedata,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
@@ -1147,7 +1145,7 @@ function DrawShapes() {
 
             if (shapes[i].Itype === 'highlight') {
                 context.fillStyle = 'rgba(255, 230, 81, 0.5)';
-                context.fillRect(shapes[i].x, shapes[i].y, shapes[i].w, shapes[i].h);
+                context.fillRect(shapes[i].x, shapes[i].y, shapes[i].textWidth, shapes[i].fontHeight);
             }
             if (shapes[i].Itype === 'image') {
 
@@ -1155,28 +1153,28 @@ function DrawShapes() {
 
                 imageObj = shapes[i].imfile;
 
-                context.drawImage(imageObj, shapes[i].x, shapes[i].y, shapes[i].w, shapes[i].h);
+                context.drawImage(imageObj, shapes[i].x, shapes[i].y, shapes[i].textWidth, shapes[i].fontHeight);
 
             }
             if (shapes[i].Itype === 'text') {
 
 
                 context.save();
-                context.translate(shapes[i].x, shapes[i].y + parseInt(shapes[i].s));
+                context.translate(shapes[i].x, shapes[i].y + parseInt(shapes[i].fontSize));
 
                 context.rotate(shapes[i].fieldType);
 
                 //set the font styles
-                var font = shapes[i].n;
-                var fontsize = shapes[i].s;
-                var fontweight = shapes[i].wt;
-                var fontstyle = shapes[i].st;
-                context.fillStyle = shapes[i].c;
+                var font = shapes[i].fontText;
+                var fontsize = shapes[i].fontSize;
+                var fontweight = shapes[i].fontWeight;
+                var fontstyle = shapes[i].fontStyle;
+                context.fillStyle = shapes[i].fontColor;
 
                 //draw the text
                 context.font = fontstyle + ' ' + fontweight + ' ' + fontsize + 'px ' + font;
 
-                context.fillText(shapes[i].t, 0, 0);
+                context.fillText(shapes[i].text, 0, 0);
 
                 context.restore();
             }
@@ -1231,15 +1229,16 @@ function fileSelected() {
     {
         case 'uploading':
             xhr.open('PUT', `${apiBaseUrl}document/upload`);
-        break;
+            break;
         case 'appending':
             xhr.open('PUT', `${apiBaseUrl}document/append`);
-        break;
+            break;
         case 'addAttachment':
             xhr.open('POST', `${apiBaseUrl}attachment/add`);
-        break;
+            break;
         default:
-            xhr.open('POST', `${apiBaseUrl}primitive/upload`);
+            xhr.open('POST', `${apiBaseUrl}shape/upload`);
+            break;
     }
 
     xhr.upload.onprogress = function (event) {
@@ -1257,9 +1256,8 @@ function fileSelected() {
             }
             
             data = JSON.parse(xhr.responseText);
-            dataLoad = data.d;
-            documentId = data.path;
-            originalFileName = data.originalFileName;
+            dataLoad = data.pages;
+            documentId = data.documentId;
             if ($('#hdnOpp').val() === 'appending') {
                 First();
             }
@@ -1286,7 +1284,7 @@ function fileSelected() {
                     GetAttachments();
                 }
                 else {
-                    InsertImages(data.d, 50, 50);
+                    InsertImages(data.pages, 50, 50);
                 }
 
             $('.progress-bar').width('100%');
@@ -1309,23 +1307,23 @@ function anchorHitTest(shape, x, y, context) {
         anchorVal = 0;
         return anchorVal;
     }
-    else if (x > (shape.x + shape.w - 10) && x < (shape.x + shape.w) && y < (shape.y + 10) && y > shape.y && shape.Itype === 'image') {
+    else if (x > (shape.x + shape.textWidth - 10) && x < (shape.x + shape.textWidth) && y < (shape.y + 10) && y > shape.y && shape.Itype === 'image') {
 
         anchorVal = 1;
 
         return anchorVal;
     }
-    else if (x > shape.x && x < (shape.x + 10) && y > (shape.y + shape.h - 10) && y < (shape.y + shape.h) && shape.Itype === 'image') {
+    else if (x > shape.x && x < (shape.x + 10) && y > (shape.y + shape.fontHeight - 10) && y < (shape.y + shape.fontHeight) && shape.Itype === 'image') {
 
         anchorVal = 2;
         return anchorVal;
     }
-    else if (x > (shape.x + shape.w - 10) && x < (shape.x + shape.w) && y > (shape.y + shape.h - 10) && y < (shape.y + shape.h) && shape.Itype === 'image') {
+    else if (x > (shape.x + shape.textWidth - 10) && x < (shape.x + shape.textWidth) && y > (shape.y + shape.fontHeight - 10) && y < (shape.y + shape.fontHeight) && shape.Itype === 'image') {
         anchorVal = 3;
         return anchorVal;
     }
 
-    else if (x > (shape.x + shape.w - 5) && x < (shape.x + shape.w + 5) && y < (shape.y + (shape.h / 2) + 10) && y > (shape.y + (shape.h / 2) - 10) && shape.Itype === 'text') {
+    else if (x > (shape.x + shape.textWidth - 5) && x < (shape.x + shape.textWidth + 5) && y < (shape.y + (shape.fontHeight / 2) + 10) && y > (shape.y + (shape.fontHeight / 2) - 10) && shape.Itype === 'text') {
         anchorVal = 5;
         return anchorVal;
     }
@@ -1333,11 +1331,11 @@ function anchorHitTest(shape, x, y, context) {
 
         context.save();
 
-        context.translate(shape.x, shape.y + parseInt(shape.s));
+        context.translate(shape.x, shape.y + parseInt(shape.fontSize));
         context.rotate(shape.fieldType);
 
         context.beginPath();
-        context.rect(shape.w - 5, (shape.h / -2) - 5, 10, 10);
+        context.rect(shape.textWidth - 5, (shape.fontHeight / -2) - 5, 10, 10);
 
         var result = context.isPointInPath(x, y);
 
@@ -1359,11 +1357,11 @@ function hitTest(shape, mx, my, context) {
 
         context.save();
 
-        context.translate(shape.x, shape.y + parseInt(shape.s));
+        context.translate(shape.x, shape.y + parseInt(shape.fontSize));
         context.rotate(shape.fieldType);
 
         context.beginPath();
-        context.rect(0, -shape.h, shape.w + 5, shape.h);
+        context.rect(0, -shape.fontHeight, shape.textWidth + 5, shape.fontHeight);
 
         var result = context.isPointInPath(mx, my);
 
@@ -1372,8 +1370,8 @@ function hitTest(shape, mx, my, context) {
         return result;
     }
 
-    if (mx > shape.x && mx < shape.x + shape.w) {
-        if (my > shape.y && my < shape.y + shape.h) {
+    if (mx > shape.x && mx < shape.x + shape.textWidth) {
+        if (my > shape.y && my < shape.y + shape.fontHeight) {
             return true;
         }
         else {
@@ -1405,7 +1403,26 @@ function InsertImages(data, imgLeft, imgTop) {
         imgWidth = this.width;
         imgHeight = this.height;
 
-        tempShape = { x: imgLeft, y: imgTop, w: imgWidth, h: imgHeight, p: currentPage, f: Npages[currentPage - 1], t: '', n: '', s: '', c: '', wt: '', st: '', ratio: aRatio[currentPage - 1], imfile: imageObj, imName: data, Itype: 'image', fieldType: '' };
+        tempShape =
+        {
+            x: imgLeft,
+            y: imgTop,
+            textWidth: imgWidth,
+            fontHeight: imgHeight,
+            page: currentPage,
+            f: Npages[currentPage - 1],
+            text: '',
+            fontText: '',
+            fontSize: '',
+            fontColor: '',
+            fontWeight: '',
+            fontStyle: '',
+            ratio: aRatio[currentPage - 1],
+            imfile: imageObj,
+            imName: data,
+            Itype: 'image',
+            fieldType: ''
+        };
         shapes.push(tempShape);
 
     };
@@ -1495,17 +1512,17 @@ function GeneralSetup(process) {
                 let getField = document.getElementById(shapes[i].imName);
                 if (getField !== null) {
                     if (shapes[i].fieldType === 'Text') {
-                        shapes[i].t = getField.value;
+                        shapes[i].text = getField.value;
                     }
                     else if (shapes[i].fieldType === 'ComboBox') {
                         let optValues = getField.value;
                         for (x = 0; x < getField.options.length; x++) {
                             optValues = optValues + '^^^' + getField.options[x].value;
                         }
-                        shapes[i].t = optValues;
+                        shapes[i].text = optValues;
                     }
                     else if (shapes[i].fieldType === 'CheckBox' || shapes[i].fieldType === 'Radio') {
-                        shapes[i].t = getField.checked;
+                        shapes[i].text = getField.checked;
                     }
                 }
             }
@@ -1531,7 +1548,26 @@ function addFields(fieldData) {
         var dataValues = fieldData.split('$#$');
 
         for (i = 0; i < dataValues.length; i++) {
-            tempShape = { x: dataValues[i + 0], y: dataValues[i + 1], w: dataValues[i + 2], h: dataValues[i + 3], p: dataValues[i + 4], f: dataValues[i + 5], t: dataValues[i + 6], n: dataValues[i + 7], s: dataValues[i + 8], c: dataValues[i + 9], wt: dataValues[i + 10], st: dataValues[i + 11], ratio: dataValues[i + 12], imfile: dataValues[i + 13], imName: dataValues[i + 14], Itype: 'field', fieldType: dataValues[i + 15] };
+            tempShape =
+            {
+                x: dataValues[i + 0],
+                y: dataValues[i + 1],
+                textWidth: dataValues[i + 2],
+                fontHeight: dataValues[i + 3],
+                page: dataValues[i + 4],
+                f: dataValues[i + 5],
+                text: dataValues[i + 6],
+                fontText: dataValues[i + 7],
+                fontSize: dataValues[i + 8],
+                fontColor: dataValues[i + 9],
+                fontWeight: dataValues[i + 10],
+                fontStyle: dataValues[i + 11],
+                ratio: dataValues[i + 12],
+                imfile: dataValues[i + 13],
+                imName: dataValues[i + 14],
+                Itype: 'field',
+                fieldType: dataValues[i + 15]
+            };
             shapes.push(tempShape);
             i = i + 15;
         }
@@ -1571,8 +1607,8 @@ function ManageFields() {
 
                     wrapper.style.left = (rect.left + parseInt(shapes[i].x) + 2) + 'px';
                     wrapper.style.top = (rect.top + parseInt(shapes[i].y) + 2) + 'px';
-                    wrapper.style.width = parseInt(shapes[i].w - 2) + 'px';
-                    wrapper.style.height = parseInt(shapes[i].h - 2) + 'px';
+                    wrapper.style.width = parseInt(shapes[i].textWidth - 2) + 'px';
+                    wrapper.style.height = parseInt(shapes[i].fontHeight - 2) + 'px';
                     wrapper.id = 'div_' + shapes[i].imName;
                     wrapper.style.zIndex = 50 + i;
 
@@ -1582,14 +1618,14 @@ function ManageFields() {
                         wrapper.setAttribute('display', 'block');
                         var textarea = document.createElement('textarea');
                         textarea.className = 'tbox';
-                        textarea.value = shapes[i].t;
-                        textarea.style.width = (parseInt(shapes[i].w) - 2) + 'px';
-                        textarea.style.height = (parseInt(shapes[i].h) - 2) + 'px';
+                        textarea.value = shapes[i].text;
+                        textarea.style.width = (parseInt(shapes[i].textWidth) - 2) + 'px';
+                        textarea.style.height = (parseInt(shapes[i].fontHeight) - 2) + 'px';
                         textarea.style.left = '0px';
                         textarea.style.top = '0px';
                         textarea.style.zIndex = 150 + i;
 
-                        if (shapes[i].st === 'True') {
+                        if (shapes[i].fontStyle === 'True') {
                             textarea.style.backgroundColor = '#FFE4E1';
                         }
                         textarea.id = shapes[i].imName;
@@ -1601,16 +1637,16 @@ function ManageFields() {
                         wrapper.className = 'info';
                         wrapper.style.left = (rect.left + (parseInt(shapes[i].x))) + 'px';
                         wrapper.style.top = (rect.top + (parseInt(shapes[i].y))) + 'px';
-                        wrapper.style.width = (parseInt(shapes[i].w) + 5) + 'px';
-                        wrapper.style.height = (parseInt(shapes[i].h) + 5) + 'px';
-                        if (shapes[i].st === 'True') {
+                        wrapper.style.width = (parseInt(shapes[i].textWidth) + 5) + 'px';
+                        wrapper.style.height = (parseInt(shapes[i].fontHeight) + 5) + 'px';
+                        if (shapes[i].fontStyle === 'True') {
                             wrapper.style.backgroundColor = '#FFE4E1';
                         }
                         var checkbox = document.createElement('input');
                         checkbox.type = 'checkbox';
                         checkbox.name = shapes[i].imfile;
 
-                        if (shapes[i].t === 'true') {
+                        if (shapes[i].text === 'true') {
                             checkbox.checked = true;
 
                         }
@@ -1628,16 +1664,16 @@ function ManageFields() {
                         wrapper.className = 'Mine';
                         wrapper.style.left = (rect.left + parseInt(shapes[i].x)) + 'px';
                         wrapper.style.top = (rect.top - 1 + parseInt(shapes[i].y)) + 'px';
-                        wrapper.style.width = (parseInt(shapes[i].w) + 5) + 'px';
-                        wrapper.style.height = (parseInt(shapes[i].h) + 5) + 'px';
-                        if (shapes[i].st === 'True') {
+                        wrapper.style.width = (parseInt(shapes[i].textWidth) + 5) + 'px';
+                        wrapper.style.height = (parseInt(shapes[i].fontHeight) + 5) + 'px';
+                        if (shapes[i].fontStyle === 'True') {
                             wrapper.style.backgroundColor = '#FFE4E1';
                         }
                         var radio = document.createElement('input');
                         radio.type = 'radio';
                         radio.id = shapes[i].imName;
                         radio.name = shapes[i].imfile;
-                        if (shapes[i].t === 'true') {
+                        if (shapes[i].text === 'true') {
                             radio.checked = true;
 
                         }
@@ -1655,10 +1691,10 @@ function ManageFields() {
                         var combo = document.createElement('select');
                         combo.id = shapes[i].imName;
                         combo.style.zIndex = 150 + i;
-                        var values = shapes[i].t.split('^^^');
+                        var values = shapes[i].text.split('^^^');
                         combo.className = 'tbox';
-                        combo.style.width = (shapes[i].w - 2) + 'px';
-                        if (shapes[i].st === 'True') {
+                        combo.style.width = (shapes[i].textWidth - 2) + 'px';
+                        if (shapes[i].fontStyle === 'True') {
                             combo.style.backgroundColor = '#FFE4E1';
                         }
                         for (j = 1; j < values.length; j++) {
@@ -1699,7 +1735,7 @@ function GetAttachments() {
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (data, textStatus, jqXHR) {
-            Attachments = data.d.split(',');
+            Attachments = data.files.split(',');
             var table = document.getElementById('tblAttach');
             while (table.rows.length > 1) {
                 table.deleteRow(1);
@@ -1760,7 +1796,7 @@ function RemoveAttachment(name, rowId) {
         data: removeData,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
-        success: function (data, textStatus, jqXHR) {
+        success: function () {
             document.getElementById('tblAttach').deleteRow(rowId);
         },
         //call on ajax call failure
@@ -1786,8 +1822,8 @@ function GetFileExists() {
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function (data, textStatus, jqXHR) {
-            dataLoad = data.d;
-            documentId = data.path;
+            dataLoad = data.pages;
+            documentId = data.documentId;
             console.log(data);
             for (let i = 0; i < shapes.length; i++) {
                 var shapeDiv = document.getElementById('div_' + shapes[i].imName + '');
@@ -1822,9 +1858,9 @@ function newFileClick(action) {
         url: `${apiBaseUrl}document/create`,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
-        success: function (data, textStatus, jqXHR) {
-            dataLoad = data.d;
-            documentId = data.path;
+        success: function (data) {
+            dataLoad = data.pages;
+            documentId = data.documentId;
             for (i = 0; i < shapes.length; i++) {
 
                 var shapeDiv = document.getElementById('div_' + shapes[i].imName + '');
@@ -1855,7 +1891,7 @@ function newFileClick(action) {
 
 function clearSignature() {
     const signatureCanvas = document.querySelector('#signCanvas');
-    signatureCanvas.width = signatureCanvas.width;    
+    signatureCanvas.width = signatureCanvas.width;
     const ctx = signatureCanvas.getContext('2d');
     ctx.lineWidth = 5;
     ctx.lineJoin = 'round';
@@ -1865,25 +1901,29 @@ function clearSignature() {
 
 function saveSignature() {
     const signatureCanvas = document.querySelector('#signCanvas');
-    const imageData = signatureCanvas.toDataURL('image/png').replace('data:image/png;base64,', '');
-    const signatureData = JSON.stringify({ 'imageData': imageData, 'documentId': documentId });
+    const imageData = signatureCanvas.toDataURL('image/png');
 
-    $.ajax({
-        type: 'POST',
-        url: `${apiBaseUrl}primitive/signature`,
-        data: signatureData,
-        contentType: 'application/json; charset=utf-8',
-        dataType: 'json',
-        success: function (data) {
-            InsertImages(data.d, signX, signY);
-            $('#divSignature').css('visibility', 'hidden');
-            currentTools = 'dragging';
-            document.getElementById('btnDrag').click();
-            var e = jQuery.Event('mousedown', { pageX: signX, pageY: signY });
-            $('#imageView').trigger(e);
-        }
-    })
-    .done(function () { $('#loadingModal').modal('hide'); });
+    var form = new FormData();
+    form.append("documentId", documentId);
+    signatureCanvas.toBlob(function (blob) {
+        form.append(imageData, blob, "signature.png");
+        $.ajax({
+            type: 'POST',
+            url: `${apiBaseUrl}shape/upload`,
+            data: form,
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                InsertImages(data.pages, signX, signY);
+                $('#divSignature').css('visibility', 'hidden');
+                currentTools = 'dragging';
+                document.getElementById('btnDrag').click();
+                var e = jQuery.Event('mousedown', { pageX: signX, pageY: signY });
+                $('#imageView').trigger(e);
+            }
+        })
+            .done(function () { $('#loadingModal').modal('hide'); });
+    }, 'image/png');
 }
 
 function closeSignature() {
@@ -1912,15 +1952,15 @@ function onStartup() {
 function drawRotationHandle(shape, context) {
     context.save();
 
-    context.translate(shape.x, shape.y + parseInt(shape.s));
+    context.translate(shape.x, shape.y + parseInt(shape.fontSize));
     context.rotate(shape.fieldType);
 
     context.strokeStyle = 'brown';
     context.setLineDash([6]);
-    context.strokeRect(0, -shape.h, shape.w, shape.h);
+    context.strokeRect(0, -shape.fontHeight, shape.textWidth, shape.fontHeight);
 
     context.fillStyle = '#7171C6';
-    context.fillRect(shape.w - 5, (shape.h / -2) - 5, 10, 10);
+    context.fillRect(shape.textWidth - 5, (shape.fontHeight / -2) - 5, 10, 10);
 
     context.restore();
 }

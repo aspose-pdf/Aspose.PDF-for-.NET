@@ -31,8 +31,8 @@ public class PageController : Controller
             filename = filename.Remove(extensionPosition, 1).Insert(extensionPosition, ".");
         }
 
-        var url = Path.Combine(folder, filename);
-        await using (Stream imgStream = await _storageService.Download(url))
+        var file = Path.Combine(folder, filename);
+        await using (Stream imgStream = await _storageService.Download(file))
         {
             using var bs = new BinaryReader(imgStream);
             byte[] content = bs.ReadBytes((int)imgStream.Length);
@@ -43,11 +43,11 @@ public class PageController : Controller
 
     [HttpPost]
     [Route("add/{folder}")]
-    public async Task<DocStatusModel> AddPage(string folder)
+    public async Task<DocInfoModel> AddPage(string folder)
     {
-        var url = Path.Combine(folder, "document.pdf");
+        var file = Path.Combine(folder, "document.pdf");
         int pageCount = 0;
-        await using (Stream docStream = await _storageService.Download(url))
+        await using (Stream docStream = await _storageService.Download(file))
         {
             using (MemoryStream ms = new MemoryStream())
             using (Document doc = new Document(docStream))
@@ -56,7 +56,7 @@ public class PageController : Controller
                 doc.Save(ms);
                 pageCount = doc.Pages.Count;
                 ms.Seek(0, SeekOrigin.Begin);
-                await _storageService.Upload(ms, url);
+                await _storageService.Upload(ms, file);
 
                 var imageFileName = "image" + pageCount + ".png";
                 using (MemoryStream imageStream = new MemoryStream())
@@ -67,10 +67,10 @@ public class PageController : Controller
                     pngDevice.Process(doc.Pages[pageCount], imageStream);
 
                     var (height, aspectRatio) =  await _imageService.ScaleImage(imageStream, folder, imageFileName, 1138);
-                    return new DocStatusModel
+                    return new DocInfoModel
                     {
-                        D = $"image{pageCount}.png#{height}#{aspectRatio}",
-                        Path = folder,
+                        Pages = $"image{pageCount}.png#{height}#{aspectRatio}",
+                        DocumentId = folder,
                         Heights = height
                     };
                 }
@@ -82,9 +82,9 @@ public class PageController : Controller
     [Route("move")]
     public async Task<MovePagesModel> MovePages([FromBody] MovePagesModel movePagesModel)
     {
-        var url = Path.Combine(movePagesModel.DocumentId, "document.pdf");
+        var file = Path.Combine(movePagesModel.DocumentId, "document.pdf");
 
-        await using (Stream docStream = await _storageService.Download(url))
+        await using (Stream docStream = await _storageService.Download(file))
         {
             int pageFrom = Convert.ToInt32(movePagesModel.MoveFrom);
             int pageTo = Convert.ToInt32(movePagesModel.MoveTo);
@@ -111,7 +111,7 @@ public class PageController : Controller
             using MemoryStream ms = new MemoryStream();
             doc.Save(ms);
             ms.Seek(0, SeekOrigin.Begin);
-            await _storageService.Upload(ms, url);
+            await _storageService.Upload(ms, file);
             movePagesModel.PageList = str.ToArray();
 
             return movePagesModel;
@@ -122,18 +122,18 @@ public class PageController : Controller
     [Route("delete")]
     public async Task<DeletePageModel> DeletePage([FromBody] DeletePageModel deletePageModel)
     {
-        var url = Path.Combine(deletePageModel.DocumentId, "document.pdf");
-        var imgUrl = Path.Combine(deletePageModel.DocumentId, deletePageModel.ImageName);
+        var file = Path.Combine(deletePageModel.DocumentId, "document.pdf");
+        var imgFile = Path.Combine(deletePageModel.DocumentId, $"image{deletePageModel.PageNumber}.png");
 
-        await using (Stream docStream = await _storageService.Download(url))
+        await using (Stream docStream = await _storageService.Download(file))
         {
             using Document doc = new Document(docStream);
-            doc.Pages.Delete(Convert.ToInt32(deletePageModel.ImageData));
+            doc.Pages.Delete(deletePageModel.PageNumber);
             using MemoryStream ms = new MemoryStream();
             doc.Save(ms);
             ms.Seek(0, SeekOrigin.Begin);
-            await _storageService.Upload(ms, url);
-            _storageService.Delete(imgUrl);
+            await _storageService.Upload(ms, file);
+            _storageService.Delete(imgFile);
             return deletePageModel;
         }
     }

@@ -10,7 +10,7 @@ namespace Aspose.PDF.Editor.Controllers;
 [Route("api/[controller]")]
 public class TextController : Controller
 {
-    private const string SearchMarker = "Aspose.PDF Editor Free App Search";
+    private const string SearchMarker = "Aspose.PDF Editor";
 
     private readonly IStorageService _storageService;
     private readonly IImageService _imageService;
@@ -23,10 +23,10 @@ public class TextController : Controller
 
     [HttpPost]
     [Route("search")]
-    public async Task<DocStatusModel> SearchData([FromBody] SearchDataModel searchDataModel)
+    public async Task<DocInfoModel> SearchData([FromBody] SearchDataModel searchDataModel)
     {
-        var url = Path.Combine(searchDataModel.DocumentId, "document.pdf");
-        await using Stream docStream = await _storageService.Download(url);
+        var file = Path.Combine(searchDataModel.DocumentId, "document.pdf");
+        await using Stream docStream = await _storageService.Download(file);
 
         using Document document = new Document(docStream);
         TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(searchDataModel.SearchText);
@@ -44,24 +44,23 @@ public class TextController : Controller
         using MemoryStream ms = new MemoryStream();
         document.Save(ms);
         ms.Seek(0, SeekOrigin.Begin);
-        var model = new DocStatusModel
+        var model = new DocInfoModel
         {
-            D = await _imageService.ImageConverter(ms, searchDataModel.DocumentId, "document.pdf"),
-            Path = searchDataModel.DocumentId,
-            OriginalFileName = ""
+            Pages = await _imageService.ImageConverter(ms, searchDataModel.DocumentId, "document.pdf"),
+            DocumentId = searchDataModel.DocumentId
         };
         ms.Seek(0, SeekOrigin.Begin);
-        await _storageService.Upload(ms, url);
+        await _storageService.Upload(ms, file);
 
         return model;
     }
 
     [HttpDelete]
     [Route("clear")]
-    public async Task<DocStatusModel> SearchClear([FromBody] SearchDataModel searchDataModel)
+    public async Task<DocInfoModel> SearchClear([FromBody] SearchDataModel searchDataModel)
     {
-        var url = Path.Combine(searchDataModel.DocumentId, "document.pdf");
-        await using Stream docStream = await _storageService.Download(url);
+        var file = Path.Combine(searchDataModel.DocumentId, "document.pdf");
+        await using Stream docStream = await _storageService.Download(file);
 
         using Document document = new Document(docStream);
         foreach (var page in document.Pages)
@@ -80,24 +79,23 @@ public class TextController : Controller
         document.Save(ms);
         ms.Seek(0, SeekOrigin.Begin);
 
-        var model = new DocStatusModel
+        var model = new DocInfoModel
         {
-            D = await _imageService.ImageConverter(ms, searchDataModel.DocumentId, "document.pdf"),
-            Path = searchDataModel.DocumentId,
-            OriginalFileName = ""
+            Pages = await _imageService.ImageConverter(ms, searchDataModel.DocumentId, "document.pdf"),
+            DocumentId = searchDataModel.DocumentId
         };
         ms.Seek(0, SeekOrigin.Begin);
-        await _storageService.Upload(ms, url);
+        await _storageService.Upload(ms, file);
 
         return model;
     }
 
     [HttpPut]
     [Route("replace")]
-    public async Task<DocStatusModel> ReplaceText([FromBody] ReplaceTextModel replaceTextModel)
+    public async Task<DocInfoModel> ReplaceText([FromBody] ReplaceTextModel replaceTextModel)
     {
-        var url = Path.Combine(replaceTextModel.DocumentId, "document.pdf");
-        await using Stream docStream = await _storageService.Download(url);
+        var file = Path.Combine(replaceTextModel.DocumentId, "document.pdf");
+        await using Stream docStream = await _storageService.Download(file);
         using Document doc = new Document(docStream);
 
         TextFragmentAbsorber textFragmentAbsorber =
@@ -118,13 +116,13 @@ public class TextController : Controller
         using MemoryStream ms = new MemoryStream();
         doc.Save(ms);
         ms.Seek(0, SeekOrigin.Begin);
-        var model = new DocStatusModel
+        var model = new DocInfoModel
         {
-            D = await _imageService.ImageConverter(ms, replaceTextModel.DocumentId, "document.pdf"),
-            Path = replaceTextModel.DocumentId
+            Pages = await _imageService.ImageConverter(ms, replaceTextModel.DocumentId, "document.pdf"),
+            DocumentId = replaceTextModel.DocumentId
         };
         ms.Seek(0, SeekOrigin.Begin);
-        await _storageService.Upload(ms, url);
+        await _storageService.Upload(ms, file);
 
         return model;
     }
