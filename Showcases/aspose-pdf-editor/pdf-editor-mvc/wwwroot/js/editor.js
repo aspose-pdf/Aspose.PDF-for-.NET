@@ -1225,18 +1225,20 @@ function fileSelected() {
 
     }
     var xhr = new XMLHttpRequest();
-    console.log($('#hdnOpp').val());
     switch($('#hdnOpp').val())
     {
         case 'uploading':
             xhr.open('PUT', `${apiBaseUrl}document/upload`);
-        break;
+            break;
         case 'appending':
             xhr.open('PUT', `${apiBaseUrl}document/append`);
-        break;
+            break;
         case 'addAttachment':
             xhr.open('POST', `${apiBaseUrl}attachment/add`);
-        break;
+            break;
+        default:
+            xhr.open('POST', `${apiBaseUrl}shape/upload`);
+            break;
     }
 
     xhr.upload.onprogress = function (event) {
