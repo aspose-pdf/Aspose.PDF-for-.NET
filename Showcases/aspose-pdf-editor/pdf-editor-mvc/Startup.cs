@@ -7,6 +7,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Builder;
 using System;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Razor;
+using System.Text.Json;
+using Aspose.PDF.Editor.Helpers;
+using Aspose.PDF.Editor.Services.Interface;
+using Aspose.PDF.Editor.Services;
+using System.IO.Abstractions;
 
 namespace Aspose.PDF.Editor
 {
@@ -28,6 +34,25 @@ namespace Aspose.PDF.Editor
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews()
+             .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+             .AddDataAnnotationsLocalization()
+             .AddJsonOptions(opts =>
+             {
+                 opts.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+             });
+            services.AddLocalization(options => options.ResourcesPath = "AppResources/Editor");
+            services.AddControllers(options => options.Filters.Add(typeof(ApiErrorsFilter)));
+            services.AddRouting(options =>
+            {
+                options.LowercaseUrls = true;
+                options.LowercaseQueryStrings = true;
+            });
+            // Add business logic
+            services.AddSingleton<IFileSystem, FileSystem>();
+            services.AddSingleton<IDocumentServicecs, DocumentServicecs>();
+            services.AddSingleton<IStorageService, StorageService>();
+            services.AddSingleton<IImageService, ImageService>();
         }
 
         /// <summary>
@@ -44,9 +69,15 @@ namespace Aspose.PDF.Editor
             //TODO: host environment is obsolete
             Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
         {
-            app.UseRouting();
-
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseStatusCodePages();
+            app.UseRouting();
+            app.UseStaticFiles();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
+            });
         }
     }
 }
