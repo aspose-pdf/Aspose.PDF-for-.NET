@@ -1,91 +1,96 @@
 using Aspose.Pdf;
 using Aspose.PDF.Editor.Services.Interface;
+using Microsoft.Extensions.Hosting;
+using System;
+using System.IO;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 
-namespace Aspose.PDF.Editor.Services;
-
-public class StorageService : IStorageService
+namespace Aspose.PDF.Editor.Services
 {
-    private const string WorkingDirectoryWin = "c:\\temp\\";
-    private const string WorkingDirectoryLinux = "./temp/";
-
-    private string _rootDir;
-
-    public StorageService(IHostEnvironment env) 
+    public class StorageService : IStorageService
     {
-        _rootDir = env.ContentRootPath;
-    }
+        private const string WorkingDirectoryWin = "c:\\temp\\";
+        private const string WorkingDirectoryLinux = "./temp/";
 
-    public string WorkingDirectory =>
-        RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ?
-            WorkingDirectoryWin :
-            WorkingDirectoryLinux;
+        private string _rootDir;
 
-    public async Task Upload(Stream inputStream, string storageFile)
-    {
-        if (inputStream == null) throw new ArgumentNullException(nameof(inputStream));
-        if (storageFile == null) throw new ArgumentNullException(nameof(storageFile));
-
-        var path = Path.IsPathRooted(storageFile) ? storageFile : Path.Combine(WorkingDirectory, storageFile);
-
-        var dir = Path.GetDirectoryName(path);
-        if (!Directory.Exists(dir))
+        public StorageService(IHostEnvironment env)
         {
-            if (dir != null)
-                Directory.CreateDirectory(dir);
+            _rootDir = env.ContentRootPath;
         }
 
-        await using (var fs = File.OpenWrite(path))
-        {
-            await inputStream
-                .CopyToAsync(fs)
-                .ContinueWith(_ => inputStream.Close());
-        }
-    }
+        public string WorkingDirectory =>
+            RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ?
+                WorkingDirectoryWin :
+                WorkingDirectoryLinux;
 
-    public async Task<Stream> Download(string storageFile)
-    {
-        if (storageFile == null) throw new ArgumentNullException(nameof(storageFile));
-        
-        var path = Path.IsPathRooted(storageFile)
-            ? storageFile
-            : Path.Combine(WorkingDirectory, storageFile);
-
-        var dir = Path.GetDirectoryName(path);
-        if (!Directory.Exists(dir))
+        public async Task Upload(Stream inputStream, string storageFile)
         {
-            if (dir != null) Directory.CreateDirectory(dir);
-        }
+            if (inputStream == null) throw new ArgumentNullException(nameof(inputStream));
+            if (storageFile == null) throw new ArgumentNullException(nameof(storageFile));
 
-        if (!File.Exists(path))
-        {
-            using (var newDoc = new Document())
+            var path = Path.IsPathRooted(storageFile) ? storageFile : Path.Combine(WorkingDirectory, storageFile);
+
+            var dir = Path.GetDirectoryName(path);
+            if (!Directory.Exists(dir))
             {
-                newDoc.Pages.Add();
-                newDoc.Save(path);
+                if (dir != null)
+                    Directory.CreateDirectory(dir);
+            }
+
+            await using (var fs = File.OpenWrite(path))
+            {
+                await inputStream
+                    .CopyToAsync(fs)
+                    .ContinueWith(_ => inputStream.Close());
             }
         }
 
-        var outputStream = new MemoryStream();
-
-        await using (Stream docStream = File.OpenRead(path))
+        public async Task<Stream> Download(string storageFile)
         {
-            await docStream.CopyToAsync(outputStream);
+            if (storageFile == null) throw new ArgumentNullException(nameof(storageFile));
+
+            var path = Path.IsPathRooted(storageFile)
+                ? storageFile
+                : Path.Combine(WorkingDirectory, storageFile);
+
+            var dir = Path.GetDirectoryName(path);
+            if (!Directory.Exists(dir))
+            {
+                if (dir != null) Directory.CreateDirectory(dir);
+            }
+
+            if (!File.Exists(path))
+            {
+                using (var newDoc = new Document())
+                {
+                    newDoc.Pages.Add();
+                    newDoc.Save(path);
+                }
+            }
+
+            var outputStream = new MemoryStream();
+
+            await using (Stream docStream = File.OpenRead(path))
+            {
+                await docStream.CopyToAsync(outputStream);
+            }
+
+            outputStream.Seek(0, SeekOrigin.Begin);
+
+            return outputStream;
         }
 
-        outputStream.Seek(0, SeekOrigin.Begin);
-
-        return outputStream;
-    }
-
-    public void Delete(string storageFile)
-    {
-        if (storageFile == null) throw new ArgumentNullException(nameof(storageFile));
-        
-        var path = Path.Combine(_rootDir, storageFile);
-        if (File.Exists(path))
+        public void Delete(string storageFile)
         {
-            File.Delete(path);
+            if (storageFile == null) throw new ArgumentNullException(nameof(storageFile));
+
+            var path = Path.Combine(_rootDir, storageFile);
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
         }
     }
 }

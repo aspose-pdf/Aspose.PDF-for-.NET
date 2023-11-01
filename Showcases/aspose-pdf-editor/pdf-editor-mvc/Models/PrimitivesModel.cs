@@ -1,8 +1,11 @@
-namespace Aspose.PDF.Editor.Models;
+using System.Collections.Generic;
 
-public class PrimitivesModel
+namespace Aspose.PDF.Editor.Models
 {
-    public string? DocumentId { get; set; }
+    public class PrimitivesModel
+    {
+        public string? DocumentId { get; set; }
 
-    public IList<ShapeModel>? Shapes { get; set; }
+        public IList<ShapeModel>? Shapes { get; set; }
+    }
 }

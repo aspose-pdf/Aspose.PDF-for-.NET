@@ -1,8 +1,9 @@
-namespace Aspose.PDF.Editor.Models;
-
-public class RemoveAttachmentModel
+namespace Aspose.PDF.Editor.Models
 {
-    public string? DocumentId { get; set; }
-      
-    public string? FileName { get; set; }
+    public class RemoveAttachmentModel
+    {
+        public string? DocumentId { get; set; }
+
+        public string? FileName { get; set; }
+    }
 }

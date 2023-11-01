@@ -1,25 +1,27 @@
-namespace Aspose.PDF.Editor.Helpers;
-
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
-
-public class ApiErrorsFilter : IExceptionFilter
+namespace Aspose.PDF.Editor.Helpers
 {
-    private readonly ProblemDetailsFactory _problemDetailsFactory;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Filters;
+    using Microsoft.AspNetCore.Mvc.Infrastructure;
 
-    public ApiErrorsFilter(ProblemDetailsFactory problemDetailsFactory) => _problemDetailsFactory = problemDetailsFactory;
-
-    public void OnException(ExceptionContext context)
+    public class ApiErrorsFilter : IExceptionFilter
     {
-        var exception = context.Exception;
-        var httpContext = context.HttpContext;
+        private readonly ProblemDetailsFactory _problemDetailsFactory;
 
-        var problemDetails = _problemDetailsFactory.CreateProblemDetails(httpContext, statusCode: 500, title: "API error", detail: exception.ToString() );
-        context.Result = new ObjectResult(problemDetails){
-            StatusCode = problemDetails.Status
-        };
+        public ApiErrorsFilter(ProblemDetailsFactory problemDetailsFactory) => _problemDetailsFactory = problemDetailsFactory;
 
-        context.ExceptionHandled = true;
+        public void OnException(ExceptionContext context)
+        {
+            var exception = context.Exception;
+            var httpContext = context.HttpContext;
+
+            var problemDetails = _problemDetailsFactory.CreateProblemDetails(httpContext, statusCode: 500, title: "API error", detail: exception.ToString());
+            context.Result = new ObjectResult(problemDetails)
+            {
+                StatusCode = problemDetails.Status
+            };
+
+            context.ExceptionHandled = true;
+        }
     }
 }

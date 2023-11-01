@@ -1,9 +1,13 @@
-namespace Aspose.PDF.Editor.Services.Interface;
+using System.IO;
+using System.Threading.Tasks;
 
-public interface IStorageService
+namespace Aspose.PDF.Editor.Services.Interface
 {
-    string WorkingDirectory { get; }
-    Task Upload(Stream inputStream, string storageFile);
-    Task<Stream> Download(string storageFile);
-    void Delete(string storageFile);
+    public interface IStorageService
+    {
+        string WorkingDirectory { get; }
+        Task Upload(Stream inputStream, string storageFile);
+        Task<Stream> Download(string storageFile);
+        void Delete(string storageFile);
+    }
 }

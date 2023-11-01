@@ -1,6 +1,7 @@
-namespace Aspose.PDF.Editor.Models;
-
-public class AttachmentModel
+namespace Aspose.PDF.Editor.Models
 {
-    public string? Files { get; set; }
+    public class AttachmentModel
+    {
+        public string? Files { get; set; }
+    }
 }

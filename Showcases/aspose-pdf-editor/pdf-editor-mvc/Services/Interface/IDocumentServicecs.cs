@@ -1,7 +1,11 @@
-﻿namespace Aspose.PDF.Editor.Services.Interface;
+﻿using System.IO;
+using System.Threading.Tasks;
 
-public interface IDocumentServicecs
+namespace Aspose.PDF.Editor.Services.Interface
 {
-    Task<string> AppendConverter(Stream docStream, Stream appendStream, string folder,
-    string appPages, string appRatios, string appHeights);
+    public interface IDocumentServicecs
+    {
+        Task<string> AppendConverter(Stream docStream, Stream appendStream, string folder,
+        string appPages, string appRatios, string appHeights);
+    }
 }

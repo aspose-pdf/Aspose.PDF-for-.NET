@@ -1,8 +1,9 @@
-namespace Aspose.PDF.Editor.Models;
-
-public class DeletePageModel
+namespace Aspose.PDF.Editor.Models
 {
-    public int PageNumber { get; set; }
+    public class DeletePageModel
+    {
+        public int PageNumber { get; set; }
 
-    public string? DocumentId { get; set; }
+        public string? DocumentId { get; set; }
+    }
 }
