@@ -27,18 +27,17 @@ public class AttachmentController : Controller
             httpRequest.Form["documentId"][0] : 
             Guid.NewGuid().ToString();
 
-        var file = Path.Combine(_storageService.WorkingDirectory, documentId);
+        var file = Path.Combine(_storageService.WorkingDirectory, documentId, "document.pdf");
 
         var formFile = httpRequest.Form.Files.FirstOrDefault();
 
         if (formFile == null)
             throw new ArgumentException("no files");
 
-        var documentFileName = Path.Combine(file, "document.pdf");
         using MemoryStream ms = new MemoryStream();
         using (PdfContentEditor contentEditor = new PdfContentEditor())
         {
-            contentEditor.BindPdf(documentFileName);
+            contentEditor.BindPdf(file);
             await using (var fs = formFile.OpenReadStream())
             {
                 contentEditor.AddDocumentAttachment(

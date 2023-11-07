@@ -1,49 +1,4 @@
-function GetFileExists() {
-    var folder = typeof window.folderName !== 'undefined' 
-        && window.folderName != 'undefined' ? 
-        window.folderName : "";
-    
-    var file = typeof window.fileName !== 'undefined' 
-        && window.fileName != 'undefined' ?
-        window.fileName : "";
-        
-    $.ajax({
-        type: 'GET',
-        url: `${apiBaseUrl}document/info?folder=${folder}&fileName=${file}`,
-        contentType: 'application/json; charset=utf-8',
-        dataType: 'json',
-        success: function (data, textStatus, jqXHR) {
-            dataLoad = data.pages;
-            documentId = data.documentId;
-            console.log(data);
-            for (let i = 0; i < shapes.length; i++) {
-                var shapeDiv = document.getElementById('div_' + shapes[i].imName + '');
-                var shape = document.getElementById(shapes[i].imName);
-                if (shape !== null) {
-                    $('#' + shapes[i].imName + '').remove();
-                }
-
-                if (shapeDiv !== null) {
-                    shapeDiv.parentNode.removeChild(shapeDiv);
-                }
-            }
-
-            $('#hdnOpp').val('Empty');
-            shapes2.length = 0;
-            shapes.length = 0;
-            Attachments.length = 0;
-            $('#loadingModal').modal('hide');
-            First();
-        },
-        //call on ajax call failure
-        error: function (xhr, textStatus, error) {
-            alertModal('Error: ', xhr, textStatus, error);
-        }
-    })
-    .done(function () { $('#loadingModal').modal('hide'); });
-}
-
-function newFileClick(action) {
+function NewFileClick() {
     $.ajax({
         type: 'POST',
         url: `${apiBaseUrl}document/create`,
@@ -72,7 +27,6 @@ function newFileClick(action) {
             Attachments.length = 0;
             First();
         },
-        //call on ajax call failure
         error: function (xhr, textStatus, error) {
             alertModal('Error: ', xhr, textStatus, error);
         }
@@ -80,8 +34,7 @@ function newFileClick(action) {
     .done(function () { $('#loadingModal').modal('hide'); });
 }
 
-function DrawPic(imageId) {
-
+function DrawPage(imageId) {
     var canvas = document.getElementById('imageView');
     canvas.height = pageHeights[imageId];
 
@@ -103,6 +56,7 @@ function DrawPic(imageId) {
 
 function AddPage() {
     $('#loadingModal').modal('show');
+
     $.ajax({
         type: 'POST',
         url: `${apiBaseUrl}page/add/${documentId}`,
@@ -132,9 +86,15 @@ function DeletePage() {
     function isFromPage(page) {
         return page == currentPage;
     }
+
     shapes = shapes.filter(isFromPage);
 
-    var deleteData = JSON.stringify({ 'pageNumber': currentPage, 'documentId': documentId });
+    var deleteData = JSON.stringify(
+        { 
+            'pageNumber': currentPage, 
+            'documentId': documentId 
+        });
+
     return $.ajax({
         type: 'DELETE',
         url: `${apiBaseUrl}page/delete`,
@@ -160,22 +120,31 @@ function updateIndexesDelete() {
         currentPage = Npages.length;
     }
 
-    DrawPic(Npages[currentPage - 1]);
+    DrawPage(Npages[currentPage - 1]);
     document.getElementById('lblPages').innerHTML = 'Page ' + currentPage + '  Of ' + Npages.length;
 }
 
 function Move() {
+    $('#loadingModal').modal('show');
+
     let moveTo = $('#txtMove').val();
+
     if ($('#hdnMove').val() === 'moving') {
-        movedata = JSON.stringify({ 'moveFrom': currentPage.toString(), 'moveTo': moveTo, 'pageList': Npages, 'documentId': documentId });
-        $('#loadingModal').modal('show');
+        movedata = JSON.stringify(
+            { 
+                'moveFrom': currentPage, 
+                'moveTo': moveTo, 
+                'pageList': Npages, 
+                'documentId': documentId 
+            });
+
         $.ajax({
             type: 'PUT',
             url: `${apiBaseUrl}page/move`,
             data: movedata,
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
-            success: function (data, textStatus, jqXHR) {
+            success: function (data) {
                 Npages = data.pageList;
                 MoveUpdate();
             },
@@ -186,19 +155,22 @@ function Move() {
         .done(function () { $('#loadingModal').modal('hide'); });
     }
     else {
-        $('#loadingModal').modal('show');
-        movedata = JSON.stringify({ 'searchText': moveTo, 'pageList': Npages, 'documentId': documentId });
-        // Sending the image data to Server
+        movedata = JSON.stringify(
+            { 
+                'searchText': moveTo, 
+                'pageList': Npages, 
+                'documentId': documentId 
+            });
+            
         $.ajax({
             type: 'POST',
             url: `${apiBaseUrl}text/search`,
             data: movedata,
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
-            success: function (data, textStatus, jqXHR) {
+            success: function () {
                 AfterSearch();
             },
-            //call on ajax call failure
             error: function (xhr, textStatus, error) {
                 alertModal('Error: ', xhr, textStatus, error);
             }
@@ -217,10 +189,9 @@ function MoveUpdate() {
         }
 
     }
+
     DrawScreen();
-
-    DrawPic(Npages[currentPage - 1]);
-
+    DrawPage(Npages[currentPage - 1]);
     DrawShapes();
 
     document.getElementById('lblPages').innerHTML = 'Page ' + currentPage + '  Of ' + Npages.length;

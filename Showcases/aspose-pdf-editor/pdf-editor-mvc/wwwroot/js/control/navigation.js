@@ -20,7 +20,7 @@ function First() {
         onStartup();
     }
 
-    DrawPic(Npages[currentPage - 1]);
+    DrawPage(Npages[currentPage - 1]);
     document.getElementById('lblPages').innerHTML = 'Page ' + currentPage + '  Of ' + Npages.length;
     DrawShapes();
 
@@ -31,7 +31,7 @@ function Next() {
     if (currentPage < Npages.length) {
         currentPage = currentPage + 1;
         DrawScreen();
-        DrawPic(Npages[currentPage - 1]);
+        DrawPage(Npages[currentPage - 1]);
         var promise = jQuery.when().promise();
         promise = promise.then(wait);
         promise.done(function () {
@@ -47,7 +47,7 @@ function Previous() {
     if (currentPage > 1) {
         currentPage = currentPage - 1;
         DrawScreen();
-        DrawPic(Npages[currentPage - 1]);
+        DrawPage(Npages[currentPage - 1]);
         var promise = jQuery.when().promise();
         promise = promise.then(wait);
         promise.done(function () {

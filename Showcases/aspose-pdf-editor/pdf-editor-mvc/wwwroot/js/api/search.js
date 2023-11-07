@@ -10,7 +10,7 @@ function wait(ms) {
 
 function AfterSearch() {
     DrawScreen();
-    DrawPic(Npages[currentPage - 1]);
+    DrawPage(Npages[currentPage - 1]);
     var promise = jQuery.when().promise();
     promise = promise.then(wait);
     promise.done(function () {
@@ -21,7 +21,13 @@ function AfterSearch() {
 function ReplaceText() {
     let txtFind = $('#txtFind').val();
     let txtReplace = $('#txtReplace').val();
-    let movedata = JSON.stringify({ 'txtFind': txtFind, 'txtReplace': txtReplace, 'pageList': Npages, 'documentId': documentId });
+    let movedata = JSON.stringify(
+        { 
+            'txtFind': txtFind, 
+            'txtReplace': txtReplace, 
+            'pageList': Npages, 
+            'documentId': documentId 
+        });
 
     $('#loadingModal').modal('show');
     // Sending the image data to Server
@@ -34,7 +40,6 @@ function ReplaceText() {
         success: function (data, textStatus, jqXHR) {
             AfterSearch();
         },
-        //call on ajax call failure
         error: function (xhr, textStatus, error) {
             alertModal('Error: ', xhr, textStatus, error);
         }
@@ -45,17 +50,22 @@ function ReplaceText() {
 
 
 function clearSearchClicked() {
-    let cleardata = JSON.stringify({ 'searchText': '', 'pageList': Npages, 'documentId': documentId });
+    let cleardata = JSON.stringify(
+        { 
+            'searchText': '', 
+            'pageList': Npages, 
+            'documentId': documentId 
+        });
+
     $.ajax({
         type: 'DELETE',
         url: `${apiBaseUrl}text/clear`,
         data: cleardata,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
-        success: function (data, textStatus, jqXHR) {
+        success: function () {
             AfterSearch();
         },
-        //call on ajax call failure
         error: function (xhr, textStatus, error) {
             alertModal('Error: ', xhr, textStatus, error);
         }

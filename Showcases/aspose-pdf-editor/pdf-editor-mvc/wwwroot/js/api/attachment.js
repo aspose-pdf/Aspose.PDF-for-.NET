@@ -6,7 +6,7 @@ function GetAttachments() {
         data: { 'documentId': documentId },
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
-        success: function (data, textStatus, jqXHR) {
+        success: function (data) {
             Attachments = data.files.split(',');
             var table = document.getElementById('tblAttach');
             while (table.rows.length > 1) {
@@ -20,7 +20,6 @@ function GetAttachments() {
                 var cell2 = row.insertCell(1);
                 var cell3 = row.insertCell(2);
                 var cell4 = row.insertCell(3);
-
 
                 // Add some text to the new cells:
                 cell1.innerHTML = Attachments[i];
@@ -51,7 +50,6 @@ function GetAttachments() {
                 i = i + 1;
             }
         },
-        //call on ajax call failure
         error: function (xhr, textStatus, error) {
             alertModal('Error: ', xhr, textStatus, error);
         }
@@ -60,8 +58,12 @@ function GetAttachments() {
 }
 
 function RemoveAttachment(name, rowId) {
-    let removeData = JSON.stringify({ 'attachmentFileName': name, 'documentId': documentId });
-    // Sending the image data to Server
+    let removeData = JSON.stringify(
+        { 
+            'attachmentFileName': name, 
+            'documentId': documentId 
+        });
+
     $.ajax({
         type: 'DELETE',
         url: `${apiBaseUrl}attachment/remove`,
@@ -71,7 +73,6 @@ function RemoveAttachment(name, rowId) {
         success: function () {
             document.getElementById('tblAttach').deleteRow(rowId);
         },
-        //call on ajax call failure
         error: function (xhr, textStatus, error) {
             alertModal('Error: ', xhr, textStatus, error);
         }

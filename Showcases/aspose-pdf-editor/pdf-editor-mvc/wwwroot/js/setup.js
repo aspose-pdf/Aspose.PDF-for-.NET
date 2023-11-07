@@ -130,7 +130,7 @@ if (window.addEventListener) {
             canvas.addEventListener('mousemove', ev_canvas, false);
             canvas.addEventListener('mouseup', ev_canvas, false);
             
-            GetFileExists();
+            GetDocumentInfo();
         }
 
         init();
