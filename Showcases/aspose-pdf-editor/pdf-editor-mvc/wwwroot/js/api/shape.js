@@ -1,5 +1,4 @@
-function saveTextFromArea() {
-    //get the value of the textarea
+function SaveText() {
     var text = $('#textareaTest').val();
     $('#textAreaPopUp').css('visibility', 'hidden');
 
@@ -81,7 +80,6 @@ function InsertImages(data, imgLeft, imgTop) {
     let canvas = document.getElementById('imageView');
     let context = canvas.getContext('2d');
 
-    let bRect = canvas.getBoundingClientRect();
     let image1 = `${apiBaseUrl}page/preview/${documentId}/${data}?Dummy=${Math.random()}`;
 
     let imgWidth = 0;
@@ -136,8 +134,6 @@ function drawRotationHandle(shape, context) {
 
     context.restore();
 }
-
-
 
 function addFields(fieldData) {
     if (fieldData !== '') {
@@ -318,7 +314,6 @@ function ManageFields() {
     }
 }
 
-
 function DrawShapes() {
     let canvas = document.getElementById('imageView');
     let context = canvas.getContext('2d');
@@ -332,10 +327,7 @@ function DrawShapes() {
             }
             if (shapes[i].Itype === 'image') {
 
-                var image1 = 'Images/'.concat(shapes[i].imfile);
-
                 imageObj = shapes[i].imfile;
-
                 context.drawImage(imageObj, shapes[i].x, shapes[i].y, shapes[i].textWidth, shapes[i].fontHeight);
 
             }

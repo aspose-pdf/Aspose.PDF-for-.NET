@@ -156,3 +156,12 @@ function onStartup() {
     document.getElementById('btnAttachments').disabled = false;
     document.getElementById('btnSignature').disabled = false;
 }
+
+function wait(ms) {
+    var deferred = jQuery.Deferred();
+    var intervalId = setInterval(function () {
+        clearInterval(intervalId);
+        deferred.resolve();
+    }, 100);
+    return deferred.promise();
+}

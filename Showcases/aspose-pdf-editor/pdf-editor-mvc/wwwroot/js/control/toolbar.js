@@ -1,5 +1,3 @@
-
-
 // The general-purpose event handler. This function just determines the mouse 
 // position relative to the canvas element.
 function ev_canvas(ev) {
@@ -18,28 +16,28 @@ function ev_canvas(ev) {
 }
 
 // The event handler for any changes made to the tool selector.
-function ev_tool_change(ev) {
+function ev_tool_change() {
     if (tools['rect'] && currentTools === 'Rect') {
         tool = new tools['rect']();
     }
 }
 
 // The event handler for any changes made to the tool selector.
-function ev_tool_change2(ev) {
+function ev_tool_change2() {
     if (tools['reading'] && currentTools === 'Read') {
         tool = new tools['reading']();
     }
 }
 
 // The event handler for any changes made to the tool selector.
-function ev_tool_change3(ev) {
+function ev_tool_change3() {
     if (tools['dragging'] && currentTools === 'Drag') {
         tool = new tools['dragging']();
     }
 }
 
 // The event handler for any changes made to the tool selector.
-function ev_tool_change4(ev) {
+function ev_tool_change4() {
     if (tools['texting']) {
         tool = new tools['texting']();
     }
@@ -62,7 +60,7 @@ function appendClick(event) {
     GeneralSetup('Append');
 }
 
-$('#myColors').on('shown.bs.modal', function (e) {
+$('#myColors').on('shown.bs.modal', function () {
     $('#myColors').modal().css('top', $('#textAreaPopUp').position().top);
     $('#myColors').modal().css('left', $('#textAreaPopUp').position().left);
 });

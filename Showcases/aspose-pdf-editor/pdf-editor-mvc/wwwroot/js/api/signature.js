@@ -21,8 +21,9 @@ function saveSignature() {
                 $('#imageView').trigger(e);
             }
         })
-            .done(function () { $('#loadingModal').modal('hide'); });
-    }, 'image/png');
+        .done(function () { $('#loadingModal').modal('hide'); });
+    },
+    'image/png');
 }
 
 function closeSignature() {

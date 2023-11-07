@@ -1,5 +1,4 @@
 function GetAttachments() {
-    // Sending the image data to Server
     $.ajax({
         type: 'GET',
         url: `${apiBaseUrl}attachment/all/${documentId}`,

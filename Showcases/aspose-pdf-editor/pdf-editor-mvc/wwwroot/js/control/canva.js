@@ -1,5 +1,3 @@
-
-
 // This function draws the #imageTemp canvas on top of #imageView, after which 
 // #imageTemp is cleared. This function is called each time when the user 
 // completes a drawing operation.
@@ -7,7 +5,6 @@ function img_update() {
     contexto.drawImage(canvas, 0, 0);
     context.clearRect(0, 0, canvas.width, canvas.height);
 }
-
 
 // The rectangle tool.
 tools.rect = function () {
@@ -139,7 +136,6 @@ tools.reading = function () {
     tool = this;
     this.started = false;
 };
-
 
 // The reading tool.
 tools.dragging = function () {
@@ -473,13 +469,13 @@ tools.texting = function () {
         }
     };
 
-    this.mousemove = function (evt) {
+    this.mousemove = function () {
         if (!tool.started) {
             return;
         }
     };
 
-    this.mouseup = function (evt) {
+    this.mouseup = function () {
         if (tool.started) {
             tool.started = false;
         }
@@ -489,9 +485,6 @@ tools.texting = function () {
     };
 
 };
-
-
-
 
 function anchorHitTest(shape, x, y, context) {
     anchorVal = -1;
@@ -540,7 +533,6 @@ function anchorHitTest(shape, x, y, context) {
 
     }
     else { return -1; }
-
 }
 
 function hitTest(shape, mx, my, context) {

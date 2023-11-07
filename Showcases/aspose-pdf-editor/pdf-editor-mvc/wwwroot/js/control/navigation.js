@@ -1,5 +1,4 @@
 
-
 function First() {
     let dataP = dataLoad.split('%#');
     Npages = dataP[0].split(',');
