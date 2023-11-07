@@ -3,6 +3,7 @@ using Aspose.Pdf.Facades;
 using Microsoft.AspNetCore.Mvc;
 using Aspose.PDF.Editor.Models;
 using Aspose.PDF.Editor.Services.Interface;
+using Aspose.Pdf.Annotations;
 
 namespace Aspose.PDF.Editor.Controllers;
 
@@ -93,7 +94,7 @@ public class AttachmentController : Controller
 
     [HttpDelete]
     [Route("remove")]
-    public async Task<StatusCodeResult> RemoveFileAttachment([FromBody] RemoveAttachmentModel removeAttachmentModel)
+    public async Task<AttachmentModel> RemoveFileAttachment([FromBody] RemoveAttachmentModel removeAttachmentModel)
     {
         var file = Path.Combine(removeAttachmentModel.DocumentId, "document.pdf");
         await using Stream docStream = await _storageService.Download(file);
@@ -109,6 +110,6 @@ public class AttachmentController : Controller
             await _storageService.Upload(ms, file);
         }
 
-        return Ok();
+        return await GetFileAttachments(removeAttachmentModel.DocumentId);
     }
 }

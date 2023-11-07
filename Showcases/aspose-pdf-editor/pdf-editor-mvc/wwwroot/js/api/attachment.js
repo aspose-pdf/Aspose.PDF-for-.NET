@@ -60,8 +60,8 @@ function GetAttachments() {
 function RemoveAttachment(name, rowId) {
     let removeData = JSON.stringify(
         { 
-            'attachmentFileName': name, 
-            'documentId': documentId 
+            'fileName': name, 
+            'documentId': documentId
         });
 
     $.ajax({
