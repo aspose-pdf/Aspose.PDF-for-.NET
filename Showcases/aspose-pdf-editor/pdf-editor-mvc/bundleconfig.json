@@ -1,8 +1,2 @@
 [
-  {
-    "outputFileName": "wwwroot/js/editor.min.js",
-    "inputFiles": [
-      "wwwroot/js/editor.js"
-    ]
-  }
 ]
