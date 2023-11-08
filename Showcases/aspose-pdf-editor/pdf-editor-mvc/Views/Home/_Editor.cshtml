@@ -141,7 +141,7 @@
                 </button>
                 <ul class="dropdown-menu">
                     <li>
-                        <a onclick="newFileClick('upload')">Create New File</a>
+                        <a onclick="NewFileClick()">Create New File</a>
                     </li>
                     <li>
                         <a class="open-uploadModal" data-bs-toggle="modal" data-bs-target="#uploadModal"
@@ -229,7 +229,7 @@
                         data-id="replacing" data-bs-placement="top" title="Replace Text">Replace Text</a>
                 </li>
                 <li>
-                    <a onclick="clearSearchClicked()">Clear Search</a>
+                    <a onclick="ClearSearch()">Clear Search</a>
                 </li>
             </ul>
         </div>
@@ -386,7 +386,7 @@
         </tr>
         <tr>
             <td>
-                <button type="button" value="save" id="saveText" onclick="saveTextFromArea();" class="btn btn-primary">
+                <button type="button" value="save" id="saveText" onclick="SaveText();" class="btn btn-primary">
                     <i class="bi bi-check"></i>
                 </button>
                 <button type="button" value="cancel" id="Button1" onclick="closeTextEditor();"

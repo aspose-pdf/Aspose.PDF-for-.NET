@@ -3,6 +3,7 @@ using Aspose.Pdf.Facades;
 using Microsoft.AspNetCore.Mvc;
 using Aspose.PDF.Editor.Models;
 using Aspose.PDF.Editor.Services.Interface;
+using Aspose.Pdf.Annotations;
 
 namespace Aspose.PDF.Editor.Controllers;
 
@@ -27,18 +28,17 @@ public class AttachmentController : Controller
             httpRequest.Form["documentId"][0] : 
             Guid.NewGuid().ToString();
 
-        var file = Path.Combine(_storageService.WorkingDirectory, documentId);
+        var file = Path.Combine(_storageService.WorkingDirectory, documentId, "document.pdf");
 
         var formFile = httpRequest.Form.Files.FirstOrDefault();
 
         if (formFile == null)
             throw new ArgumentException("no files");
 
-        var documentFileName = Path.Combine(file, "document.pdf");
         using MemoryStream ms = new MemoryStream();
         using (PdfContentEditor contentEditor = new PdfContentEditor())
         {
-            contentEditor.BindPdf(documentFileName);
+            contentEditor.BindPdf(file);
             await using (var fs = formFile.OpenReadStream())
             {
                 contentEditor.AddDocumentAttachment(
@@ -94,7 +94,7 @@ public class AttachmentController : Controller
 
     [HttpDelete]
     [Route("remove")]
-    public async Task<StatusCodeResult> RemoveFileAttachment([FromBody] RemoveAttachmentModel removeAttachmentModel)
+    public async Task<AttachmentModel> RemoveFileAttachment([FromBody] RemoveAttachmentModel removeAttachmentModel)
     {
         var file = Path.Combine(removeAttachmentModel.DocumentId, "document.pdf");
         await using Stream docStream = await _storageService.Download(file);
@@ -110,6 +110,6 @@ public class AttachmentController : Controller
             await _storageService.Upload(ms, file);
         }
 
-        return Ok();
+        return await GetFileAttachments(removeAttachmentModel.DocumentId);
     }
 }

@@ -34,7 +34,7 @@ public class ImageService : IImageService
                 PngDevice pngDevice = new PngDevice(new Resolution(150));
                 pngDevice.Process(doc.Pages[pageCount], imageStream);
 
-                var r = await ScaleImage(imageStream, folder, imgFile, 1138);
+                var r = await ScaleImage(imageStream, folder, imgFile, 1295);
 
                 if (pageCount == 1)
                     fields = CheckFields(doc, pageCount, fields, double.Parse(r.Item2, CultureInfo.InvariantCulture));
