@@ -49,6 +49,8 @@ function DrawPage(imageId) {
     var rand = Math.random();
     
     image1 = `${apiBaseUrl}page/preview/${documentId}/${imageId}`;
+    $('#imageView').css('background-size', 'contain');
+    $('#imageView').css('background-repeat', 'no-repeat');
     $('#imageView').css('background-image', 'url(' + image1 + '?Dummy=' + rand + ')');
 
     return true;

@@ -1,8 +1,8 @@
 let apiBaseUrl = '/api/';
 let documentId = '';
 let ratio = 1;
-let canvasHeight;
-let canvasWidth;
+let canvasHeight = 760;
+let canvasWidth = 2000;
 let currentPage;
 let Npages = [];
 let aRatio = [];
@@ -50,8 +50,6 @@ let dragging;
 
 let dragHoldX;
 let dragHoldY;
-canvasWidth = 1138;
-canvasHeight = 760;
 
 if (window.addEventListener) {
     window.addEventListener('load', function () {
