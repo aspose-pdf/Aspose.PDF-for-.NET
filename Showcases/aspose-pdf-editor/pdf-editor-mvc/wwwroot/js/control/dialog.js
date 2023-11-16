@@ -153,8 +153,7 @@ function alertModal (msg, xhr, textStatus, error){
     if(xhr != null && xhr.responseJSON != null) {
         msg += xhr.responseJSON.detail;
     }
-    
-    if(error != null) {
+    else if(error != null) {
         msg += error;
     }
 
