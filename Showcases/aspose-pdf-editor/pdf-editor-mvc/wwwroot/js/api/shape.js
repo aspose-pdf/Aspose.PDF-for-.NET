@@ -85,7 +85,7 @@ function InsertImages(data, imgLeft, imgTop) {
     let imgWidth = 0;
     let imgHeight = 0;
 
-    imageObj = new Image();
+    var imageObj = new Image();
 
     imageObj.onload = function () {
         context.drawImage(imageObj, imgLeft, imgTop);
@@ -327,7 +327,7 @@ function DrawShapes() {
             }
             if (shapes[i].Itype === 'image') {
 
-                imageObj = shapes[i].imfile;
+                var imageObj = shapes[i].imfile;
                 context.drawImage(imageObj, shapes[i].x, shapes[i].y, shapes[i].textWidth, shapes[i].fontHeight);
 
             }

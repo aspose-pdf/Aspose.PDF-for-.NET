@@ -20,7 +20,6 @@ let mouseY;
 let textX;
 let textY;
 let editText = -1;
-let imageObj;
 let selectedShape = -1;
 let searchFolder = '';
 let pageHeights = {};

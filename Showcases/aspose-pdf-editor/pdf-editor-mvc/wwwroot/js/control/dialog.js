@@ -126,6 +126,7 @@ function fileSelected() {
                 }
                 else {
                     InsertImages(data.pages, 50, 50);
+                    xhr.onreadystatechange = null;
                 }
 
             $('.progress-bar').width('100%');
@@ -144,7 +145,6 @@ function fileSelected() {
 
 $(document).on('click', '.open-uploadModal', function () {
     let operationId = $(this).data('id');
-    console.log(operationId);
     $('#hdnOpp').val(operationId);
 });
 
@@ -153,8 +153,7 @@ function alertModal (msg, xhr, textStatus, error){
     if(xhr != null && xhr.responseJSON != null) {
         msg += xhr.responseJSON.detail;
     }
-    
-    if(error != null) {
+    else if(error != null) {
         msg += error;
     }
 

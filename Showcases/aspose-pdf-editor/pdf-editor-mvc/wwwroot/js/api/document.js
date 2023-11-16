@@ -12,10 +12,9 @@ function GetDocumentInfo() {
         url: `${apiBaseUrl}document/info?folder=${folder}&fileName=${file}`,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
-        success: function (data, textStatus, jqXHR) {
+        success: function (data) {
             dataLoad = data.pages;
             documentId = data.documentId;
-            console.log(data);
             for (let i = 0; i < shapes.length; i++) {
                 var shapeDiv = document.getElementById('div_' + shapes[i].imName + '');
                 var shape = document.getElementById(shapes[i].imName);
