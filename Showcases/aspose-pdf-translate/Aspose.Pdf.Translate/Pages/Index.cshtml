@@ -1,0 +1,391 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div id="dvTitle" class="container-main blue">
+    <div id="dvTitle" class="container blue dvTitle-container">
+        <h1 id="ProductTitle">PDF Translator</h1>
+        <h2 id="ProductTitleSubDiv" class="p-text" style="width: 85%;">
+            Translate PDF documents from English, French,
+            German, Italian from to global languages.
+        </h2>
+    </div>
+</div>
+
+<div id="loader-container" class="container-main blue">
+    <div id="processing" class="loading hidden">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div id="loader" class="hidden" role="status" aria-hidden="true">
+        <div class="progress" style="max-width: 800px;">
+            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+                 style="width: 15%">
+                15%
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="WorkPlaceHolder" class="container-main blue" style="justify-content:start">
+    <form id="UploadFile" name="UploadFile" method="POST" enctype="multipart/form-data" style="width: 100%;"
+          action="https://localhost:5001/pdf/translate">
+        <div id="loading-waiter" style="display: none;">
+            <div class="loading-spinner" style="display: block;">Loading…</div>
+        </div>
+        <p id="idFile" hidden="">1886913881</p>
+        <div id="filesUploadBlock" style="display:flex; flex-direction:row; flex-wrap:wrap;justify-content:center;">
+            <div class="filedrop-container width-for-mobile">
+                <div class="filedrop filedrop-mvc fileplacement width-for-mobile" id="filedrop-1886913881"
+                     style="background-image: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUuNSAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6N0YyMkRENzM1RkYxMTFFODhFNkVDNDNBOTY5QzNBODYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6N0YyMkRENzQ1RkYxMTFFODhFNkVDNDNBOTY5QzNBODYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3RjIyREQ3MTVGRjExMUU4OEU2RUM0M0E5NjlDM0E4NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3RjIyREQ3MjVGRjExMUU4OEU2RUM0M0E5NjlDM0E4NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsUkwuUAAAYTSURBVHja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 );">
+                    <input type="file" id="UploadFileInput-1886913881" class="filedrop-input"
+                           name="UploadFileInput-1886913881" title="Translate .pdf" accept=".pdf" multiple="">
+                    <div class="fileupload-list"></div>
+                    <label for="UploadFileInput-1886913881" class="drop-files-label">
+                        Drop or upload your
+                        files*
+                    </label>
+                </div>
+
+                <div class="filedrop-buttonbar">
+                    <label id="choose-file-button" for="UploadFileInput-1886913881"
+                           class="btn-gray filedrop-buttonbar-item" title="Click to choose a file">
+                        <svg class="svg-inline--fa fa-link" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                             width="18" height="18" viewBox="0 0 24 24">
+                            <image style="overflow:visible;" width="18" height="18"
+                                   xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAA5CAYAAACBBvPCAAAACXBIWXMAAAsSAAALEgHS3X78AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAApBJREFUeNrcm4uNgzAMQHMTHCNkhIyQEbrBdYSOwAiMkBEYgREYIbdBbgKuSEFCFIjt/AyRrEotBF7s+Ef5EjyHfovyIg+OGd4y+k8nLj5mYONBJqTMi/B6S3NF6IEAvCfzwrVXWASZEHpvEZ5cwR9E88ZKz80K2gLQW3+wuwBfhcFnh/aDOP7X3/y4+q5ZRYJv4Dx/3reMtTRugJqy3nNL4PYxsRbAATzGSUngNQaO4EMirWiAI205gZvE11TexM+uKe8Ivt4GLhACbwm+toDi2ucADskpDBfwpaixB6HP+LCGHc3BnFPqSpACrk9u7igH0Mj7ep3MVw28i0hZO6T2s8FTwI2Iz9kxe3bIAV8LHLsAbWr42uCLQBzhIyV8LnDr97P20gKyNQdIjXUq+FzgHdFjT/737PC5wCHV3DNQrmaFrwm+jJ4YtqL2PAfwM4gpkPyQvT0X8GVQ4Elxnhs4BZ6U4XEEVwT4FgvPETwEIg+07jBVHbU6yw1+1p2xKer5l6Dl031m8CaQ6XWI2L6IwmrPEOJvbvA9k1eBHt5HC3sU9ArqURHcIME/FuuZoHQ0Iu1TUgi43RQ1EPCPvr1N1DSQfvs0BcDdZt9CwEdM7LSi/POtXOC7LF1GZ8UFfHtOMO91dwcXDB4sVAMXov7TzGrg1BLxFuA14auDi4im4OXBazg8NuClQx0r8JJJDjtwSHqbYiiO4KkLmyNwxxUcUtJSzV8SIUwpcIj2FwvAVHiaCN6UBoe2say3giYwTy9g/7hUB9ZSFBzi+ff6YJ2vAVoPbIHnhiD60uCY1nXsiwAK4CTtpgOTHTz3AmC1p0tCQxv+FBnExV4AUiL+PRiXuUjKPqAefO+lAbba/hdgAGzMlDoCtYNUAAAAAElFTkSuQmCC">
+                            </image>
+                        </svg>
+
+                        Choose file
+                    </label>
+                </div>
+
+                <div id="filedrop-input-url" class="fileupload file-upload-input-container" style="display:none">
+                    <span class="filename">
+                        <input type="text" id="externalUrlInput" class="form-control externalUrlInput"
+                               name="externalUrlInput" placeholder="Enter file URL (with http://, https://)">
+                        <span class="fileLinkHolder">
+                            <span class="file-link-holder-add">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check"
+                                     role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                     class="svg-inline--fa fa-check fa-w-16 fa-2x">
+                                    <path fill="currentColor"
+                                          d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                          class=""></path>
+                                </svg>
+                            </span>
+                            <span class="file-link-holder-cancel">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times"
+                                     role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"
+                                     class="svg-inline--fa fa-times fa-w-11 fa-2x">
+                                    <path fill="currentColor"
+                                          d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                                          class=""></path>
+                                </svg>
+                            </span>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div id="controlsView">
+            <div>
+                <div>
+                    <div style="margin:20px">
+                        <label for="from">
+                            <span class="dropdown-label">
+                                From
+                            </span>
+                            <select class="dropdown-thin" name="from" id="from">
+                                <option value="en">English</option>
+                                <option value="fr">Français</option>
+                                <option value="de">Deutsch</option>
+                                <option value="it">Italiano</option>
+                                <option value="es">Español</option>
+                                <option value="pt">Português</option>
+                                <option value="pl">Polski</option>
+                                <option value="ru">Русский</option>
+                                <option value="ar">العربية</option>
+                                <option value="zh">中國傳統的</option>
+                            </select>
+                        </label>
+                        <label for="to">
+                            <span class="dropdown-label">
+                                To
+                            </span>
+                            <select class="dropdown-thin" name="to" id="to">
+                                <option value="en" style="display: none;">English</option>
+                                <option value="fr" selected="">Français</option>
+                                <option value="de">Deutsch</option>
+                                <option value="it">Italiano</option>
+                                <option value="es">Español</option>
+                                <option value="pt">Português</option>
+                                <option value="pl">Polski</option>
+                                <option value="ru">Русский</option>
+                                <option value="ar">العربية</option>
+                                <option value="zh">中國傳統的</option>
+                                <option value="lt">Lietuvis</option>
+                                <option value="lv">Latviski</option>
+                                <option value="az">Azərbaycan</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="convertbtn btn-group">
+            <input id="uploadButton" type="button" class="btn" value="Translate">
+        </div>
+    </form>
+</div>
+
+<div id="DownloadPlaceHolder" class="container-main blue hidden" style="justify-content:start">
+    <div class="filesuccess">
+        <p id="SuccessMessage">
+            Your first 4 pages have been translated successfully. We are working to make everyone
+            get as many pages translated as possible. Your are not limited in translate requests.
+        </p>
+
+        <div id="DownloadContainer">
+            <div id="DownloadBtn" class="convertbtn">
+                <a rel="nofollow" href="https://localhost:5001/pdf/translate#" id="DownloadButton"
+                   class="btn download-button" target="_blank" download="">
+                    DOWNLOAD&nbsp;
+                    <svg class="icon icon-download frame0-1" viewBox="0 -5 30 32">
+                        <path d="M22.857 24q0-0.464-0.339-0.804t-0.804-0.339-0.804 0.339-0.339 0.804 0.339 0.804 0.804 0.339 0.804-0.339 0.339-0.804zM27.429 24q0-0.464-0.339-0.804t-0.804-0.339-0.804 0.339-0.339 0.804 0.339 0.804 0.804 0.339 0.804-0.339 0.339-0.804zM29.714 20v5.714q0 0.714-0.5 1.214t-1.214 0.5h-26.286q-0.714 0-1.214-0.5t-0.5-1.214v-5.714q0-0.714 0.5-1.214t1.214-0.5h8.304l2.411 2.429q1.036 1 2.429 1t2.429-1l2.429-2.429h8.286q0.714 0 1.214 0.5t0.5 1.214zM23.911 9.839q0.304 0.732-0.25 1.25l-8 8q-0.321 0.339-0.804 0.339t-0.804-0.339l-8-8q-0.554-0.518-0.25-1.25 0.304-0.696 1.054-0.696h4.571v-8q0-0.464 0.339-0.804t0.804-0.339h4.571q0.464 0 0.804 0.339t0.339 0.804v8h4.571q0.75 0 1.054 0.696z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+
+        <div>
+            <a href="/pdf/translate" class="btn">
+                Translate other documents &nbsp;
+                <svg class="icon icon-refresh frame0" viewBox="0 -2 32 32">
+                    <path d="M26.982 18.857q0 0.089-0.018 0.125-1.143 4.786-4.786 7.759t-8.536 2.973q-2.607 0-5.045-0.982t-4.348-2.804l-2.304 2.304q-0.339 0.339-0.804 0.339t-0.804-0.339-0.339-0.804v-8q0-0.464 0.339-0.804t0.804-0.339h8q0.464 0 0.804 0.339t0.339 0.804-0.339 0.804l-2.446 2.446q1.268 1.179 2.875 1.821t3.339 0.643q2.393 0 4.464-1.161t3.321-3.196q0.196-0.304 0.946-2.089 0.143-0.411 0.536-0.411h3.429q0.232 0 0.402 0.17t0.17 0.402zM27.429 4.571v8q0 0.464-0.339 0.804t-0.804 0.339h-8q-0.464 0-0.804-0.339t-0.339-0.804 0.339-0.804l2.464-2.464q-2.643-2.446-6.232-2.446-2.393 0-4.464 1.161t-3.321 3.196q-0.196 0.304-0.946 2.089-0.143 0.411-0.536 0.411h-3.554q-0.232 0-0.402-0.17t-0.17-0.402v-0.125q1.161-4.786 4.821-7.759t8.571-2.973q2.607 0 5.071 0.991t4.375 2.795l2.321-2.304q0.339-0.339 0.804-0.339t0.804 0.339 0.339 0.804z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="alertPlaceHolder" class="container-main blue">
+    <p id="alertMessage" class="alert-danger hidden"></p>
+    <p id="alertSuccess" class="alert-success hidden"></p>
+</div>
+
+<nav id="dvNaviBar" class="container sub-menu-container">
+    <div class="sub-menu-container-links">
+        <a class="sub-menu-container-link hide-on-mobile" rel="nofollow"
+           href="https://localhost:5001/pdf/translate#overview">Overview</a>
+        <a class="sub-menu-container-link hide-on-mobile" rel="nofollow"
+           href="https://localhost:5001/pdf/translate#features">Features</a>
+        <a class="sub-menu-container-link hide-on-mobile" rel="nofollow"
+           href="https://localhost:5001/pdf/translate#howto">How To</a>
+        <a class="sub-menu-container-link hide-on-mobile" rel="nofollow"
+           href="https://localhost:5001/pdf/translate#faqpage">FAQ</a>
+        <a class="sub-menu-container-link" href="https://docs.aspose.com/pdf/net/" target="_blank" rel="noopener">
+            Documentation
+        </a>
+    </div>
+</nav>
+
+<a class="anchor" name="overview"></a>
+
+<div id="dvOverview" class="container gray" style="display: flex" dir="ltr">
+    <p>
+        PDF Translate is a modern online document translation tool. The online translator uses its own dedicated
+        server in the cloud to translate documents while retaining their formatting. We use trained models for
+        popular languages and do not train our models on user data. Our unique algorithm analyses paragraph
+        formatting in the text to retain position and word size even if the target language differs from the
+        original. We do our best to retain the document layout, preserving the background, images, and text
+        position. We have made it possible to translate only selected pages in the document.
+    </p>
+    <p>
+        Translate your PDF online to English, German, French, Italian, Spanish, Arabic, Russian, Chinese, and other
+        supported languages. Save translated results to a new PDF document. This tool is based on machine learning
+        technology and will help you with your daily document translation activities. Translator PDF preserves the
+        layout of your PDF documents. It grabs the original content of the PDF and then puts the result translated
+        strings at the exact positions in the new PDF file.
+    </p>
+</div>
+<a class="anchor" name="features"></a>
+<div id="dvFeatureList" class="container gray" dir="ltr">
+    <ul>
+        <li>Simple way to translate files with selected language.</li>
+        <li>Preserve document structure.</li>
+        <li>Translate Power point presentations.</li>
+    </ul>
+</div>
+
+<div id="HowtoList" class="container green">
+    <a class="anchor" name="howto"></a>
+    <img dir="ltr" class="howToImage hide-on-mobile"
+         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAMAAAAEGQ4lAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAFlUExURUdwTP7+/v///+vq6v///+vr6////9Xc5/Tx8f////39/f////////37++pTGkRERERERP///0ZGRgB52Pn5+QB52P///+tUG0RERP7+/m5ecOpTGgB52AB52AB52OpTGkRERP///wB52PT09PT09OpTGvz8/P///xyF3OpTGutVHP///wB62epTGutUG////wB52OtVHERERERERERERAB52ERERP///+tcJ0dHR5i0yurq6urq6vCFXnd3d+vr6+vr6/Kdfurq6urq6v///7W1tUREROpTGgB52Ofn59nZ2d7e3onB7dTU1P38/MLCwsfHx+Pj47y8vMvLy7m5uebm5lmp5guD2+tbJO5xQu1kMvX19fzj2r6+vvGRb/WxmZjJ8PrUx9DQ0E5OTv3t6ICAgJaWlu+BWP718vfArPOihu/v70Gc411dXfjHtbvd9Xu67Gmx6W9vb+jy+yqS4Njr+a2trVBN3f0AAABDdFJOUwASBjjHCBcBAyoOKBwj+SXrL0FvSvUJztw7B2wSJ8wnpt4/bZ4SiFtTP610tOmMo49YVYBy4BC1G7w26eBuYyvOPVzRXCMvAAAL6klEQVR42u2d+V/aSB/HA21JPEDRqhXPerTiqqu9233a7S4oVwmnFUSw4q3Vtrbdv//JBckkM2ECBDEzn1/6ArEkb773zCDDUFFRUVFRUVFRUVFRUVFRacVOLa2vvBwZebmyvjTFUh4KlbmVKKCVOcqGYQLDI1GDRoYDpFvLUhShJaKtZnI6itT0JLlc5qKmmiOVy3C0gYYpF0rGEhciycxFsURcnJkcwQMzQlpumjbF8evz53rWpo4kE/n+5dvPsKCvRDoTC3GkrwoRRXWTGSGpBFYbgR3FRr5F+TCgz2pzQJ7B7GhsZCeMAkOQyUwpt/xJAwINJjpFDJh15Y6/4IFZJy70YoKJkuJLk1GLYEgp8uasgiGllBm2CgajlewdleXmZLGK7lSIWbEKZqXxfxpuoMeK7st6/aeshSeK/pA1/1TWQ0Xjinr6vPK132tFjT6ml7Ub/q5e+E99gfdVA+Zl62Ba1n3pbbhQK3rQ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"
+         alt="How to" width="280" height="200">
+    <h2 id="HowtoTitle" dir="ltr">How to translate PDF</h2>
+    <div class="howtolist" dir="ltr">
+        <ul>
+            <li>
+                <p class="howto_number" dir="ltr">1</p>Open free online Translate PDF website.
+            </li>
+            <li>
+                <p class="howto_number" dir="ltr">2</p>Click inside the file drop area to upload or drag &amp; drop
+                files.
+            </li>
+            <li>
+                <p class="howto_number" dir="ltr">3</p>You can upload maximum 10 files for the operation.
+            </li>
+            <li>
+                <p class="howto_number" dir="ltr">4</p>Set languages you want to be translate from to.
+            </li>
+            <li>
+                <p class="howto_number" dir="ltr">5</p>Click on Translate button. Your files will be uploaded and
+                translated to result format.
+            </li>
+            <li>
+                <p class="howto_number" dir="ltr">6</p>Download link of result files will be available instantly
+                after Translate.
+            </li>
+            <li>
+                <p class="howto_number" dir="ltr">7</p>You can also send a link to the file to your email address.
+            </li>
+            <li>
+                <p class="howto_number" dir="ltr">8</p>Note that file will be deleted from our servers after 24
+                hours and download links will stop working after this time period.
+            </li>
+            <li>
+                <p class="howto_number" dir="ltr">9</p>We do not use your texts to improve our models or store it as
+                test data.
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="Faq" class="container lightgray">
+    <a class="anchor" name="faqpage"></a>
+    <div class="howtolist" itemscope="" itemtype="https://schema.org/FAQPage">
+        <div class="howtosectiongfx">
+            <img class="hide-on-mobile"
+                 src="data:image/png;base64,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"
+                 alt="HowTo" width="250" height="207">
+        </div>
+        <div class="howtosection">
+            <h2>FAQ</h2>
+            <ul>
+                <li itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div>
+                        <p class="howto_number" dir="ltr">1</p>
+                        <h3 itemprop="name">❓ How can I translate PDF document?</h3>
+                    </div>
+                    <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <span itemprop="text">
+                            First, you need to add a file for translation: drag &amp; drop your
+                            PDF file or click inside the white area for choose a file and specify languages. Then
+                            click the 'TRANSLATE' button. When document's translation is completed, you can download
+                            your result files.
+                        </span>
+                    </div>
+                </li>
+                <li itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div>
+                        <p class="howto_number" dir="ltr">2</p>
+                        <h3 itemprop="name">⏱️ How long does it take to translate PDF?</h3>
+                    </div>
+                    <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <span itemprop="text">
+                            This Translate app works fast. You can translate PDF in a few
+                            seconds.
+                        </span>
+                    </div>
+                </li>
+                <li itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div>
+                        <p class="howto_number" dir="ltr">3</p>
+                        <h3 itemprop="name">🛡️ Is it safe to translate PDF using this free app?</h3>
+                    </div>
+                    <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <span itemprop="text">
+                            Of course! The download link of result files will be available
+                            instantly after translation. We delete uploaded files after 24 hours and the download
+                            links will stop working after this time period. No one has access to your files.
+                            Translation is absolutely safe.
+                        </span>
+                    </div>
+                </li>
+                <li itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div>
+                        <p class="howto_number" dir="ltr">4</p>
+                        <h3 itemprop="name">💻 Can I translate PDF on Mac OS, Android or Linux?</h3>
+                    </div>
+                    <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <span itemprop="text">
+                            Our PDF Translator works online and does not require any software
+                            installation.
+                        </span>
+                    </div>
+                </li>
+                <li itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div>
+                        <p class="howto_number" dir="ltr">5</p>
+                        <h3 itemprop="name">🌐 What browser should I use to translate PDF?</h3>
+                    </div>
+                    <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <span itemprop="text">
+                            You can use any modern browser to translate PDF, for example, Google
+                            Chrome, Firefox, Opera, Safari.
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container app-features-section">
+    <div class="feature">
+        <div class="imgcircle fasteasy" style="background-color: #64d79c">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUuNSAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6N0YyMkRENzM1RkYxMTFFODhFNkVDNDNBOTY5QzNBODYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6N0YyMkRENzQ1RkYxMTFFODhFNkVDNDNBOTY5QzNBODYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3RjIyREQ3MTVGRjExMUU4OEU2RUM0M0E5NjlDM0E4NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3RjIyREQ3MjVGRjExMUU4OEU2RUM0M0E5NjlDM0E4NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsUkwuUAAAYTSURBVHja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"
+                 alt="Fast and Easy Translate for documents" width="48" height="48">
+        </div>
+        <h3>Fast and Easy Translate for documents</h3>
+        <p>
+            Upload your document, set options and click on “Translate” button. You will get the download link as soon
+            as the document translated.
+        </p>
+    </div>
+
+    <div class="feature">
+        <div class="imgcircle" style="background-color: #a1c8e7">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUuNSAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OEQ1RUY0MTc1RkYxMTFFOEFDQzRFOEE0MjBBQzA1N0QiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OEQ1RUY0MTg1RkYxMTFFOEFDQzRFOEE0MjBBQzA1N0QiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4RDVFRjQxNTVGRjExMUU4QUNDNEU4QTQyMEFDMDU3RCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4RDVFRjQxNjVGRjExMUU4QUNDNEU4QTQyMEFDMDU3RCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PulB0rQAAAXuSURBVHja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"
+                 alt="Translate Documents from Anywhere" width="48" height="48">
+        </div>
+        <h3>Translate Documents from Anywhere</h3>
+        <p>
+            It works from all platforms including Windows, Mac, Android and iOS. All files are processed on our
+            servers. No plugin or software installation required for you.
+        </p>
+    </div>
+
+    <div class="feature">
+        <div class="imgcircle" style="background-color: #e4d6ed">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUuNSAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OTJCRDRFMkM1RkYxMTFFOEEwQUY4NEVBRDVDOTFFOTgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OTJCRDRFMkQ1RkYxMTFFOEEwQUY4NEVBRDVDOTFFOTgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5MkJENEUyQTVGRjExMUU4QTBBRjg0RUFENUM5MUU5OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5MkJENEUyQjVGRjExMUU4QTBBRjg0RUFENUM5MUU5OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Prm0RVYAAAXOSURBVHja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"
+                 alt="Documents Translate Quality" width="48" height="48">
+        </div>
+        <h3>Documents Translate Quality</h3>
+        <p>
+            All files are processed using Aspose APIs, which are being used by many Fortune 100 companies across 114
+            countries.
+        </p>
+    </div>
+</div>
