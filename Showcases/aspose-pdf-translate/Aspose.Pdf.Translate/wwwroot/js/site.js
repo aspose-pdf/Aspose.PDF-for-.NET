@@ -145,3 +145,12 @@ extend(o, {
     MaximumUploadFiles: 1,
     UseSorting: false
 });
+
+/**
+* Adds event listeners for DOMContentLoaded and upload button click events.
+* Initializes the functionality when the DOM content is loaded.
+*/
+document.addEventListener("DOMContentLoaded", () => {
+    hideSuccess();
+    document.querySelector('#uploadButton').addEventListener('click', o.Method);
+});

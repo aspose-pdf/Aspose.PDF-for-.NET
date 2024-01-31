@@ -1,13 +1,4 @@
 /**
- * Adds event listeners for DOMContentLoaded and upload button click events.
- * Initializes the functionality when the DOM content is loaded.
- */
-document.addEventListener("DOMContentLoaded", () => {
-    hideSuccess();
-    document.querySelector('#uploadButton').addEventListener('click', o.Method);
-});
-
-/**
  * Displays the loading spinner.
  */
 function showLoader() {
