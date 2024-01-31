@@ -248,8 +248,6 @@ var filedrop = function (options) {
 				}
 			}
 
-			data.append("DocumentPassword", document.getElementById("documentPassword").value);
-
 			let isLandscape = document.querySelector('#dcIsLandscape');
 			if (isLandscape !== null)
 				data.append("dc_isLandscape", isLandscape.value == 'on' ? "true" : "false");
