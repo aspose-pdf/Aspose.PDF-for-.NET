@@ -38,7 +38,7 @@ var filedrop = function (options) {
      * Generates a random integer.
      * @returns {number} A random integer.
      */
-	var getRandomIntInclusive = function () {
+	this.getRandomIntInclusive = function () {
 		idFileBlock = idFileBlock + 1;
 		return idFileBlock - 1;
 	};
@@ -51,12 +51,12 @@ var filedrop = function (options) {
 
 	var droppedFiles = [];
 
-	var getFileExtension = function (file) {
+	this.getFileExtension = function (file) {
 		var pos = file.name.lastIndexOf('.');
 		return pos !== -1 ? file.name.substring(pos + 1).toUpperCase() : null;
 	};
 
-	var nextFileId = function () {
+	this.nextFileId = function () {
 		var id = 1;
 		var found;
 		do {
@@ -78,13 +78,13 @@ var filedrop = function (options) {
 		return id;
 	};
 
-	var preventFileDrop = function (evt) {
+	this.preventFileDrop = function (evt) {
 		evt = evt || event;
 		evt.preventDefault();
 		evt.stopPropagation();
 	};
 
-	var removeFileBlock = function (id) {
+	this.removeFileBlock = function (id) {
 		var pos;
 		for (pos = 0; pos < droppedFiles.length; pos++) {
 			if (droppedFiles[pos].id === id) {
@@ -103,7 +103,7 @@ var filedrop = function (options) {
 		}
 	};
 
-	var moveUpFileBlock = function (id) {
+	this.moveUpFileBlock = function (id) {
 		var pos;
 		for (pos = 0; pos < droppedFiles.length; pos++) {
 			if (droppedFiles[pos].id === id) {
@@ -122,7 +122,7 @@ var filedrop = function (options) {
 		}
 	};
 
-	var moveDownFileBlock = function (id) {
+	this.moveDownFileBlock = function (id) {
 		var pos;
 		for (pos = 0; pos < droppedFiles.length; pos++) {
 			if (droppedFiles[pos].id === id) {
@@ -141,7 +141,7 @@ var filedrop = function (options) {
 		}
 	};
 
-	var el = function (htmlString) {
+	this.el = function (htmlString) {
 		var div = document.createElement('div');
 		div.innerHTML = htmlString.trim();
 
@@ -149,7 +149,7 @@ var filedrop = function (options) {
 		return div.firstChild;
 	};
 
-	var appendFileBlock = function (file, idUploadBlock) {
+	this.appendFileBlock = function (file, idUploadBlock) {
 		var id = nextFileId();
 		var name = file.name;
 		var fileMoveUpLink = null;
@@ -183,7 +183,7 @@ var filedrop = function (options) {
 		fileBlock.appendChild(spanFileName);
 
 		var filedrop = null;
-		if (!IsNullOrEmpty(idUploadBlock)) {
+		if (!isNullOrEmpty(idUploadBlock)) {
 			filedrop = document.getElementById(idUploadBlock).closest('.filedrop-container').querySelector('.filedrop');
 			if (!filedrop.classList.contains('hide-drop-files-hint')) {
 				filedrop.classList.add('hide-drop-files-hint');
@@ -205,13 +205,13 @@ var filedrop = function (options) {
 		});
 	};
 
-	var prepareFormData = function (min = 1, max = undefined) {
+	this.prepareFormData = function (min = 1, max = undefined) {
 		if (max === undefined)
 			max = options.MaximumUploadFiles;
 
 		if (droppedFiles.length) {
 			if (droppedFiles.length < min || droppedFiles.length > max) {
-				options.showAlert(options.FileAmountMessage);
+				showAlert(options.FileAmountMessage);
 				return null;
 			}
 
@@ -228,20 +228,20 @@ var filedrop = function (options) {
 				} else if (f.url) {
 					data.append(f.id, f.url);
 				} else {
-					options.showAlert(options.FileWrongTypeMessage + ext);
+					showAlert(options.FileWrongTypeMessage + ext);
 					return null;
 				}
 
 				if (options.MaximumUploadFileSize > 0) {
 					var maxFileSize = options.MaximumUploadFileSize;
 					if (!f.url && f.file.size > maxFileSize) {
-						options.showAlert(options.FileMaximumUploadSizeReachedMessage);
+						showAlert(options.FileMaximumUploadSizeReachedMessage);
 						return null;
 					}
 					else if (!f.url) {
 						sizeSum += f.file.size;
 						if (sizeSum > maxFileSize) {
-							options.showAlert(options.FileMaximumUploadSizeReachedMessage);
+							showAlert(options.FileMaximumUploadSizeReachedMessage);
 							return null;
 						}
 					}
@@ -258,12 +258,12 @@ var filedrop = function (options) {
 
 			return data;
 		} else {
-			options.showAlert(options.FileSelectMessage);
+			showAlert(options.FileSelectMessage);
 			return null;
 		}
 	};
 
-	var uploadFileSelected = function (event) {
+	this.uploadFileSelected = function (event) {
 		if (options.onFilesChanged) {
 			options.onFilesChanged(event)
 			return false;
@@ -277,12 +277,12 @@ var filedrop = function (options) {
 
 			if (fileCount <= options.MaximumUploadFiles) {
 				var ext;
-				options.hideAlert();
+				hideAlert();
 				for (var i = 0; i < event.target.files.length; i++) {
 					ext = getFileExtension(event.target.files[i]);
 					if (options.AcceptAllFormats || (ext !== null && acceptExts.indexOf(ext) !== -1)) {
 						if (event.target.files[i].size == 0) {
-							options.showAlert(options.FileEmptyMessage + ' "' + event.target.files[i].name + '"');
+							showAlert(options.FileEmptyMessage + ' "' + event.target.files[i].name + '"');
 						}
 						else {
 							appendFileBlock(event.target.files[i], event.target.id);
@@ -291,14 +291,14 @@ var filedrop = function (options) {
 						bError = true;
 						if (ext !== null)
 							ext = ext.toUpperCase();
-						options.showAlert(options.FileWrongTypeMessage + ext);
+						showAlert(options.FileWrongTypeMessage + ext);
 					}
 				}
 			} else {
 				bError = true;
-				options.showAlert(options.FileAmountMessage);
+				showAlert(options.FileAmountMessage);
 				window.setTimeout(function () {
-					options.hideAlert();
+					hideAlert();
 				}, 5000);
 			}
 		}
@@ -308,9 +308,9 @@ var filedrop = function (options) {
 		return !bError;
 	};
 
-	var handleFileInputDrop = function (fileDropNum) {
+	this.handleFileInputDrop = function (fileDropNum) {
 		const fileDropId = 'filedrop-' + fileDropNum;
-		if (!IsNullOrEmpty(document.getElementById(fileDropId))) {
+		if (!isNullOrEmpty(document.getElementById(fileDropId))) {
 			const fileInputId = 'input#UploadFileInput-' + fileDropNum;
 
 			document.getElementById(fileDropId).addEventListener('click', function (e) {
@@ -353,17 +353,17 @@ var filedrop = function (options) {
 	// adding event handlers
 	if (handlerFileDropAssignIndex == 0) {
 		var queryObj = document.querySelector('input#UploadFileInput-' + randomId);
-		if (!IsNullOrEmpty(queryObj))
+		if (!isNullOrEmpty(queryObj))
 			queryObj.addEventListener('change', uploadFileSelected);
 		if (o.AppName == "comparison") {
 			queryObj = document.querySelector('input#UploadFileInput-' + (randomId + 1));
-			if (!IsNullOrEmpty(queryObj))
+			if (!isNullOrEmpty(queryObj))
 				queryObj.addEventListener('change', uploadFileSelected);
 		}
 
 		handleFileInputDrop(randomId);
 		var fileDropId = 'filedrop-' + (randomId + 1);
-		if (!IsNullOrEmpty(document.getElementById(fileDropId))) {
+		if (!isNullOrEmpty(document.getElementById(fileDropId))) {
 			handleFileInputDrop(randomId + 1);
 		};
 		handlerFileDropAssignIndex += 1;
@@ -435,4 +435,4 @@ var filedrop = function (options) {
 			document.querySelector('#filedrop-' + randomId).querySelector('div[id^=fileupload-]').remove();
 		}
 	};
-};
+}(o);
