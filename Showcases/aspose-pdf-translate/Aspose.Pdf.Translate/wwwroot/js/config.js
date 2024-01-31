@@ -1,11 +1,11 @@
 ﻿var o = {
     "MaximumUploadFileSize": 31457280,
     "FileMaximumUploadSizeReachedMessage": "Files upload size must be equal or less than 31457280 bytes. To remove limitation of direct upload you can Enter Url from google drive, dropbox or from public web.",
-    "AppURL": "https://products.aspose.app/pdf/translate",
+    "AppURL": "http://localhost:5240/",
     "AppName": "translate",
     "OriginalAppName": "Translate",
     "AppRoute": "/pdf/translate",
-    "WebApiPath": "https://localhost:5002/pdf/webapi/",
+    "WebApiPath": "http://localhost:5240/webapi/",
     "UIBasePath": "",
     "FileSelectMessage": "Please select a file to upload",
     "MaximumUploadFiles": 10,
