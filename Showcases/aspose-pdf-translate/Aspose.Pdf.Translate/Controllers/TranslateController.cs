@@ -8,7 +8,7 @@ namespace Aspose.Pdf.Translate.Controllers
     public class TranslateController : ControllerBase
     {
         [HttpPost]
-        [Route("upload")]
+        [Route("")]
         public void Upload()
         {
 

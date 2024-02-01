@@ -5,7 +5,7 @@
     "AppName": "translate",
     "OriginalAppName": "Translate",
     "AppRoute": "/pdf/translate",
-    "WebApiPath": "http://localhost:5240/webapi/",
+    "WebApiPath": "http://localhost:5240/api/",
     "UIBasePath": "",
     "FileSelectMessage": "Please select a file to upload",
     "MaximumUploadFiles": 10,

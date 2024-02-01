@@ -9,6 +9,10 @@
   <ItemGroup>
     <PackageReference Include="Aspose.PDF.Drawing" Version="24.1.0" />
     <PackageReference Include="GroupDocs.Translation-Cloud" Version="23.12.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
   </ItemGroup>
 
