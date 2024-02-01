@@ -1,4 +1,6 @@
-﻿using Aspose.Pdf.Translate.Model;
+﻿using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Translate.Model;
+using Aspose.Pdf.Translate.Services;
 using Aspose.Pdf.Translate.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,13 +12,16 @@ namespace Aspose.Pdf.Translate.Controllers
     {
         private readonly ITranslateService translateService;
         private readonly IStatusStorage statusStorage;
+        private readonly IStorageService storageService;
 
         public TranslateController(
             ITranslateService translateService,
-            IStatusStorage statusStorage) 
+            IStatusStorage statusStorage,
+            IStorageService storageService) 
         {
             this.translateService = translateService;
             this.statusStorage = statusStorage;
+            this.storageService = storageService;
         }
 
         [HttpPost]
@@ -38,9 +43,42 @@ namespace Aspose.Pdf.Translate.Controllers
 
         [HttpGet]
         [Route("/api/download/{documentId}")]
-        public void Download(string documentId)
+        public async Task<FileContentResult> Download(string documentId)
         {
+            var downloadFileName = "translated.pdf";
+            string contentType = "application/pdf";
+            switch ("pdf")
+            {
+                case "docx":
+                    downloadFileName = "translated.docx";
+                    contentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+                    break;
+                case "svg":
+                    downloadFileName = "translated.svg";
+                    contentType = "image/svg+xml";
+                    break;
+                case "xps":
+                    downloadFileName = "translated.xps";
+                    contentType = "application/oxps, application/vnd.ms-xpsdocument";
+                    break;
+                case "xls":
+                    downloadFileName = "translated.xlsx";
+                    contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                    break;
+                case "html":
+                    downloadFileName = "translated.html";
+                    contentType = "text/html";
+                    break;
+            }
 
+            var file = Path.Combine(documentId, downloadFileName);
+            await using (Stream docStream = await storageService.Download(file))
+            {
+                using var bs = new BinaryReader(docStream);
+                byte[] content = bs.ReadBytes((int)docStream.Length);
+
+                return File(content, contentType);
+            }
         }
     }
 }

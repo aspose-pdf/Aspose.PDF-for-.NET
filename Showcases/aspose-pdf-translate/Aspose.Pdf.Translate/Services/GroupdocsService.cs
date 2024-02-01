@@ -11,43 +11,42 @@ namespace Aspose.Pdf.Translate.Services
     public class GroupdocsService : IGroupdocsService
     {
         private readonly Configuration conf;
+        private readonly ILogger<GroupdocsService> logger;
 
-        public GroupdocsService() 
+        public GroupdocsService(ILogger<GroupdocsService> logger) 
         {
-            var clientId = Environment.GetEnvironmentVariable("Translate_ClientId");
-            var clientSecret = Environment.GetEnvironmentVariable("Translate_ClientSecret");
-
-            conf = new Configuration();
-            new OAuthAuthenticator(
-                "https://id.groupdocs.cloud/connect/token", 
-                clientId, 
-                clientSecret, 
-                OAuthFlow.APPLICATION, 
-                new JsonSerializerSettings(), 
-                conf);
+            this.logger = logger;
+            conf = new Configuration
+            {
+                OAuthClientId = Environment.GetEnvironmentVariable("Translate_ClientId"),
+                OAuthClientSecret = Environment.GetEnvironmentVariable("Translate_ClientSecret")
+            };
         }
 
-        public Stream TranslateDocument(string documentId, IFormFile doc, string inputType, string from, string to, string fileName)
+        public Stream TranslateDocument(string documentId, byte[] fileData, string inputType, string from, string to, string fileName)
         {
-            FileApi fileApi = new FileApi(conf);
-            TranslationApi api = new TranslationApi(conf);
+            try
+            {
+                TranslationApi api = new TranslationApi(conf);
 
-            MemoryStream ms = new MemoryStream();
-            doc.CopyTo(ms);
+                StatusResponse postStatus = api.AutoPost(
+                    new FileRequest(
+                        sourceLanguage: "en",
+                        targetLanguages: new List<string> { "fr" },
+                        file: fileData,
+                        originalFileName: GetSafeInputName(documentId, fileName),
+                        url: null,
+                        origin: null,
+                        savingMode: FileRequest.SavingModeEnum.Files,
+                        format: FileRequest.FormatEnum.Pdf));
 
-            var uploadResult = fileApi.FileUploadPost(inputType);
-            StatusResponse postStatus = api.AutoPost(
-                new FileRequest(
-                    sourceLanguage: "en",
-                    targetLanguages: new List<string> { "fr" },
-                    file: ms.ToArray(),
-                    originalFileName: GetSafeInputName(documentId, doc.FileName),
-                    url: null,
-                    origin: null,
-                    savingMode: FileRequest.SavingModeEnum.Files,
-                    format: FileRequest.FormatEnum.Pdf));
-
-            return null;
+                return null;
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex.Message, ex);
+                return null;
+            }
         }
 
         private Dictionary<string, string[]> SupportedTranslateLanguages
