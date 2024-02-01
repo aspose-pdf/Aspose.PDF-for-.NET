@@ -42,7 +42,7 @@ namespace Aspose.Pdf.Translate.Services
             }
         }
 
-        public async Task<Stream> Download(string storageFile)
+        public async Task<Stream?> Download(string storageFile)
         {
             if (storageFile == null) throw new ArgumentNullException(nameof(storageFile));
 
@@ -50,20 +50,7 @@ namespace Aspose.Pdf.Translate.Services
                 ? storageFile
                 : Path.Combine(WorkingDirectory, storageFile);
 
-            var dir = Path.GetDirectoryName(path);
-            if (!Directory.Exists(dir))
-            {
-                if (dir != null) Directory.CreateDirectory(dir);
-            }
-
-            if (!File.Exists(path))
-            {
-                using (var newDoc = new Document())
-                {
-                    newDoc.Pages.Add();
-                    newDoc.Save(path);
-                }
-            }
+            if (!File.Exists(path)) return null;
 
             var outputStream = new MemoryStream();
 

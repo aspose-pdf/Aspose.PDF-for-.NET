@@ -122,7 +122,7 @@ function executeStatusQuery(data) {
 		}
 	}
 
-	request.open("POST", o.WebApiPath + 'ProcessStatus/' + data.folderName, true);
+	request.open("GET", o.WebApiPath + 'status/' + data.folderName, true);
 	request.send(data);
 }
 

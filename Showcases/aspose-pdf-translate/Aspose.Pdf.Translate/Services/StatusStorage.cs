@@ -1,17 +1,32 @@
 ﻿using Aspose.Pdf.Translate.Model;
 using Aspose.Pdf.Translate.Services.Interface;
+using System.Text.Json;
 
 namespace Aspose.Pdf.Translate.Services
 {
     public class StatusStorage : IStatusStorage
     {
-        public StatusStorage()
+        private readonly IStorageService storageService;
+
+        public StatusStorage(IStorageService storageService)
         {
+            this.storageService = storageService;
         }
 
-        public Task<FileResponse> CheckStatus(string documentId)
+        public async Task<FileResponse> CheckStatus(string documentId)
         {
-            return null;
+            var stream = await storageService.Download(Path.Combine(documentId,"status.json"));
+
+            if(stream == null) 
+            {
+                return new FileResponse 
+                { 
+                    FolderName = documentId, 
+                    StatusCode = 204 
+                };
+            }
+
+            return JsonSerializer.Deserialize<FileResponse>(stream);
         }
         public async Task UpdateStatus(FileResponse data)
         {

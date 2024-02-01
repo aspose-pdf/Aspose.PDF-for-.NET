@@ -9,10 +9,14 @@ namespace Aspose.Pdf.Translate.Controllers
     public class TranslateController : ControllerBase
     {
         private readonly ITranslateService translateService;
+        private readonly IStatusStorage statusStorage;
 
-        public TranslateController(ITranslateService translateService) 
+        public TranslateController(
+            ITranslateService translateService,
+            IStatusStorage statusStorage) 
         {
             this.translateService = translateService;
+            this.statusStorage = statusStorage;
         }
 
         [HttpPost]
@@ -26,14 +30,14 @@ namespace Aspose.Pdf.Translate.Controllers
         }
 
         [HttpGet]
-        [Route("get-status")]
-        public void GetStatus(string documentId)
+        [Route("/api/status/{documentId}")]
+        public async Task<FileResponse> GetStatus(string documentId)
         {
-
+            return await statusStorage.CheckStatus(documentId);
         }
 
         [HttpGet]
-        [Route("download")]
+        [Route("/api/download/{documentId}")]
         public void Download(string documentId)
         {
 
