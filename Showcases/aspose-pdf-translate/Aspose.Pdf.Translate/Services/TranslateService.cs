@@ -3,7 +3,7 @@ using Aspose.Pdf.Translate.Services.Interface;
 
 namespace Aspose.Pdf.Translate.Services
 {
-    public class TranslateService
+    public class TranslateService : ITranslateService
     {
         private readonly IGroupdocsService groupDocsService;
         private readonly IStorageService storage;
@@ -37,12 +37,7 @@ namespace Aspose.Pdf.Translate.Services
             this.logger = logger;
         }
 
-        public async Task<FileResponse> TranslateFiles(
-            string documentId, 
-            string inputType, 
-            string from, 
-            string to, 
-            List<FormFile> docs)
+        public async Task<FileResponse> TranslateFiles(string documentId,string from, string to, List<IFormFile> docs)
         {
             List<string> resultFiles = new List<string>();
             foreach (var doc in docs)
@@ -51,7 +46,7 @@ namespace Aspose.Pdf.Translate.Services
                     groupDocsService.TranslateDocument(
                             documentId,
                             doc, 
-                            inputType,
+                            Path.GetExtension(doc.FileName).TrimStart('.').ToLower(),
                             from,
                             to,
                             doc.FileName);

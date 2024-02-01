@@ -1,6 +1,6 @@
 using Aspose.Pdf.Translate.Helper;
-using Microsoft.AspNetCore.Mvc.Razor;
-using System.Text.Json;
+using Aspose.Pdf.Translate.Services.Interface;
+using Aspose.Pdf.Translate.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +13,12 @@ builder.Services.AddRouting(options =>
     options.LowercaseUrls = true;
     options.LowercaseQueryStrings = true;
 });
+
+// Add business logic
+builder.Services.AddSingleton<IGroupdocsService, GroupdocsService>();
+builder.Services.AddSingleton<IStorageService, StorageService>();
+builder.Services.AddSingleton<IStatusStorage, StatusStorage>();
+builder.Services.AddSingleton<ITranslateService, TranslateService>();
 
 
 builder.Services.AddSwaggerGen();

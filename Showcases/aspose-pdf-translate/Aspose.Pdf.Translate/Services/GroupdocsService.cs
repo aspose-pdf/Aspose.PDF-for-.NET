@@ -27,7 +27,7 @@ namespace Aspose.Pdf.Translate.Services
                 conf);
         }
 
-        public Stream TranslateDocument(string documentId, FormFile doc, string inputType, string from, string to, string fileName)
+        public Stream TranslateDocument(string documentId, IFormFile doc, string inputType, string from, string to, string fileName)
         {
             FileApi fileApi = new FileApi(conf);
             TranslationApi api = new TranslationApi(conf);

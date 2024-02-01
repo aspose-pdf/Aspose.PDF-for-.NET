@@ -18,7 +18,7 @@ function hideLoader() {
  * Displays the upload form.
  */
 function showUploadForm() {
-    const uploadBlock = document.getElementById('upload-block')
+    const uploadBlock = document.getElementById('loader')
     uploadBlock.style.display = 'block'
 }
 
@@ -26,7 +26,7 @@ function showUploadForm() {
  * Hides the upload form.
  */
 function hideUploadForm() {
-    const uploadBlock = document.getElementById('upload-block')
+    const uploadBlock = document.getElementById('loader')
     uploadBlock.style.display = 'none'
 }
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Aspose.Pdf.Translate.Model;
+using Aspose.Pdf.Translate.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aspose.Pdf.Translate.Controllers
@@ -7,11 +8,21 @@ namespace Aspose.Pdf.Translate.Controllers
     [ApiController]
     public class TranslateController : ControllerBase
     {
+        private readonly ITranslateService translateService;
+
+        public TranslateController(ITranslateService translateService) 
+        {
+            this.translateService = translateService;
+        }
+
         [HttpPost]
         [Route("")]
-        public void Upload()
+        public FileResponse Upload(string from, string to)
         {
-
+            var files = HttpContext.Request.Form.Files;
+            var documentId = Guid.NewGuid().ToString();
+            Task.Run(() => translateService.TranslateFiles(documentId, from, to, files.ToList()));
+            return new FileResponse { FolderName = documentId };
         }
 
         [HttpGet]

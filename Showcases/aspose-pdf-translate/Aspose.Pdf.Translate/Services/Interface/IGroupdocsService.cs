@@ -2,6 +2,6 @@
 {
     public interface IGroupdocsService
     {
-        Stream TranslateDocument(string documentId, FormFile doc, string inputType, string from, string to, string fileName);
+        Stream TranslateDocument(string documentId, IFormFile doc, string inputType, string from, string to, string fileName);
     }
 }
