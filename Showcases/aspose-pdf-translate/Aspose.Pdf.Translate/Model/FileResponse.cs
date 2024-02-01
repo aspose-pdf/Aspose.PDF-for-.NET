@@ -16,5 +16,7 @@
         /// Get or set FileProcessingErrorCode
         ///</Summary>
         public int FileProcessingErrorCode { get; set; }
+
+        public int StatusCode { get; set; }
     }
 }

@@ -22,7 +22,7 @@ namespace Aspose.Pdf.Translate.Controllers
             var files = HttpContext.Request.Form.Files;
             var documentId = Guid.NewGuid().ToString();
             Task.Run(() => translateService.TranslateFiles(documentId, from, to, files.ToList()));
-            return new FileResponse { FolderName = documentId };
+            return new FileResponse { FolderName = documentId, StatusCode = 204 };
         }
 
         [HttpGet]
