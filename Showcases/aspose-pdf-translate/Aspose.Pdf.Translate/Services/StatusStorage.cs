@@ -30,7 +30,14 @@ namespace Aspose.Pdf.Translate.Services
         }
         public async Task UpdateStatus(FileResponse data)
         {
+            var statusStr = JsonSerializer.Serialize(data);
+            var ms = new MemoryStream();
+            using (var stream = new StreamWriter(ms))
+            {
+                stream.Write(statusStr);
+            }
 
+            await storageService.Upload(ms, Path.Combine(data.FolderName, "status.json"));
         }
     }
 }
