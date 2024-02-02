@@ -36,10 +36,12 @@ namespace Aspose.Pdf.Translate.Services
                     Format = "pdf",
                     OutputFormat = "pdf",
                     SourceLanguage = "en",
-                    TargetLanguages = new List<string>() { "fr" }
+                    TargetLanguages = new List<string>() { "fr" },
+                    OriginalFileName = "1.pdf",
+                    
                 };
 
-                var res = await new TranslationUpload(token).SendTranslationRequest(t, new MemoryStream(fileData), "1.pdf");
+                var res = await new TranslationUpload(token).SendTranslationRequest(t);
 
                 return null;
             }

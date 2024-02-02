@@ -9,7 +9,7 @@ namespace Aspose.Pdf.Translate.Helper
     {
         private readonly HttpClient _httpClient;
         private readonly string _apiKey;
-        private readonly string _apiUrl = "https://api.groupdocs.cloud/v2.0/translation/auto";
+        private readonly string _apiUrl = "https://api.groupdocs.cloud/v2.0/translation/pdf";
 
         public TranslationUpload(string apiKey)
         {
@@ -17,7 +17,7 @@ namespace Aspose.Pdf.Translate.Helper
             _apiKey = apiKey;
         }
 
-        public async Task<HttpResponseMessage> SendTranslationRequest(TranslationRequest request, Stream fileStream, string fileName)
+        public async Task<HttpResponseMessage> SendTranslationRequest(TranslationRequest request)
         {
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiKey}");
             var response = await _httpClient.PostAsJsonAsync(_apiUrl, request);
