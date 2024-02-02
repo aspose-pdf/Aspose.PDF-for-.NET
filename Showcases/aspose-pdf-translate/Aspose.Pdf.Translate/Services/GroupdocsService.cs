@@ -1,9 +1,7 @@
 ﻿using Aspose.Pdf.Translate.Services.Interface;
 using GroupDocs.Translation.Cloud.Sdk.Api;
 using GroupDocs.Translation.Cloud.Sdk.Client;
-using GroupDocs.Translation.Cloud.Sdk.Client.Auth;
 using GroupDocs.Translation.Cloud.Sdk.Model;
-using Newtonsoft.Json;
 using System.Web;
 
 namespace Aspose.Pdf.Translate.Services
@@ -34,10 +32,7 @@ namespace Aspose.Pdf.Translate.Services
                         sourceLanguage: "en",
                         targetLanguages: new List<string> { "fr" },
                         file: fileData,
-                        originalFileName: GetSafeInputName(documentId, fileName),
-                        url: null,
-                        origin: null,
-                        savingMode: FileRequest.SavingModeEnum.Files,
+                        originalFileName: fileName,
                         format: FileRequest.FormatEnum.Pdf));
 
                 return null;

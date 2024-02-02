@@ -3,6 +3,8 @@ using Aspose.Pdf.Translate.Model;
 using Aspose.Pdf.Translate.Services;
 using Aspose.Pdf.Translate.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.StaticFiles;
+using System.IO.Compression;
 
 namespace Aspose.Pdf.Translate.Controllers
 {
@@ -17,7 +19,7 @@ namespace Aspose.Pdf.Translate.Controllers
         public TranslateController(
             ITranslateService translateService,
             IStatusStorage statusStorage,
-            IStorageService storageService) 
+            IStorageService storageService)
         {
             this.translateService = translateService;
             this.statusStorage = statusStorage;
@@ -45,40 +47,38 @@ namespace Aspose.Pdf.Translate.Controllers
         [Route("/api/download/{documentId}")]
         public async Task<FileContentResult> Download(string documentId)
         {
-            var downloadFileName = "translated.pdf";
-            string contentType = "application/pdf";
-            switch ("pdf")
+            var status = await statusStorage.CheckStatus(documentId);
+            if (status.Files.Count == 0)
             {
-                case "docx":
-                    downloadFileName = "translated.docx";
-                    contentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
-                    break;
-                case "svg":
-                    downloadFileName = "translated.svg";
-                    contentType = "image/svg+xml";
-                    break;
-                case "xps":
-                    downloadFileName = "translated.xps";
-                    contentType = "application/oxps, application/vnd.ms-xpsdocument";
-                    break;
-                case "xls":
-                    downloadFileName = "translated.xlsx";
-                    contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-                    break;
-                case "html":
-                    downloadFileName = "translated.html";
-                    contentType = "text/html";
-                    break;
+                throw new Exception("error code:" + status.FileProcessingErrorCode.ToString());
             }
 
-            var file = Path.Combine(documentId, downloadFileName);
-            await using (Stream docStream = await storageService.Download(file))
+            if (status.Files.Count == 1)
             {
+                string contentType;
+                new FileExtensionContentTypeProvider().TryGetContentType(status.Files[0], out contentType);
+
+                var path = Path.Combine(documentId, status.Files[0]);
+                Stream docStream = await storageService.Download(path);
                 using var bs = new BinaryReader(docStream);
                 byte[] content = bs.ReadBytes((int)docStream.Length);
 
                 return File(content, contentType);
             }
+
+            var zipStream = new MemoryStream();
+            var archive = new ZipArchive(zipStream, ZipArchiveMode.Create, true);
+            foreach (var file in status.Files)
+            {
+                var entity = archive.CreateEntry(file);
+                using (var entryStream = entity.Open())
+                {
+                    var path = Path.Combine(documentId, status.Files[0]);
+                    Stream docStream = await storageService.Download(path);
+                    docStream.CopyTo(entryStream);
+                }
+            }
+            return File(zipStream.ToArray(), "application/zip");
         }
     }
 }
