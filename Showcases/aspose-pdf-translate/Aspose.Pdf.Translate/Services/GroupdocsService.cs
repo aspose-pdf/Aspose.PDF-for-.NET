@@ -1,4 +1,5 @@
-﻿using Aspose.Pdf.Translate.Services.Interface;
+﻿using Aspose.Pdf.Translate.Helper;
+using Aspose.Pdf.Translate.Services.Interface;
 using GroupDocs.Translation.Cloud.Sdk.Api;
 using GroupDocs.Translation.Cloud.Sdk.Client;
 using GroupDocs.Translation.Cloud.Sdk.Model;
@@ -21,19 +22,24 @@ namespace Aspose.Pdf.Translate.Services
             };
         }
 
-        public Stream TranslateDocument(string documentId, byte[] fileData, string inputType, string from, string to, string fileName)
+        public async Task<Stream> TranslateDocument(string documentId, byte[] fileData, string inputType, string from, string to, string fileName)
         {
             try
             {
-                TranslationApi api = new TranslationApi(conf);
+                var token = await new TokenRetriever(conf.OAuthClientId, conf.OAuthClientSecret).GetTokenAsync();
 
-                StatusResponse postStatus = api.AutoPost(
-                    new FileRequest(
-                        sourceLanguage: "en",
-                        targetLanguages: new List<string> { "fr" },
-                        file: fileData,
-                        originalFileName: fileName,
-                        format: FileRequest.FormatEnum.Pdf));
+                //await new FileUpload(token).SendFileRequest("Pdf", new MemoryStream(fileData), "1.pdf");
+
+                var t = new TranslationRequest
+                {
+                    File = "1.pdf",
+                    Format = "pdf",
+                    OutputFormat = "pdf",
+                    SourceLanguage = "en",
+                    TargetLanguages = new List<string>() { "fr" }
+                };
+
+                var res = await new TranslationUpload(token).SendTranslationRequest(t, new MemoryStream(fileData), "1.pdf");
 
                 return null;
             }

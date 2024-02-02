@@ -1,4 +1,6 @@
-﻿namespace Aspose.Pdf.Translate.Helper
+﻿using System.Text.Json;
+
+namespace Aspose.Pdf.Translate.Helper
 {
     public class TokenRetriever
     {
@@ -26,8 +28,18 @@
                 var response = await client.PostAsync(tokenUrl, content);
                 if (response.IsSuccessStatusCode)
                 {
-                    var tokenResponse = await response.Content.ReadFromJsonAsync<TokenResponse>();
-                    return tokenResponse?.AccessToken;
+                    var tokenResponseStr = await response.Content.ReadAsStringAsync();
+                    try
+                    {
+                        var res = JsonSerializer.Deserialize<TokenResponse>(tokenResponseStr).AccessToken;
+
+                        return res;
+                    }
+                    catch(Exception ex)
+                    {
+                        Console.WriteLine(ex);
+                        return null;
+                    }
                 }
                 else
                 {

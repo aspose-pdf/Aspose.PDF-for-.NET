@@ -19,28 +19,9 @@ namespace Aspose.Pdf.Translate.Helper
 
         public async Task<HttpResponseMessage> SendTranslationRequest(TranslationRequest request, Stream fileStream, string fileName)
         {
-            using (var content = new MultipartFormDataContent())
-            {
-                // Serialize the TranslationRequest to JSON
-                var jsonContent = new StringContent(JsonSerializer.Serialize(request), Encoding.UTF8, "application/json");
-                content.Add(jsonContent, "request");
-
-                // Create a file content from the stream
-                var fileContent = new StreamContent(fileStream);
-                fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
-                {
-                    Name = "file",
-                    FileName = fileName
-                };
-                content.Add(fileContent);
-
-                // Add the API key to the headers
-                _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiKey}");
-
-                // Send the POST request
-                var response = await _httpClient.PostAsync(_apiUrl, content);
-                return response;
-            }
+            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiKey}");
+            var response = await _httpClient.PostAsJsonAsync(_apiUrl, request);
+            return response;
         }
     }
 }

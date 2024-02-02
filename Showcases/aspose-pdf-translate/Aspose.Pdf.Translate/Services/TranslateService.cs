@@ -60,7 +60,7 @@ namespace Aspose.Pdf.Translate.Services
                     List<string> resultFiles = new List<string>();
                     foreach (var doc in job)
                     {
-                        Stream outputStream =
+                        Stream outputStream = await
                             groupDocsService.TranslateDocument(
                                     documentId,
                                     doc.Raw,
