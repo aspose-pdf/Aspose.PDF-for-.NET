@@ -4,6 +4,5 @@
     {
         Task Upload(Stream inputStream, string storageFile);
         Task<Stream?> Download(string storageFile);
-        void Delete(string storageFile);
     }
 }

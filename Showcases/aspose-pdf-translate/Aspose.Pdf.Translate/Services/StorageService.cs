@@ -63,16 +63,5 @@ namespace Aspose.Pdf.Translate.Services
 
             return outputStream;
         }
-
-        public void Delete(string storageFile)
-        {
-            if (storageFile == null) throw new ArgumentNullException(nameof(storageFile));
-
-            var path = Path.Combine(_rootDir, storageFile);
-            if (File.Exists(path))
-            {
-                File.Delete(path);
-            }
-        }
     }
 }

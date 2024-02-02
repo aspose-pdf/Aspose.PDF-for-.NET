@@ -1,6 +1,5 @@
 ﻿using Aspose.Pdf.Translate.Model;
 using Aspose.Pdf.Translate.Services.Interface;
-using Microsoft.AspNetCore.Http;
 
 namespace Aspose.Pdf.Translate.Services
 {
@@ -56,29 +55,44 @@ namespace Aspose.Pdf.Translate.Services
 
             Task.Run(async () => 
             {
-                List<string> resultFiles = new List<string>();
-                foreach (var doc in job)
+                try
                 {
-                    Stream outputStream =
-                        groupDocsService.TranslateDocument(
-                                documentId,
-                                doc.Raw,
-                                Path.GetExtension(doc.FileName).TrimStart('.').ToLower(),
-                                from,
-                                to,
-                                doc.FileName);
+                    List<string> resultFiles = new List<string>();
+                    foreach (var doc in job)
+                    {
+                        Stream outputStream =
+                            groupDocsService.TranslateDocument(
+                                    documentId,
+                                    doc.Raw,
+                                    Path.GetExtension(doc.FileName).TrimStart('.').ToLower(),
+                                    from,
+                                    to,
+                                    doc.FileName);
 
-                    await storage.Upload(outputStream, doc.FileName);
-                    resultFiles.Add("Treanslated_"+ doc.FileName);
+                        await storage.Upload(outputStream, doc.FileName);
+                        resultFiles.Add("Treanslated_" + doc.FileName);
+                    }
+                    var result = new FileResponse
+                    {
+                        FolderName = documentId,
+                        Files = resultFiles,
+                        StatusCode = 200
+                    };
+
+                    statusStorage.UpdateStatus(result);
                 }
-                var result = new FileResponse 
-                { 
-                    FolderName = documentId, 
-                    Files = resultFiles, 
-                    StatusCode = 200 
-                };
+                catch(Exception ex)
+                {
+                    logger.LogError(ex.Message, ex);
+                    var result = new FileResponse
+                    {
+                        FolderName = documentId,
+                        StatusCode = 500
+                    };
 
-                statusStorage.UpdateStatus(result);
+                    statusStorage.UpdateStatus(result);
+                }
+                
             });
 
             return new FileResponse { FolderName = documentId, StatusCode = 204 };
