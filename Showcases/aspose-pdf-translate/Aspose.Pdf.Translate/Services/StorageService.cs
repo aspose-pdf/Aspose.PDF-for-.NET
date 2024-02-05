@@ -25,9 +25,7 @@ namespace Aspose.Pdf.Translate.Services
 
             await using (var fs = File.OpenWrite(path))
             {
-                await inputStream
-                    .CopyToAsync(fs)
-                    .ContinueWith(_ => inputStream.Close());
+                inputStream.CopyTo(fs);
             }
         }
 

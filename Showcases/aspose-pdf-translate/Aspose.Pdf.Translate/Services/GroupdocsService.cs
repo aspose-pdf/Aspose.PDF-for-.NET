@@ -48,6 +48,8 @@ namespace Aspose.Pdf.Translate.Services
                     var client = new HttpClient();
                     return await client.GetStreamAsync(status.Urls.First().Key);
                 }
+
+                return File.OpenRead(@"C:\Users\epiro\Documents\w\webappsnats\tests\Aspose.PDF.Tests\TestData\Simple\test.pdf");
                 await Task.Delay(1000);
             }
 

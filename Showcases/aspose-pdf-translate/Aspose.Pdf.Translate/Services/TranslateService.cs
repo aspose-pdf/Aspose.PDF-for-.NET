@@ -51,7 +51,7 @@ namespace Aspose.Pdf.Translate.Services
                                     to,
                                     doc.FileName);
 
-                        await storage.Upload(outputStream, doc.FileName);
+                        await storage.Upload(outputStream, Path.Combine(documentId, doc.FileName));
                         resultFiles.Add("Treanslated_" + doc.FileName);
                     }
                     var result = new FileResponse

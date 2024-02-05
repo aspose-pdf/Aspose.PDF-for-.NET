@@ -1,5 +1,6 @@
 ﻿using Aspose.Pdf.Translate.Model;
 using Aspose.Pdf.Translate.Services.Interface;
+using System.Text;
 using System.Text.Json;
 
 namespace Aspose.Pdf.Translate.Services
@@ -31,12 +32,7 @@ namespace Aspose.Pdf.Translate.Services
         public async Task UpdateStatus(FileResponse data)
         {
             var statusStr = JsonSerializer.Serialize(data);
-            var ms = new MemoryStream();
-            using (var stream = new StreamWriter(ms))
-            {
-                stream.Write(statusStr);
-            }
-
+            var ms = new MemoryStream(Encoding.UTF8.GetBytes(statusStr));
             await storageService.Upload(ms, Path.Combine(data.FolderName, "status.json"));
         }
     }
