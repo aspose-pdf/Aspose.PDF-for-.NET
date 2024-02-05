@@ -22,8 +22,6 @@ namespace Aspose.Pdf.Translate.Services
 
         public async Task<Stream> TranslateDocument(string documentId, byte[] fileData, string inputType, string from, string to, string fileName)
         {
-            return File.OpenRead(@"C:\Users\epiro\Documents\w\webappsnats\tests\Aspose.PDF.Tests\TestData\Simple\test.pdf");
-
             var instance = new TranslationApi(conf);
             var fileApi = new FileApi(conf);
 
