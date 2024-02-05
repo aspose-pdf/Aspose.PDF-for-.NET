@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="temp\**" />
+    <Content Remove="temp\**" />
+    <EmbeddedResource Remove="temp\**" />
+    <None Remove="temp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Aspose.PDF.Drawing" Version="24.1.0" />
     <PackageReference Include="GroupDocs.Translation-Cloud" Version="23.12.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
