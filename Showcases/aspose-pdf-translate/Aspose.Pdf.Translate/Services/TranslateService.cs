@@ -10,23 +10,6 @@ namespace Aspose.Pdf.Translate.Services
         private readonly IStatusStorage statusStorage;
         private readonly ILogger<TranslateService> logger;
 
-        private readonly Dictionary<string, string> lang = new Dictionary<string, string>
-            {
-                {"en","english"},
-                {"fr","french"},
-                {"de","german"},
-                {"it","italian"},
-                {"es","spanish"},
-                {"pt","portuguese"},
-                {"pl","polish"},
-                {"ru","russian"},
-                {"ar","arabic"},
-                {"zh","chinese"},
-                {"az","azerbaijani"},
-                {"lv","latvian"},
-                {"lt","lithuanian"}
-            };
-
         public TranslateService(
             IGroupdocsService groupDocsService,
             IStorageService storage,
@@ -36,7 +19,6 @@ namespace Aspose.Pdf.Translate.Services
             this.groupDocsService = groupDocsService;
             this.storage = storage;
             this.statusStorage = statusStorage;
-            this.logger = logger;
             this.logger = logger;
         }
 
@@ -92,7 +74,6 @@ namespace Aspose.Pdf.Translate.Services
 
                     statusStorage.UpdateStatus(result);
                 }
-                
             });
 
             return new FileResponse { FolderName = documentId, StatusCode = 204 };

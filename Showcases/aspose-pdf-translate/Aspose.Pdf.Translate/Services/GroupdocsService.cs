@@ -9,11 +9,9 @@ namespace Aspose.Pdf.Translate.Services
     public class GroupdocsService : IGroupdocsService
     {
         private readonly Configuration conf;
-        private readonly ILogger<GroupdocsService> logger;
 
-        public GroupdocsService(ILogger<GroupdocsService> logger) 
+        public GroupdocsService() 
         {
-            this.logger = logger;
             conf = new Configuration
             {
                 OAuthFlow = GroupDocs.Translation.Cloud.Sdk.Client.Auth.OAuthFlow.APPLICATION,

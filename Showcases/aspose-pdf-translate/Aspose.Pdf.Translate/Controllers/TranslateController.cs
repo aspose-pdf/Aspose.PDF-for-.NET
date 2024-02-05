@@ -1,6 +1,4 @@
-﻿using Aspose.Pdf.Annotations;
-using Aspose.Pdf.Translate.Model;
-using Aspose.Pdf.Translate.Services;
+﻿using Aspose.Pdf.Translate.Model;
 using Aspose.Pdf.Translate.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.StaticFiles;

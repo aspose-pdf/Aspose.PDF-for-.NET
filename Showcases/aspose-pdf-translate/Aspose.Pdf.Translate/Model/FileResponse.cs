@@ -17,6 +17,9 @@
         ///</Summary>
         public int FileProcessingErrorCode { get; set; }
 
+        /// <summary>
+        /// Status Code, 200 = Ok, 204 = Processing, 500 = error
+        /// </summary>
         public int StatusCode { get; set; }
     }
 }
