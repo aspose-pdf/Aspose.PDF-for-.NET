@@ -14,7 +14,7 @@ namespace Aspose.Pdf.Translate.Services
 
             if (storageFile == null) throw new ArgumentNullException(nameof(storageFile));
 
-            var path = Path.IsPathRooted(storageFile) ? storageFile : Path.Combine(WorkingDirectory, storageFile);
+            var path = Path.Combine(WorkingDirectory, storageFile);
 
             var dir = Path.GetDirectoryName(path);
             if (!Directory.Exists(dir))
@@ -33,9 +33,7 @@ namespace Aspose.Pdf.Translate.Services
         {
             if (storageFile == null) throw new ArgumentNullException(nameof(storageFile));
 
-            var path = Path.IsPathRooted(storageFile)
-                ? storageFile
-                : Path.Combine(WorkingDirectory, storageFile);
+            var path = Path.Combine(WorkingDirectory, storageFile);
 
             if (!File.Exists(path)) return null;
 

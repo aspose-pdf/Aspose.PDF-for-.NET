@@ -51,7 +51,7 @@ function workSuccess(data, textStatus, xhr, sendData) {
 	if (data.statusCode === 200) {
 		hideLoader();
 
-		prepareDownloadButtons(data.sharedFiles, data.fileName)
+		prepareDownloadButtons(data.files, data.folderName)
 		showSuccess();
 	}
 	else if (data.statusCode === 204) {
@@ -131,14 +131,14 @@ function executeStatusQuery(data) {
  * @param {Array} files - Array of files to create download buttons for.
  * @param {string} fileName - The name of the file.
  */
-function prepareDownloadButtons(files, fileName) {
-	const downloadContainer = document.getElementById('download-container');
+function prepareDownloadButtons(files, documentId) {
+	const downloadContainer = document.getElementById('DownloadContainer');
 
 	for (var i = 0; i < files.length; i++) {
 		const buttonsGroup = document.createElement("div");
 		buttonsGroup.classList.add("cd-button-group");
 
-		const downloadButton = createButton("cd-button cd-button--success", files[i].fileName, files[i].uploadFileName, "_target");
+		const downloadButton = createButton("cd-button cd-button--success", files[i], documentId, "_target");
 		buttonsGroup.appendChild(downloadButton);
 
 		downloadContainer.appendChild(buttonsGroup);
@@ -153,12 +153,12 @@ function prepareDownloadButtons(files, fileName) {
  * @param {string} target - The target attribute of the button.
  * @returns {HTMLAnchorElement} The created button element.
  */
-function createButton(classes, text, href, target) {
+function createButton(classes, text, documentId, target) {
 	const button = document.createElement("a");
 
 	button.className = classes;
 	button.textContent = text;
-	button.href = href;
+	button.href = o.WebApiPath + "download/" + documentId;
 	button.target = target;
 	button.rel = "nofollow";
 
