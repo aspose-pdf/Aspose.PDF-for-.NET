@@ -55,7 +55,7 @@
         "10001": "No search results",
         "10002": "Wrong regular expression"
     },
-    "UploadOptions": ["PDF"],
+    "UploadOptions": ["PDF", "HTML", "PPT", "PPTX", "PPTM", "TXT", "CSV", "DOC", "DOCM", "DOCX", "MD", "ODP", "ODS", "ODT", "RESX", "RTF", "SRT", "TSV", "XLS", "XLSM", "XLSX"],
     "AcceptAllFormats": false,
     "Multiple": true,
     "DropFilesPrompt": "Drop or upload your files*",
