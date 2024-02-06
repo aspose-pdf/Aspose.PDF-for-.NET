@@ -6,9 +6,9 @@
 
 <div id="dvTitle" class="container-main blue">
     <div id="dvTitle" class="container blue dvTitle-container">
-        <h1 id="ProductTitle">PDF Translator</h1>
+        <h1 id="ProductTitle">Groupdocs Translator</h1>
         <h2 id="ProductTitleSubDiv" class="p-text" style="width: 85%;">
-            Translate PDF documents from English, French,
+            Translate documents from English, French,
             German, Italian from to global languages. Please register on https://products.groupdocs.cloud/translation/family/ and specify Translate_ClientId and Translate_ClientSecret environment variables.
         </h2>
     </div>
@@ -34,7 +34,7 @@
 
 <div id="WorkPlaceHolder" class="container-main blue" style="justify-content:start">
     <form id="UploadFile" name="UploadFile" method="POST" enctype="multipart/form-data" style="width: 100%;"
-          action="https://localhost:5001/pdf/translate">
+          action="http://localhost:5240/">
         <div id="loading-waiter" style="display: none;">
             <div class="loading-spinner" style="display: block;">Loading…</div>
         </div>
@@ -44,7 +44,7 @@
                 <div class="filedrop filedrop-mvc fileplacement width-for-mobile" id="filedrop-1886913881"
                      style="background-image: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUuNSAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6N0YyMkRENzM1RkYxMTFFODhFNkVDNDNBOTY5QzNBODYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6N0YyMkRENzQ1RkYxMTFFODhFNkVDNDNBOTY5QzNBODYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3RjIyREQ3MTVGRjExMUU4OEU2RUM0M0E5NjlDM0E4NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3RjIyREQ3MjVGRjExMUU4OEU2RUM0M0E5NjlDM0E4NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsUkwuUAAAYTSURBVHja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 );">
                     <input type="file" id="UploadFileInput-1886913881" class="filedrop-input"
-                           name="UploadFileInput-1886913881" title="Translate .pdf" accept=".pdf" multiple="">
+                           name="UploadFileInput-1886913881" title="Translate documents" accept=".PDF,.HTML,.PPT,.PPTX,.PPTM,.TXT,.CSV,.DOC,.DOCM,.DOCX,.MD,.ODP,.ODS,.ODT,.RESX,.RTF,.SRT,.TSV,.XLS,.XLSM,.XLSX,.pdf,.html,.ppt,.pptx,.pptm,.txt,.csv,.doc,.docm,.docx,.md,.odp,.ods,.odt,.resx,.rtf,.srt,.tsv,.xls,.xlsm,.xlsx" multiple="">
                     <div class="fileupload-list"></div>
                     <label for="UploadFileInput-1886913881" class="drop-files-label">
                         Drop or upload your
@@ -173,14 +173,14 @@
 <nav id="dvNaviBar" class="container sub-menu-container">
     <div class="sub-menu-container-links">
         <a class="sub-menu-container-link hide-on-mobile" rel="nofollow"
-           href="https://localhost:5001/pdf/translate#overview">Overview</a>
+           href="http://localhost:5240/#overview">Overview</a>
         <a class="sub-menu-container-link hide-on-mobile" rel="nofollow"
-           href="https://localhost:5001/pdf/translate#features">Features</a>
+           href="http://localhost:5240/#features">Features</a>
         <a class="sub-menu-container-link hide-on-mobile" rel="nofollow"
-           href="https://localhost:5001/pdf/translate#howto">How To</a>
+           href="http://localhost:5240/#howto">How To</a>
         <a class="sub-menu-container-link hide-on-mobile" rel="nofollow"
-           href="https://localhost:5001/pdf/translate#faqpage">FAQ</a>
-        <a class="sub-menu-container-link" href="https://docs.aspose.com/pdf/net/" target="_blank" rel="noopener">
+           href="http://localhost:5240/#faqpage">FAQ</a>
+        <a class="sub-menu-container-link" href="https://products.groupdocs.cloud/translation/family/" target="_blank" rel="noopener">
             Documentation
         </a>
     </div>
@@ -190,7 +190,7 @@
 
 <div id="dvOverview" class="container gray" style="display: flex" dir="ltr">
     <p>
-        PDF Translate is a modern online document translation tool. The online translator uses its own dedicated
+        Groupdocs Translate is a modern online document translation tool. The online translator uses its own dedicated
         server in the cloud to translate documents while retaining their formatting. We use trained models for
         popular languages and do not train our models on user data. Our unique algorithm analyses paragraph
         formatting in the text to retain position and word size even if the target language differs from the
@@ -198,7 +198,7 @@
         position. We have made it possible to translate only selected pages in the document.
     </p>
     <p>
-        Translate your PDF online to English, German, French, Italian, Spanish, Arabic, Russian, Chinese, and other
+        Translate your PDF and other document formats online to English, German, French, Italian, Spanish, Arabic, Russian, Chinese, and other
         supported languages. Save translated results to a new PDF document. This tool is based on machine learning
         technology and will help you with your daily document translation activities. Translator PDF preserves the
         layout of your PDF documents. It grabs the original content of the PDF and then puts the result translated
@@ -219,11 +219,11 @@
     <img dir="ltr" class="howToImage hide-on-mobile"
          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAADICAMAAAAEGQ4lAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAFlUExURUdwTP7+/v///+vq6v///+vr6////9Xc5/Tx8f////39/f////////37++pTGkRERERERP///0ZGRgB52Pn5+QB52P///+tUG0RERP7+/m5ecOpTGgB52AB52AB52OpTGkRERP///wB52PT09PT09OpTGvz8/P///xyF3OpTGutVHP///wB62epTGutUG////wB52OtVHERERERERERERAB52ERERP///+tcJ0dHR5i0yurq6urq6vCFXnd3d+vr6+vr6/Kdfurq6urq6v///7W1tUREROpTGgB52Ofn59nZ2d7e3onB7dTU1P38/MLCwsfHx+Pj47y8vMvLy7m5uebm5lmp5guD2+tbJO5xQu1kMvX19fzj2r6+vvGRb/WxmZjJ8PrUx9DQ0E5OTv3t6ICAgJaWlu+BWP718vfArPOihu/v70Gc411dXfjHtbvd9Xu67Gmx6W9vb+jy+yqS4Njr+a2trVBN3f0AAABDdFJOUwASBjjHCBcBAyoOKBwj+SXrL0FvSvUJztw7B2wSJ8wnpt4/bZ4SiFtTP610tOmMo49YVYBy4BC1G7w26eBuYyvOPVzRXCMvAAAL6klEQVR42u2d+V/aSB/HA21JPEDRqhXPerTiqqu9233a7S4oVwmnFUSw4q3Vtrbdv//JBckkM2ECBDEzn1/6ArEkb773zCDDUFFRUVFRUVFRUVFRUVFRacVOLa2vvBwZebmyvjTFUh4KlbmVKKCVOcqGYQLDI1GDRoYDpFvLUhShJaKtZnI6itT0JLlc5qKmmiOVy3C0gYYpF0rGEhciycxFsURcnJkcwQMzQlpumjbF8evz53rWpo4kE/n+5dvPsKCvRDoTC3GkrwoRRXWTGSGpBFYbgR3FRr5F+TCgz2pzQJ7B7GhsZCeMAkOQyUwpt/xJAwINJjpFDJh15Y6/4IFZJy70YoKJkuJLk1GLYEgp8uasgiGllBm2CgajlewdleXmZLGK7lSIWbEKZqXxfxpuoMeK7st6/aeshSeK/pA1/1TWQ0Xjinr6vPK132tFjT6ml7Ub/q5e+E99gfdVA+Zl62Ba1n3pbbhQK3rQ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"
          alt="How to" width="280" height="200">
-    <h2 id="HowtoTitle" dir="ltr">How to translate PDF</h2>
+    <h2 id="HowtoTitle" dir="ltr">How to translate Document</h2>
     <div class="howtolist" dir="ltr">
         <ul>
             <li>
-                <p class="howto_number" dir="ltr">1</p>Open free online Translate PDF website.
+                <p class="howto_number" dir="ltr">1</p>Open free online Translate website.
             </li>
             <li>
                 <p class="howto_number" dir="ltr">2</p>Click inside the file drop area to upload or drag &amp; drop
@@ -272,12 +272,12 @@
                 <li itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <div>
                         <p class="howto_number" dir="ltr">1</p>
-                        <h3 itemprop="name">❓ How can I translate PDF document?</h3>
+                        <h3 itemprop="name">❓ How can I translate document?</h3>
                     </div>
                     <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <span itemprop="text">
                             First, you need to add a file for translation: drag &amp; drop your
-                            PDF file or click inside the white area for choose a file and specify languages. Then
+                            file or click inside the white area for choose a file and specify languages. Then
                             click the 'TRANSLATE' button. When document's translation is completed, you can download
                             your result files.
                         </span>
@@ -286,19 +286,18 @@
                 <li itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <div>
                         <p class="howto_number" dir="ltr">2</p>
-                        <h3 itemprop="name">⏱️ How long does it take to translate PDF?</h3>
+                        <h3 itemprop="name">⏱️ How long does it take to translate?</h3>
                     </div>
                     <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <span itemprop="text">
-                            This Translate app works fast. You can translate PDF in a few
-                            seconds.
+                            This ASP.NET 6 application integrates with the GroupDocs Translate API to translate PDF documents from English, French, German, Italian to global languages.
                         </span>
                     </div>
                 </li>
                 <li itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <div>
                         <p class="howto_number" dir="ltr">3</p>
-                        <h3 itemprop="name">🛡️ Is it safe to translate PDF using this free app?</h3>
+                        <h3 itemprop="name">🛡️ Is it safe to translate using this free app?</h3>
                     </div>
                     <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <span itemprop="text">
@@ -312,11 +311,11 @@
                 <li itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <div>
                         <p class="howto_number" dir="ltr">4</p>
-                        <h3 itemprop="name">💻 Can I translate PDF on Mac OS, Android or Linux?</h3>
+                        <h3 itemprop="name">💻 Can I translate document on Mac OS, Android or Linux?</h3>
                     </div>
                     <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <span itemprop="text">
-                            Our PDF Translator works online and does not require any software
+                            Our Translator works online and does not require any software
                             installation.
                         </span>
                     </div>
@@ -324,11 +323,11 @@
                 <li itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <div>
                         <p class="howto_number" dir="ltr">5</p>
-                        <h3 itemprop="name">🌐 What browser should I use to translate PDF?</h3>
+                        <h3 itemprop="name">🌐 What browser should I use to translate?</h3>
                     </div>
                     <div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <span itemprop="text">
-                            You can use any modern browser to translate PDF, for example, Google
+                            You can use any modern browser to translate documents, for example, Google
                             Chrome, Firefox, Opera, Safari.
                         </span>
                     </div>
