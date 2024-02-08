@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FontFamilies>
+    <changed>2024-02-06T16:56:18.9141067Z</changed>
+    <Family name="DejaVu Sans Mono">
+        <Font style="Book" type="TTF" name="DejaVu Sans Mono" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf" offset="0" />
+        <Font style="Bold" type="TTF" name="DejaVu Sans Mono Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf" offset="0" />
+    </Family>
+    <Family name="DejaVu Serif">
+        <Font style="Book" type="TTF" name="DejaVu Serif" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf" offset="0" />
+        <Font style="Bold" type="TTF" name="DejaVu Serif Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf" offset="0" />
+    </Family>
+    <Family name="DejaVu Sans">
+        <Font style="Book" type="TTF" name="DejaVu Sans" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf" offset="0" />
+        <Font style="Bold" type="TTF" name="DejaVu Sans Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" offset="0" />
+    </Family>
+    <Family name="Liberation Mono">
+        <Font style="Regular" type="TTF" name="Liberation Mono" localizedFamilyNames="" path="/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf" offset="0" />
+        <Font style="Italic" type="TTF" name="Liberation Mono Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/liberation/LiberationMono-Italic.ttf" offset="0" />
+        <Font style="Bold" type="TTF" name="Liberation Mono Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/liberation/LiberationMono-Bold.ttf" offset="0" />
+        <Font style="Bold Italic" type="TTF" name="Liberation Mono Bold Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/liberation/LiberationMono-BoldItalic.ttf" offset="0" />
+    </Family>
+    <Family name="Liberation Sans">
+        <Font style="Regular" type="TTF" name="Liberation Sans" localizedFamilyNames="" path="/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf" offset="0" />
+        <Font style="Italic" type="TTF" name="Liberation Sans Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/liberation/LiberationSans-Italic.ttf" offset="0" />
+        <Font style="Bold" type="TTF" name="Liberation Sans Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf" offset="0" />
+        <Font style="Bold Italic" type="TTF" name="Liberation Sans Bold Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/liberation/LiberationSans-BoldItalic.ttf" offset="0" />
+    </Family>
+    <Family name="Liberation Serif">
+        <Font style="Regular" type="TTF" name="Liberation Serif" localizedFamilyNames="" path="/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf" offset="0" />
+        <Font style="Italic" type="TTF" name="Liberation Serif Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/liberation/LiberationSerif-Italic.ttf" offset="0" />
+        <Font style="Bold" type="TTF" name="Liberation Serif Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf" offset="0" />
+        <Font style="Bold Italic" type="TTF" name="Liberation Serif Bold Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/liberation/LiberationSerif-BoldItalic.ttf" offset="0" />
+    </Family>
+    <Family name="Liberation Sans Narrow">
+        <Font style="Regular" type="TTF" name="Liberation Sans Narrow" localizedFamilyNames="" path="/usr/share/fonts/truetype/liberation/LiberationSansNarrow-Regular.ttf" offset="0" />
+        <Font style="Italic" type="TTF" name="Liberation Sans Narrow Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/liberation/LiberationSansNarrow-Italic.ttf" offset="0" />
+        <Font style="Bold" type="TTF" name="Liberation Sans Narrow Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/liberation/LiberationSansNarrow-Bold.ttf" offset="0" />
+        <Font style="Bold Italic" type="TTF" name="Liberation Sans Narrow Bold Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/liberation/LiberationSansNarrow-BoldItalic.ttf" offset="0" />
+    </Family>
+    <Family name="Courier New">
+        <Font style="Regular" type="TTF" name="Courier New" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/Courier_New.ttf" offset="0" />
+        <Font style="Italic" type="TTF" name="Courier New Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/Courier_New_Italic.ttf" offset="0" />
+        <Font style="Bold" type="TTF" name="Courier New Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/Courier_New_Bold.ttf" offset="0" />
+        <Font style="Bold Italic" type="TTF" name="Courier New Bold Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/courbi.ttf" offset="0" />
+    </Family>
+    <Family name="Arial">
+        <Font style="Regular" type="TTF" name="Arial" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/Arial.ttf" offset="0" />
+        <Font style="Italic" type="TTF" name="Arial Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/Arial_Italic.ttf" offset="0" />
+        <Font style="Bold" type="TTF" name="Arial Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/arialbd.ttf" offset="0" />
+        <Font style="Bold Italic" type="TTF" name="Arial Bold Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/arialbi.ttf" offset="0" />
+    </Family>
+    <Family name="Georgia">
+        <Font style="Regular" type="TTF" name="Georgia" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/Georgia.ttf" offset="0" />
+        <Font style="Italic" type="TTF" name="Georgia Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/Georgia_Italic.ttf" offset="0" />
+        <Font style="Bold" type="TTF" name="Georgia Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/Georgia_Bold.ttf" offset="0" />
+        <Font style="Bold Italic" type="TTF" name="Georgia Bold Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/georgiaz.ttf" offset="0" />
+    </Family>
+    <Family name="Verdana">
+        <Font style="Regular" type="TTF" name="Verdana" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/Verdana.ttf" offset="0" />
+        <Font style="Italic" type="TTF" name="Verdana Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/verdanai.ttf" offset="0" />
+        <Font style="Bold" type="TTF" name="Verdana Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/verdanab.ttf" offset="0" />
+        <Font style="Bold Italic" type="TTF" name="Verdana Bold Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/verdanaz.ttf" offset="0" />
+    </Family>
+    <Family name="Times New Roman">
+        <Font style="Regular" type="TTF" name="Times New Roman" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/Times_New_Roman.ttf" offset="0" />
+        <Font style="Italic" type="TTF" name="Times New Roman Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/Times_New_Roman_Italic.ttf" offset="0" />
+        <Font style="Bold" type="TTF" name="Times New Roman Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/Times_New_Roman_Bold.ttf" offset="0" />
+        <Font style="Bold Italic" type="TTF" name="Times New Roman Bold Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/Times_New_Roman_Bold_Italic.ttf" offset="0" />
+    </Family>
+    <Family name="Trebuchet MS">
+        <Font style="Regular" type="TTF" name="Trebuchet MS" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/trebuc.ttf" offset="0" />
+        <Font style="Italic" type="TTF" name="Trebuchet MS Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/trebucit.ttf" offset="0" />
+        <Font style="Bold" type="TTF" name="Trebuchet MS Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/trebucbd.ttf" offset="0" />
+        <Font style="Bold Italic" type="TTF" name="Trebuchet MS Bold Italic" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/Trebuchet_MS_Bold_Italic.ttf" offset="0" />
+    </Family>
+    <Family name="Comic Sans MS">
+        <Font style="Regular" type="TTF" name="Comic Sans MS" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/comic.ttf" offset="0" />
+        <Font style="Bold" type="TTF" name="Comic Sans MS Bold" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/comicbd.ttf" offset="0" />
+    </Family>
+    <Family name="Arial Black">
+        <Font style="Regular" type="TTF" name="Arial Black" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/ariblk.ttf" offset="0" />
+    </Family>
+    <Family name="Webdings">
+        <Font style="Regular" type="TTF" name="Webdings" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/webdings.ttf" offset="0" />
+    </Family>
+    <Family name="Impact">
+        <Font style="Regular" type="TTF" name="Impact" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/Impact.ttf" offset="0" />
+    </Family>
+    <Family name="Andale Mono">
+        <Font style="Regular" type="TTF" name="Andale Mono" localizedFamilyNames="" path="/usr/share/fonts/truetype/msttcorefonts/andalemo.ttf" offset="0" />
+    </Family>
+</FontFamilies>
