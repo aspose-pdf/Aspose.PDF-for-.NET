@@ -36,6 +36,6 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDFFacades.Printing
             {
                 Console.WriteLine(ex.Message);
             }
-        }       
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.DocumentConversion
                 // The path to the documents directory.
                 string dataDir = RunExamples.GetDataDir_AsposePdf_DocumentConversion();
                 // Instantiate Latex Load option object
-                LatexLoadOptions Latexoptions = new LatexLoadOptions();
+                TeXLoadOptions Latexoptions = new TeXLoadOptions();
                 // Create Document object
                 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "samplefile.tex", Latexoptions);
                 // Save the output in PDF file

@@ -5,7 +5,7 @@ using System;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Text
 {
-    public class ReplaceTextonRegularExpression
+    public class ReplaceTextOnRegularExpression
     {
         public static void Run()
         {

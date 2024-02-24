@@ -24,8 +24,8 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Text
             string latexText1 = "$123456789+\\sqrt{1}+\\int_a^b f(x)dx$";
             Cell cell = row.Cells.Add();
             cell.Margin = new MarginInfo { Left = 20, Right = 20, Top = 20, Bottom = 20 };
-            // Second LatexFragment constructor bool parameter provides LaTeX paragraph indents elimination.
-            LatexFragment ltext1 = new LatexFragment(latexText1, true);
+            // Second TexFragment constructor bool parameter provides LaTeX paragraph indents elimination.
+            TeXFragment ltext1 = new TeXFragment(latexText1, true);
             cell.Paragraphs.Add(ltext1);
             // Add table inside page
             page.Paragraphs.Add(table);

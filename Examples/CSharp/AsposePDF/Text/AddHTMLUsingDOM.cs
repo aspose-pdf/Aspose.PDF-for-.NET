@@ -34,7 +34,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Text
             Console.WriteLine("\nHTML using DOM added successfully.\nFile saved at " + dataDir);
         }
 
-        public static void HTMLfragmentRectangle()
+        public static void HTMLFragmentRectangle()
         {
             // ExStart:HTMLfragmentRectangle
             // The path to the documents directory.

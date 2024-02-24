@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aspose.Pdf.Examples.CSharp</RootNamespace>
     <AssemblyName>Aspose.Pdf.Examples.CSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -32,24 +33,27 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <OutputPath>bin\Debug\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <OutputPath>bin\Release\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>Aspose.Pdf.Examples.CSharp.RunExamples</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.Cells, Version=20.1.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.Cells.20.1.0\lib\net40\Aspose.Cells.dll</HintPath>
+    <Reference Include="Aspose.Cells, Version=23.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Cells.23.4.0\lib\net40\Aspose.Cells.dll</HintPath>
     </Reference>
-    <Reference Include="Aspose.PDF, Version=20.3.0.0, Culture=neutral, PublicKeyToken=f0262d67fe233d63, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.PDF.20.3.0\lib\net4.0\Aspose.PDF.dll</HintPath>
+    <Reference Include="Aspose.PDF, Version=23.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.PDF.23.4.0\lib\net4.0\Aspose.PDF.dll</HintPath>
     </Reference>
     <Reference Include="Ionic.Zip.Reduced, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.Reduced.1.9.1.8\lib\net20\Ionic.Zip.Reduced.dll</HintPath>
@@ -180,7 +184,6 @@
     <Compile Include="AsposePdfFacades\Printing\CheckPrintJobStatus.cs" />
     <Compile Include="AsposePdfFacades\Printing\Impersonator.cs" />
     <Compile Include="AsposePdfFacades\Printing\PdfToPostScript.cs" />
-    <Compile Include="AsposePdfFacades\Printing\PrintoXPSPrinter.cs" />
     <Compile Include="AsposePdfFacades\Printing\PrintPages.cs" />
     <Compile Include="AsposePdfFacades\Printing\PrintToDefaultPrinter.cs" />
     <Compile Include="AsposePdfFacades\Printing\PrintPageRange.cs" />
@@ -378,7 +381,7 @@
     <Compile Include="AsposePDF\Images\ResizeImages.cs" />
     <Compile Include="AsposePDF\Images\SetImageSize.cs" />
     <Compile Include="AsposePDF\Images\BradleyAlgorithm.cs" />
-    <Compile Include="AsposePDF\Images\ConvertImageStreamtoPDF.cs" />
+    <Compile Include="AsposePDF\Images\ConvertImageStreamToPDF.cs" />
     <Compile Include="AsposePDF\Images\ConvertToBMP.cs" />
     <Compile Include="AsposePDF\Images\IdentifyImages.cs" />
     <Compile Include="AsposePDF\Images\ConvertPageRegionToDOM.cs" />
@@ -427,7 +430,7 @@
     <Compile Include="AsposePDF\Pages\ImageAsBackground.cs" />
     <Compile Include="AsposePDF\Pages\ConcatenatePdfFiles.cs" />
     <Compile Include="AsposePDF\Pages\DeleteParticularPage.cs" />
-    <Compile Include="AsposePDF\Pages\GetNumberofPages.cs" />
+    <Compile Include="AsposePDF\Pages\GetNumberOfPages.cs" />
     <Compile Include="AsposePDF\Pages\GetProperties.cs" />
     <Compile Include="AsposePDF\Pages\GetParticularPage.cs" />
     <Compile Include="AsposePDF\Pages\InsertEmptyPageAtEnd.cs" />
@@ -458,20 +461,20 @@
     <Compile Include="AsposePDF\Stamps-Watermarks\CountingArtifacts.cs" />
     <Compile Include="AsposePDF\Stamps-Watermarks\ExtractTextFromStampAnnotation.cs" />
     <Compile Include="AsposePDF\Stamps-Watermarks\GetWatermark.cs" />
-    <Compile Include="AsposePDF\Stamps-Watermarks\ImageandPageNumberinHeaderFootersection.cs" />
-    <Compile Include="AsposePDF\Stamps-Watermarks\PageNumberinHeaderFooterUsingFloatingBox.cs" />
-    <Compile Include="AsposePDF\Stamps-Watermarks\ImageandPageNumberinHeaderFootersectionInline.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\ImageAndPageNumberinHeaderFooterSection.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\PageNumberingHeaderFooterUsingFloatingBox.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\ImageandPageNumberinHeaderFooterSectionInline.cs" />
     <Compile Include="AsposePDF\Stamps-Watermarks\ImageInFooter.cs" />
-    <Compile Include="AsposePDF\Stamps-Watermarks\ImageinHeader.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\ImageInHeader.cs" />
     <Compile Include="AsposePDF\Stamps-Watermarks\AddImageStamp.cs" />
     <Compile Include="AsposePDF\Stamps-Watermarks\AddPDFPageStamp.cs" />
     <Compile Include="AsposePDF\Stamps-Watermarks\TableInHeaderFooterSection.cs" />
-    <Compile Include="AsposePDF\Stamps-Watermarks\TextinFooter.cs" />
-    <Compile Include="AsposePDF\Stamps-Watermarks\TextinHeader.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\TextInFooter.cs" />
+    <Compile Include="AsposePDF\Stamps-Watermarks\TextInHeader.cs" />
     <Compile Include="AsposePDF\Stamps-Watermarks\AddTextStamp.cs" />
     <Compile Include="AsposePDF\Stamps-Watermarks\PageNumberStamps.cs" />
     <Compile Include="AsposePDF\Stamps-Watermarks\DefineAlignment.cs" />
-    <Compile Include="AsposePDF\Tables\AddImageinATableCell.cs" />
+    <Compile Include="AsposePDF\Tables\AddImageInATableCell.cs" />
     <Compile Include="AsposePDF\Tables\AddRepeatingColumn.cs" />
     <Compile Include="AsposePDF\Tables\AddSVGObject.cs" />
     <Compile Include="AsposePDF\Tables\ExportExcelWorksheetDataToTable.cs" />
@@ -549,17 +552,17 @@
     <Compile Include="AsposePDF\Text\ReplaceFirstOccurrence .cs" />
     <Compile Include="AsposePDF\Text\SearchRegularExpression.cs" />
     <Compile Include="AsposePDF\Text\SearchAndGetTextPage.cs" />
-    <Compile Include="AsposePDF\Text\ReplaceTextonRegularExpression.cs" />
+    <Compile Include="AsposePDF\Text\ReplaceTextOnRegularExpression.cs" />
     <Compile Include="AsposePDF\Text\TextSegments.cs" />
     <Compile Include="AsposePDF\Text\SearchTextSegmentsPage.cs" />
     <Compile Include="AsposePDF\Text\UseLatexScript.cs" />
     <Compile Include="AsposePDF\Text\UseLatexScript2.cs" />
     <Compile Include="AsposePDF\Text\UseLatexScript3.cs" />
-    <Compile Include="AsposePDF\Working-Document\CustomizePageNumbesWhileAddingTOC.cs" />
+    <Compile Include="AsposePDF\Working-Document\CustomizePageNumbersWhileAddingTOC.cs" />
     <Compile Include="AsposePDF\Working-Document\GetWarningsForFontSubstitution.cs" />
     <Compile Include="AsposePDF\Working-Document\SetPropertiesForPrintDialog.cs" />
     <Compile Include="AsposePDF\Working-with-TaggedPDFs\AccessChildrenElements.cs" />
-    <Compile Include="AsposePDF\Working-Document\AllowResusePageContent.cs" />
+    <Compile Include="AsposePDF\Working-Document\AllowReusePageContent.cs" />
     <Compile Include="AsposePDF\Working-Document\ConvertFromRGBToGrayscale.cs" />
     <Compile Include="AsposePDF\Working-Document\EmbedFontsUsingSubsetStrategy.cs" />
     <Compile Include="AsposePDF\Working-with-TaggedPDFs\CreateTableElement.cs" />
@@ -575,8 +578,8 @@
     <Compile Include="AsposePDF\Working-Document\CreatePDFA1WithAsposePdf.cs" />
     <Compile Include="AsposePDF\Working-with-TaggedPDFs\AddStructureElementIntoElement.cs" />
     <Compile Include="AsposePDF\Working-with-TaggedPDFs\CreateNoteStructureElement.cs" />
-    <Compile Include="AsposePDF\Working-with-TaggedPDFs\CreatePDFwithTaggedImage.cs" />
-    <Compile Include="AsposePDF\Working-with-TaggedPDFs\CreatePDFwithTaggedText.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\CreatePDFWithTaggedImage.cs" />
+    <Compile Include="AsposePDF\Working-with-TaggedPDFs\CreatePDFWithTaggedText.cs" />
     <Compile Include="AsposePDF\Working-with-TaggedPDFs\CreateStructureElements.cs" />
     <Compile Include="AsposePDF\Working-with-TaggedPDFs\CreateStructureElementsTree.cs" />
     <Compile Include="AsposePDF\Working-with-TaggedPDFs\CustomTagName.cs" />
@@ -594,7 +597,7 @@
     <Compile Include="AsposePDF\Working-Document\SetExpiryDate.cs" />
     <Compile Include="AsposePDF\Working-Document\EmbedFontWhileDocCreation.cs" />
     <Compile Include="AsposePDF\Working-Document\EmbedFont .cs" />
-    <Compile Include="AsposePDF\Working-Document\AddRemoveJavascriptToDoc.cs" />
+    <Compile Include="AsposePDF\Working-Document\AddRemoveJavaScriptToDoc.cs" />
     <Compile Include="AsposePDF\Working-Document\AddLayers.cs" />
     <Compile Include="AsposePDF\Working-Document\AddJavaScriptToPage.cs" />
     <Compile Include="AsposePDF\Working-Document\ShrinkDocuments.cs" />
@@ -620,12 +623,11 @@
     <Compile Include="AsposePDF\Working-Document\UnembedFonts.cs" />
     <Compile Include="AsposePDF\Working-Document\ValidatePDFABStandard.cs" />
     <Compile Include="AsposePDF\Working-Document\ValidatePDFAStandard.cs" />
-    <Compile Include="AsposePDF\Working-Document\ValidatePDFUAstandard.cs" />
+    <Compile Include="AsposePDF\Working-Document\ValidatePDFUAStandard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RunExamples.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

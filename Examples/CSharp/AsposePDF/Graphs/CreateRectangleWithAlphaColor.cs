@@ -17,7 +17,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Graphs
             // Add page to pages collection of PDF file
             Aspose.Pdf.Page page = doc.Pages.Add();
             // Create Graph instance
-            Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
+            Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100.0f, 400.0f);
             // Create rectangle object with specific dimensions
             Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
             // Set graph fill color from System.Drawing.Color structure from a 32-bit ARGB value

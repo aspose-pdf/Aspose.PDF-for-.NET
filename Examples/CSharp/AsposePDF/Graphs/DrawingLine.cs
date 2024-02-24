@@ -35,7 +35,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Graphs
             // Save PDF file
             pDoc.Save(dataDir);
             // ExEnd:DrawingLine
-            Console.WriteLine("\nLine drawn successfully across the page.\nFile saved at " + dataDir);            
+            Console.WriteLine("\nLine drawn successfully across the page.\nFile saved at " + dataDir);
         }
     }
 }

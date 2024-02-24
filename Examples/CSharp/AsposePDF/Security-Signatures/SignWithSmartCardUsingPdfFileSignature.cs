@@ -23,7 +23,9 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.SecuritySignatures
                 System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
                 store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
                 // Manually chose the certificate in the store
-                System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
+                System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel =
+                    System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(
+                        store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
 
                 Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0]);
                 pdfSign.SignatureAppearance = dataDir + "demo.png";
@@ -42,7 +44,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.SecuritySignatures
                     }
                 }
             }
-            // ExEnd:1  
+            // ExEnd:1
         }
     }
 }

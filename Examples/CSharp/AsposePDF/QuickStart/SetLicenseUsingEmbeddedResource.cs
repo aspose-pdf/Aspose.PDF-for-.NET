@@ -15,10 +15,10 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.QuickStart
             // Initialize license object
             Aspose.Pdf.License license = new Aspose.Pdf.License();
             // Set license
-            license.SetLicense("MergedAPI.Aspose.Total.lic");
+            // license.SetLicense("MergedAPI.Aspose.Total.lic");
 
             Console.WriteLine("License set successfully.");
-            // ExEnd:1  
+            // ExEnd:1
         }
     }
 }

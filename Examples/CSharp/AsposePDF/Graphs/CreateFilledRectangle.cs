@@ -17,7 +17,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Graphs
             // Add page to pages collection of PDF file
             Page page = doc.Pages.Add();
             // Create Graph instance
-            Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
+            Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100.0f, 400.0f);
             // Add graph object to paragraphs collection of page instance
             page.Paragraphs.Add(graph);
             // Create Rectangle instance
@@ -30,7 +30,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Graphs
             // Save PDF file
             doc.Save(dataDir);
             // ExEnd:CreateFilledRectangle
-            Console.WriteLine("\nFilled rectangle object created successfully.\nFile saved at " + dataDir);            
+            Console.WriteLine("\nFilled rectangle object created successfully.\nFile saved at " + dataDir);
         }
     }
 }

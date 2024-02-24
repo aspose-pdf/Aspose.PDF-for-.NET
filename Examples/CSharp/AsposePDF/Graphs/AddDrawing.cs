@@ -16,14 +16,14 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Graphs
             int green = 0;
             int red = 100;
             int blue = 0;
-            // Create Color object using Alpha RGB 
+            // Create Color object using Alpha RGB
             Aspose.Pdf.Color alphaColor = Aspose.Pdf.Color.FromArgb(alpha, red, green, blue); // Provide alpha channel
             // Instantiate Document object
             Document document = new Document();
             // Add page to pages collection of PDF file
             Page page = document.Pages.Add();
             // Create Graph object with certain dimensions
-            Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300, 400);
+            Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300.0f, 400.0f);
             // Set border for Drawing object
             graph.Border = (new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Black));
             // Add graph object to paragraphs collection of Page instance
@@ -42,7 +42,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Graphs
             // Save PDF file
             document.Save(dataDir);
             // ExEnd:AddDrawing
-            Console.WriteLine("\nDrawing added successfully with transparent color.\nFile saved at " + dataDir);            
+            Console.WriteLine("\nDrawing added successfully with transparent color.\nFile saved at " + dataDir);
         }
     }
 }

@@ -4,7 +4,7 @@ using Aspose.Pdf;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.StampsWatermarks
 {
-    public class TextinFooter
+    public class TextInFooter
     {
         public static void Run()
         {

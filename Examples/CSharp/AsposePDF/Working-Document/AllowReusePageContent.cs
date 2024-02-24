@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Working_Document
 {
-    public class AllowResusePageContent
+    public class AllowReusePageContent
     {
         public static void Run()
         {

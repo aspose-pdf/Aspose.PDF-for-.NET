@@ -3,20 +3,20 @@ using Aspose.Pdf;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Pages
 {
-    public class GetNumberofPages
+    public class GetNumberOfPages
     {
         public static void Run()
         {
-            // ExStart:GetNumberofPages
+            // ExStart:GetNumberOfPages
             // The path to the documents directory.
             string dataDir = RunExamples.GetDataDir_AsposePdf_Pages();
 
             // Open document
-            Document pdfDocument = new Document(dataDir + "GetNumberofPages.pdf");
+            Document pdfDocument = new Document(dataDir + "GetNumberOfPages.pdf");
 
             // Get page count
             System.Console.WriteLine("Page Count : {0}", pdfDocument.Pages.Count);
-            // ExEnd:GetNumberofPages
+            // ExEnd:GetNumberOfPages
         }
     }
 }

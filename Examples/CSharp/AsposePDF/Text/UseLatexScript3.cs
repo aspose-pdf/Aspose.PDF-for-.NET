@@ -26,7 +26,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Text
             var doc = new Document();
             var page = doc.Pages.Add();
 
-            var latex = new LatexFragment(s);
+            var latex = new TeXFragment(s);
 
             page.Paragraphs.Add(latex);
             doc.Save(dataDir + "Script_out.pdf");

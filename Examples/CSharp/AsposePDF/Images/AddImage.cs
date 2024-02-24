@@ -43,7 +43,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Images
             // Save updated document
             pdfDocument.Save(dataDir);
             // ExEnd:AddImage
-            Console.WriteLine("\nImage added successfully.\nFile saved at " + dataDir); 
+            Console.WriteLine("\nImage added successfully.\nFile saved at " + dataDir);
         }
 
         public static void AddDicomImage()
