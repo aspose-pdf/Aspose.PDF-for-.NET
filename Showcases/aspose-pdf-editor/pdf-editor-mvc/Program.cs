@@ -24,11 +24,11 @@ builder.Services.AddRouting(options =>
     options.LowercaseQueryStrings = true;
 });
 
-builder.Services.AddProblemDetails(
-    config =>
-        config.CustomizeProblemDetails =
-            ctx =>
-                ctx.ProblemDetails.Extensions.Add("request_host", ctx.HttpContext.Request.Host.Value));
+// builder.Services.AddProblemDetails(
+//     config =>
+//         config.CustomizeProblemDetails =
+//             ctx =>
+//                 ctx.ProblemDetails.Extensions.Add("request_host", ctx.HttpContext.Request.Host.Value));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
