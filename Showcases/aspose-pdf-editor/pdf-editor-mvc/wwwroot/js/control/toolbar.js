@@ -60,12 +60,6 @@ function appendClick(event) {
     GeneralSetup('Append');
 }
 
-$('#myColors').on('shown.bs.modal', function () {
-    $('#myColors').modal().css('top', $('#textAreaPopUp').position().top);
-    $('#myColors').modal().css('left', $('#textAreaPopUp').position().left);
-});
-
-
 $('.btn-group > .btn').click(function () {
     $('.btn-group > .btn').removeClass('active');
     $(this).addClass('active');
