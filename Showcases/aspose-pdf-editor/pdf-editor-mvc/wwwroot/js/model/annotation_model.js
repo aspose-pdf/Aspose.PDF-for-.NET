@@ -63,3 +63,114 @@ function InkModel(position, title, points, border, capStyle) {
     this.CapStyle = capStyle || "Rounded";
 }
 
+function LineModel(position, title, start, end, popup, width, startingStyle, endingStyle) {
+    this.Position = position || new PagePositionModel();
+    this.Title = title || new TitleModel();
+    this.Start = start || new PointModel(10, 10);
+    this.End = end || new PointModel(20, 20);
+    this.Popup = popup || new PagePositionModel();
+    this.Width = width || 50;
+    this.StartingStyle = startingStyle || "Circle";
+    this.EndingStyle = endingStyle || "ClosedArrow";
+}
+
+function LinkModel(page, text, url) {
+    this.Page = page || new PageModel();
+    this.Text = text || "Test data";
+    this.Url = url || "http://google.com";
+}
+
+function MovieModel(position, mediaFile) {
+    this.Position = position || new PagePositionModel();
+    this.MediaFile = mediaFile || "test.avi";
+}
+
+function PolygonModel(position, title, popup, points) {
+    this.Position = position || new PagePositionModel();
+    this.Title = title || new TitleModel();
+    this.Popup = popup || new PagePositionModel();
+    this.Points = points || [new PointModel(10, 10), new PointModel(20, 20), new PointModel(30, 20)];
+}
+
+function PolyLineModel(position, title, popup, points) {
+    this.Position = position || new PagePositionModel();
+    this.Title = title || new TitleModel();
+    this.Popup = popup || new PagePositionModel();
+    this.Points = points || [new PointModel(10, 10), new PointModel(20, 20), new PointModel(30, 20)];
+}
+
+function RedactModel(position, fillColor, borderColor, color, overlayText, textAlignment, repeat) {
+    this.Position = position || new PagePositionModel();
+    this.FillColor = fillColor || "Aqua";
+    this.BorderColor = borderColor || "Black";
+    this.Color = color || "Beige";
+    this.OverlayText = overlayText || "CENSORED";
+    this.TextAlignment = textAlignment || "Center";
+    this.Repeat = repeat || true;
+}
+
+function ScreenModel(position, mediaFile) {
+    this.Position = position || new PagePositionModel();
+    this.MediaFile = mediaFile || "test.avi";
+}
+
+function SoundModel(position, mediaFile) {
+    this.Position = position || new PagePositionModel();
+    this.MediaFile = mediaFile || "test.wav";
+}
+
+function SquareModel(position, title, popup, interiorColor) {
+    this.Position = position || new PagePositionModel();
+    this.Title = title || new TitleModel();
+    this.Popup = popup || new PagePositionModel();
+    this.InteriorColor = interiorColor || "Aqua";
+}
+
+function SquigglyModel(page, title, text) {
+    this.Page = page || new PageModel();
+    this.Title = title || new TitleModel();
+    this.Text = text || "Test data";
+}
+
+function StampModel(page, imageFile, background, xIndent, yIndent, height, width, rotate, opacity) {
+    this.Page = page || new PageModel();
+    this.ImageFile = imageFile || "test.bmp";
+    this.Background = background || true;
+    this.XIndent = xIndent || 10;
+    this.YIndent = yIndent || 10;
+    this.Height = height || 50;
+    this.Width = width || 50;
+    this.Rotate = rotate || "on90";
+    this.Opacity = opacity || 0.5;
+}
+
+function StrikeOutModel(page, title, text) {
+    this.Page = page || new PageModel();
+    this.Title = title || new TitleModel();
+    this.Text = text || "Test data";
+}
+
+function TextModel(position, title, contents, open, icon, border) {
+    this.Position = position || new PagePositionModel();
+    this.Title = title || new TitleModel();
+    this.Contents = contents || "test";
+    this.Open = open || true;
+    this.Icon = icon || "Comment";
+    this.Border = border || 5;
+}
+
+function UnderlineModel(page, title, text) {
+    this.Page = page || new PageModel();
+    this.Title = title || new TitleModel();
+    this.Text = text || "Test data";
+}
+
+function WatermarkModel(position, text, opacity, foregroundColor, font, fontSize) {
+    this.Position = position || new PagePositionModel();
+    this.Text = text || ["test1", "test2"];
+    this.Opacity = opacity || 0.5;
+    this.ForegroundColor = foregroundColor || "Aqua";
+    this.Font = font || "Arial";
+    this.FontSize = fontSize || 20;
+}
+
