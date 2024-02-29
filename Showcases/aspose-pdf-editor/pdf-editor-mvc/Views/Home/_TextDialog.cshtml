@@ -1,0 +1,69 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div id="textAreaPopUp" class="panel panel-success" style="position: absolute; z-index: 1030; visibility: hidden;">
+    <table id="txtTable" class="table table-bordered table-hover">
+        <tr>
+            <td>
+                <select id="ddFont" class="form-select" onchange="ddFontChange()">
+                    <option value="Arial" selected="selected">Arial</option>
+                    <option value="Times">Times New Roman</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Tahoma">Tahoma</option>
+                </select>
+                <select id="ddSize" class="form-select" onchange="ddSizeChange()">
+                    <option value="8" selected="selected">8px</option>
+                    <option value="9">9px</option>
+                    <option value="10">10px</option>
+                    <option value="12">12px</option>
+                    <option value="14">14px</option>
+                    <option value="16">16px</option>
+                    <option value="18">18px</option>
+                    <option value="24">24px</option>
+                    <option value="36">36px</option>
+                    <option value="48">48px</option>
+                    <option value="72">72px</option>
+                </select>
+
+                <button id="btnBold" value="Bold" onclick="makeBold();" class="btn btn-outline-secondary btn-sm"
+                        data-bs-toggle="button" data-bs-placement="top" title="Bold">
+                    <i class="bi bi-type-bold"></i>
+                </button>
+
+                <button id="btnItalic" value="Italic" onclick="makeItalic();" class="btn btn-outline-secondary btn-sm"
+                        data-bs-toggle="button" data-bs-placement="top" title="Italic">
+                    <i class="bi bi-type-italic"></i>
+                </button>
+
+                <button id="btnUnderline" value="Underline" class="btn btn-outline-secondary btn-sm"
+                        data-bs-toggle="button" data-bs-placement="top" title="Underline">
+                    <i class="bi bi-type-underline"></i>
+                </button>
+
+                <button id="btnColor" value="Color"
+                        data-bs-toggle="modal" data-bs-target="#myColors" class="btn btn-outline-secondary btn-sm"
+                        data-bs-placement="bottom" title="Color">
+                    <i class="bi bi-palette"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <textarea id='textareaTest' class="form-control"
+                          style='height: 50px; max-width: 350px; width: 100%;'></textarea>
+                <div id='textareaTest' contentEditable="true">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" value="save" id="saveText" onclick="SaveText();" class="btn btn-primary">
+                    <i class="bi bi-check"></i>
+                </button>
+                <button type="button" value="cancel" id="Button1" onclick="closeTextEditor();"
+                        class="btn btn-secondary">
+                    <i class="bi bi-x-circle"></i>
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
