@@ -128,6 +128,20 @@ if (window.addEventListener) {
             canvas.addEventListener('mouseup', ev_canvas, false);
             
             GetDocumentInfo();
+
+            $('#sidePanel').hide();
+            $('#btnAnnotate').on('click', function() {                
+                // Adjust the column classes on the main content area
+                if ($('#mainContent').hasClass('col-md-9')) {
+                    console.log('collapse');
+                    $('#mainContent').removeClass('col-md-9').addClass('col-md-12');
+                    $('#sidePanel').hide();
+                } else {
+                    console.log('show');
+                    $('#mainContent').removeClass('col-md-12').addClass('col-md-9');
+                    $('#sidePanel').show();
+                }
+            });
         }
 
         init();
