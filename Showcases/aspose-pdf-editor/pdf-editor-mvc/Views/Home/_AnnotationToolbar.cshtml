@@ -3,20 +3,9 @@
 <!-- Toolbar -->
 <div class="toolbar-area">
     <div class="btn-toolbar" role="toolbar" aria-label="Aspose.PDF Editor toolbar">
-        <div class="btn-group me-2" role="group" aria-label="PDF Annotation Types">
-            <button alt="Text" id="btnText" value="Text" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
-                    data-bs-placement="top" title="Text" onclick="GeneralSetup('Text');">
-                <i class="bi bi-fonts"></i>
-            </button>
-            <button alt="Link" id="btnLink" value="Link" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
-                    data-bs-placement="top" title="Link" onclick="GeneralSetup('Link');">
-                <i class="bi bi-link-45deg"></i>
-            </button>
-            <button alt="Free text" id="btnFreeText" value="FreeText" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
-                    data-bs-placement="top" title="Free Text" onclick="GeneralSetup('FreeText');">
-                <i class="bi bi-text-paragraph"></i>
-            </button>
-            <button alt="Line" id="btnLine" value="Line" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
+        
+        <div class="btn-group me-2" role="group" aria-label="Shapes">
+<button alt="Line" id="btnLine" value="Line" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
                     data-bs-placement="top" title="Line" onclick="GeneralSetup('Line');">
                 <i class="bi bi-dash"></i>
             </button>
@@ -36,6 +25,12 @@
                     data-bs-placement="top" title="Polyline" onclick="GeneralSetup('PolyLine');">
                 <i class="bi bi-vector-pen"></i>
             </button>
+            <button alt="Ink" id="btnInk" value="Ink" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
+                    data-bs-placement="top" title="Ink" onclick="GeneralSetup('Ink');">
+                <i class="bi bi-pen"></i>
+            </button>
+        </div>
+        <div class="btn-group me-2" role="group" aria-label="Highlight">
             <button alt="Highlight" id="btnHighlight" value="Highlight" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
                     data-bs-placement="top" title="Highlight" onclick="GeneralSetup('Highlight');">
                 <i class="bi bi-pen"></i>
@@ -52,6 +47,18 @@
                     data-bs-placement="top" title="Strikeout" onclick="GeneralSetup('StrikeOut');">
                 <i class="bi bi-type-strikethrough"></i>
             </button>
+        </div>
+        <div class="btn-group me-2" role="group" aria-label="Widget">
+            <button alt="Pop-up" id="btnPopup" value="Popup" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
+                    data-bs-placement="top" title="Pop-up" onclick="GeneralSetup('Popup');">
+                <i class="bi bi-chat-right-dots"></i>
+            </button>
+            <button alt="Widget" id="btnWidget" value="Widget" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
+                    data-bs-placement="top" title="Widget" onclick="GeneralSetup('Widget');">
+                <i class="bi bi-gear"></i>
+            </button>
+        </div>
+        <div class="btn-group me-2" role="group" aria-label="Watermark">
             <button alt="Stamp" id="btnStamp" value="Stamp" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
                     data-bs-placement="top" title="Rubber stamp" onclick="GeneralSetup('Stamp');">
                 <i class="bi bi-award"></i>
@@ -60,15 +67,13 @@
                     data-bs-placement="top" title="Caret" onclick="GeneralSetup('Caret');">
                 <i class="bi bi-caret-down-fill"></i>
             </button>
-            <button alt="Ink" id="btnInk" value="Ink" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
-                    data-bs-placement="top" title="Ink" onclick="GeneralSetup('Ink');">
-                <i class="bi bi-pen"></i>
+            <button alt="Watermark" id="btnWatermark" value="Watermark" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
+                    data-bs-placement="top" title="Watermark" onclick="GeneralSetup('Watermark');">
+                <i class="bi bi-water"></i>
             </button>
-            <button alt="Pop-up" id="btnPopup" value="Popup" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
-                    data-bs-placement="top" title="Pop-up" onclick="GeneralSetup('Popup');">
-                <i class="bi bi-chat-right-dots"></i>
-            </button>
-            <button alt="Sound" id="btnSound" value="Sound" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
+        </div>
+        <div class="btn-group me-2" role="group" aria-label="Media">
+<button alt="Sound" id="btnSound" value="Sound" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
                     data-bs-placement="top" title="Sound" onclick="GeneralSetup('Sound');">
                 <i class="bi bi-volume-up"></i>
             </button>
@@ -76,17 +81,25 @@
                     data-bs-placement="top" title="Movie" onclick="GeneralSetup('Movie');">
                 <i class="bi bi-film"></i>
             </button>
-            <button alt="Widget" id="btnWidget" value="Widget" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
-                    data-bs-placement="top" title="Widget" onclick="GeneralSetup('Widget');">
-                <i class="bi bi-gear"></i>
-            </button>
             <button alt="Screen" id="btnScreen" value="Screen" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
                     data-bs-placement="top" title="Screen" onclick="GeneralSetup('Screen');">
                 <i class="bi bi-display"></i>
             </button>
-            <button alt="Watermark" id="btnWatermark" value="Watermark" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
-                    data-bs-placement="top" title="Watermark" onclick="GeneralSetup('Watermark');">
-                <i class="bi bi-water"></i>
+        </div>
+        
+
+        <div class="btn-group me-2" role="group" aria-label="Text">
+            <button alt="Text" id="btnText" value="Text" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
+                    data-bs-placement="top" title="Text" onclick="GeneralSetup('Text');">
+                <i class="bi bi-fonts"></i>
+            </button>
+            <button alt="Link" id="btnLink" value="Link" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
+                    data-bs-placement="top" title="Link" onclick="GeneralSetup('Link');">
+                <i class="bi bi-link-45deg"></i>
+            </button>
+            <button alt="Free text" id="btnFreeText" value="FreeText" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
+                    data-bs-placement="top" title="Free Text" onclick="GeneralSetup('FreeText');">
+                <i class="bi bi-text-paragraph"></i>
             </button>
             <button alt="Redact" id="btnRedact" value="Redact" class="btn btn-secondary btn-lg" data-bs-toggle="buttons"
                     data-bs-placement="top" title="Redact" onclick="GeneralSetup('Redact');">

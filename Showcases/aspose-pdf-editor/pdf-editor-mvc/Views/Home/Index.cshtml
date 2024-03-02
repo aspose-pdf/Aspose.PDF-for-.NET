@@ -7,8 +7,20 @@
     ViewData["Title"] = @Localizer["Editor"];
 }
 
-<partial name="_Editor" />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-9">
 
+            <main role="main" class="pb-3">
+                <partial name="_Editor" />
+            </main>
+        </div>
+        <div class="col-md-3 side-panel collapse"  id="sidePanel">
+                <partial name="_AnnotationToolbar" />
+        </div>
+    </div>
+</div>
+<!-- Button to toggle the side panel -->
 @section Scripts {
     <script type="text/javascript" src="~/js/api/document.js" asp-append-version="true"></script>
     <script type="text/javascript" src="~/js/api/page.js" asp-append-version="true"></script>

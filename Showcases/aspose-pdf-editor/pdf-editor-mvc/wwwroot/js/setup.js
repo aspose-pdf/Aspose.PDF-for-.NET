@@ -152,6 +152,7 @@ function onStartup() {
     document.getElementById('btnTexting').disabled = false;
     document.getElementById('btnAttachments').disabled = false;
     document.getElementById('btnSignature').disabled = false;
+    document.getElementById('btnAnnotate').disabled = false;
 }
 
 function wait(ms) {
