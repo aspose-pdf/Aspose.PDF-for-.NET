@@ -76,16 +76,13 @@ function createFormAndInsertIntoDiv(className, divId) {
 
     // Create the object from the class name
     var obj = createObjectFromClassName(className);
+    console.log(obj);
 
     // Create a div to hold the form
-    var formContainer = document.createElement('div');
-    formContainer.id = divId;
+    var formContainer = document.getElementById(divId);
 
     // Create the form from the object and append it to the div
     createFormFromObject(obj, formContainer);
-
-    // Append the form container to the body or any other container you want
-    document.body.appendChild(formContainer);
 }
 
 // Function to set the value of an object's property based on an input element
