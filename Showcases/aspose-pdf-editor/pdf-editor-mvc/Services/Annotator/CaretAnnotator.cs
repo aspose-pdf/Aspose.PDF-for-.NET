@@ -30,23 +30,23 @@ public class CaretAnnotator : IAnnotator
         
         // This annotation is used to indicate the insertion of text
         var caretAnnotation = new CaretAnnotation(
-            document.Pages[_model.Position.PageNumber], 
+            document.Pages[_model.PageNumber], 
             new Rectangle(
-                _model.Position.Llx, 
-                _model.Position.Lly, 
-                _model.Position.Urx,
-                _model.Position.Ury,
-                _model.Position.NormalizeCoordinates))
+                _model.Llx, 
+                _model.Lly, 
+                _model.Urx,
+                _model.Ury,
+                _model.NormalizeCoordinates))
         {
-            Title = _model.Title.Title,
-            Subject = _model.Title.Subject,
+            Title = _model.Title,
+            Subject = _model.Subject,
             Flags = _model.FlagsValue,
-            Color = _model.Title.ColorValue,
-            Opacity = _model.Title.Opacity
+            Color = _model.ColorValue,
+            Opacity = _model.Opacity
         };
 
         document
-            .Pages[_model.Position.PageNumber]
+            .Pages[_model.PageNumber]
             .Annotations
             .Add(caretAnnotation);
         

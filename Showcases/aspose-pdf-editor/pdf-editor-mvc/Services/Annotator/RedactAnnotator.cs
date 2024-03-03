@@ -26,13 +26,13 @@ public class RedactAnnotator : IAnnotator
 
         // Create RedactionAnnotation instance for specific page region
         RedactionAnnotation annotation = new RedactionAnnotation(
-            document.Pages[_model.Position.PageNumber],
+            document.Pages[_model.PageNumber],
             new Rectangle(
-                _model.Position.Llx,
-                _model.Position.Lly,
-                _model.Position.Urx,
-                _model.Position.Ury,
-                _model.Position.NormalizeCoordinates))
+                _model.Llx,
+                _model.Lly,
+                _model.Urx,
+                _model.Ury,
+                _model.NormalizeCoordinates))
         {
             FillColor = _model.FillColorValue,
             BorderColor = _model.BorderColorValue,
@@ -46,7 +46,7 @@ public class RedactAnnotator : IAnnotator
         
         // Add annotation to annotations collection of first page
         document
-            .Pages[_model.Position.PageNumber]
+            .Pages[_model.PageNumber]
             .Annotations
             .Add(annotation);
         

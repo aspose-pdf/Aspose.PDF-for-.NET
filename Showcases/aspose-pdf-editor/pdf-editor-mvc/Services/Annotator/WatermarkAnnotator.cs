@@ -27,13 +27,13 @@ public class WatermarkAnnotator : IAnnotator
 
         //Create Annotation
         WatermarkAnnotation annotation = new WatermarkAnnotation(
-            document.Pages[_model.Position.PageNumber],
+            document.Pages[_model.PageNumber],
             new Rectangle(
-                _model.Position.Llx,
-                _model.Position.Lly,
-                _model.Position.Urx,
-                _model.Position.Ury,
-                _model.Position.NormalizeCoordinates))
+                _model.Llx,
+                _model.Lly,
+                _model.Urx,
+                _model.Ury,
+                _model.NormalizeCoordinates))
         {
             Opacity = _model.Opacity
         };
@@ -51,7 +51,7 @@ public class WatermarkAnnotator : IAnnotator
         
         // Add annotation to the page
         document
-            .Pages[_model.Position.PageNumber]
+            .Pages[_model.PageNumber]
             .Annotations
             .Add(annotation);
 

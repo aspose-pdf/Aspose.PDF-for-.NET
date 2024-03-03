@@ -5,7 +5,7 @@ namespace aspose.pdf.annotation.Model;
 [Serializable]
 public class FreeTextModel
 {
-    public PageModel Page { get; set; } = new PageModel();
+    public int PageNumber { get; set; } = 1;
 
     public string Text { get; set; } = "test";
 

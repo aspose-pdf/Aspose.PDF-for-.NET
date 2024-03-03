@@ -28,17 +28,17 @@ public class ScreenAnnotator : IAnnotator
         
         // Create Screen Annotation
         var screenAnnotation = new ScreenAnnotation(
-            document.Pages[_model.Position.PageNumber], 
+            document.Pages[_model.PageNumber], 
             new Rectangle(
-                _model.Position.Llx, 
-                _model.Position.Lly, 
-                _model.Position.Urx,
-                _model.Position.Ury,
-                _model.Position.NormalizeCoordinates),
+                _model.Llx, 
+                _model.Lly, 
+                _model.Urx,
+                _model.Ury,
+                _model.NormalizeCoordinates),
             mediaFile);
         
         document
-            .Pages[_model.Position.PageNumber]
+            .Pages[_model.PageNumber]
             .Annotations
             .Add(screenAnnotation);
 

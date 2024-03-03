@@ -26,36 +26,36 @@ public class PolygonAnnotator : IAnnotator
 
         // Create Polygon Annotation
         var polygonAnnotation = new PolygonAnnotation(
-            document.Pages[_model.Position.PageNumber], 
+            document.Pages[_model.PageNumber], 
             new Rectangle(
-                _model.Position.Llx, 
-                _model.Position.Lly, 
-                _model.Position.Urx,
-                _model.Position.Ury,
-                _model.Position.NormalizeCoordinates),
+                _model.Llx, 
+                _model.Lly, 
+                _model.Urx,
+                _model.Ury,
+                _model.NormalizeCoordinates),
             _model
                 .Points
                 .Select(p => new Point(p.X, p.Y))
                 .ToArray())
         {
-            Title = _model.Title.Title,
-            Subject = _model.Title.Subject,
-            Color = _model.Title.ColorValue,
-            Opacity = _model.Title.Opacity,
+            Title = _model.Title,
+            Subject = _model.Subject,
+            Color = _model.ColorValue,
+            Opacity = _model.Opacity,
             InteriorColor = Color.BlueViolet,
             Popup = new PopupAnnotation(
-                document.Pages[_model.Popup.PageNumber], 
+                document.Pages[_model.PopupPageNumber], 
                 new Rectangle(
-                    _model.Popup.Llx, 
-                    _model.Popup.Lly, 
-                    _model.Popup.Urx,
-                    _model.Popup.Ury,
-                    _model.Popup.NormalizeCoordinates))
+                    _model.PopupLlx, 
+                    _model.PopupLly, 
+                    _model.PopupUrx,
+                    _model.PopupUry,
+                    _model.PopupNormalizeCoordinates))
         };
 
         // Add annotation to the page
         document
-            .Pages[_model.Position.PageNumber]
+            .Pages[_model.PageNumber]
             .Annotations
             .Add(polygonAnnotation);
         

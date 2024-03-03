@@ -37,7 +37,7 @@ public class StampAnnotator : IAnnotator
         
         // Add stamp to particular page
         pdfDocument
-            .Pages[_model.Page.PageNumber]
+            .Pages[_model.PageNumber]
             .AddStamp(imageStamp);
 
         // Save output document

@@ -30,14 +30,14 @@ public class LinkAnnotator : IAnnotator
 
         // Accept the absorber for the 1st page only
         document
-            .Pages[_model.Page.PageNumber]
+            .Pages[_model.PageNumber]
             .Accept(textFragmentAbsorber);
 
         var phoneNumberFragment = textFragmentAbsorber.TextFragments[1];
 
         // Create Link Annotation and set the action to call a phone number
         var linkAnnotation = new LinkAnnotation(
-            document.Pages[_model.Page.PageNumber], 
+            document.Pages[_model.PageNumber], 
             phoneNumberFragment.Rectangle)
         {
             Action = new GoToURIAction(_model.Url)
@@ -45,7 +45,7 @@ public class LinkAnnotator : IAnnotator
 
         // Add annotation to page
         document
-            .Pages[_model.Page.PageNumber]
+            .Pages[_model.PageNumber]
             .Annotations
             .Add(linkAnnotation);
         

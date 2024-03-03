@@ -37,7 +37,7 @@ public class FreeTextAnnotator : IAnnotator
         pdfContentEditor.CreateFreeText(
             rect, 
             _model.Text,
-            _model.Page.PageNumber); // last param is a page number
+            _model.PageNumber); // last param is a page number
         
         pdfContentEditor.Save(Path.Combine(_workFolder, _outputFile));
     }

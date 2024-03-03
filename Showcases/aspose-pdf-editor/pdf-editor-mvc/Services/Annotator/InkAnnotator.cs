@@ -24,25 +24,25 @@ public class InkAnnotator : IAnnotator
         // Load the PDF file
         Document document = new Document(Path.Combine(_workFolder, _inputFile));
         
-        Page page = document.Pages[_model.Position.PageNumber];
+        Page page = document.Pages[_model.PageNumber];
 
         InkAnnotation annotation = new InkAnnotation(
             page, 
             new Rectangle(
-                _model.Position.Llx, 
-                _model.Position.Lly, 
-                _model.Position.Urx,
-                _model.Position.Ury,
-                _model.Position.NormalizeCoordinates),
+                _model.Llx, 
+                _model.Lly, 
+                _model.Urx,
+                _model.Ury,
+                _model.NormalizeCoordinates),
             (IList<Point[]>)new List<Point[]> { _model
                 .Points
                 .Select(p => new Point(p.X, p.Y))
                 .ToArray() })
         {
-            Title = _model.Title.Title,
-            Subject = _model.Title.Subject,
-            Color = _model.Title.ColorValue,
-            Opacity = _model.Title.Opacity,
+            Title = _model.Title,
+            Subject = _model.Subject,
+            Color = _model.ColorValue,
+            Opacity = _model.Opacity,
             CapStyle = _model.CapStyleValue,
         };
         

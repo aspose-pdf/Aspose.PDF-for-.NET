@@ -26,27 +26,27 @@ public class CircleAnnotator : IAnnotator
 
         // Create Cirlce Annotation
         var circleAnnotation = new CircleAnnotation(
-            document.Pages[_model.Position.PageNumber], 
+            document.Pages[_model.PageNumber], 
             new Rectangle(
-                _model.Position.Llx, 
-                _model.Position.Lly, 
-                _model.Position.Urx,
-                _model.Position.Ury,
-                _model.Position.NormalizeCoordinates))
+                _model.Llx, 
+                _model.Lly, 
+                _model.Urx,
+                _model.Ury,
+                _model.NormalizeCoordinates))
         {
-            Title = _model.Title.Title,
-            Subject = _model.Title.Subject,
-            Color = _model.Title.ColorValue,
+            Title = _model.Title,
+            Subject = _model.Subject,
+            Color = _model.ColorValue,
             InteriorColor = _model.InteriorColorValue,
-            Opacity = _model.Title.Opacity,        
+            Opacity = _model.Opacity,        
             Popup = new PopupAnnotation(
-                document.Pages[_model.Popup.PageNumber], 
+                document.Pages[_model.PopupPageNumber], 
                 new Rectangle(
-                    _model.Popup.Llx, 
-                    _model.Popup.Lly, 
-                    _model.Popup.Urx,
-                    _model.Popup.Ury,
-                    _model.Popup.NormalizeCoordinates))
+                    _model.PopupLlx, 
+                    _model.PopupLly, 
+                    _model.PopupUrx,
+                    _model.PopupUry,
+                    _model.PopupNormalizeCoordinates))
         };
 
         // Add annotation to the page

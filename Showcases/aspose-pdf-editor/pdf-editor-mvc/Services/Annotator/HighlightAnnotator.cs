@@ -26,22 +26,22 @@ public class HighlightAnnotator : IAnnotator
         
         var textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber(_model.Text);
         
-        textFragmentAbsorber.Visit(document.Pages[_model.Page.PageNumber]);
+        textFragmentAbsorber.Visit(document.Pages[_model.PageNumber]);
 
         //Create annotations
         HighlightAnnotation highlightAnnotation = new HighlightAnnotation(
-            document.Pages[_model.Page.PageNumber],
+            document.Pages[_model.PageNumber],
             textFragmentAbsorber.TextFragments[1].Rectangle)
         {
-            Title = _model.Title.Title,
-            Subject = _model.Title.Subject,
-            Color = _model.Title.ColorValue,
-            Opacity = _model.Title.Opacity
+            Title = _model.Title,
+            Subject = _model.Subject,
+            Color = _model.ColorValue,
+            Opacity = _model.Opacity
         };
         
         // Add annotation to the page
         document
-            .Pages[_model.Page.PageNumber]
+            .Pages[_model.PageNumber]
             .Annotations
             .Add(highlightAnnotation);
         

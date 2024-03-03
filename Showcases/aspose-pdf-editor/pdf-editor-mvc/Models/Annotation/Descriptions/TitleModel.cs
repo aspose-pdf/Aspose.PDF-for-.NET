@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 namespace aspose.pdf.annotation.Model.Descriptions;
 
 [Serializable]
-public class TitleModel
+public class TitleModel1
 {
     public string Title { get; set; } = "title";
 
