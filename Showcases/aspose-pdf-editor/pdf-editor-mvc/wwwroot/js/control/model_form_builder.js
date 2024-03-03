@@ -65,7 +65,7 @@ function createObjectFromClassName(className) {
     }
 }
 
-function addButtons(formContainer){
+function addButtons(formContainer, applyCallback){
     // Create the button container
     var buttonContainer = document.createElement('div');
     buttonContainer.id = 'buttonContainer';
@@ -97,8 +97,7 @@ function addButtons(formContainer){
     });
 
     applyButton.addEventListener('click', function() {
-    // Handle apply button click
-    console.log('Apply button clicked');
+        applyCallback();
     });
 }
 
@@ -106,7 +105,7 @@ function addButtons(formContainer){
 // Example usage:
 // Assuming 'MyClass' is a class defined somewhere in your code
 // createFormAndInsertIntoDiv('MyClass', 'myFormContainer');
-function createFormAndInsertIntoDiv(id, x, y, className, divId) {
+function createFormAndInsertIntoDiv(applyCallback, id, x, y, className, divId) {
 
     className = className + 'Model';
     divId = divId ? divId : 'annotationForm';
@@ -127,7 +126,7 @@ function createFormAndInsertIntoDiv(id, x, y, className, divId) {
 
     // Create the form from the object and append it to the div
     createFormFromObject(obj, formContainer);
-    addButtons(formContainer);
+    addButtons(formContainer, applyCallback);
 }
 
 // Function to set the value of an object's property based on an input element

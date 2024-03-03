@@ -46,6 +46,9 @@ function putMarker(x, y, className){
     return id;
 }
 
+function postAnnotation(obj, className) {
+}
+
 function annotationSetup(className) {
     let canvas = document.getElementById('imageTemp');
         
@@ -58,7 +61,13 @@ function annotationSetup(className) {
 
         var id = putMarker(x, y, className);
         canvas.removeEventListener("mousedown", PointClick, false);
-        createFormAndInsertIntoDiv(id, x, y, className);
+        createFormAndInsertIntoDiv(
+            function () {
+                var obj = getFilledObjectFromForm(className+'Model', 'annotationForm');
+                postAnnotation(obj, className);
+                document.getElementById('annotationForm').innerHTML = '';
+            },
+         id, x, y, className);
     }
 
     canvas.addEventListener("mousedown", PointClick, false);
