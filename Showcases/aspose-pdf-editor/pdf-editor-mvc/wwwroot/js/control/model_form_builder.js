@@ -65,6 +65,42 @@ function createObjectFromClassName(className) {
     }
 }
 
+function addButtons(formContainer){
+    // Create the button container
+    var buttonContainer = document.createElement('div');
+    buttonContainer.id = 'buttonContainer';
+
+    // Create the Cancel button
+    var cancelButton = document.createElement('button');
+    cancelButton.id = 'cancelButton';
+    cancelButton.className = 'button';
+    cancelButton.textContent = 'Cancel';
+
+    // Create the Apply button
+    var applyButton = document.createElement('button');
+    applyButton.id = 'applyButton';
+    applyButton.className = 'button';
+    applyButton.textContent = 'Apply';
+
+    // Append the buttons to the button container
+    buttonContainer.appendChild(cancelButton);
+    buttonContainer.appendChild(applyButton);
+
+    // Append the button container to the div
+    formContainer.appendChild(buttonContainer);
+
+    // Add event listeners to the buttons
+    cancelButton.addEventListener('click', function() {
+    // Handle cancel button click
+    console.log('Cancel button clicked');
+    });
+
+    applyButton.addEventListener('click', function() {
+    // Handle apply button click
+    console.log('Apply button clicked');
+    });
+}
+
 // Function to create a form from an object and insert it into a div
 // Example usage:
 // Assuming 'MyClass' is a class defined somewhere in your code
@@ -90,6 +126,7 @@ function createFormAndInsertIntoDiv(id, x, y, className, divId) {
 
     // Create the form from the object and append it to the div
     createFormFromObject(obj, formContainer);
+    addButtons(formContainer);
 }
 
 // Function to set the value of an object's property based on an input element
