@@ -57,8 +57,11 @@ function postAnnotation(obj, className) {
         data: JSON.stringify(d), // Stringify the data to send as JSON
         contentType: 'application/json', // Set the content type to JSON
         dataType: 'json',
-        success: function () {
-            // Handle success
+        success: function (data) {
+            documentId = data.documentId;
+            window.folderName = data.documentId;
+            window.fileName = "document.pdf";
+            GetDocumentInfo();
         },
         error: function (xhr, textStatus, error) {
             alertModal('Error: ', xhr, textStatus, error);

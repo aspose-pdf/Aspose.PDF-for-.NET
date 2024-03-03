@@ -23,8 +23,6 @@ public class AnnotationController : Controller
     [Route("add/{documentId}")]
     public async Task<DocInfoModel> Add(string documentId, [FromBody] AnnotationModel model)
     {
-        var httpRequest = HttpContext.Request;
-
         var file = Path.Combine(_storageService.WorkingDirectory, documentId, "document.pdf");
 
         if (model.Caret != null)
