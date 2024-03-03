@@ -92,7 +92,8 @@ function addButtons(formContainer){
     // Add event listeners to the buttons
     cancelButton.addEventListener('click', function() {
     // Handle cancel button click
-    console.log('Cancel button clicked');
+        formContainer.innerHTML = '';
+        document.getElementById(formContainer.dataid).remove();
     });
 
     applyButton.addEventListener('click', function() {
