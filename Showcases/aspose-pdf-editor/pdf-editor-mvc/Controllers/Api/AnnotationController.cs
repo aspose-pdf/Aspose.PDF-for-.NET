@@ -21,7 +21,7 @@ public class AnnotationController : Controller
 
     [HttpPost]
     [Route("add/{documentId}")]
-    public async Task<DocInfoModel> Add(string documentId, AnnotationModel model)
+    public async Task<DocInfoModel> Add(string documentId, [FromBody] AnnotationModel model)
     {
         var httpRequest = HttpContext.Request;
 

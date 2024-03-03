@@ -47,6 +47,26 @@ function putMarker(x, y, className){
 }
 
 function postAnnotation(obj, className) {
+    $('#loadingModal').modal('show');
+    var d = {};
+    d[className] = obj;
+    console.log(d);
+    $.ajax({
+        type: 'POST',
+        url: `${apiBaseUrl}annotation/add/${documentId}`,
+        data: JSON.stringify(d), // Stringify the data to send as JSON
+        contentType: 'application/json', // Set the content type to JSON
+        dataType: 'json',
+        success: function () {
+            // Handle success
+        },
+        error: function (xhr, textStatus, error) {
+            alertModal('Error: ', xhr, textStatus, error);
+        }
+    })
+        .done(function () {
+            $('#loadingModal').modal('hide');
+        });
 }
 
 function annotationSetup(className) {

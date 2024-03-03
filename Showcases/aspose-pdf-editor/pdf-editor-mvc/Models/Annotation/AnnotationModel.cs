@@ -24,7 +24,5 @@ namespace Aspose.PDF.Editor.Models.Annotation
         public TextModel Text { get; set; }
         public UnderlineModel Underline { get; set; }
         public WatermarkModel Watermark { get; set; }
-
-
     }
 }
