@@ -32,7 +32,7 @@ public class WatermarkModel
     {
         get
         {
-            return (Aspose.Pdf.Color)Enum.Parse(typeof(Aspose.Pdf.Color), ForegroundColor);
+            return Aspose.Pdf.Color.Parse(ForegroundColor);
         }
     }
 

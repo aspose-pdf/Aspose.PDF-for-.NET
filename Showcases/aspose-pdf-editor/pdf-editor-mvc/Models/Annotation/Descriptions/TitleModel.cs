@@ -14,8 +14,8 @@ public class TitleModel1
     public Color? ColorValue 
     { 
         get 
-        { 
-            return (Aspose.Pdf.Color)Enum.Parse(typeof(Aspose.Pdf.Color), Color); 
+        {
+            return Aspose.Pdf.Color.Parse(Color);
         } 
     }
 

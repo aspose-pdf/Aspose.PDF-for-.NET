@@ -33,7 +33,7 @@ public class CircleModel
     {
         get
         {
-            return (Aspose.Pdf.Color)Enum.Parse(typeof(Aspose.Pdf.Color), Color);
+            return Aspose.Pdf.Color.Parse(Color);
         }
     }
 
@@ -46,7 +46,7 @@ public class CircleModel
     {
         get
         {
-            return (Aspose.Pdf.Color)Enum.Parse(typeof(Aspose.Pdf.Color), InteriorColor);
+            return Aspose.Pdf.Color.Parse(InteriorColor);
         }
     }
 

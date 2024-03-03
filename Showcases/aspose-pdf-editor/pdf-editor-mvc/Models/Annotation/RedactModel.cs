@@ -29,7 +29,7 @@ public class RedactModel
     {
         get
         {
-            return (Aspose.Pdf.Color)Enum.Parse(typeof(Aspose.Pdf.Color), FillColor);
+            return Aspose.Pdf.Color.Parse(FillColor);
         }
     }
 
@@ -40,7 +40,7 @@ public class RedactModel
     {
         get
         {
-            return (Aspose.Pdf.Color)Enum.Parse(typeof(Aspose.Pdf.Color), BorderColor);
+            return Aspose.Pdf.Color.Parse(BorderColor);
         }
     }
 
@@ -51,7 +51,7 @@ public class RedactModel
     {
         get
         {
-            return (Aspose.Pdf.Color)Enum.Parse(typeof(Aspose.Pdf.Color), Color);
+            return Aspose.Pdf.Color.Parse(Color);
         }
     }
 

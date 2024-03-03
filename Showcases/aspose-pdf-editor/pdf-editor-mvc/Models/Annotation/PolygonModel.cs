@@ -33,7 +33,7 @@ public class PolygonModel
     {
         get
         {
-            return (Aspose.Pdf.Color)Enum.Parse(typeof(Aspose.Pdf.Color), Color);
+            return Aspose.Pdf.Color.Parse(Color);
         }
     }
 
