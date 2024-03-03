@@ -69,7 +69,7 @@ function createObjectFromClassName(className) {
 // Example usage:
 // Assuming 'MyClass' is a class defined somewhere in your code
 // createFormAndInsertIntoDiv('MyClass', 'myFormContainer');
-function createFormAndInsertIntoDiv(x, y, className, divId) {
+function createFormAndInsertIntoDiv(id, x, y, className, divId) {
 
     className = className + 'Model';
     divId = divId ? divId : 'annotationForm';
@@ -80,6 +80,7 @@ function createFormAndInsertIntoDiv(x, y, className, divId) {
 
     // Create a div to hold the form
     var formContainer = document.getElementById(divId);
+    formContainer.dataid = id;
 
     var title = document.createElement('label');
     var titleArray = className.match(/[A-Z][a-z]+/g);

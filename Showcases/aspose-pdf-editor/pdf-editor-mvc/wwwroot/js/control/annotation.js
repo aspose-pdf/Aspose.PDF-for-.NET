@@ -21,35 +21,44 @@ var annotationIcnosDict = {
     "Redact": '<i class="bi bi-eye-slash" style="color:white"></i>',
 };
 
+function putMarker(x, y, className){
+    // Create a new div to hold the icon
+    let iconDiv = document.createElement('div');
+    iconDiv.style.position = 'absolute'; // Make it position: absolute
+    iconDiv.style.pointerEvents = 'none'; // Ensure the icon doesn't interfere with pointer events
+    iconDiv.style.left = x + 'pt'; // Set the icon's left position
+    iconDiv.style.top = y + 'pt'; // Set the icon's top position
+    iconDiv.style.zIndex = 100; // Ensure the icon is above the canvas
+    iconDiv.style.borderRadius = '4pt';
+    iconDiv.style.width = '20pt';
+    iconDiv.style.outline = '4px solid #CCC';
+    iconDiv.style.padding = '2px';
+    iconDiv.style.backgroundColor = '#0d6efd';
+    // Set the icon content
+    iconDiv.innerHTML = annotationIcnosDict[className];
+
+    const id = "id" + Math.random().toString(16).slice(2);
+    iconDiv.id = id;
+    
+    // Append the icon div to the canvas
+    canvas.parentNode.appendChild(iconDiv);
+
+    return id;
+}
+
 function annotationSetup(className) {
     let canvas = document.getElementById('imageTemp');
         
     function PointClick(event) {
         var ctx = canvas.getBoundingClientRect();
 
+        // Get the mouse position relative to the canvas
         var x = event.clientX - ctx.left;
         var y = event.clientY - ctx.top;
+
+        var id = putMarker(x, y, className);
         canvas.removeEventListener("mousedown", PointClick, false);
-        createFormAndInsertIntoDiv(x, y, className);
-
-        // Create a new div to hold the icon
-        let iconDiv = document.createElement('div');
-        iconDiv.style.position = 'absolute'; // Make it position: absolute
-        iconDiv.style.pointerEvents = 'none'; // Ensure the icon doesn't interfere with pointer events
-        iconDiv.style.left = x + 'pt'; // Set the icon's left position
-        iconDiv.style.top = y + 'pt'; // Set the icon's top position
-        iconDiv.style.zIndex = 100; // Ensure the icon is above the canvas
-        iconDiv.style.borderRadius = '4pt';
-        iconDiv.style.width = '20pt';
-        iconDiv.style.outline = '4px solid #CCC';
-        iconDiv.style.padding = '2px';
-        iconDiv.style.backgroundColor = '#0d6efd';
-        // Set the icon content
-        iconDiv.innerHTML = annotationIcnosDict[className];
-
-        // Append the icon div to the canvas
-        canvas.parentNode.appendChild(iconDiv);
-
+        createFormAndInsertIntoDiv(id, x, y, className);
     }
 
     canvas.addEventListener("mousedown", PointClick, false);
