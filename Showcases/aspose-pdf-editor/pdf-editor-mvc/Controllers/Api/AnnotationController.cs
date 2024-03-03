@@ -1,13 +1,7 @@
-using Aspose.Pdf;
-using Aspose.Pdf.Facades;
 using Microsoft.AspNetCore.Mvc;
 using Aspose.PDF.Editor.Models;
 using Aspose.PDF.Editor.Services.Interface;
-using Aspose.Pdf.Annotations;
 using Aspose.PDF.Editor.Models.Annotation;
-using Aspose.PDF.Editor.Services;
-using System;
-using System.Runtime.InteropServices;
 using aspose.pdf.annotation;
 
 namespace Aspose.PDF.Editor.Controllers;
