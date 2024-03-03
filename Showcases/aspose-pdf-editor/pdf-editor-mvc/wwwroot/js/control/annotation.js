@@ -50,7 +50,7 @@ function postAnnotation(obj, className) {
     $('#loadingModal').modal('show');
     var d = {};
     d[className] = obj;
-    console.log(d);
+    console.log(JSON.stringify(d));
     $.ajax({
         type: 'POST',
         url: `${apiBaseUrl}annotation/add/${documentId}`,

@@ -45,19 +45,18 @@ function setPosition(obj, x, y, pageNumber) {
 }
 
 function PageModel(pageNumber) {
-    this.pageNumber = pageNumber !== undefined ? pageNumber : 1;
+    this.PageNumber = pageNumber !== undefined ? PageNumber : 1;
 }
 
 // PagePositionModel constructor function that inherits from PageModel
 function PagePositionModel(pageNumber, llx, lly, urx, ury) {
-    // Call the PageModel constructor to initialize the base properties
-    PageModel.call(this, pageNumber);
+    this.PageNumber = pageNumber !== undefined ? PageNumber : 1;
 
     // Initialize PagePositionModel properties with default values or provided values
-    this.llx = llx !== undefined ? llx : 10;
-    this.lly = lly !== undefined ? lly : 10;
-    this.urx = urx !== undefined ? urx : 20;
-    this.ury = ury !== undefined ? ury : 20;
+    this.Llx = llx !== undefined ? llx : 10;
+    this.Lly = lly !== undefined ? lly : 10;
+    this.Urx = urx !== undefined ? urx : 20;
+    this.Ury = ury !== undefined ? ury : 20;
 }
 
 function PointModel(x, y) {

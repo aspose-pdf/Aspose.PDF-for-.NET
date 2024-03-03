@@ -3,12 +3,12 @@ function createFormField(property, value) {
     var div = document.createElement('div');
     var label = document.createElement('label');
     var input = document.createElement('input');
+    input.datakey = property;
     label.style.width = 100 + 'pt';
 
     // Set the label text to the property name
     var titleArray = property.match(/[A-Z][a-z]+/g);
-    var property = property.replace(/([a-zA-Z])(?=[A-Z])/g, '$1 ').toLowerCase();
-    label.textContent =property;
+    label.textContent = property.replace(/([a-zA-Z])(?=[A-Z])/g, '$1 ').toLowerCase();
 
     // Set the input type and value based on the data type
     if (typeof value === 'boolean') {
@@ -156,7 +156,7 @@ function gatherFormFields(obj, parentElement) {
     var inputs = parentElement.getElementsByTagName('input');
     for (var i = 0; i < inputs.length; i++) {
         var input = inputs[i];
-        var property = input.previousSibling.textContent;
+        var property = input.datakey;
         setValueFromInput(obj, property, input);
     }
 
@@ -186,7 +186,8 @@ function gatherFormFields(obj, parentElement) {
 // console.log(filledObject);
 function getFilledObjectFromForm(className, formId) {
     // Create the object from the class name
-    var obj = createObjectFromClassName(className);
+    console.log(createObjectFromClassName(className));
+    var obj = {};
 
     // Get the form container by its ID
     var formContainer = document.getElementById(formId);
