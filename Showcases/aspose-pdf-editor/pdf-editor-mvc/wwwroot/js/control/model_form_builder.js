@@ -3,9 +3,12 @@ function createFormField(property, value) {
     var div = document.createElement('div');
     var label = document.createElement('label');
     var input = document.createElement('input');
+    label.style.width = 100 + 'pt';
 
     // Set the label text to the property name
-    label.textContent = property;
+    var titleArray = property.match(/[A-Z][a-z]+/g);
+    var property = property.replace(/([a-zA-Z])(?=[A-Z])/g, '$1 ').toLowerCase();
+    label.textContent =property;
 
     // Set the input type and value based on the data type
     if (typeof value === 'boolean') {
@@ -29,26 +32,23 @@ function createFormField(property, value) {
 }
 
 // Function to create a form from an object
-// Create the form and append it to the body
-// var formContainer = document.createElement('div');
-// createFormFromObject(dataObject, formContainer);
-// document.body.appendChild(formContainer);
 function createFormFromObject(obj, parentElement) {
     for (var property in obj) {
         if (obj.hasOwnProperty(property)) {
             var value = obj[property];
-            var formField = createFormField(property, value);
-            parentElement.appendChild(formField);
-
+            
             // If the value is an object or array, recurse
             if (typeof value === 'object' && value !== null) {
                 if (Array.isArray(value)) {
                     value.forEach(function(item) {
-                        createFormFromObject(item, formField);
+                        createFormFromObject(item, parentElement);
                     });
                 } else {
-                    createFormFromObject(value, formField);
+                    createFormFromObject(value, parentElement);
                 }
+            }else{
+                var formField = createFormField(property, value);
+                parentElement.appendChild(formField);    
             }
         }
     }
@@ -76,10 +76,15 @@ function createFormAndInsertIntoDiv(className, divId) {
 
     // Create the object from the class name
     var obj = createObjectFromClassName(className);
-    console.log(obj);
 
     // Create a div to hold the form
     var formContainer = document.getElementById(divId);
+
+    var title = document.createElement('label');
+    var titleArray = className.match(/[A-Z][a-z]+/g);
+    titleArray = titleArray.slice(0, titleArray.length - 1);
+    title.textContent = titleArray.join(' ');
+    formContainer.appendChild(title);    
 
     // Create the form from the object and append it to the div
     createFormFromObject(obj, formContainer);

@@ -3,7 +3,7 @@ function PageModel(pageNumber) {
 }
 
 // PagePositionModel constructor function that inherits from PageModel
-function PagePositionModel(pageNumber, llx, lly, urx, ury, normalizeCoordinates) {
+function PagePositionModel(pageNumber, llx, lly, urx, ury) {
     // Call the PageModel constructor to initialize the base properties
     PageModel.call(this, pageNumber);
 
@@ -12,7 +12,6 @@ function PagePositionModel(pageNumber, llx, lly, urx, ury, normalizeCoordinates)
     this.lly = lly !== undefined ? lly : 10;
     this.urx = urx !== undefined ? urx : 20;
     this.ury = ury !== undefined ? ury : 20;
-    this.normalizeCoordinates = normalizeCoordinates !== undefined ? normalizeCoordinates : true;
 }
 
 function PointModel(x, y) {
