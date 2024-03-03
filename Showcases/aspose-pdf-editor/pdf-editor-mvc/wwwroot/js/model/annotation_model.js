@@ -1,3 +1,49 @@
+function setPosition(obj, x, y, pageNumber) {
+    // Check if the object has a 'pageNumber' field and set it if provided
+    
+    if (obj.hasOwnProperty('Page')) {
+        obj.Page.pageNumber = pageNumber !== undefined ? pageNumber : obj.Page.pageNumber;
+    }
+
+    if (obj.hasOwnProperty('X')) {
+        obj.X = x !== undefined ? x : obj.X;
+    }
+
+    if (obj.hasOwnProperty('Y')) {
+        obj.Y = y !== undefined ? y : obj.Y;
+    }
+
+    if (obj.hasOwnProperty('XIndent')) {
+        obj.XIndent = x !== undefined ? x : obj.XIndent;
+    }
+
+    if (obj.hasOwnProperty('YIndent')) {
+        obj.YIndent = y !== undefined ? y : obj.YIndent;
+    }
+
+    if (obj.hasOwnProperty('Points')) {
+        obj.Points = [ new PointModel(x, y) ];
+    }
+
+    // Check if the object has a 'Position' field and set its properties if provided
+    if (obj.hasOwnProperty('Position')) {
+        if (obj.Position.hasOwnProperty('pageNumber')) {
+            obj.Position.pageNumber = pageNumber !== undefined ? pageNumber : obj.Position.pageNumber;
+        }
+        obj.Position.llx = x !== undefined ? x : obj.Position.llx;
+        obj.Position.lly = y !== undefined ? y : obj.Position.lly;
+        obj.Position.urx = x !== undefined ? x + 100 : obj.Position.urx;
+        obj.Position.ury = y !== undefined ? y + 100 : obj.Position.ury;
+    }
+
+    if (obj.hasOwnProperty('Popup')) {
+        obj.Popup.llx = x !== undefined ? x : obj.Popup.llx;
+        obj.Popup.lly = y !== undefined ? y : obj.Popup.lly;
+        obj.Popup.urx = x !== undefined ? x + 100 : obj.Popup.urx;
+        obj.Popup.ury = y !== undefined ? y + 100 : obj.Popup.ury;
+    }
+}
+
 function PageModel(pageNumber) {
     this.pageNumber = pageNumber !== undefined ? pageNumber : 1;
 }
