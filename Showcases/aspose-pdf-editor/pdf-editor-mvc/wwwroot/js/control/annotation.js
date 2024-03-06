@@ -84,13 +84,18 @@ function annotationSetup(className) {
 
         var id = putMarker(x, y, className);
         canvas.removeEventListener("mousedown", PointClick, false);
+        
+        let ARect = canvas.getBoundingClientRect();
+        var mouseX = (event.clientX - ARect.left) * (canvas.width / ARect.width);
+        var mouseY = (event.clientY - ARect.top) * (canvas.height / ARect.height);
+
         createFormAndInsertIntoDiv(
             function () {
                 var obj = getFilledObjectFromForm(className+'Model', 'annotationForm');
                 postAnnotation(obj, className);
                 document.getElementById('annotationForm').innerHTML = '';
             },
-         id, x, y, className);
+         id, Math.round(mouseX * 0.58), Math.round((913 - mouseY)), className);
     }
 
     canvas.addEventListener("mousedown", PointClick, false);
