@@ -94,10 +94,54 @@ function addButtons(formContainer, applyCallback){
     // Handle cancel button click
         formContainer.innerHTML = '';
         document.getElementById(formContainer.dataid).remove();
+        
+          document.getElementById('btnLine').disabled = false;
+          document.getElementById('btnSquare').disabled = false;
+          document.getElementById('btnCircle').disabled = false;
+          document.getElementById('btnPolygon').disabled = false;
+          document.getElementById('btnPolyLine').disabled = false;
+          document.getElementById('btnInk').disabled = false;
+          document.getElementById('btnHighlight').disabled = false;
+          document.getElementById('btnUnderline').disabled = false;
+          document.getElementById('btnSquiggly').disabled = false;
+          document.getElementById('btnStrikeOut').disabled = false;
+          document.getElementById('btnStamp').disabled = false;
+          document.getElementById('btnCaret').disabled = false;
+          document.getElementById('btnWatermark').disabled = false;
+          document.getElementById('btnSound').disabled = false;
+          document.getElementById('btnMovie').disabled = false;
+          document.getElementById('btnScreen').disabled = false;
+          document.getElementById('btnText').disabled = false;
+          document.getElementById('btnLink').disabled = false;
+          document.getElementById('btnFreeText').disabled = false;
+          document.getElementById('btnRedact').disabled = false;
+          document.getElementById('btnUnderline').disabled = false;
     });
 
     applyButton.addEventListener('click', function() {
         applyCallback();
+        
+          document.getElementById('btnLine').disabled = false;
+          document.getElementById('btnSquare').disabled = false;
+          document.getElementById('btnCircle').disabled = false;
+          document.getElementById('btnPolygon').disabled = false;
+          document.getElementById('btnPolyLine').disabled = false;
+          document.getElementById('btnInk').disabled = false;
+          document.getElementById('btnHighlight').disabled = false;
+          document.getElementById('btnUnderline').disabled = false;
+          document.getElementById('btnSquiggly').disabled = false;
+          document.getElementById('btnStrikeOut').disabled = false;
+          document.getElementById('btnStamp').disabled = false;
+          document.getElementById('btnCaret').disabled = false;
+          document.getElementById('btnWatermark').disabled = false;
+          document.getElementById('btnSound').disabled = false;
+          document.getElementById('btnMovie').disabled = false;
+          document.getElementById('btnScreen').disabled = false;
+          document.getElementById('btnText').disabled = false;
+          document.getElementById('btnLink').disabled = false;
+          document.getElementById('btnFreeText').disabled = false;
+          document.getElementById('btnRedact').disabled = false;
+          document.getElementById('btnUnderline').disabled = false;
     });
 }
 

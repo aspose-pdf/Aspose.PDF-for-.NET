@@ -95,7 +95,30 @@ function annotationSetup(className) {
                 postAnnotation(obj, className);
                 document.getElementById('annotationForm').innerHTML = '';
             },
-         id, Math.round(mouseX * 0.58), Math.round((913 - mouseY)), className);
+         id, Math.round(mouseX * 0.58), Math.round((913 - mouseY) * 0.8), className);
+         
+         
+          document.getElementById('btnLine').disabled = true;
+          document.getElementById('btnSquare').disabled = true;
+          document.getElementById('btnCircle').disabled = true;
+          document.getElementById('btnPolygon').disabled = true;
+          document.getElementById('btnPolyLine').disabled = true;
+          document.getElementById('btnInk').disabled = true;
+          document.getElementById('btnHighlight').disabled = true;
+          document.getElementById('btnUnderline').disabled = true;
+          document.getElementById('btnSquiggly').disabled = true;
+          document.getElementById('btnStrikeOut').disabled = true;
+          document.getElementById('btnStamp').disabled = true;
+          document.getElementById('btnCaret').disabled = true;
+          document.getElementById('btnWatermark').disabled = true;
+          document.getElementById('btnSound').disabled = true;
+          document.getElementById('btnMovie').disabled = true;
+          document.getElementById('btnScreen').disabled = true;
+          document.getElementById('btnText').disabled = true;
+          document.getElementById('btnLink').disabled = true;
+          document.getElementById('btnFreeText').disabled = true;
+          document.getElementById('btnRedact').disabled = true;
+          document.getElementById('btnUnderline').disabled = true;
     }
 
     canvas.addEventListener("mousedown", PointClick, false);
