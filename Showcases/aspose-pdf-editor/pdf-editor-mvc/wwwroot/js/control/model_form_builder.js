@@ -41,7 +41,7 @@ function createFormFromArray(arr, parentElement, prefix) {
     }
     else
     {
-        var formField = createFormField(prefix+"_"+property+ i, value, i);
+        var formField = createFormField(prefix+"_"+ i, value, i);
         parentElement.appendChild(formField);
     }
   }
@@ -137,20 +137,31 @@ function setArrayFromInput(obj, property, input, index, prop) {
           default:
               value = input.value;
       }
-    
-    var className = property == "Points" ? 'PointModel' : property + 'Model';
-      var ClassConstructor = window[className];
-      if(obj[property] == null){        
-        if (typeof ClassConstructor === 'function') {
-            obj[property] = [new ClassConstructor()];
-        } else {
-            throw new Error('Class ' + className + ' not found.');
+
+    if (typeof (prop) == "undefined" || prop == null || prop.length == 0) {
+        if (obj[property] == null) {
+            obj[property] = ["test"];
         }
-      }
-      if(obj[property].length <= index){
-          obj[property].push(new ClassConstructor());
-      }
-      obj[property][index][prop] = value;
+        if (obj[property].length <= index) {
+            obj[property].push(value);
+        }
+        obj[property][index] = value;
+    }
+    else {
+        var className = property == "Points" ? 'PointModel' : property + 'Model';
+        var ClassConstructor = window[className];
+        if (obj[property] == null) {
+            if (typeof ClassConstructor === 'function') {
+                obj[property] = [new ClassConstructor()];
+            } else {
+                throw new Error('Class ' + className + ' not found.');
+            }
+        }
+        if (obj[property].length <= index) {
+            obj[property].push(new ClassConstructor());
+        }
+        obj[property][index][prop] = value;
+    }
 }
 
 // Function to gather all form fields and set their values to the object
