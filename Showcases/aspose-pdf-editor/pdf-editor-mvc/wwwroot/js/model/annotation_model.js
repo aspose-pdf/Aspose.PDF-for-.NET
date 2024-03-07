@@ -63,7 +63,7 @@ function InkModel() {
     this.Color = "Aqua";
     this.Opacity = 0.5;
     this.Points = [new PointModel(10, 10), new PointModel(20, 20)];
-    this.Border = border || 5;
+    this.Border = 5;
     this.CapStyle = "Rounded";
 }
 
@@ -77,14 +77,16 @@ function LineModel() {
     this.Subject = "subject";
     this.Color = "Aqua";
     this.Opacity = 0.5;
-    this.Start = new PointModel(10, 10);
-    this.End = new PointModel(20, 20);
+    this.StartX = 10;
+    this.StartY = 10;
+    this.EndX = 20;
+    this.EndY = 20;
     this.PopupPageNumber = 1;
     this.PopupLlx = 10;
     this.PopupLly = 10;
     this.PopupUrx = 20;
     this.PopupUry = 20;
-    this.Width = width || 50;
+    this.Width = 50;
     this.StartingStyle = "Circle";
     this.EndingStyle = "ClosedArrow";
 }
@@ -201,14 +203,14 @@ function SquigglyModel() {
 
 function StampModel() {
     this.PageNumber = 1;
-    this.ImageFile = imageFile || "test.bmp";
-    this.Background = background || true;
-    this.XIndent = xIndent || 10;
-    this.YIndent = yIndent || 10;
-    this.Height = height || 50;
-    this.Width = width || 50;
-    this.Rotate = rotate || "on90";
-    this.Opacity = opacity || 0.5;
+    this.ImageFile = "test.bmp";
+    this.Background = true;
+    this.XIndent = 10;
+    this.YIndent = 10;
+    this.Height = 50;
+    this.Width = 50;
+    this.Rotate = "on90";
+    this.Opacity = 0.5;
 }
 
 function StrikeOutModel() {

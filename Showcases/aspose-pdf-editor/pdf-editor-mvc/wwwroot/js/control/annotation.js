@@ -39,6 +39,16 @@ function setPosition(obj, x, y, pageNumber) {
     if (obj.hasOwnProperty('Y')) {
         obj.Y = y !== undefined ? y : obj.Y;
     }
+    
+    if (obj.hasOwnProperty('StartX')) {
+        obj.StartX = x !== undefined ? x : obj.StartX;
+        this.EndX = obj.StartX + 20;
+    }
+    
+    if (obj.hasOwnProperty('StartY')) {
+        obj.StartY = y !== undefined ? y : obj.StartY;
+        this.EndY = obj.StartY + 20;
+    }
 
     if (obj.hasOwnProperty('XIndent')) {
         obj.XIndent = x !== undefined ? x : obj.XIndent;

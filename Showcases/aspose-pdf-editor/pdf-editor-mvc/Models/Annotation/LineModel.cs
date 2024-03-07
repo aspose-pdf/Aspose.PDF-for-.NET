@@ -42,9 +42,13 @@ public class LineModel
 
     public double Opacity { get; set; } = 0.5;
 
-    public PointModel Start { get; set; } = new PointModel { X = 10, Y = 10 };
+    public double StartX { get; set; }  = 10;
+    
+    public double StartY { get; set; }  = 10;
 
-    public PointModel End { get; set; } = new PointModel { X = 20, Y = 20 };
+    public double EndX { get; set; } = 20;
+    
+    public double EndY { get; set; } = 20;
 
     public int PopupPageNumber { get; set; } = 1;
 

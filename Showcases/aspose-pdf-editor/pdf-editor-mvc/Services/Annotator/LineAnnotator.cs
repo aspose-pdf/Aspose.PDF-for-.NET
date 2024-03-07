@@ -33,8 +33,8 @@ public class LineAnnotator : IAnnotator
                 _model.Urx,
                 _model.Ury,
                 _model.NormalizeCoordinates),
-            new Point(_model.Start.X, _model.Start.Y), 
-            new Point(_model.End.X, _model.End.Y))
+            new Point(_model.StartX, _model.StartY), 
+            new Point(_model.EndX, _model.EndY))
         {
             Title = _model.Title,
             Subject = _model.Subject,
