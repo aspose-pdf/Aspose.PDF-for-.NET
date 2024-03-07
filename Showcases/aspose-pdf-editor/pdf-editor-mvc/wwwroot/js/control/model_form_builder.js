@@ -146,12 +146,11 @@ function setArrayFromInput(obj, property, input, index, prop) {
         } else {
             throw new Error('Class ' + className + ' not found.');
         }
-      }else {
-        if(obj[property].length <= index){
-          obj[property].push(new ClassConstructor());
-        }
-        obj[property][index][prop] = value;
       }
+      if(obj[property].length <= index){
+          obj[property].push(new ClassConstructor());
+      }
+      obj[property][index][prop] = value;
 }
 
 // Function to gather all form fields and set their values to the object
