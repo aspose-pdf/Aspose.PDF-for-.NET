@@ -21,6 +21,66 @@ var annotationIcnosDict = {
     "Redact": '<i class="bi bi-eye-slash" style="color:white"></i>',
 };
 
+function setPosition(obj, x, y, pageNumber) {
+    // Check if the object has a 'pageNumber' field and set it if provided
+    
+    if (obj.hasOwnProperty('PageNumber')) {
+        obj.PageNumber = pageNumber !== undefined ? pageNumber : obj.PageNumber;
+    }
+    
+    if (obj.hasOwnProperty('PopupPageNumber')) {
+        obj.PopupPageNumber = pageNumber !== undefined ? pageNumber : obj.PopupPageNumber;
+    }
+    
+    if (obj.hasOwnProperty('X')) {
+        obj.X = x !== undefined ? x : obj.X;
+    }
+
+    if (obj.hasOwnProperty('Y')) {
+        obj.Y = y !== undefined ? y : obj.Y;
+    }
+
+    if (obj.hasOwnProperty('XIndent')) {
+        obj.XIndent = x !== undefined ? x : obj.XIndent;
+    }
+
+    if (obj.hasOwnProperty('YIndent')) {
+        obj.YIndent = y !== undefined ? y : obj.YIndent;
+    }
+
+    if (obj.hasOwnProperty('Points')) {
+        if(obj.Points.length == 1)
+        {
+          obj.Points = [ new PointModel(x, y) ];
+        }
+        else
+        {
+          obj.Points = [ new PointModel(x, y), new PointModel(x + 10, y + 10) ];
+        }
+        console.log(obj.Points);
+    }
+    
+    if (obj.hasOwnProperty('Llx')) {
+        obj.Llx = x !== undefined ? x : obj.Llx;
+        obj.Urx = obj.Llx + 10;
+    }
+    
+    if (obj.hasOwnProperty('Lly')) {
+        obj.Lly = y !== undefined ? y : obj.Lly;
+        obj.Ury = obj.Lly + 10;
+    }
+    
+    if (obj.hasOwnProperty('PopupLlx')) {
+        obj.PopupLlx = x !== undefined ? x : obj.PopupLlx;
+        obj.PopupUrx = obj.PopupLlx + 10;
+    }
+    
+    if (obj.hasOwnProperty('PopupLly')) {
+        obj.PopupLly = y !== undefined ? y : obj.PopupLly;
+        obj.PopupUry = obj.PopupLly + 10;
+    }
+}
+
 function toogleAnnotationToolbar(disabled)
 {
           document.getElementById('btnLine').disabled = disabled;
@@ -143,13 +203,15 @@ function annotationSetup(className) {
         var ctx = canvas.getBoundingClientRect();
 
         // Get the mouse position relative to the canvas
-        var x = event.clientX - ctx.left;
-        var y = event.clientY - ctx.top;
+        
+        let ARect = canvas.getBoundingClientRect();
+        
+        var x = (event.clientX - ARect.left) * (canvas.width / ARect.width);
+        var y = (event.clientY - ARect.top) * (canvas.height / ARect.height);
 
         var id = putMarker(x, y, className);
         canvas.removeEventListener("mousedown", PointClick, false);
         
-        let ARect = canvas.getBoundingClientRect();
         let mouseX = (event.clientX - ARect.left) * (canvas.width / ARect.width);
         let mouseY = canvas.height - (event.clientY - ARect.top) * (canvas.height / ARect.height);
         

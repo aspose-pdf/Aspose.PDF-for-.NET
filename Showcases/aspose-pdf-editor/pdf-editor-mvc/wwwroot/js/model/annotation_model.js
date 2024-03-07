@@ -1,84 +1,32 @@
-function setPosition(obj, x, y, pageNumber) {
-    // Check if the object has a 'pageNumber' field and set it if provided
-    
-    if (obj.hasOwnProperty('PageNumber')) {
-        obj.PageNumber = pageNumber !== undefined ? pageNumber : obj.PageNumber;
-    }
-    
-    if (obj.hasOwnProperty('PopupPageNumber')) {
-        obj.PopupPageNumber = pageNumber !== undefined ? pageNumber : obj.PopupPageNumber;
-    }
-    
-    if (obj.hasOwnProperty('X')) {
-        obj.X = x !== undefined ? x : obj.X;
-    }
-
-    if (obj.hasOwnProperty('Y')) {
-        obj.Y = y !== undefined ? y : obj.Y;
-    }
-
-    if (obj.hasOwnProperty('XIndent')) {
-        obj.XIndent = x !== undefined ? x : obj.XIndent;
-    }
-
-    if (obj.hasOwnProperty('YIndent')) {
-        obj.YIndent = y !== undefined ? y : obj.YIndent;
-    }
-
-    if (obj.hasOwnProperty('Points')) {
-        obj.Points = [ new PointModel(x, y) ];
-    }
-    
-    if (obj.hasOwnProperty('Llx')) {
-        obj.Llx = x !== undefined ? x : obj.Llx;
-        obj.Urx = obj.Llx + 10;
-    }
-    
-    if (obj.hasOwnProperty('Lly')) {
-        obj.Lly = y !== undefined ? y : obj.Lly;
-        obj.Ury = obj.Lly + 10;
-    }
-    
-    if (obj.hasOwnProperty('PopupLlx')) {
-        obj.PopupLlx = x !== undefined ? x : obj.PopupLlx;
-        obj.PopupUrx = obj.PopupLlx + 10;
-    }
-    
-    if (obj.hasOwnProperty('PopupLly')) {
-        obj.PopupLly = y !== undefined ? y : obj.PopupLly;
-        obj.PopupUry = obj.PopupLly + 10;
-    }
-}
-
 function PointModel(x, y) {
     this.X = x;
     this.Y = y;
 }
 
-function CaretModel(position, title, flags) {
+function CaretModel() {
     this.PageNumber = 1;
     this.Llx = 10;
     this.Lly = 10;
     this.Urx = 20;
     this.Ury = 20;
-    this.Title = title !== undefined ? title : "title";
+    this.Title = "title";
     this.Subject = "subject";
     this.Color = "Aqua";
     this.Opacity = 0.5;
-    this.Flags = flags || "Default";
+    this.Flags = "Default";
 }
 
-function CircleModel(position, title, interiorColor, popup) {
+function CircleModel() {
     this.PageNumber = 1;
     this.Llx = 10;
     this.Lly = 10;
     this.Urx = 20;
     this.Ury = 20;
-    this.Title = title !== undefined ? title : "title";
+    this.Title = "title";
     this.Subject = "subject";
     this.Color = "Aqua";
     this.Opacity = 0.5;
-    this.InteriorColor = interiorColor || "Aqua";
+    this.InteriorColor = "Aqua";
     this.PopupPageNumber = 1;
     this.PopupLlx = 10;
     this.PopupLly = 10;
@@ -86,83 +34,83 @@ function CircleModel(position, title, interiorColor, popup) {
     this.PopupUry = 20;
 }
 
-function FreeTextModel(page, text, x, y, width, height) {
+function FreeTextModel() {
     this.PageNumber = 1;
-    this.Text = text || "test";
-    this.X = x || 10;
-    this.Y = y || 10;
-    this.Width = width || 50;
-    this.Height = height || 50;
+    this.Text = "test";
+    this.X = 10;
+    this.Y = 10;
+    this.Width = 50;
+    this.Height = 50;
 }
 
-function HighlightModel(page, title, text) {
+function HighlightModel() {
     this.PageNumber = 1;
-    this.Title = title !== undefined ? title : "title";
+    this.Title = "title";
     this.Subject = "subject";
     this.Color = "Aqua";
     this.Opacity = 0.5;
-    this.Text = text || "Test data";
+    this.Text = "Test data";
 }
 
-function InkModel(position, title, points, border, capStyle) {
+function InkModel() {
     this.PageNumber = 1;
     this.Llx = 10;
     this.Lly = 10;
     this.Urx = 20;
     this.Ury = 20;
-    this.Title = title !== undefined ? title : "title";
+    this.Title = "title";
     this.Subject = "subject";
     this.Color = "Aqua";
     this.Opacity = 0.5;
-    this.Points = points || [new PointModel(10, 10), new PointModel(20, 20)];
+    this.Points = [new PointModel(10, 10), new PointModel(20, 20)];
     this.Border = border || 5;
-    this.CapStyle = capStyle || "Rounded";
+    this.CapStyle = "Rounded";
 }
 
-function LineModel(position, title, start, end, popup, width, startingStyle, endingStyle) {
+function LineModel() {
     this.PageNumber = 1;
     this.Llx = 10;
     this.Lly = 10;
     this.Urx = 20;
     this.Ury = 20;
-    this.Title = title !== undefined ? title : "title";
+    this.Title = "title";
     this.Subject = "subject";
     this.Color = "Aqua";
     this.Opacity = 0.5;
-    this.Start = start || new PointModel(10, 10);
-    this.End = end || new PointModel(20, 20);
+    this.Start = new PointModel(10, 10);
+    this.End = new PointModel(20, 20);
     this.PopupPageNumber = 1;
     this.PopupLlx = 10;
     this.PopupLly = 10;
     this.PopupUrx = 20;
     this.PopupUry = 20;
     this.Width = width || 50;
-    this.StartingStyle = startingStyle || "Circle";
-    this.EndingStyle = endingStyle || "ClosedArrow";
+    this.StartingStyle = "Circle";
+    this.EndingStyle = "ClosedArrow";
 }
 
-function LinkModel(page, text, url) {
+function LinkModel() {
     this.PageNumber = 1;
-    this.Text = text || "Test data";
-    this.Url = url || "http://google.com";
+    this.Text = "Test data";
+    this.Url = "http://google.com";
 }
 
-function MovieModel(position, mediaFile) {
-    this.PageNumber = 1;
-    this.Llx = 10;
-    this.Lly = 10;
-    this.Urx = 20;
-    this.Ury = 20;
-    this.MediaFile = mediaFile || "test.avi";
-}
-
-function PolygonModel(position, title, popup, points) {
+function MovieModel() {
     this.PageNumber = 1;
     this.Llx = 10;
     this.Lly = 10;
     this.Urx = 20;
     this.Ury = 20;
-    this.Title = title !== undefined ? title : "title";
+    this.MediaFile = "test.avi";
+}
+
+function PolygonModel() {
+    this.PageNumber = 1;
+    this.Llx = 10;
+    this.Lly = 10;
+    this.Urx = 20;
+    this.Ury = 20;
+    this.Title = "title";
     this.Subject = "subject";
     this.Color = "Aqua";
     this.Opacity = 0.5;
@@ -171,16 +119,16 @@ function PolygonModel(position, title, popup, points) {
     this.PopupLly = 10;
     this.PopupUrx = 20;
     this.PopupUry = 20;
-    this.Points = points || [new PointModel(10, 10), new PointModel(20, 20), new PointModel(30, 20)];
+    this.Points = [new PointModel(10, 10), new PointModel(20, 20), new PointModel(30, 20)];
 }
 
-function PolyLineModel(position, title, popup, points) {
+function PolyLineModel() {
     this.PageNumber = 1;
     this.Llx = 10;
     this.Lly = 10;
     this.Urx = 20;
     this.Ury = 20;
-    this.Title = title !== undefined ? title : "title";
+    this.Title = "title";
     this.Subject = "subject";
     this.Color = "Aqua";
     this.Opacity = 0.5;
@@ -189,48 +137,48 @@ function PolyLineModel(position, title, popup, points) {
     this.PopupLly = 10;
     this.PopupUrx = 20;
     this.PopupUry = 20;
-    this.Points = points || [new PointModel(10, 10), new PointModel(20, 20), new PointModel(30, 20)];
+    this.Points = [new PointModel(10, 10), new PointModel(20, 20), new PointModel(30, 20)];
 }
 
-function RedactModel(position, fillColor, borderColor, color, overlayText, textAlignment, repeat) {
+function RedactModel() {
     this.PageNumber = 1;
     this.Llx = 10;
     this.Lly = 10;
     this.Urx = 20;
     this.Ury = 20;
-    this.FillColor = fillColor || "Aqua";
-    this.BorderColor = borderColor || "Black";
-    this.Color = color || "Beige";
-    this.OverlayText = overlayText || "CENSORED";
-    this.TextAlignment = textAlignment || "Center";
-    this.Repeat = repeat || true;
+    this.FillColor = "Aqua";
+    this.BorderColor = "Black";
+    this.Color = "Beige";
+    this.OverlayText = "CENSORED";
+    this.TextAlignment = "Center";
+    this.Repeat = true;
 }
 
-function ScreenModel(position, mediaFile) {
+function ScreenModel() {
     this.PageNumber = 1;
     this.Llx = 10;
     this.Lly = 10;
     this.Urx = 20;
     this.Ury = 20;
-    this.MediaFile = mediaFile || "test.avi";
+    this.MediaFile = "test.avi";
 }
 
-function SoundModel(position, mediaFile) {
+function SoundModel() {
     this.PageNumber = 1;
     this.Llx = 10;
     this.Lly = 10;
     this.Urx = 20;
     this.Ury = 20;
-    this.MediaFile = mediaFile || "test.wav";
+    this.MediaFile = "test.wav";
 }
 
-function SquareModel(position, title, popup, interiorColor) {
+function SquareModel() {
     this.PageNumber = 1;
     this.Llx = 10;
     this.Lly = 10;
     this.Urx = 20;
     this.Ury = 20;
-    this.Title = title !== undefined ? title : "title";
+    this.Title = "title";
     this.Subject = "subject";
     this.Color = "Aqua";
     this.Opacity = 0.5;
@@ -239,19 +187,19 @@ function SquareModel(position, title, popup, interiorColor) {
     this.PopupLly = 10;
     this.PopupUrx = 20;
     this.PopupUry = 20;
-    this.InteriorColor = interiorColor || "Aqua";
+    this.InteriorColor = "Aqua";
 }
 
-function SquigglyModel(page, title, text) {
+function SquigglyModel() {
     this.PageNumber = 1;
-    this.Title = title !== undefined ? title : "title";
+    this.Title = "title";
     this.Subject = "subject";
     this.Color = "Aqua";
     this.Opacity = 0.5;
-    this.Text = text || "Test data";
+    this.Text = "Test data";
 }
 
-function StampModel(page, imageFile, background, xIndent, yIndent, height, width, rotate, opacity) {
+function StampModel() {
     this.PageNumber = 1;
     this.ImageFile = imageFile || "test.bmp";
     this.Background = background || true;
@@ -263,49 +211,49 @@ function StampModel(page, imageFile, background, xIndent, yIndent, height, width
     this.Opacity = opacity || 0.5;
 }
 
-function StrikeOutModel(page, title, text) {
+function StrikeOutModel() {
     this.PageNumber = 1;
-    this.Title = title !== undefined ? title : "title";
+    this.Title = "title";
     this.Subject = "subject";
     this.Color = "Aqua";
     this.Opacity = 0.5;
-    this.Text = text || "Test data";
+    this.Text = "Test data";
 }
 
-function TextModel(position, title, contents, open, icon, border) {
+function TextModel() {
     this.PageNumber = 1;
     this.Llx = 10;
     this.Lly = 10;
     this.Urx = 20;
     this.Ury = 20;
-    this.Title = title !== undefined ? title : "title";
+    this.Title = "title";
     this.Subject = "subject";
     this.Color = "Aqua";
     this.Opacity = 0.5;
-    this.Contents = contents || "test";
-    this.Open = open || true;
-    this.Icon = icon || "Comment";
-    this.Border = border || 5;
+    this.Contents = "test";
+    this.Open = true;
+    this.Icon = "Comment";
+    this.Border = 5;
 }
 
-function UnderlineModel(page, title, text) {
+function UnderlineModel() {
     this.PageNumber = 1;
-    this.Title = title !== undefined ? title : "title";
+    this.Title = "title";
     this.Subject = "subject";
     this.Color = "Aqua";
     this.Opacity = 0.5;
-    this.Text = text || "Test data";
+    this.Text = "Test data";
 }
 
-function WatermarkModel(position, text, opacity, foregroundColor, font, fontSize) {
+function WatermarkModel() {
     this.PageNumber = 1;
     this.Llx = 10;
     this.Lly = 10;
     this.Urx = 20;
     this.Ury = 20;
-    this.Text = text || ["test1", "test2"];
-    this.Opacity = opacity || 0.5;
-    this.ForegroundColor = foregroundColor || "Aqua";
-    this.Font = font || "Arial";
-    this.FontSize = fontSize || 20;
+    this.Text = ["test1", "test2"];
+    this.Opacity = 0.5;
+    this.ForegroundColor = "Aqua";
+    this.Font = "Arial";
+    this.FontSize = 20;
 }
