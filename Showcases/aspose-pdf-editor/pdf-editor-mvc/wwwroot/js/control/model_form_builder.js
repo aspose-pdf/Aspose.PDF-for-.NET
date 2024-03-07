@@ -37,12 +37,10 @@ function createFormFromArray(arr, parentElement, prefix) {
     var value = arr[i];
       
     if (typeof value === 'object' && value !== null) {
-        console.log("p:" +i+":");
         createFormFromObject(value, parentElement,i, prefix+'_');
     }
     else
     {
-        console.log("f:" +i+":");
         var formField = createFormField(prefix+"_"+property+ i, value, i);
         parentElement.appendChild(formField);
     }
@@ -112,19 +110,48 @@ function createFormAndInsertIntoDiv(applyCallback, id, x, y, className, divId) {
 }
 
 // Function to set the value of an object's property based on an input element
-function setValueFromInput(obj, property, input) {
+function setValueFromInput(obj, property, input, index, prop) {
     var value;
     switch (input.type) {
-        case 'checkbox':
-            value = input.checked;
-            break;
-        case 'number':
-            value = parseFloat(input.value);
-            break;
-        default:
-            value = input.value;
-    }
-    obj[property] = value;
+          case 'checkbox':
+              value = input.checked;
+              break;
+          case 'number':
+              value = parseFloat(input.value);
+              break;
+          default:
+              value = input.value;
+      }
+      obj[property] = value;
+}
+
+function setArrayFromInput(obj, property, input, index, prop) {
+    var value;
+    switch (input.type) {
+          case 'checkbox':
+              value = input.checked;
+              break;
+          case 'number':
+              value = parseFloat(input.value);
+              break;
+          default:
+              value = input.value;
+      }
+    
+    var className = property == "Points" ? 'PointModel' : property + 'Model';
+      var ClassConstructor = window[className];
+      if(obj[property] == null){        
+        if (typeof ClassConstructor === 'function') {
+            obj[property] = [new ClassConstructor()];
+        } else {
+            throw new Error('Class ' + className + ' not found.');
+        }
+      }else {
+        if(obj[property].length <= index){
+          obj[property].push(new ClassConstructor());
+        }
+        obj[property][index][prop] = value;
+      }
 }
 
 // Function to gather all form fields and set their values to the object
@@ -138,23 +165,19 @@ function gatherFormFields(obj, parentElement) {
     for (var i = 0; i < inputs.length; i++) {
         var input = inputs[i];
         var property = input.datakey;
-        setValueFromInput(obj, property, input);
-    }
-
-    // Recurse for nested objects and arrays
-    for (var property in obj) {
-        if (obj.hasOwnProperty(property)) {
-            var value = obj[property];
-            if (typeof value === 'object' && value !== null) {
-                if (Array.isArray(value)) {
-                    value.forEach(function(item) {
-                        gatherFormFields(item, parentElement);
-                    });
-                } else {
-                    gatherFormFields(value, parentElement);
-                }
-            }
+        if(property.indexOf('_') == -1)
+        {
+          setValueFromInput(obj, property, input);
         }
+        else
+        {
+          var pair = property.split('_');
+          var arrayName = pair[0]; 
+          var index = Number(pair[1].match(/\d+/));
+          var prop = pair[1].replace(index, '');
+          setArrayFromInput(obj, arrayName, input, index, prop);
+        }
+        
     }
 }
 
@@ -178,5 +201,6 @@ function getFilledObjectFromForm(className, formId) {
     // Gather form fields and populate the object
     gatherFormFields(obj, formContainer);
     // Return the filled object
+    console.log(obj);
     return obj;
 }
