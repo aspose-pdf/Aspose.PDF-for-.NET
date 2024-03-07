@@ -31,8 +31,26 @@ function createFormField(property, value) {
     return div;
 }
 
+function createFormFromArray(arr, parentElement, suffix) {
+  console.log(arr);
+  for (var i = 0; i < arr.length; i++) {
+    var value = arr[i];
+      
+    if (typeof value === 'object' && value !== null) {
+        console.log("p:" +i+":");
+        createFormFromObject(value, parentElement, i);
+    }
+    else
+    {
+        console.log("f:" +i+":");
+        var formField = createFormField(property+suffix, value, i);
+        parentElement.appendChild(formField);
+    }
+  }
+}
+
 // Function to create a form from an object
-function createFormFromObject(obj, parentElement) {
+function createFormFromObject(obj, parentElement, suffix) {
     for (var property in obj) {
         if (obj.hasOwnProperty(property)) {
             var value = obj[property];
@@ -40,14 +58,12 @@ function createFormFromObject(obj, parentElement) {
             // If the value is an object or array, recurse
             if (typeof value === 'object' && value !== null) {
                 if (Array.isArray(value)) {
-                    value.forEach(function(item) {
-                        createFormFromObject(item, parentElement);
-                    });
+                    createFormFromArray(value, parentElement, property);
                 } else {
-                    createFormFromObject(value, parentElement);
+                    createFormFromObject(value, parentElement, suffix);
                 }
             }else{
-                var formField = createFormField(property, value);
+                var formField = createFormField(property+suffix, value);
                 parentElement.appendChild(formField);    
             }
         }
@@ -77,7 +93,6 @@ function createFormAndInsertIntoDiv(applyCallback, id, x, y, className, divId) {
     // Create the object from the class name
     var obj = createObjectFromClassName(className);
     setPosition(obj, x, y, currentPage);
-    console.log(obj);
 
     // Create a div to hold the form
     var formContainer = document.getElementById(divId);
@@ -116,7 +131,6 @@ function setValueFromInput(obj, property, input) {
 // Gather all form fields and set their values to the dataObject
 // gatherFormFields(dataObject, formContainer);
 // Now dataObject contains the values from the form fields
-// console.log(dataObject);
 function gatherFormFields(obj, parentElement) {
     var inputs = parentElement.getElementsByTagName('input');
     for (var i = 0; i < inputs.length; i++) {
@@ -148,7 +162,6 @@ function gatherFormFields(obj, parentElement) {
 // and 'myForm' is the ID of your existing form container
 // var filledObject = getFilledObjectFromForm('MyClass', 'myForm');
 // Now filledObject contains the values from the form fields
-// console.log(filledObject);
 function getFilledObjectFromForm(className, formId) {
     // Create the object from the class name
     
@@ -162,8 +175,6 @@ function getFilledObjectFromForm(className, formId) {
 
     // Gather form fields and populate the object
     gatherFormFields(obj, formContainer);
-
-    console.log(obj);
     // Return the filled object
     return obj;
 }

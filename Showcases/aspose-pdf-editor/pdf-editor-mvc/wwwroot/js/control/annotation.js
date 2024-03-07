@@ -73,7 +73,6 @@ function setPosition(obj, x, y, pageNumber) {
         {
           obj.Points = [ new PointModel(x, y), new PointModel(x + 10, y + 10) ];
         }
-        console.log(obj.Points);
     }
     
     if (obj.hasOwnProperty('Llx')) {
@@ -190,7 +189,6 @@ function postAnnotation(obj, className) {
     $('#loadingModal').modal('show');
     var d = {};
     d[className] = obj;
-    console.log(JSON.stringify(d));
     $.ajax({
         type: 'POST',
         url: `${apiBaseUrl}annotation/add/${documentId}`,
@@ -238,8 +236,6 @@ function annotationSetup(className) {
         // Convert the coordinates to A4 PDF DPI
         let pdfMouseX = mouseX * heightScaleFactor;
         let pdfMouseY = mouseY * heightScaleFactor;
-        console.log('x:' + pdfMouseX);
-        console.log('x:' + pdfMouseY);
         createFormAndInsertIntoDiv(
             function () {
                 let obj = getFilledObjectFromForm(className+'Model', 'annotationForm');
