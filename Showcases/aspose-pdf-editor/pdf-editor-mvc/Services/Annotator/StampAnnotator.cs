@@ -20,6 +20,8 @@ public class StampAnnotator : IAnnotator
 
     public void Save()
     {
+        File.Copy("./test.bmp", Path.Combine(_workFolder, "test.bmp"));
+
         // Open document
         Document pdfDocument = new Document(Path.Combine(_workFolder, _inputFile));
 

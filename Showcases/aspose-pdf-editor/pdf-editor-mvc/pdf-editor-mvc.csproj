@@ -48,4 +48,10 @@
   <ItemGroup>
     <Folder Include="ViewModel\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="test.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
