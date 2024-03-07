@@ -77,6 +77,7 @@ function createFormAndInsertIntoDiv(applyCallback, id, x, y, className, divId) {
     // Create the object from the class name
     var obj = createObjectFromClassName(className);
     setPosition(obj, x, y, currentPage);
+    console.log(obj);
 
     // Create a div to hold the form
     var formContainer = document.getElementById(divId);
