@@ -1,6 +1,14 @@
 function setPosition(obj, x, y, pageNumber) {
     // Check if the object has a 'pageNumber' field and set it if provided
     
+    if (obj.hasOwnProperty('PageNumber')) {
+        obj.PageNumber = pageNumber !== undefined ? pageNumber : obj.PageNumber;
+    }
+    
+    if (obj.hasOwnProperty('PopupPageNumber')) {
+        obj.PopupPageNumber = pageNumber !== undefined ? pageNumber : obj.PopupPageNumber;
+    }
+    
     if (obj.hasOwnProperty('X')) {
         obj.X = x !== undefined ? x : obj.X;
     }
@@ -19,6 +27,26 @@ function setPosition(obj, x, y, pageNumber) {
 
     if (obj.hasOwnProperty('Points')) {
         obj.Points = [ new PointModel(x, y) ];
+    }
+    
+    if (obj.hasOwnProperty('Llx')) {
+        obj.Llx = x !== undefined ? x : obj.Llx;
+        obj.Urx = obj.Llx + 10;
+    }
+    
+    if (obj.hasOwnProperty('Lly')) {
+        obj.Lly = y !== undefined ? y : obj.Lly;
+        obj.Ury = obj.Lly + 10;
+    }
+    
+    if (obj.hasOwnProperty('PopupLlx')) {
+        obj.PopupLlx = x !== undefined ? x : obj.PopupLlx;
+        obj.PopupUrx = obj.PopupLlx + 10;
+    }
+    
+    if (obj.hasOwnProperty('PopupLly')) {
+        obj.PopupLly = y !== undefined ? y : obj.PopupLly;
+        obj.PopupUry = obj.PopupLly + 10;
     }
 }
 

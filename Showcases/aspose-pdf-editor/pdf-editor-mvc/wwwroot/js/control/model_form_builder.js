@@ -230,7 +230,7 @@ function gatherFormFields(obj, parentElement) {
 // console.log(filledObject);
 function getFilledObjectFromForm(className, formId) {
     // Create the object from the class name
-    console.log(createObjectFromClassName(className));
+    
     var obj = {};
 
     // Get the form container by its ID
@@ -242,6 +242,7 @@ function getFilledObjectFromForm(className, formId) {
     // Gather form fields and populate the object
     gatherFormFields(obj, formContainer);
 
+    console.log(obj);
     // Return the filled object
     return obj;
 }

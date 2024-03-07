@@ -76,6 +76,7 @@ function annotationSetup(className) {
     let canvas = document.getElementById('imageTemp');
         
     function PointClick(event) {
+        let canvas = document.getElementById('imageView');
         var ctx = canvas.getBoundingClientRect();
 
         // Get the mouse position relative to the canvas
@@ -86,16 +87,25 @@ function annotationSetup(className) {
         canvas.removeEventListener("mousedown", PointClick, false);
         
         let ARect = canvas.getBoundingClientRect();
-        var mouseX = (event.clientX - ARect.left) * (canvas.width / ARect.width);
-        var mouseY = (event.clientY - ARect.top) * (canvas.height / ARect.height);
-
+        let mouseX = (event.clientX - ARect.left) * (canvas.width / ARect.width);
+        let mouseY = canvas.height - (event.clientY - ARect.top) * (canvas.height / ARect.height);
+        
+        // Scale factors for DPI conversion
+        let widthScaleFactor = 8.27 / (canvas.width / 72);
+        let heightScaleFactor = 11.69 / (canvas.height / 72);
+        
+        // Convert the coordinates to A4 PDF DPI
+        let pdfMouseX = mouseX * heightScaleFactor;
+        let pdfMouseY = mouseY * heightScaleFactor;
+        console.log('x:' + pdfMouseX);
+        console.log('x:' + pdfMouseY);
         createFormAndInsertIntoDiv(
             function () {
-                var obj = getFilledObjectFromForm(className+'Model', 'annotationForm');
+                let obj = getFilledObjectFromForm(className+'Model', 'annotationForm');
                 postAnnotation(obj, className);
                 document.getElementById('annotationForm').innerHTML = '';
             },
-         id, Math.round(mouseX * 0.58), Math.round((913 - mouseY) * 0.8), className);
+            id, Math.round(pdfMouseX), Math.round(pdfMouseY), className);
          
          
           document.getElementById('btnLine').disabled = true;
