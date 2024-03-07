@@ -21,6 +21,32 @@ var annotationIcnosDict = {
     "Redact": '<i class="bi bi-eye-slash" style="color:white"></i>',
 };
 
+function toogleAnnotationToolbar(disabled)
+{
+          document.getElementById('btnLine').disabled = disabled;
+          document.getElementById('btnSquare').disabled = disabled;
+          document.getElementById('btnCircle').disabled = disabled;
+          document.getElementById('btnPolygon').disabled = disabled;
+          document.getElementById('btnPolyLine').disabled = disabled;
+          document.getElementById('btnInk').disabled = disabled;
+          document.getElementById('btnHighlight').disabled = disabled;
+          document.getElementById('btnUnderline').disabled = disabled;
+          document.getElementById('btnSquiggly').disabled = disabled;
+          document.getElementById('btnStrikeOut').disabled = disabled;
+          document.getElementById('btnStamp').disabled = disabled;
+          document.getElementById('btnCaret').disabled = disabled;
+          document.getElementById('btnWatermark').disabled = disabled;
+          document.getElementById('btnSound').disabled = disabled;
+          document.getElementById('btnMovie').disabled = disabled;
+          document.getElementById('btnScreen').disabled = disabled;
+          document.getElementById('btnText').disabled = disabled;
+          document.getElementById('btnLink').disabled = disabled;
+          document.getElementById('btnFreeText').disabled = disabled;
+          document.getElementById('btnRedact').disabled = disabled;
+          document.getElementById('btnUnderline').disabled = disabled;
+          document.getElementById('btnAnnotate').disabled = disabled;
+}
+
 function addButtons(formContainer, applyCallback){
     // Create the button container
     var buttonContainer = document.createElement('div');
@@ -50,54 +76,12 @@ function addButtons(formContainer, applyCallback){
     // Handle cancel button click
         formContainer.innerHTML = '';
         document.getElementById(formContainer.dataid).remove();
-        
-          document.getElementById('btnLine').disabled = false;
-          document.getElementById('btnSquare').disabled = false;
-          document.getElementById('btnCircle').disabled = false;
-          document.getElementById('btnPolygon').disabled = false;
-          document.getElementById('btnPolyLine').disabled = false;
-          document.getElementById('btnInk').disabled = false;
-          document.getElementById('btnHighlight').disabled = false;
-          document.getElementById('btnUnderline').disabled = false;
-          document.getElementById('btnSquiggly').disabled = false;
-          document.getElementById('btnStrikeOut').disabled = false;
-          document.getElementById('btnStamp').disabled = false;
-          document.getElementById('btnCaret').disabled = false;
-          document.getElementById('btnWatermark').disabled = false;
-          document.getElementById('btnSound').disabled = false;
-          document.getElementById('btnMovie').disabled = false;
-          document.getElementById('btnScreen').disabled = false;
-          document.getElementById('btnText').disabled = false;
-          document.getElementById('btnLink').disabled = false;
-          document.getElementById('btnFreeText').disabled = false;
-          document.getElementById('btnRedact').disabled = false;
-          document.getElementById('btnUnderline').disabled = false;
+        toogleAnnotationToolbar(false);
     });
 
     applyButton.addEventListener('click', function() {
         applyCallback();
-        
-          document.getElementById('btnLine').disabled = false;
-          document.getElementById('btnSquare').disabled = false;
-          document.getElementById('btnCircle').disabled = false;
-          document.getElementById('btnPolygon').disabled = false;
-          document.getElementById('btnPolyLine').disabled = false;
-          document.getElementById('btnInk').disabled = false;
-          document.getElementById('btnHighlight').disabled = false;
-          document.getElementById('btnUnderline').disabled = false;
-          document.getElementById('btnSquiggly').disabled = false;
-          document.getElementById('btnStrikeOut').disabled = false;
-          document.getElementById('btnStamp').disabled = false;
-          document.getElementById('btnCaret').disabled = false;
-          document.getElementById('btnWatermark').disabled = false;
-          document.getElementById('btnSound').disabled = false;
-          document.getElementById('btnMovie').disabled = false;
-          document.getElementById('btnScreen').disabled = false;
-          document.getElementById('btnText').disabled = false;
-          document.getElementById('btnLink').disabled = false;
-          document.getElementById('btnFreeText').disabled = false;
-          document.getElementById('btnRedact').disabled = false;
-          document.getElementById('btnUnderline').disabled = false;
+        toogleAnnotationToolbar(false);
     });
 }
 
@@ -186,29 +170,7 @@ function annotationSetup(className) {
             },
             id, Math.round(pdfMouseX), Math.round(pdfMouseY), className);
          
-         
-          document.getElementById('btnLine').disabled = true;
-          document.getElementById('btnSquare').disabled = true;
-          document.getElementById('btnCircle').disabled = true;
-          document.getElementById('btnPolygon').disabled = true;
-          document.getElementById('btnPolyLine').disabled = true;
-          document.getElementById('btnInk').disabled = true;
-          document.getElementById('btnHighlight').disabled = true;
-          document.getElementById('btnUnderline').disabled = true;
-          document.getElementById('btnSquiggly').disabled = true;
-          document.getElementById('btnStrikeOut').disabled = true;
-          document.getElementById('btnStamp').disabled = true;
-          document.getElementById('btnCaret').disabled = true;
-          document.getElementById('btnWatermark').disabled = true;
-          document.getElementById('btnSound').disabled = true;
-          document.getElementById('btnMovie').disabled = true;
-          document.getElementById('btnScreen').disabled = true;
-          document.getElementById('btnText').disabled = true;
-          document.getElementById('btnLink').disabled = true;
-          document.getElementById('btnFreeText').disabled = true;
-          document.getElementById('btnRedact').disabled = true;
-          document.getElementById('btnUnderline').disabled = true;
-          canvas.removeEventListener("mousedown", PointClick);
+        toogleAnnotationToolbar(true);
     }
 
     canvas.addEventListener("mousedown", PointClick, false);

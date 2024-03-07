@@ -141,8 +141,6 @@ if (window.addEventListener) {
                     document.getElementById('btnDeletePage').disabled = false;
                     document.getElementById('btnMoving').disabled = false;
                     document.getElementById('btnAppending').disabled = false;
-                    document.getElementById('btnSave').disabled = false;
-                    document.getElementById('btnExporting').disabled = false;
                     document.getElementById('btnPrevious').disabled = false;
                     document.getElementById('btnNext').disabled = false;
                     document.getElementById('btnSearching').disabled = false;
@@ -163,8 +161,6 @@ if (window.addEventListener) {
                     document.getElementById('btnDeletePage').disabled = true;
                     document.getElementById('btnMoving').disabled = true;
                     document.getElementById('btnAppending').disabled = true;
-                    document.getElementById('btnSave').disabled = true;
-                    document.getElementById('btnExporting').disabled = true;
                     document.getElementById('btnPrevious').disabled = true;
                     document.getElementById('btnNext').disabled = true;
                     document.getElementById('btnSearching').disabled = true;
