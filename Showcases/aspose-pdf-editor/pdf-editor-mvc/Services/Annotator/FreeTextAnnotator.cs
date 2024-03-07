@@ -23,9 +23,9 @@ public class FreeTextAnnotator : IAnnotator
     public void Save()
     {
         var document = new Document(Path.Combine(_workFolder, _inputFile));
-        
+
         var pdfContentEditor = new PdfContentEditor(document);
-        
+
         var rect = new System.Drawing.Rectangle
         {
             X = _model.X,
@@ -35,10 +35,10 @@ public class FreeTextAnnotator : IAnnotator
         };
 
         pdfContentEditor.CreateFreeText(
-            rect, 
+            rect,
             _model.Text,
             _model.PageNumber); // last param is a page number
-        
+
         pdfContentEditor.Save(Path.Combine(_workFolder, _outputFile));
     }
 }

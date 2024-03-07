@@ -66,8 +66,7 @@ function fileSelected() {
 
     }
     var xhr = new XMLHttpRequest();
-    switch($('#hdnOpp').val())
-    {
+    switch ($('#hdnOpp').val()) {
         case 'uploading':
             xhr.open('PUT', `${apiBaseUrl}document/upload`);
             break;
@@ -90,12 +89,11 @@ function fileSelected() {
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
-            if(xhr.status >= 300)
-            {
+            if (xhr.status >= 300) {
                 alertModal(xhr.statusText);
                 return;
             }
-            
+
             data = JSON.parse(xhr.responseText);
             dataLoad = data.pages;
             documentId = data.documentId;
@@ -130,7 +128,7 @@ function fileSelected() {
                 }
 
             $('.progress-bar').width('100%');
-            
+
 
             $('#fileToUpload').wrap('<form>').parent('form').trigger('reset');
             $('#fileToUpload').unwrap();
@@ -149,11 +147,11 @@ $(document).on('click', '.open-uploadModal', function () {
 });
 
 
-function alertModal (msg, xhr, textStatus, error){
-    if(xhr != null && xhr.responseJSON != null) {
+function alertModal(msg, xhr, textStatus, error) {
+    if (xhr != null && xhr.responseJSON != null) {
         msg += xhr.responseJSON.detail;
     }
-    else if(error != null) {
+    else if (error != null) {
         msg += error;
     }
 

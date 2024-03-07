@@ -23,15 +23,15 @@ var annotationIcnosDict = {
 
 function setPosition(obj, x, y, pageNumber) {
     // Check if the object has a 'pageNumber' field and set it if provided
-    
+
     if (obj.hasOwnProperty('PageNumber')) {
         obj.PageNumber = pageNumber !== undefined ? pageNumber : obj.PageNumber;
     }
-    
+
     if (obj.hasOwnProperty('PopupPageNumber')) {
         obj.PopupPageNumber = pageNumber !== undefined ? pageNumber : obj.PopupPageNumber;
     }
-    
+
     if (obj.hasOwnProperty('X')) {
         obj.X = x !== undefined ? x : obj.X;
     }
@@ -39,19 +39,19 @@ function setPosition(obj, x, y, pageNumber) {
     if (obj.hasOwnProperty('Y')) {
         obj.Y = y !== undefined ? y : obj.Y;
     }
-    
+
     if (obj.hasOwnProperty('StartX')) {
         obj.StartX = x !== undefined ? x : obj.StartX;
     }
-    
+
     if (obj.hasOwnProperty('StartY')) {
         obj.StartY = y !== undefined ? y : obj.StartY;
     }
-    
+
     if (obj.hasOwnProperty('EndX')) {
         obj.EndX = x !== undefined ? x + 20 : obj.StartX;
     }
-    
+
     if (obj.hasOwnProperty('EndY')) {
         obj.EndY = y !== undefined ? y + 20 : obj.EndY;
     }
@@ -65,64 +65,61 @@ function setPosition(obj, x, y, pageNumber) {
     }
 
     if (obj.hasOwnProperty('Points')) {
-        if(obj.Points.length == 1)
-        {
-          obj.Points = [ new PointModel(x, y) ];
+        if (obj.Points.length == 1) {
+            obj.Points = [new PointModel(x, y)];
         }
-        else
-        {
-          obj.Points = [ new PointModel(x, y), new PointModel(x + 10, y + 10) ];
+        else {
+            obj.Points = [new PointModel(x, y), new PointModel(x + 10, y + 10)];
         }
     }
-    
+
     if (obj.hasOwnProperty('Llx')) {
         obj.Llx = x !== undefined ? x : obj.Llx;
         obj.Urx = obj.Llx + 10;
     }
-    
+
     if (obj.hasOwnProperty('Lly')) {
         obj.Lly = y !== undefined ? y : obj.Lly;
         obj.Ury = obj.Lly + 10;
     }
-    
+
     if (obj.hasOwnProperty('PopupLlx')) {
         obj.PopupLlx = x !== undefined ? x : obj.PopupLlx;
         obj.PopupUrx = obj.PopupLlx + 10;
     }
-    
+
     if (obj.hasOwnProperty('PopupLly')) {
         obj.PopupLly = y !== undefined ? y : obj.PopupLly;
         obj.PopupUry = obj.PopupLly + 10;
     }
 }
 
-function toogleAnnotationToolbar(disabled)
-{
-          document.getElementById('btnLine').disabled = disabled;
-          document.getElementById('btnSquare').disabled = disabled;
-          document.getElementById('btnCircle').disabled = disabled;
-          document.getElementById('btnPolygon').disabled = disabled;
-          document.getElementById('btnPolyLine').disabled = disabled;
-          document.getElementById('btnInk').disabled = disabled;
-          document.getElementById('btnHighlight').disabled = disabled;
-          document.getElementById('btnUnderline').disabled = disabled;
-          document.getElementById('btnSquiggly').disabled = disabled;
-          document.getElementById('btnStrikeOut').disabled = disabled;
-          document.getElementById('btnStamp').disabled = disabled;
-          document.getElementById('btnCaret').disabled = disabled;
-          document.getElementById('btnWatermark').disabled = disabled;
-          document.getElementById('btnSound').disabled = disabled;
-          document.getElementById('btnMovie').disabled = disabled;
-          document.getElementById('btnScreen').disabled = disabled;
-          document.getElementById('btnText').disabled = disabled;
-          document.getElementById('btnLink').disabled = disabled;
-          document.getElementById('btnFreeText').disabled = disabled;
-          document.getElementById('btnRedact').disabled = disabled;
-          document.getElementById('btnUnderline').disabled = disabled;
-          document.getElementById('btnAnnotate').disabled = disabled;
+function toogleAnnotationToolbar(disabled) {
+    document.getElementById('btnLine').disabled = disabled;
+    document.getElementById('btnSquare').disabled = disabled;
+    document.getElementById('btnCircle').disabled = disabled;
+    document.getElementById('btnPolygon').disabled = disabled;
+    document.getElementById('btnPolyLine').disabled = disabled;
+    document.getElementById('btnInk').disabled = disabled;
+    document.getElementById('btnHighlight').disabled = disabled;
+    document.getElementById('btnUnderline').disabled = disabled;
+    document.getElementById('btnSquiggly').disabled = disabled;
+    document.getElementById('btnStrikeOut').disabled = disabled;
+    document.getElementById('btnStamp').disabled = disabled;
+    document.getElementById('btnCaret').disabled = disabled;
+    document.getElementById('btnWatermark').disabled = disabled;
+    document.getElementById('btnSound').disabled = disabled;
+    document.getElementById('btnMovie').disabled = disabled;
+    document.getElementById('btnScreen').disabled = disabled;
+    document.getElementById('btnText').disabled = disabled;
+    document.getElementById('btnLink').disabled = disabled;
+    document.getElementById('btnFreeText').disabled = disabled;
+    document.getElementById('btnRedact').disabled = disabled;
+    document.getElementById('btnUnderline').disabled = disabled;
+    document.getElementById('btnAnnotate').disabled = disabled;
 }
 
-function addButtons(formContainer, applyCallback){
+function addButtons(formContainer, applyCallback) {
     // Create the button container
     var buttonContainer = document.createElement('div');
     buttonContainer.id = 'buttonContainer';
@@ -147,20 +144,21 @@ function addButtons(formContainer, applyCallback){
     formContainer.appendChild(buttonContainer);
 
     // Add event listeners to the buttons
-    cancelButton.addEventListener('click', function() {
-    // Handle cancel button click
+    cancelButton.addEventListener('click', function () {
+        // Handle cancel button click
         formContainer.innerHTML = '';
         document.getElementById(formContainer.dataid).remove();
         toogleAnnotationToolbar(false);
     });
 
-    applyButton.addEventListener('click', function() {
+    applyButton.addEventListener('click', function () {
         applyCallback();
         toogleAnnotationToolbar(false);
+        document.getElementById(formContainer.dataid).remove();
     });
 }
 
-function putMarker(x, y, className){
+function putMarker(x, y, className) {
     // Create a new div to hold the icon
     let iconDiv = document.createElement('div');
     iconDiv.style.position = 'absolute'; // Make it position: absolute
@@ -178,7 +176,7 @@ function putMarker(x, y, className){
 
     const id = "id" + Math.random().toString(16).slice(2);
     iconDiv.id = id;
-    
+
     // Append the icon div to the canvas
     canvas.parentNode.appendChild(iconDiv);
 
@@ -211,39 +209,39 @@ function postAnnotation(obj, className) {
 }
 
 function annotationSetup(className) {
-        
+
     function PointClick(event) {
         let canvas = document.getElementById('imageTemp');
         var ctx = canvas.getBoundingClientRect();
 
         // Get the mouse position relative to the canvas
-        
+
         let ARect = canvas.getBoundingClientRect();
-        
+
         var x = (event.clientX - ARect.left) * (canvas.width / ARect.width);
         var y = (event.clientY - ARect.top) * (canvas.height / ARect.height);
 
         var id = putMarker(x, y, className);
         canvas.removeEventListener("mousedown", PointClick, false);
-        
+
         let mouseX = (event.clientX - ARect.left) * (canvas.width / ARect.width);
         let mouseY = canvas.height - (event.clientY - ARect.top) * (canvas.height / ARect.height);
-        
+
         // Scale factors for DPI conversion
         let widthScaleFactor = 8.27 / (canvas.width / 72);
         let heightScaleFactor = 11.69 / (canvas.height / 72);
-        
+
         // Convert the coordinates to A4 PDF DPI
         let pdfMouseX = mouseX * heightScaleFactor;
         let pdfMouseY = mouseY * heightScaleFactor;
         createFormAndInsertIntoDiv(
             function () {
-                let obj = getFilledObjectFromForm(className+'Model', 'annotationForm');
+                let obj = getFilledObjectFromForm(className + 'Model', 'annotationForm');
                 postAnnotation(obj, className);
                 document.getElementById('annotationForm').innerHTML = '';
             },
             id, Math.round(pdfMouseX), Math.round(pdfMouseY), className);
-         
+
         toogleAnnotationToolbar(true);
     }
 

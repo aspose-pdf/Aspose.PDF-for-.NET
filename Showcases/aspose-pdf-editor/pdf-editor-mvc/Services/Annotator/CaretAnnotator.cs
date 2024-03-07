@@ -12,9 +12,9 @@ public class CaretAnnotator : IAnnotator
     private readonly string _outputFile;
 
     public CaretAnnotator(
-        CaretModel model, 
-        string workFolder, 
-        string inputFile, 
+        CaretModel model,
+        string workFolder,
+        string inputFile,
         string outputFile)
     {
         _model = model;
@@ -22,18 +22,18 @@ public class CaretAnnotator : IAnnotator
         _inputFile = inputFile;
         _outputFile = outputFile;
     }
-    
+
     public void Save()
     {
         // Load the PDF file
         Document document = new Document(Path.Combine(_workFolder, _inputFile));
-        
+
         // This annotation is used to indicate the insertion of text
         var caretAnnotation = new CaretAnnotation(
-            document.Pages[_model.PageNumber], 
+            document.Pages[_model.PageNumber],
             new Rectangle(
-                _model.Llx, 
-                _model.Lly, 
+                _model.Llx,
+                _model.Lly,
                 _model.Urx,
                 _model.Ury,
                 _model.NormalizeCoordinates))
@@ -49,7 +49,7 @@ public class CaretAnnotator : IAnnotator
             .Pages[_model.PageNumber]
             .Annotations
             .Add(caretAnnotation);
-        
+
         document.Save(Path.Combine(_workFolder, _outputFile));
     }
 }

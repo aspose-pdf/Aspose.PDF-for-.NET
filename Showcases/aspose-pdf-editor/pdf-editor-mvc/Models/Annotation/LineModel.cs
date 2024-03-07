@@ -42,12 +42,12 @@ public class LineModel
 
     public double Opacity { get; set; } = 0.5;
 
-    public double StartX { get; set; }  = 10;
-    
-    public double StartY { get; set; }  = 10;
+    public double StartX { get; set; } = 10;
+
+    public double StartY { get; set; } = 10;
 
     public double EndX { get; set; } = 20;
-    
+
     public double EndY { get; set; } = 20;
 
     public int PopupPageNumber { get; set; } = 1;

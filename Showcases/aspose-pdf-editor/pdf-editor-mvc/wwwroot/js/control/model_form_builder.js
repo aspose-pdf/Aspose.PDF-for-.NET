@@ -32,29 +32,28 @@ function createFormField(property, value) {
 }
 
 function createFormFromArray(arr, parentElement, prefix) {
-  console.log(arr);
-  for (var i = 0; i < arr.length; i++) {
-    var value = arr[i];
-      
-    if (typeof value === 'object' && value !== null) {
-        createFormFromObject(value, parentElement,i, prefix+'_');
+    console.log(arr);
+    for (var i = 0; i < arr.length; i++) {
+        var value = arr[i];
+
+        if (typeof value === 'object' && value !== null) {
+            createFormFromObject(value, parentElement, i, prefix + '_');
+        }
+        else {
+            var formField = createFormField(prefix + "_" + i, value, i);
+            parentElement.appendChild(formField);
+        }
     }
-    else
-    {
-        var formField = createFormField(prefix+"_"+ i, value, i);
-        parentElement.appendChild(formField);
-    }
-  }
 }
 
 // Function to create a form from an object
 function createFormFromObject(obj, parentElement, suffix, prefix) {
-    if(typeof(prefix) == "undefined") prefix = "";
-    if(typeof(suffix) == "undefined") suffix = "";
+    if (typeof (prefix) == "undefined") prefix = "";
+    if (typeof (suffix) == "undefined") suffix = "";
     for (var property in obj) {
         if (obj.hasOwnProperty(property)) {
             var value = obj[property];
-            
+
             // If the value is an object or array, recurse
             if (typeof value === 'object' && value !== null) {
                 if (Array.isArray(value)) {
@@ -62,9 +61,9 @@ function createFormFromObject(obj, parentElement, suffix, prefix) {
                 } else {
                     createFormFromObject(value, parentElement, suffix, prefix);
                 }
-            }else{
-                var formField = createFormField(prefix+property+suffix, value);
-                parentElement.appendChild(formField);    
+            } else {
+                var formField = createFormField(prefix + property + suffix, value);
+                parentElement.appendChild(formField);
             }
         }
     }
@@ -102,7 +101,7 @@ function createFormAndInsertIntoDiv(applyCallback, id, x, y, className, divId) {
     var titleArray = className.match(/[A-Z][a-z]+/g);
     titleArray = titleArray.slice(0, titleArray.length - 1);
     title.textContent = titleArray.join(' ');
-    formContainer.appendChild(title);    
+    formContainer.appendChild(title);
 
     // Create the form from the object and append it to the div
     createFormFromObject(obj, formContainer);
@@ -113,30 +112,30 @@ function createFormAndInsertIntoDiv(applyCallback, id, x, y, className, divId) {
 function setValueFromInput(obj, property, input, index, prop) {
     var value;
     switch (input.type) {
-          case 'checkbox':
-              value = input.checked;
-              break;
-          case 'number':
-              value = parseFloat(input.value);
-              break;
-          default:
-              value = input.value;
-      }
-      obj[property] = value;
+        case 'checkbox':
+            value = input.checked;
+            break;
+        case 'number':
+            value = parseFloat(input.value);
+            break;
+        default:
+            value = input.value;
+    }
+    obj[property] = value;
 }
 
 function setArrayFromInput(obj, property, input, index, prop) {
     var value;
     switch (input.type) {
-          case 'checkbox':
-              value = input.checked;
-              break;
-          case 'number':
-              value = parseFloat(input.value);
-              break;
-          default:
-              value = input.value;
-      }
+        case 'checkbox':
+            value = input.checked;
+            break;
+        case 'number':
+            value = parseFloat(input.value);
+            break;
+        default:
+            value = input.value;
+    }
 
     if (typeof (prop) == "undefined" || prop == null || prop.length == 0) {
         if (obj[property] == null) {
@@ -175,19 +174,17 @@ function gatherFormFields(obj, parentElement) {
     for (var i = 0; i < inputs.length; i++) {
         var input = inputs[i];
         var property = input.datakey;
-        if(property.indexOf('_') == -1)
-        {
-          setValueFromInput(obj, property, input);
+        if (property.indexOf('_') == -1) {
+            setValueFromInput(obj, property, input);
         }
-        else
-        {
-          var pair = property.split('_');
-          var arrayName = pair[0]; 
-          var index = Number(pair[1].match(/\d+/));
-          var prop = pair[1].replace(index, '');
-          setArrayFromInput(obj, arrayName, input, index, prop);
+        else {
+            var pair = property.split('_');
+            var arrayName = pair[0];
+            var index = Number(pair[1].match(/\d+/));
+            var prop = pair[1].replace(index, '');
+            setArrayFromInput(obj, arrayName, input, index, prop);
         }
-        
+
     }
 }
 
@@ -199,7 +196,7 @@ function gatherFormFields(obj, parentElement) {
 // Now filledObject contains the values from the form fields
 function getFilledObjectFromForm(className, formId) {
     // Create the object from the class name
-    
+
     var obj = {};
 
     // Get the form container by its ID

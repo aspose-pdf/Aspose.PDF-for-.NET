@@ -24,16 +24,16 @@ public class LineAnnotator : IAnnotator
         // Load the PDF file
         Document document = new Document(Path.Combine(_workFolder, _inputFile));
 
-// Create Line Annotation
+        // Create Line Annotation
         var lineAnnotation = new LineAnnotation(
-            document.Pages[_model.PageNumber], 
+            document.Pages[_model.PageNumber],
             new Rectangle(
-                _model.Llx, 
-                _model.Lly, 
+                _model.Llx,
+                _model.Lly,
                 _model.Urx,
                 _model.Ury,
                 _model.NormalizeCoordinates),
-            new Point(_model.StartX, _model.StartY), 
+            new Point(_model.StartX, _model.StartY),
             new Point(_model.EndX, _model.EndY))
         {
             Title = _model.Title,
@@ -44,10 +44,10 @@ public class LineAnnotator : IAnnotator
             StartingStyle = _model.StartingStyleValue,
             EndingStyle = _model.EndingStyleValue,
             Popup = new PopupAnnotation(
-                document.Pages[_model.PopupPageNumber], 
+                document.Pages[_model.PopupPageNumber],
                 new Rectangle(
-                    _model.PopupLlx, 
-                    _model.PopupLly, 
+                    _model.PopupLlx,
+                    _model.PopupLly,
                     _model.PopupUrx,
                     _model.PopupUry,
                     _model.PopupNormalizeCoordinates))
@@ -58,7 +58,7 @@ public class LineAnnotator : IAnnotator
             .Pages[_model.PageNumber]
             .Annotations
             .Add(lineAnnotation);
-        
+
         document.Save(Path.Combine(_workFolder, _outputFile));
     }
 }

@@ -36,7 +36,7 @@ public class StampAnnotator : IAnnotator
             Rotate = _model.RotateValue,
             Opacity = _model.Opacity
         };
-        
+
         // Add stamp to particular page
         pdfDocument
             .Pages[_model.PageNumber]

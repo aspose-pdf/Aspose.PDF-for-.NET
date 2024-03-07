@@ -43,17 +43,17 @@ public class RedactAnnotator : IAnnotator
             // Repat Overlay text over redact Annotation
             Repeat = _model.Repeat
         };
-        
+
         // Add annotation to annotations collection of first page
         document
             .Pages[_model.PageNumber]
             .Annotations
             .Add(annotation);
-        
+
         // Flattens annotation and redacts page contents (i.e. removes text and image
         // Under redacted annotation)
         annotation.Redact();
-        
+
         document.Save(Path.Combine(_workFolder, _outputFile));
     }
 }

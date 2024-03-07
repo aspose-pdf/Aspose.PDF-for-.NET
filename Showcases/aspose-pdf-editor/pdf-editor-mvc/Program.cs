@@ -5,6 +5,8 @@ using Aspose.PDF.Editor.Helpers;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc.Razor;
 
+LicenseProvider.SetLicense();
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews()
@@ -17,7 +19,7 @@ builder.Services.AddControllersWithViews()
 
 builder.Services.AddLocalization(options => options.ResourcesPath = "AppResources/Editor");
 
-builder.Services.AddControllers(options =>options.Filters.Add(typeof(ApiErrorsFilter)));
+builder.Services.AddControllers(options => options.Filters.Add(typeof(ApiErrorsFilter)));
 builder.Services.AddRouting(options =>
 {
     options.LowercaseUrls = true;

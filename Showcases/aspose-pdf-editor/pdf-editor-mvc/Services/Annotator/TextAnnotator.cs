@@ -18,7 +18,7 @@ public class TextAnnotator : IAnnotator
         _inputFile = inputFile;
         _outputFile = outputFile;
     }
-    
+
     public void Save()
     {
         // Open document
@@ -26,10 +26,10 @@ public class TextAnnotator : IAnnotator
 
         // Create annotation
         TextAnnotation textAnnotation = new TextAnnotation(
-            document.Pages[_model.PageNumber], 
+            document.Pages[_model.PageNumber],
             new Rectangle(
-                _model.Llx, 
-                _model.Lly, 
+                _model.Llx,
+                _model.Lly,
                 _model.Urx,
                 _model.Ury,
                 _model.NormalizeCoordinates))
@@ -52,7 +52,7 @@ public class TextAnnotator : IAnnotator
             .Pages[_model.PageNumber]
             .Annotations
             .Add(textAnnotation);
-        
+
         // Save output file
         document.Save(Path.Combine(_workFolder, _outputFile));
     }

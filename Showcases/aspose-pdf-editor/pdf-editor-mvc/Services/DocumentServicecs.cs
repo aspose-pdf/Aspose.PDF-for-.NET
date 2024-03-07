@@ -9,7 +9,7 @@ public class DocumentServicecs : IDocumentServicecs
     private readonly IStorageService _storageService;
     private readonly IImageService _imageService;
 
-    public DocumentServicecs(IStorageService storageService, IImageService imageService) 
+    public DocumentServicecs(IStorageService storageService, IImageService imageService)
     {
         _storageService = storageService;
         _imageService = imageService;

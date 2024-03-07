@@ -26,10 +26,10 @@ public class SquareAnnotator : IAnnotator
 
         // Create Square Annotation
         var squareAnnotation = new SquareAnnotation(
-            document.Pages[_model.PageNumber], 
+            document.Pages[_model.PageNumber],
             new Rectangle(
-                _model.Llx, 
-                _model.Lly, 
+                _model.Llx,
+                _model.Lly,
                 _model.Urx,
                 _model.Ury,
                 _model.NormalizeCoordinates))
@@ -40,10 +40,10 @@ public class SquareAnnotator : IAnnotator
             Opacity = _model.Opacity,
             InteriorColor = _model.InteriorColorValue,
             Popup = new PopupAnnotation(
-                document.Pages[_model.PopupPageNumber], 
+                document.Pages[_model.PopupPageNumber],
                 new Rectangle(
-                    _model.PopupLlx, 
-                    _model.PopupLly, 
+                    _model.PopupLlx,
+                    _model.PopupLly,
                     _model.PopupUrx,
                     _model.PopupUry,
                     _model.PopupNormalizeCoordinates))
@@ -54,7 +54,7 @@ public class SquareAnnotator : IAnnotator
             .Pages[_model.PageNumber]
             .Annotations
             .Add(squareAnnotation);
-        
+
         document.Save(Path.Combine(_workFolder, _outputFile));
     }
 }

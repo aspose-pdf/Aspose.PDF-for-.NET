@@ -19,7 +19,7 @@ public class WatermarkAnnotator : IAnnotator
         _inputFile = inputFile;
         _outputFile = outputFile;
     }
-    
+
     public void Save()
     {
         //Load a Document
@@ -45,10 +45,10 @@ public class WatermarkAnnotator : IAnnotator
             Font = FontRepository.FindFont(_model.Font),
             FontSize = _model.FontSize
         };
-        
+
         //Add Text in Annotation
         annotation.SetTextAndState(_model.Text, ts);
-        
+
         // Add annotation to the page
         document
             .Pages[_model.PageNumber]

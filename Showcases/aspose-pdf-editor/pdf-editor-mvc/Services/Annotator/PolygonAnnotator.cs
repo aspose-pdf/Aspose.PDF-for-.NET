@@ -26,10 +26,10 @@ public class PolygonAnnotator : IAnnotator
 
         // Create Polygon Annotation
         var polygonAnnotation = new PolygonAnnotation(
-            document.Pages[_model.PageNumber], 
+            document.Pages[_model.PageNumber],
             new Rectangle(
-                _model.Llx, 
-                _model.Lly, 
+                _model.Llx,
+                _model.Lly,
                 _model.Urx,
                 _model.Ury,
                 _model.NormalizeCoordinates),
@@ -44,10 +44,10 @@ public class PolygonAnnotator : IAnnotator
             Opacity = _model.Opacity,
             InteriorColor = Color.BlueViolet,
             Popup = new PopupAnnotation(
-                document.Pages[_model.PopupPageNumber], 
+                document.Pages[_model.PopupPageNumber],
                 new Rectangle(
-                    _model.PopupLlx, 
-                    _model.PopupLly, 
+                    _model.PopupLlx,
+                    _model.PopupLly,
                     _model.PopupUrx,
                     _model.PopupUry,
                     _model.PopupNormalizeCoordinates))
@@ -58,7 +58,7 @@ public class PolygonAnnotator : IAnnotator
             .Pages[_model.PageNumber]
             .Annotations
             .Add(polygonAnnotation);
-        
+
         document.Save(Path.Combine(_workFolder, _outputFile));
     }
 }

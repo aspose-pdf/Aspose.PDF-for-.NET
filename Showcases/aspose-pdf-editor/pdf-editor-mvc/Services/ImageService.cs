@@ -10,12 +10,12 @@ namespace Aspose.PDF.Editor.Services;
 public class ImageService : IImageService
 {
     private readonly IStorageService _storageService;
-    
+
     public ImageService(IStorageService storageService)
     {
         _storageService = storageService;
     }
-    
+
     public async Task<string> ImageConverter(Stream docStream, string folder, string fileName)
     {
         using Document doc = new Document(docStream);
@@ -85,7 +85,7 @@ public class ImageService : IImageService
 
         return (height, aspectRatio);
     }
-    
+
     private static string CheckFields(Document doc, int pageCount, string fields, double ratio,
         bool licensed = true)
     {

@@ -18,12 +18,12 @@ public class StrikeOutAnnotator : IAnnotator
         _inputFile = inputFile;
         _outputFile = outputFile;
     }
-    
+
     public void Save()
     {
         // Load the PDF file
         Document document = new Document(Path.Combine(_workFolder, _inputFile));
-        
+
         var textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber(_model.Text);
         textFragmentAbsorber.Visit(document.Pages[_model.PageNumber]);
 
@@ -36,13 +36,13 @@ public class StrikeOutAnnotator : IAnnotator
             Color = _model.ColorValue,
             Opacity = _model.Opacity
         };
-        
+
         // Add annotation to the page
         document
             .Pages[_model.PageNumber]
             .Annotations
             .Add(strikeOutAnnotation);
-        
+
         document.Save(Path.Combine(_workFolder, _outputFile));
     }
 }

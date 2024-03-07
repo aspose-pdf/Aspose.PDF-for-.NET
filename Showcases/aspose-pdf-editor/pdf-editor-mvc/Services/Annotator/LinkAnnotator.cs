@@ -24,7 +24,7 @@ public class LinkAnnotator : IAnnotator
     {
         // Load the PDF file
         Document document = new Document(Path.Combine(_workFolder, _inputFile));
-        
+
         // Create TextFragmentAbsorber object to find a phone number
         TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(_model.Text);
 
@@ -37,7 +37,7 @@ public class LinkAnnotator : IAnnotator
 
         // Create Link Annotation and set the action to call a phone number
         var linkAnnotation = new LinkAnnotation(
-            document.Pages[_model.PageNumber], 
+            document.Pages[_model.PageNumber],
             phoneNumberFragment.Rectangle)
         {
             Action = new GoToURIAction(_model.Url)
@@ -48,7 +48,7 @@ public class LinkAnnotator : IAnnotator
             .Pages[_model.PageNumber]
             .Annotations
             .Add(linkAnnotation);
-        
+
         document.Save(Path.Combine(_workFolder, _outputFile));
     }
 }

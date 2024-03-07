@@ -59,5 +59,5 @@ public class PolygonModel
     public bool PopupNormalizeCoordinates { get; set; } = true;
 
 
-    public PointModel[] Points { get; set; } = new PointModel[] { new PointModel { X = 10, Y = 10 }, new PointModel { X = 20, Y = 20 } , new PointModel { X = 30, Y = 20 } };
+    public PointModel[] Points { get; set; } = new PointModel[] { new PointModel { X = 10, Y = 10 }, new PointModel { X = 20, Y = 20 }, new PointModel { X = 30, Y = 20 } };
 }

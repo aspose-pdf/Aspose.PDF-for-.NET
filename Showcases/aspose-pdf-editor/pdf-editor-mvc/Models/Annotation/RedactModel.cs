@@ -35,7 +35,7 @@ public class RedactModel
 
     public string FillColor { get; set; } = "Aqua";
 
-    [JsonIgnore] 
+    [JsonIgnore]
     public Color BorderColorValue
     {
         get
@@ -46,7 +46,7 @@ public class RedactModel
 
     public string BorderColor { get; set; } = "Black";
 
-    [JsonIgnore] 
+    [JsonIgnore]
     public Color ColorValue
     {
         get
@@ -58,8 +58,8 @@ public class RedactModel
     public string Color { get; set; } = "Beige";
 
     public string OverlayText { get; set; } = "CENSORED";
-    
-    [JsonIgnore] 
+
+    [JsonIgnore]
     public HorizontalAlignment TextAlignmentValue
     {
         get

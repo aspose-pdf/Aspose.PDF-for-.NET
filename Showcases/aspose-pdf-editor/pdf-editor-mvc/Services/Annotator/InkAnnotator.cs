@@ -23,14 +23,14 @@ public class InkAnnotator : IAnnotator
     {
         // Load the PDF file
         Document document = new Document(Path.Combine(_workFolder, _inputFile));
-        
+
         Page page = document.Pages[_model.PageNumber];
 
         InkAnnotation annotation = new InkAnnotation(
-            page, 
+            page,
             new Rectangle(
-                _model.Llx, 
-                _model.Lly, 
+                _model.Llx,
+                _model.Lly,
                 _model.Urx,
                 _model.Ury,
                 _model.NormalizeCoordinates),
@@ -45,12 +45,12 @@ public class InkAnnotator : IAnnotator
             Opacity = _model.Opacity,
             CapStyle = _model.CapStyleValue,
         };
-        
+
         annotation.Border = new Border(annotation)
         {
             Width = _model.Border
         };
-        
+
         page.Annotations.Add(annotation);
 
         // Save output file
