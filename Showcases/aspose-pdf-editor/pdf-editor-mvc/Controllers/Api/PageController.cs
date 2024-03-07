@@ -66,7 +66,7 @@ public class PageController : Controller
                     //Convert a particular page and save the image to stream
                     pngDevice.Process(doc.Pages[pageCount], imageStream);
 
-                    var (height, aspectRatio) =  await _imageService.ScaleImage(imageStream, folder, imageFileName, 1138);
+                    var (height, aspectRatio) = await _imageService.ScaleImage(imageStream, folder, imageFileName, 1138);
                     return new DocInfoModel
                     {
                         Pages = $"image{pageCount}.png#{height}#{aspectRatio}",

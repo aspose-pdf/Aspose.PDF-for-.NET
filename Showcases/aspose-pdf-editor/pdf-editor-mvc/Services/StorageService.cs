@@ -11,7 +11,7 @@ public class StorageService : IStorageService
 
     private string _rootDir;
 
-    public StorageService(IHostEnvironment env) 
+    public StorageService(IHostEnvironment env)
     {
         _rootDir = env.ContentRootPath;
     }
@@ -46,7 +46,7 @@ public class StorageService : IStorageService
     public async Task<Stream> Download(string storageFile)
     {
         if (storageFile == null) throw new ArgumentNullException(nameof(storageFile));
-        
+
         var path = Path.IsPathRooted(storageFile)
             ? storageFile
             : Path.Combine(WorkingDirectory, storageFile);
@@ -81,7 +81,7 @@ public class StorageService : IStorageService
     public void Delete(string storageFile)
     {
         if (storageFile == null) throw new ArgumentNullException(nameof(storageFile));
-        
+
         var path = Path.Combine(_rootDir, storageFile);
         if (File.Exists(path))
         {

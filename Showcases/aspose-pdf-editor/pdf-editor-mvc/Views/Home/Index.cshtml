@@ -7,11 +7,20 @@
     ViewData["Title"] = @Localizer["Editor"];
 }
 
-<div class="text-center">
-    <h1 class="display-4">@Localizer["Editor"]</h1>
-    <partial name="_Editor" />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" id="mainContent">
+            <main role="main" class="pb-3">
+                <partial name="_Editor" />
+            </main>
+        </div>
+        <div class="col-md-3 side-panel collapse"  id="sidePanel">
+                <partial name="_AnnotationToolbar" />
+                <div id="annotationForm"></div>
+        </div>
+    </div>
 </div>
-
+<!-- Button to toggle the side panel -->
 @section Scripts {
     <script type="text/javascript" src="~/js/api/document.js" asp-append-version="true"></script>
     <script type="text/javascript" src="~/js/api/page.js" asp-append-version="true"></script>
@@ -24,4 +33,8 @@
     <script type="text/javascript" src="~/js/control/navigation.js" asp-append-version="true"></script>
     <script type="text/javascript" src="~/js/control/toolbar.js" asp-append-version="true"></script>
     <script type="text/javascript" src="~/js/control/canva.js" asp-append-version="true"></script>
+
+    <script type="text/javascript" src="~/js/model/annotation_model.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="~/js/control/model_form_builder.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="~/js/control/annotation.js" asp-append-version="true"></script>
 }

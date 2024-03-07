@@ -126,8 +126,53 @@ if (window.addEventListener) {
             canvas.addEventListener('mousedown', ev_canvas, false);
             canvas.addEventListener('mousemove', ev_canvas, false);
             canvas.addEventListener('mouseup', ev_canvas, false);
-            
+
             GetDocumentInfo();
+
+            $('#sidePanel').hide();
+            $('#btnAnnotate').on('click', function () {
+                // Adjust the column classes on the main content area
+                if ($('#mainContent').hasClass('col-md-9')) {
+                    $('#mainContent').removeClass('col-md-9').addClass('col-md-12');
+                    $('#sidePanel').hide();
+                    document.body.style.zoom = "100%";
+
+                    document.getElementById('btnAddPage').disabled = false;
+                    document.getElementById('btnDeletePage').disabled = false;
+                    document.getElementById('btnMoving').disabled = false;
+                    document.getElementById('btnAppending').disabled = false;
+                    document.getElementById('btnPrevious').disabled = false;
+                    document.getElementById('btnNext').disabled = false;
+                    document.getElementById('btnSearching').disabled = false;
+                    document.getElementById('btnImage').disabled = false;
+                    document.getElementById('btnRect').disabled = false;
+                    document.getElementById('btnRead').disabled = false;
+                    document.getElementById('btnDrag').disabled = false;
+                    document.getElementById('btnTexting').disabled = false;
+                    document.getElementById('btnAttachments').disabled = false;
+                    document.getElementById('btnSignature').disabled = false;
+
+                } else {
+                    $('#mainContent').removeClass('col-md-12').addClass('col-md-9');
+                    $('#sidePanel').show();
+                    document.body.style.zoom = "80%";
+
+                    document.getElementById('btnAddPage').disabled = false;
+                    document.getElementById('btnDeletePage').disabled = true;
+                    document.getElementById('btnMoving').disabled = true;
+                    document.getElementById('btnAppending').disabled = true;
+                    document.getElementById('btnPrevious').disabled = true;
+                    document.getElementById('btnNext').disabled = true;
+                    document.getElementById('btnSearching').disabled = true;
+                    document.getElementById('btnImage').disabled = true;
+                    document.getElementById('btnRect').disabled = true;
+                    document.getElementById('btnRead').disabled = true;
+                    document.getElementById('btnDrag').disabled = true;
+                    document.getElementById('btnTexting').disabled = true;
+                    document.getElementById('btnAttachments').disabled = true;
+                    document.getElementById('btnSignature').disabled = true;
+                }
+            });
         }
 
         init();
@@ -152,6 +197,7 @@ function onStartup() {
     document.getElementById('btnTexting').disabled = false;
     document.getElementById('btnAttachments').disabled = false;
     document.getElementById('btnSignature').disabled = false;
+    document.getElementById('btnAnnotate').disabled = false;
 }
 
 function wait(ms) {

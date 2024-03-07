@@ -24,8 +24,8 @@ public class AttachmentController : Controller
     {
         var httpRequest = HttpContext.Request;
         var documentId = httpRequest.Form.Keys.Contains("documentId") &&
-                         httpRequest.Form["documentId"][0] != null ? 
-            httpRequest.Form["documentId"][0] : 
+                         httpRequest.Form["documentId"][0] != null ?
+            httpRequest.Form["documentId"][0] :
             Guid.NewGuid().ToString();
 
         var file = Path.Combine(_storageService.WorkingDirectory, documentId, "document.pdf");
@@ -46,7 +46,7 @@ public class AttachmentController : Controller
                     formFile.FileName,
                     "File added by Aspose.PDF Editor");
                 contentEditor.Save(ms);
-            }    
+            }
         }
 
         await _storageService.Upload(ms, file);

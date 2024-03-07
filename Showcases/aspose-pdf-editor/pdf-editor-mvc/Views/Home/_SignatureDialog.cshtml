@@ -1,0 +1,16 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!-- Signature -->
+<div id='divSignature' class="panel panel-success" style='position: absolute; z-index: 1030; visibility: hidden'>
+    <div class="panel-header">
+        <h5 class="panel-title">Signature</h5>
+    </div>
+    <div class="panel-body">
+        <canvas id="signCanvas" width="250" height="120" style="z-index: 1125;"></canvas>
+    </div>
+    <div class="panel-footer">
+        <button type="button" class="btn btn-secondary" id="btnClear" onclick="clearSignature();">Clear</button>
+        <button type="button" class="btn btn-success" id="btnSignDone" onclick="saveSignature();">Done</button>
+        <button type="button" class="btn btn-danger" id="btnSignClose" onclick="closeSignature();">Close</button>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="modal fade" id="replaceModal" tabindex="-1" aria-labelledby="H2" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="H2">Replace Text</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label id="Label1" for="txtFind">Find Text</label><br />
+                <input type="text" id="txtFind" /><br />
+                <label id="Label2" for="txtReplace">Replace With</label><br />
+                <input type="text" id="txtReplace" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="btnReplace" onclick="ReplaceText();"
+                    data-bs-dismiss="modal">Replace</button>
+            </div>
+        </div>
+    </div>
+</div>

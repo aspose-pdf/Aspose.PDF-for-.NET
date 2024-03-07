@@ -1,0 +1,26 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="modal fade" id="moveModal" tabindex="-1" aria-labelledby="H1" aria-hidden="true" data-bs-backdrop="static"
+     data-bs-keyboard="false">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        onclick="moveModeClose(); return false;"></button>
+                <h5 class="modal-title" id="H1">Move Page After</h5>
+            </div>
+            <div class="modal-body">
+                <label id="lblpagemove" for="txtMove">Enter Page Number</label><br />
+                <input type="text" id="txtMove" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="btnMove" onclick="Move();"
+                        data-bs-dismiss="modal">
+                    Move
+                </button>
+                <input id="hdnMove" type="hidden" />
+            </div>
+        </div>
+    </div>
+</div>
+
