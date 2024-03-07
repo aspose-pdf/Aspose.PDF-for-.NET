@@ -77,11 +77,23 @@ function SavePdf() {
             'aspectRatio': ratio, 
             'documentId': documentId 
         });
+    const jsonObj = JSON.parse(wholedata);
+
+    jsonObj.shapes = jsonObj.shapes.map(shape => {
+        for (const key in shape) {
+            if (typeof shape[key] === 'number') {
+                shape[key] = shape[key].toString();
+            }
+        }
+        return shape;
+    });
+
+    const modifiedWholedata = JSON.stringify(jsonObj);
 
     $.ajax({
         type: 'POST',
         url: `${apiBaseUrl}shape/add`,
-        data: wholedata,
+        data: modifiedWholedata,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         success: function () {
