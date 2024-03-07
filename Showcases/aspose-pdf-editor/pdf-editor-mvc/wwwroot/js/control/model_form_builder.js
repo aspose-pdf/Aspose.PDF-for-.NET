@@ -31,26 +31,28 @@ function createFormField(property, value) {
     return div;
 }
 
-function createFormFromArray(arr, parentElement, suffix) {
+function createFormFromArray(arr, parentElement, prefix) {
   console.log(arr);
   for (var i = 0; i < arr.length; i++) {
     var value = arr[i];
       
     if (typeof value === 'object' && value !== null) {
         console.log("p:" +i+":");
-        createFormFromObject(value, parentElement, i);
+        createFormFromObject(value, parentElement,i, prefix+'_');
     }
     else
     {
         console.log("f:" +i+":");
-        var formField = createFormField(property+suffix, value, i);
+        var formField = createFormField(prefix+"_"+property+ i, value, i);
         parentElement.appendChild(formField);
     }
   }
 }
 
 // Function to create a form from an object
-function createFormFromObject(obj, parentElement, suffix) {
+function createFormFromObject(obj, parentElement, suffix, prefix) {
+    if(typeof(prefix) == "undefined") prefix = "";
+    if(typeof(suffix) == "undefined") suffix = "";
     for (var property in obj) {
         if (obj.hasOwnProperty(property)) {
             var value = obj[property];
@@ -60,10 +62,10 @@ function createFormFromObject(obj, parentElement, suffix) {
                 if (Array.isArray(value)) {
                     createFormFromArray(value, parentElement, property);
                 } else {
-                    createFormFromObject(value, parentElement, suffix);
+                    createFormFromObject(value, parentElement, suffix, prefix);
                 }
             }else{
-                var formField = createFormField(property+suffix, value);
+                var formField = createFormField(prefix+property+suffix, value);
                 parentElement.appendChild(formField);    
             }
         }
