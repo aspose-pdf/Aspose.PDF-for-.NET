@@ -21,6 +21,86 @@ var annotationIcnosDict = {
     "Redact": '<i class="bi bi-eye-slash" style="color:white"></i>',
 };
 
+function addButtons(formContainer, applyCallback){
+    // Create the button container
+    var buttonContainer = document.createElement('div');
+    buttonContainer.id = 'buttonContainer';
+
+    // Create the Cancel button
+    var cancelButton = document.createElement('button');
+    cancelButton.id = 'cancelButton';
+    cancelButton.className = 'button';
+    cancelButton.textContent = 'Cancel';
+
+    // Create the Apply button
+    var applyButton = document.createElement('button');
+    applyButton.id = 'applyButton';
+    applyButton.className = 'button';
+    applyButton.textContent = 'Apply';
+
+    // Append the buttons to the button container
+    buttonContainer.appendChild(cancelButton);
+    buttonContainer.appendChild(applyButton);
+
+    // Append the button container to the div
+    formContainer.appendChild(buttonContainer);
+
+    // Add event listeners to the buttons
+    cancelButton.addEventListener('click', function() {
+    // Handle cancel button click
+        formContainer.innerHTML = '';
+        document.getElementById(formContainer.dataid).remove();
+        
+          document.getElementById('btnLine').disabled = false;
+          document.getElementById('btnSquare').disabled = false;
+          document.getElementById('btnCircle').disabled = false;
+          document.getElementById('btnPolygon').disabled = false;
+          document.getElementById('btnPolyLine').disabled = false;
+          document.getElementById('btnInk').disabled = false;
+          document.getElementById('btnHighlight').disabled = false;
+          document.getElementById('btnUnderline').disabled = false;
+          document.getElementById('btnSquiggly').disabled = false;
+          document.getElementById('btnStrikeOut').disabled = false;
+          document.getElementById('btnStamp').disabled = false;
+          document.getElementById('btnCaret').disabled = false;
+          document.getElementById('btnWatermark').disabled = false;
+          document.getElementById('btnSound').disabled = false;
+          document.getElementById('btnMovie').disabled = false;
+          document.getElementById('btnScreen').disabled = false;
+          document.getElementById('btnText').disabled = false;
+          document.getElementById('btnLink').disabled = false;
+          document.getElementById('btnFreeText').disabled = false;
+          document.getElementById('btnRedact').disabled = false;
+          document.getElementById('btnUnderline').disabled = false;
+    });
+
+    applyButton.addEventListener('click', function() {
+        applyCallback();
+        
+          document.getElementById('btnLine').disabled = false;
+          document.getElementById('btnSquare').disabled = false;
+          document.getElementById('btnCircle').disabled = false;
+          document.getElementById('btnPolygon').disabled = false;
+          document.getElementById('btnPolyLine').disabled = false;
+          document.getElementById('btnInk').disabled = false;
+          document.getElementById('btnHighlight').disabled = false;
+          document.getElementById('btnUnderline').disabled = false;
+          document.getElementById('btnSquiggly').disabled = false;
+          document.getElementById('btnStrikeOut').disabled = false;
+          document.getElementById('btnStamp').disabled = false;
+          document.getElementById('btnCaret').disabled = false;
+          document.getElementById('btnWatermark').disabled = false;
+          document.getElementById('btnSound').disabled = false;
+          document.getElementById('btnMovie').disabled = false;
+          document.getElementById('btnScreen').disabled = false;
+          document.getElementById('btnText').disabled = false;
+          document.getElementById('btnLink').disabled = false;
+          document.getElementById('btnFreeText').disabled = false;
+          document.getElementById('btnRedact').disabled = false;
+          document.getElementById('btnUnderline').disabled = false;
+    });
+}
+
 function putMarker(x, y, className){
     // Create a new div to hold the icon
     let iconDiv = document.createElement('div');
@@ -73,10 +153,9 @@ function postAnnotation(obj, className) {
 }
 
 function annotationSetup(className) {
-    let canvas = document.getElementById('imageTemp');
         
     function PointClick(event) {
-        let canvas = document.getElementById('imageView');
+        let canvas = document.getElementById('imageTemp');
         var ctx = canvas.getBoundingClientRect();
 
         // Get the mouse position relative to the canvas
@@ -129,6 +208,7 @@ function annotationSetup(className) {
           document.getElementById('btnFreeText').disabled = true;
           document.getElementById('btnRedact').disabled = true;
           document.getElementById('btnUnderline').disabled = true;
+          canvas.removeEventListener("mousedown", PointClick);
     }
 
     canvas.addEventListener("mousedown", PointClick, false);
