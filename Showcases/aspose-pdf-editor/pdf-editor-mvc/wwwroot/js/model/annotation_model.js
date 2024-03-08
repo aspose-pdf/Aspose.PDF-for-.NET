@@ -203,7 +203,7 @@ function SquigglyModel() {
 
 function StampModel() {
     this.PageNumber = 1;
-    this.ImageFile = "test.bmp";
+    this.ImageFile = "stamp.jpg";
     this.Background = true;
     this.XIndent = 10;
     this.YIndent = 10;

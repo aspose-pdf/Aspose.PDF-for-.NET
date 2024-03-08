@@ -9,7 +9,7 @@ public class StampModel
 {
     public int PageNumber { get; set; } = 1;
 
-    public string ImageFile { get; set; } = "test.bmp";
+    public string ImageFile { get; set; } = "stamp.jpg";
 
     public bool Background { get; set; } = true;
 
