@@ -44,7 +44,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Annotations
             // Save output file
             doc.Save(dataDir);
             // ExEnd:AddLinkAnnotation
-            Console.WriteLine("\nlnk annotation added successfully.\nFile saved at " + dataDir);
+            Console.WriteLine("\nInk annotation added successfully.\nFile saved at " + dataDir);
         }
     }
 }
