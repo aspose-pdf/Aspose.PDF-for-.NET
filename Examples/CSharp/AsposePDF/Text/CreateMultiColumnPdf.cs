@@ -20,7 +20,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Text
             doc.PageInfo.Margin.Right = 40;
             Page page = doc.Pages.Add();
 
-            Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500.0f, 2.0f);
+            Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500.0, 2.0);
             // Add the line to paragraphs collection of section object
             page.Paragraphs.Add(graph1);
 
@@ -54,7 +54,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Text
 
             text1.TextState.FontStyle = FontStyles.Italic;
             // Create a graphs object to draw a line
-            Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50.0f, 10.0f);
+            Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50.0, 10.0);
             // Specify the coordinates for the line
             float[] posArr2 = new float[] { 1, 10, 100, 10 };
             Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);

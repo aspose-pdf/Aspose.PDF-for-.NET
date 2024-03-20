@@ -59,25 +59,25 @@ namespace Aspose.Pdf.Examples.CSharp
         {
             Console.WriteLine("Open RunExamples.cs. \nIn Main() method uncomment the example that you want to run.");
             Console.WriteLine("=====================================================");
-            // Uncomment the one you want to try out
+            //Uncomment the one you want to try out
 
-            // =====================================================
-            // =====================================================
-            // Aspose.Pdf
-            // =====================================================
-            // =====================================================
+            //=====================================================
+            //=====================================================
+            //Aspose.Pdf
+            //=====================================================
+            //=====================================================
 
-            // QuickStart
-            // =====================================================
-            //HelloWorld.Run();
+            //QuickStart
+            //=====================================================
+            HelloWorld.Run();
             //LoadLicenseFromFile.Run();
             //LoadLicenseFromStreamObject.Run();
             //SetLicenseUsingEmbeddedResource.Run();
 
             #region Annotations
-            //// =====================================================
+            // =====================================================
             //AddAnnotation.Run();
-            //AddlnkAnnotation.Run();
+            //AddLinkAnnotation.Run();
             //AddSwfFileAsAnnotation.Run();
             //DeleteAllAnnotationsFromPage.Run();
             //DeleteParticularAnnotation.Run();
@@ -98,7 +98,7 @@ namespace Aspose.Pdf.Examples.CSharp
             // =====================================================
             //Aspose.Pdf.Examples.CSharp.AsposePDF.Attachments.AddAttachment.Run();
             //DisableFilesCompression.Run();
-            //GetAlltheAttachments.Run();
+            //GetAllTheAttachments.Run();
             //GetAttachmentInfo.Run();
             //GetIndividualAttachment.Run();
             #endregion
@@ -115,6 +115,7 @@ namespace Aspose.Pdf.Examples.CSharp
             //InheritZoom.Run();
             //UpdateBookmarks.Run();
             //UpdateChildBookmarks.Run();
+            //ExpandBookmarks.Run();
             #endregion
 
             #region  Document Conversion
@@ -129,7 +130,7 @@ namespace Aspose.Pdf.Examples.CSharp
             //MarkdownToPDF.Run();
             //MHTToPDF.Run();
             //PageOrientationAccordingImageDimensions.Run();
-            //PCLToPDF.PCLstream();
+            //PCLToPDF.PCLstream(); //TODO: Fix
             //PCLToPDF.Run();
             //PDFAToPDF.Run();
             //PDFToDOC.Run();
@@ -208,7 +209,6 @@ namespace Aspose.Pdf.Examples.CSharp
             #endregion
 
             #region Images
-            // Images
             // =====================================================
             //AllPagesToTIFF.Run();
             //Aspose.Pdf.Examples.CSharp.AsposePDF.Images.ExtractImages.Run();
@@ -267,7 +267,6 @@ namespace Aspose.Pdf.Examples.CSharp
             #endregion
 
             #region Pages
-            // Pages
             // =====================================================
             //ChangeOrientation.Run();
             //ConcatenatePdfFiles.Run();
@@ -295,12 +294,11 @@ namespace Aspose.Pdf.Examples.CSharp
             //ExtractingImage.Run();
             //IsPasswordProtected.Run();
             //SetPrivileges.Run();
-            //SignWithSmartCardUsingPdfFileSignature.Run(); //TODO: FIX
+            //SignWithSmartCardUsingPdfFileSignature.Run();
             //SignWithSmartCardUsingSignatureField.Run();
             #endregion
 
             #region Stamps-Watermarks
-            // Stamps-Watermarks
             // =====================================================
             //AddDateTimeStamp.Run();
             //AddImageStamp.AddImageStampAsBackgroundInFloatingBox();
@@ -311,11 +309,11 @@ namespace Aspose.Pdf.Examples.CSharp
             //DefineAlignment.Run();
             //ExtractTextFromStampAnnotation.Run(); //TODO
             //FillStrokeText.Run();
-            ImageAndPageNumberinHeaderFooterSection.Run();
-            ImageandPageNumberinHeaderFooterSectionInline.Run();
+            //ImageAndPageNumberinHeaderFooterSection.Run();
+            //ImageandPageNumberinHeaderFooterSectionInline.Run();
             //ImageInFooter.Run();
-            ImageInHeader.Run();
-            PageNumberingHeaderFooterUsingFloatingBox.Run();
+            //ImageInHeader.Run();
+            //PageNumberingHeaderFooterUsingFloatingBox.Run();
             //PageNumberStamps.Run();
             //TableInHeaderFooterSection.Run();
             //TextInFooter.Run();
@@ -324,7 +322,7 @@ namespace Aspose.Pdf.Examples.CSharp
 
             #region Tables
             // =====================================================
-            AddImageInATableCell.Run();
+            //AddImageInATableCell.Run();
             //AddRepeatingColumn.Run();
             //AddSVGObject.Run();
             //AddTable.Run();
@@ -346,14 +344,13 @@ namespace Aspose.Pdf.Examples.CSharp
             #endregion
 
             #region TechnicalArticles
-            // =====================================================
+             // =====================================================
             //CreatePDFPortfolio.Run();
             //ExtractFilesFromPortfolio.Run();
             //RemoveFilesFromPortfolio.Run();
             #endregion
 
             #region Text
-            // Text
             // =====================================================
             //AddHTMLOrderedListIntoDocuments.Run();
             //AddHTMLUsingDOM.HTMLFragmentRectangle();
@@ -391,12 +388,11 @@ namespace Aspose.Pdf.Examples.CSharp
             //SearchTextWithDotNetRegex.Run();
             //SetHTMLStringFormatting.Run();
             //SpecifyCharacterSpacing.Run();
-            SpecifyLineSpacing.Run();
-            TextAndImageAsParagraph.Run();
-            UseLatexScript.Run();
-            UseLatexScript2.Run();
-            Aspose.Pdf.Examples.CSharp.AsposePDF.Text.ExtractTextPage.Run();
-
+            //SpecifyLineSpacing.Run();
+            //TextAndImageAsParagraph.Run();
+            //UseLatexScript.Run();
+            //UseLatexScript2.Run();
+            //Aspose.Pdf.Examples.CSharp.AsposePDF.Text.ExtractTextPage.Run();
             #endregion
 
             #region Working-Document
@@ -416,7 +412,7 @@ namespace Aspose.Pdf.Examples.CSharp
             //ConvertFromRGBToGrayscale.Run();
             //CreateMultilayerPDFFirstApproach.Run();
             //CreateMultilayerPDFSecondApproach.Run();
-            //CreatePDFA1WithAsposePdf.Run(); //TODO: Fix
+            ////CreatePDFA1WithAsposePdf.Run(); //TODO: Fix
             //CustomizePageNumbersWhileAddingTOC.Run();
             //CreateThumbnailImages.Run();
             //EmbedFontsUsingSubsetStrategy.Run();
@@ -441,7 +437,7 @@ namespace Aspose.Pdf.Examples.CSharp
             //TrimWhiteSpace.Run();
             //UnembedFonts.Run();
             //ValidatePDFAStandard.Run();
-            ValidatePDFUAStandard.Run(); //TODO: Fix
+            ////ValidatePDFUAStandard.Run(); //TODO: Fix
             #endregion
 
             #region Working-with-Tagged PDFs
@@ -473,7 +469,7 @@ namespace Aspose.Pdf.Examples.CSharp
             #endregion
 
             #region XML And XLST
-            //// =====================================================
+            // =====================================================
             //BreakfastMenuUsingXmlAndXslt.Run();
             //HelloWorldPDFUsingXmlAndXslt.Run();
             #endregion

@@ -22,7 +22,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.QuickStart
             // Save updated PDF
             document.Save(dataDir + "HelloWorld_out.pdf");
             // ExEnd:1
-            Console.WriteLine("\nPDF file password changed successfully.\nFile saved at " + dataDir);
+            Console.WriteLine("\nFile saved at " + dataDir);
         }
     }
 }

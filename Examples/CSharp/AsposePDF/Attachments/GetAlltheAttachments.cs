@@ -4,7 +4,7 @@ using System;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Attachments
 {
-    public class GetAlltheAttachments
+    public class GetAllTheAttachments
     {
         public static void Run()
         {
@@ -14,15 +14,15 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Attachments
 
             // Open document
             Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-            
+
             // Get embedded files collection
             EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
-            
+
             // Get count of the embedded files
             Console.WriteLine("Total files : {0}", embeddedFiles.Count);
 
             int count = 1;
-            
+
             // Loop through the collection to get all the attachments
             foreach (FileSpecification fileSpecification in embeddedFiles)
             {
@@ -31,8 +31,8 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Attachments
                 fileSpecification.Description);
                 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
 
-                
-                
+
+
                 // Check if parameter object contains the parameters
                 if (fileSpecification.Params != null)
                 {
@@ -44,7 +44,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Attachments
                     fileSpecification.Params.ModDate);
                     Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
                 }
-                
+
                 // Get the attachment and write to file or stream
                 byte[] fileContent = new byte[fileSpecification.Contents.Length];
                 fileSpecification.Contents.Read(fileContent, 0,

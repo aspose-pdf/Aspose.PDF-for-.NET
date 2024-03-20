@@ -19,7 +19,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Text
             Aspose.Pdf.Page page = doc.Pages.Add();
 
             // Create Graph object
-            Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100.0f, 400.0f);
+            Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100.0, 400.0);
             // Create rectangle instance with certain dimensions
             Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
             // Create color object from Alpha color channel

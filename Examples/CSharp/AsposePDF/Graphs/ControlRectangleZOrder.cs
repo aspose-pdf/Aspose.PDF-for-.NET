@@ -38,7 +38,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Graphs
         private static void AddRectangle(Aspose.Pdf.Page page, float x, float y, float width, float height, Aspose.Pdf.Color color, int zindex)
         {
             // Create graph object with dimensions same as specified for Rectangle object
-            Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(width*1.0f, height*1.0f);
+            Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(width*1.0, height*1.0);
             // Can we change the position of graph instance
             graph.IsChangePosition = false;
             // Set Left coordinate position for Graph instance

@@ -49,11 +49,11 @@
     <StartupObject>Aspose.Pdf.Examples.CSharp.RunExamples</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.Cells, Version=23.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.Cells.23.4.0\lib\net40\Aspose.Cells.dll</HintPath>
+    <Reference Include="Aspose.Cells, Version=24.3.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Cells.24.3.0\lib\net40\Aspose.Cells.dll</HintPath>
     </Reference>
-    <Reference Include="Aspose.PDF, Version=23.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.PDF.23.4.0\lib\net4.0\Aspose.PDF.dll</HintPath>
+    <Reference Include="Aspose.PDF, Version=24.3.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.PDF.24.3.0\lib\net4.0\Aspose.PDF.dll</HintPath>
     </Reference>
     <Reference Include="Ionic.Zip.Reduced, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetZip.Reduced.1.9.1.8\lib\net20\Ionic.Zip.Reduced.dll</HintPath>
@@ -256,7 +256,7 @@
     <Compile Include="AsposePDF\Annotations\ExtractHighlightedText.cs" />
     <Compile Include="AsposePDF\Annotations\GetResourceOfAnnotation.cs" />
     <Compile Include="AsposePDF\Annotations\lnkAnnotationLineWidth.cs" />
-    <Compile Include="AsposePDF\Annotations\AddlnkAnnotation.cs" />
+    <Compile Include="AsposePDF\Annotations\AddLinkAnnotation.cs" />
     <Compile Include="AsposePDF\Annotations\InvisibleAnnotation.cs" />
     <Compile Include="AsposePDF\Annotations\AddAnnotation.cs" />
     <Compile Include="AsposePDF\Annotations\AddSwfFileAsAnnotation.cs" />
@@ -272,7 +272,7 @@
     <Compile Include="AsposePDF\Attachments\AddAttachment.cs" />
     <Compile Include="AsposePDF\Attachments\DeleteAllAttachments.cs" />
     <Compile Include="AsposePDF\Attachments\DisableFilesCompression.cs" />
-    <Compile Include="AsposePDF\Attachments\GetAlltheAttachments.cs" />
+    <Compile Include="AsposePDF\Attachments\GetAllTheAttachments.cs" />
     <Compile Include="AsposePDF\Attachments\GetIndividualAttachment.cs" />
     <Compile Include="AsposePDF\Attachments\GetAttachmentInfo.cs" />
     <Compile Include="AsposePDF\Bookmarks\AddBookmark.cs" />
@@ -632,7 +632,9 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="AsposePDF\Working-Document\aspose-logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

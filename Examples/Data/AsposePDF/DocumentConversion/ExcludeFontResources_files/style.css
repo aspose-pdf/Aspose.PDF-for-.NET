@@ -41,12 +41,12 @@
 	height: 66em;
 }
 @font-face {
-	font-family:"MICIST+Arial Bold";
-	src:url("9e42fd32-0001-0000-0000-000000000000.woff") format("woff");
+	font-family:"PDUJPU+Arial Bold";
+	src:url("6c57b0a7-0001-0000-0000-000000000000.woff") format("woff");
 }
 .stl_05 {
 	font-size: 1.67em;
-	font-family: "MICIST+Arial Bold";
+	font-family: "PDUJPU+Arial Bold";
 	color: #C00000;
 	line-height: 1.117188em;
 }
@@ -54,22 +54,22 @@
 	letter-spacing: -0.01em;
 }
 @font-face {
-	font-family:"LCPOAL+Arial Bold";
-	src:url("b8266316-0001-0000-0000-000000000000.woff") format("woff");
+	font-family:"CVQLEJ+Arial Bold";
+	src:url("da8db65c-0001-0000-0000-000000000000.woff") format("woff");
 }
 .stl_07 {
 	font-size: 1.67em;
-	font-family: "LCPOAL+Arial Bold", "Times New Roman";
+	font-family: "CVQLEJ+Arial Bold", "Times New Roman";
 	color: #C00000;
 	line-height: 1.117188em;
 }
 @font-face {
-	font-family:"SRSDWO+Calibri";
-	src:url("4bfc5a5b-0000-0000-0000-000000000000.woff") format("woff");
+	font-family:"FMUDTG+Calibri";
+	src:url("c436485e-0000-0000-0000-000000000000.woff") format("woff");
 }
 .stl_08 {
 	font-size: 0.92em;
-	font-family: "SRSDWO+Calibri";
+	font-family: "FMUDTG+Calibri";
 	color: #000000;
 	line-height: 1.220703em;
 }

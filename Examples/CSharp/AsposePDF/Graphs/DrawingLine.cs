@@ -19,7 +19,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Graphs
             // Set page margin on all sides as 0
             pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
             // Create Graph object with Width and Height equal to page dimensions
-            Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width , (float)pg.PageInfo.Height);
+            Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(pg.PageInfo.Width , pg.PageInfo.Height);
             // Create first line object starting from Lower-Left to Top-Right corner of page
             Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)pg.Rect.LLX, 0, (float)pg.PageInfo.Width, (float)pg.Rect.URY });
             // Add line to shapes collection of Graph object

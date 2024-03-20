@@ -17,7 +17,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Graphs
             // Add page to pages collection of PDF file
             Page page = doc.Pages.Add();
             // Create Graph instance
-            Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100.0f, 400.0f);
+            Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100.0, 400.0);
             // Add graph object to paragraphs collection of page instance
             page.Paragraphs.Add(graph);
             // Create Rectangle instance

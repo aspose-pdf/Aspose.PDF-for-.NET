@@ -7,11 +7,11 @@ using System.Collections.Generic;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Annotations
 {
-    public class AddlnkAnnotation
+    public class AddLinkAnnotation
     {
         public static void Run()
         {
-            // ExStart:AddlnkAnnotation
+            // ExStart:AddLinkAnnotation
             // The path to the documents directory.
             string dataDir = RunExamples.GetDataDir_AsposePdf_Annotations();
 
@@ -41,7 +41,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Annotations
             dataDir = dataDir + "AddlnkAnnotation_out.pdf";
             // Save output file
             doc.Save(dataDir);
-            // ExEnd:AddlnkAnnotation
+            // ExEnd:AddLinkAnnotation
             Console.WriteLine("\nlnk annotation added successfully.\nFile saved at " + dataDir);
         }
     }

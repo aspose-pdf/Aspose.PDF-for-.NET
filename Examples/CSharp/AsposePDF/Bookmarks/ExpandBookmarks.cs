@@ -13,11 +13,11 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Bookmarks
             string dataDir = RunExamples.GetDataDir_AsposePdf_Bookmarks();
 
             // Open document
-            Document doc = new Document(dataDir + "input.pdf");
+            Document doc = new Document(dataDir + "input-bookmark.pdf");
 
             // Set page view mode i.e. show thumbnails, full-screen, show attachment panel
             doc.PageMode = PageMode.UseOutlines;
-            // Traverse through each Ouline item in outlines collection of PDF file
+            // Traverse through each Outline item in outlines collection of PDF file
             foreach (OutlineItemCollection item in doc.Outlines)
             {
                 // Set open status for outline item

@@ -24,29 +24,29 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDFFacades.Printing
             viewer.PrintPageDialog = false;   // Do not produce the page number dialog when printing
 
             // Create objects for printer and page settings and PrintDocument
-            System.Drawing.Printing.PrinterSettings ps = new System.Drawing.Printing.PrinterSettings();
-            System.Drawing.Printing.PageSettings pgs = new System.Drawing.Printing.PageSettings();
+            Aspose.Pdf.Printing.PrinterSettings ps = new Aspose.Pdf.Printing.PrinterSettings();
+            Aspose.Pdf.Printing.PageSettings pgs = new Aspose.Pdf.Printing.PageSettings();
             System.Drawing.Printing.PrintDocument prtdoc = new System.Drawing.Printing.PrintDocument();
 
             // Set printer name
             ps.PrinterName = prtdoc.PrinterSettings.PrinterName;
 
             // Set PageSize (if required)
-            pgs.PaperSize = new System.Drawing.Printing.PaperSize("A4", 827, 1169);
+            pgs.PaperSize = new Aspose.Pdf.Printing.PaperSize("A4", 827, 1169);
 
             // Set PageMargins (if required)
-            pgs.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
+            pgs.Margins = new Devices.Margins(0, 0, 0, 0);
 
             // Print document using printer and page settings
             viewer.PrintDocumentWithSettings(pgs, ps);
 
-            // Close the PDF file after priting
+            // Close the PDF file after printing
             viewer.Close();
             // ExEnd:PrintToDefaultPrinter
         }
         public static void ShowPrintDialog()
         {
-          
+
             // The path to the documents directory.
             string dataDir = RunExamples.GetDataDir_AsposePdfFacades_Printing();
 
@@ -62,18 +62,18 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDFFacades.Printing
             viewer.PrintPageDialog = false;   // Do not produce the page number dialog when printing
 
             // Create objects for printer and page settings and PrintDocument
-            System.Drawing.Printing.PrinterSettings ps = new System.Drawing.Printing.PrinterSettings();
-            System.Drawing.Printing.PageSettings pgs = new System.Drawing.Printing.PageSettings();
+            Aspose.Pdf.Printing.PrinterSettings ps = new Aspose.Pdf.Printing.PrinterSettings();
+            Aspose.Pdf.Printing.PageSettings pgs = new Aspose.Pdf.Printing.PageSettings();
             System.Drawing.Printing.PrintDocument prtdoc = new System.Drawing.Printing.PrintDocument();
 
             // Set printer name
             ps.PrinterName = prtdoc.PrinterSettings.PrinterName;
 
             // Set PageSize (if required)
-            pgs.PaperSize = new System.Drawing.Printing.PaperSize("A4", 827, 1169);
+            pgs.PaperSize = new Aspose.Pdf.Printing.PaperSize("A4", 827, 1169);
 
             // Set PageMargins (if required)
-            pgs.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
+            pgs.Margins = new Aspose.Pdf.Devices.Margins(0, 0, 0, 0);
             // ExStart:PrintDialog
             System.Windows.Forms.PrintDialog printDialog = new System.Windows.Forms.PrintDialog();
             if (printDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -82,11 +82,11 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDFFacades.Printing
                 // Print document using printer and page settings
                 viewer.PrintDocumentWithSettings(pgs, ps);
             }
-            // ExEnd:PrintDialog            
+            // ExEnd:PrintDialog
 
-            // Close the PDF file after priting
+            // Close the PDF file after printing
             viewer.Close();
         }
-       
+
     }
 }

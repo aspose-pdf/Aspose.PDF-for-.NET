@@ -10,7 +10,7 @@
 		<div class="stl_ stl_02">
 			<div class="stl_view">
 				<div class="stl_03 stl_04">
-					<div class="stl_01" style="left:15.1917em;top:6.0399em;z-index:20;"><span class="stl_05 stl_06" style="word-spacing:0.04em;">Sample PDF File 1 </span><span class="stl_07" style="word-spacing:0.03em;">– </span><span class="stl_05" style="word-spacing:0em;">Page 1 &nbsp;</span></div>
+					<div class="stl_01" style="left:15.1917em;top:6.0399em;z-index:20;"><span class="stl_05 stl_06" style="font-weight:bold;word-spacing:0.04em;">Sample PDF File 1 </span><span class="stl_07" style="font-weight:bold;word-spacing:0.03em;">– </span><span class="stl_05" style="font-weight:bold;word-spacing:0em;">Page 1 &nbsp;</span></div>
 					<div class="stl_01" style="left:6.002em;top:8.8357em;z-index:96;"><span class="stl_08 stl_06" style="word-spacing:0.04em;">This is a sample text on page one in PDF file in which the text replacement is to be performed. &nbsp;</span></div>
 					<div class="stl_01" style="left:6.002em;top:11.0757em;z-index:181;"><span class="stl_08 stl_06" style="word-spacing:0.03em;">In order to replace text in all the pages of a PDF document, you first need to use TextFragmentAbsorber &nbsp;</span></div>
 					<div class="stl_01" style="left:6.002em;top:12.1957em;z-index:257;"><span class="stl_08 stl_06" style="word-spacing:0.04em;">to find the particular phrase you want to replace. After that, you need to go through all the &nbsp;</span></div>

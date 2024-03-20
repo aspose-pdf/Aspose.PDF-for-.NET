@@ -23,7 +23,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Graphs
             // Add page to pages collection of PDF file
             Page page = document.Pages.Add();
             // Create Graph object with certain dimensions
-            Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300.0f, 400.0f);
+            Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300.0, 400.0);
             // Set border for Drawing object
             graph.Border = (new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Black));
             // Add graph object to paragraphs collection of Page instance

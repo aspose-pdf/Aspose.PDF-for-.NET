@@ -17,7 +17,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Graphs
             // Add page to pages collection of Document object
             Page page = doc.Pages.Add();
             // Create Drawing object with certain dimensions
-            Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100.0f, 400.0f);
+            Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100.0, 400.0);
             // Add drawing object to paragraphs collection of page instance
             page.Paragraphs.Add(canvas);
             // Create Line object
