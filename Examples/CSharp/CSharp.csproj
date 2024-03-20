@@ -256,7 +256,7 @@
     <Compile Include="AsposePDF\Annotations\ExtractHighlightedText.cs" />
     <Compile Include="AsposePDF\Annotations\GetResourceOfAnnotation.cs" />
     <Compile Include="AsposePDF\Annotations\lnkAnnotationLineWidth.cs" />
-    <Compile Include="AsposePDF\Annotations\AddLinkAnnotation.cs" />
+    <Compile Include="AsposePDF\Annotations\AddInkAnnotation.cs" />
     <Compile Include="AsposePDF\Annotations\InvisibleAnnotation.cs" />
     <Compile Include="AsposePDF\Annotations\AddAnnotation.cs" />
     <Compile Include="AsposePDF\Annotations\AddSwfFileAsAnnotation.cs" />
