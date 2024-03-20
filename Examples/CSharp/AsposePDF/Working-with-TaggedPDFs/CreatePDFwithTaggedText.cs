@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Working_with_TaggedPDFs
 {
-    public class CreatePDFwithTaggedText
+    public class CreatePDFWithTaggedText
     {
         public static void Run()
         {

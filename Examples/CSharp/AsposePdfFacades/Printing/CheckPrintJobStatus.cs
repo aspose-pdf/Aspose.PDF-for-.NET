@@ -27,11 +27,11 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDFFacades.Printing
                 viewer.PrintPageDialog = false;
 
                 // Create Printer Settings object
-                System.Drawing.Printing.PrinterSettings ps = new System.Drawing.Printing.PrinterSettings();
-                System.Drawing.Printing.PageSettings pgs = new System.Drawing.Printing.PageSettings();
+                Aspose.Pdf.Printing.PrinterSettings ps = new Aspose.Pdf.Printing.PrinterSettings();
+                Aspose.Pdf.Printing.PageSettings pgs = new Aspose.Pdf.Printing.PageSettings();
                 System.Drawing.Printing.PrintDocument prtdoc = new System.Drawing.Printing.PrintDocument();
 
-                // Specify the printer anme
+                // Specify the printer name
                 ps.PrinterName = "Microsoft XPS Document Writer";
 
                 // Resultant Printout name
@@ -41,12 +41,12 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDFFacades.Printing
                 ps.PrintToFile = true;
                 ps.FromPage = 1;
                 ps.ToPage = 2;
-                ps.PrintRange = System.Drawing.Printing.PrintRange.SomePages;
+                ps.PrintRange = Aspose.Pdf.Printing.PrintRange.SomePages;
 
                 // Specify the page size of printout
-                pgs.PaperSize = new System.Drawing.Printing.PaperSize("A4", 827, 1169);
+                pgs.PaperSize = new Aspose.Pdf.Printing.PaperSize("A4", 827, 1169);
                 ps.DefaultPageSettings.PaperSize = pgs.PaperSize;
-                pgs.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
+                pgs.Margins = new Aspose.Pdf.Devices.Margins(0, 0, 0, 0);
 
                 // Print the document with settings specified above
                 viewer.PrintDocumentWithSettings(pgs, ps);
@@ -55,8 +55,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDFFacades.Printing
                 if (viewer.PrintStatus != null)
                 {
                     // An exception was thrown
-                    Exception ex = viewer.PrintStatus as Exception;
-                    if (ex != null)
+                    if (viewer.PrintStatus is Exception ex)
                     {
                         // Get exception message
                     }
@@ -104,7 +103,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDFFacades.Printing
             // Do not produce the page number dialog when printing
             using (new Impersonator("OwnerUserName", "SomeDomain", "OwnerUserNamePassword"))
             {
-                System.Drawing.Printing.PrinterSettings ps = new System.Drawing.Printing.PrinterSettings();
+                Aspose.Pdf.Printing.PrinterSettings ps = new Aspose.Pdf.Printing.PrinterSettings();
                 ps.PrinterName = "Microsoft XPS Document Writer";
                 viewer.PrintDocumentWithSettings(ps); // OwnerUserName is a value of Owner column in spooler app
                 viewer.Close();

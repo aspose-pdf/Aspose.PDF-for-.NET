@@ -7,33 +7,34 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDFFacades.Printing
 {
     public class PrintPageRange
     {
+        [Obsolete]
         public static void Run()
         {
             try
             {
                 // ExStart:PrintPageRange
                 // The path to the documents directory.
-                string dataDir = RunExamples.GetDataDir_AsposePdfFacades_Printing();
+                //string dataDir = RunExamples.GetDataDir_AsposePdfFacades_Printing();
 
-                Aspose.Pdf.Facades.PdfViewer pdfv = new Aspose.Pdf.Facades.PdfViewer();
+                //Aspose.Pdf.Facades.PdfViewer pdfv = new Aspose.Pdf.Facades.PdfViewer();
 
-                pdfv.PdfQueryPageSettings += PdfvOnPdfQueryPageSettings;
+                ////pdfv.PdfQueryPageSettings += PdfvOnPdfQueryPageSettings;
 
-                System.Drawing.Printing.PageSettings pgs = new System.Drawing.Printing.PageSettings();
-                System.Drawing.Printing.PrinterSettings prin = new System.Drawing.Printing.PrinterSettings();
+                //System.Drawing.Printing.PageSettings pgs = new System.Drawing.Printing.PageSettings();
+                //System.Drawing.Printing.PrinterSettings prin = new System.Drawing.Printing.PrinterSettings();
 
-                pdfv.BindPdf(dataDir + "Print-PageRange.pdf");
-                prin.PrinterName = "HP LaserJet M9050 MFP PCL6";
-                prin.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("A4", 827, 1169);
+                //pdfv.BindPdf(dataDir + "Print-PageRange.pdf");
+                //prin.PrinterName = "HP LaserJet M9050 MFP PCL6";
+                //prin.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("A4", 827, 1169);
 
-                Aspose.Pdf.Facades.PdfPageEditor pageEditor = new Aspose.Pdf.Facades.PdfPageEditor();
-                pageEditor.BindPdf(dataDir + "input.pdf");
+                //Aspose.Pdf.Facades.PdfPageEditor pageEditor = new Aspose.Pdf.Facades.PdfPageEditor();
+                //pageEditor.BindPdf(dataDir + "input.pdf");
 
-                pgs.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
-                pgs.PaperSize = prin.DefaultPageSettings.PaperSize;
+                //pgs.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
+                //pgs.PaperSize = prin.DefaultPageSettings.PaperSize;
 
-                pdfv.PrintDocumentWithSettings(pgs, prin);
-                pdfv.Close();
+                //pdfv.PrintDocumentWithSettings(pgs, prin);
+                //pdfv.Close();
                 // ExEnd:PrintPageRange
             }
             catch (Exception ex)

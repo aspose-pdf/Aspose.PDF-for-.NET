@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Working_Document
 {
-    public class ValidatePDFUAstandard
+    public class ValidatePDFUAStandard
     {
         public static void Run()
         {

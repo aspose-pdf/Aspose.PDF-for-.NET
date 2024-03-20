@@ -9,6 +9,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Operators
     {
         public static void Run()
         {
+            // TODO: Fix 
             // ExStart:RemoveGraphicsObjects
             // The path to the documents directory.
             string dataDir = RunExamples.GetDataDir_AsposePdf_Operators();
@@ -24,7 +25,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Operators
                     new Aspose.Pdf.Operators.Fill()
             };
 
-            oc.Delete(operators);
+            // oc.Delete(operators);
             doc.Save(dataDir+ "No_Graphics_out.pdf");
             // ExEnd:RemoveGraphicsObjects
         }

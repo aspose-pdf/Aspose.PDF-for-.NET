@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Working_Document
 {
-    class CustomizePageNumbesWhileAddingTOC
+    class CustomizePageNumbersWhileAddingTOC
     {
         public static void Run()
         {

@@ -2,7 +2,7 @@
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Images
 {
-    public class ConvertImageStreamtoPDF
+    public class ConvertImageStreamToPDF
     {
         public static void Run()
         {

@@ -16,11 +16,11 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.QuickStart
             // Initialize license object
             Aspose.Pdf.License license = new Aspose.Pdf.License();
             // Load license in FileStream
-            FileStream myStream = new FileStream("Aspose.Pdf.lic", FileMode.Open);
+            FileStream myStream = new FileStream(@"c:\Keys\Aspose.Pdf.net.lic", FileMode.Open);
             // Set license
             license.SetLicense(myStream);
             Console.WriteLine("License set successfully.");
-            // ExEnd:1  
+            // ExEnd:1
         }
     }
 }

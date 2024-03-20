@@ -1,0 +1,24 @@
+<!DOCTYPE html><!--[if IE]>  <html class="stl_ie"> <![endif]-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>
+		</title>
+		<link rel="stylesheet" type="text/css" href="ExcludeFontResources_files/style.css" />
+	</head>
+	<body>
+		<div class="stl_ stl_02">
+			<div class="stl_view">
+				<div class="stl_03 stl_04">
+					<div class="stl_01" style="left:15.1917em;top:6.0399em;z-index:20;"><span class="stl_05 stl_06" style="font-weight:bold;word-spacing:0.04em;">Sample PDF File 1 </span><span class="stl_07" style="font-weight:bold;word-spacing:0.03em;">– </span><span class="stl_05" style="font-weight:bold;word-spacing:0em;">Page 1 &nbsp;</span></div>
+					<div class="stl_01" style="left:6.002em;top:8.8357em;z-index:96;"><span class="stl_08 stl_06" style="word-spacing:0.04em;">This is a sample text on page one in PDF file in which the text replacement is to be performed. &nbsp;</span></div>
+					<div class="stl_01" style="left:6.002em;top:11.0757em;z-index:181;"><span class="stl_08 stl_06" style="word-spacing:0.03em;">In order to replace text in all the pages of a PDF document, you first need to use TextFragmentAbsorber &nbsp;</span></div>
+					<div class="stl_01" style="left:6.002em;top:12.1957em;z-index:257;"><span class="stl_08 stl_06" style="word-spacing:0.04em;">to find the particular phrase you want to replace. After that, you need to go through all the &nbsp;</span></div>
+					<div class="stl_01" style="left:6.002em;top:13.3157em;z-index:341;"><span class="stl_08 stl_06" style="word-spacing:0.03em;">TextFragments to replace the text and change any other attributes. Once you have done that, you only &nbsp;</span></div>
+					<div class="stl_01" style="left:6.002em;top:14.4357em;z-index:424;"><span class="stl_08 stl_06" style="word-spacing:0.04em;">need to save the output PDF using Save method of the Document object. The example elaborates this in &nbsp;</span></div>
+					<div class="stl_01" style="left:6.002em;top:15.5557em;z-index:458;"><span class="stl_08 stl_06" style="word-spacing:0.04em;">detail to replace text in a PDF document. &nbsp;</span></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

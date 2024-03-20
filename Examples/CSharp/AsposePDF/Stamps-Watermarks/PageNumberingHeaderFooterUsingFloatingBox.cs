@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.StampsWatermarks
 {
-    public class PageNumberinHeaderFooterUsingFloatingBox
+    public class PageNumberingHeaderFooterUsingFloatingBox
     {
         public static void Run()
         {

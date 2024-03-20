@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Tables
 {
-    public class AddImageinATableCell
+    public class AddImageInATableCell
     {
         public static void Run()
         {

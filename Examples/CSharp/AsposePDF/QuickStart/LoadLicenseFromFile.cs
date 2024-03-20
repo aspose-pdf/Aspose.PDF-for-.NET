@@ -15,9 +15,9 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.QuickStart
             // Initialize license object
             Aspose.Pdf.License license = new Aspose.Pdf.License();
             // Set license
-            license.SetLicense("Aspose.Pdf.lic");
+            license.SetLicense("c:\\keys\\Aspose.Pdf.net.lic");
             Console.WriteLine("License set successfully.");
-            // ExEnd:1  
+            // ExEnd:1
         }
     }
 }

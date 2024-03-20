@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Annotations
 {
-    public class lnkAnnotationLineWidth
+    public class LnkAnnotationLineWidth
     {
         public static void Run()
         {

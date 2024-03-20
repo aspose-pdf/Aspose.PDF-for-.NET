@@ -18,13 +18,13 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Text
             // Create page to pages collection of PDF file
             Aspose.Pdf.Page page = doc.Pages.Add();
 
-            // Create Graph object 
-            Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
+            // Create Graph object
+            Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100.0, 400.0);
             // Create rectangle instance with certain dimensions
             Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
             // Create color object from Alpha color channel
             rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
-            // Add rectanlge to shapes collection of Graph object
+            // Add rectangle to shapes collection of Graph object
             canvas.Shapes.Add(rect);
             // Add graph object to paragraphs collection of page object
             page.Paragraphs.Add(canvas);
@@ -42,7 +42,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Text
 
             dataDir = dataDir + "AddTransparentText_out.pdf";
             doc.Save(dataDir);
-            // ExEnd:AddTransparentText            
+            // ExEnd:AddTransparentText
             Console.WriteLine("\nTransparent text added successfully.\nFile saved at " + dataDir);
         }
     }

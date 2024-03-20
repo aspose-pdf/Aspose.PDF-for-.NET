@@ -7,14 +7,14 @@ using System.Text;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Working_with_TaggedPDFs
 {
-    public class CreatePDFwithTaggedImage
+    public class CreatePDFWithTaggedImage
     {
         public static void Run()
         {
             // ExStart:CreatePDFwithTaggedImage
             // The path to the documents directory.
             string dataDir = RunExamples.GetDataDir_AsposePdf_WorkingDocuments();
-     
+
             Document document = new Document();
             ITaggedContent taggedContent = document.TaggedContent;
 
@@ -27,7 +27,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Working_with_TaggedPDFs
             figure1.Title = "Image 1";
             figure1.SetTag("Fig");
             // Add image with resolution 300 DPI (by default)
-            figure1.SetImage(dataDir + @"aspose-logo.jpg");
+            figure1.SetImage(dataDir + @"aspose-logo.png");
 
             // Save PDF Document
             document.Save(dataDir + "PDFwithTaggedImage.pdf");

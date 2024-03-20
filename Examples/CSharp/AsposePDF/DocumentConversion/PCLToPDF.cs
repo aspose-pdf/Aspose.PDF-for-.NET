@@ -1,6 +1,8 @@
 using System;
+using System.Drawing.Text;
 using System.IO;
 using Aspose.Pdf;
+using Aspose.Pdf.Text;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.DocumentConversion
 {
@@ -35,17 +37,20 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.DocumentConversion
             // ExStart:PCLstream
             // The path to the documents directory.
             string dataDir = RunExamples.GetDataDir_AsposePdf_DocumentConversion();
-
             using (FileStream fileStream = new FileStream(dataDir + "sample.pcl", FileMode.Open))
             using (MemoryStream memoryStream = new MemoryStream())
             {
+                PclLoadOptions pclLoadOptions = new PclLoadOptions
+                {
+                    ConversionEngine = PclLoadOptions.ConversionEngines.LegacyEngine
+                };
                 fileStream.CopyTo(memoryStream);
 
                 memoryStream.Seek(0, SeekOrigin.Begin);
 
-                using (Document document = new Document(memoryStream, new PclLoadOptions()))
+                using (Document document = new Document(memoryStream, pclLoadOptions))
                 {
-
+                    Console.WriteLine(document.Pages.Count);
                 }
             }
             // ExEnd:PCLstream

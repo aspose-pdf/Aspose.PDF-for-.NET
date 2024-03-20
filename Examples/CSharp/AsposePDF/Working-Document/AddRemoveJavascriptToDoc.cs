@@ -7,7 +7,7 @@ using System.Collections;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.WorkingDocuments
 {
-    public class AddRemoveJavascriptToDoc
+    public class AddRemoveJavaScriptToDoc
     {
         public static void Run()
         {

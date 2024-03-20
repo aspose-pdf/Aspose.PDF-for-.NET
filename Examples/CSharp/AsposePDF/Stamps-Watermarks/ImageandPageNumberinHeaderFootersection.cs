@@ -1,7 +1,7 @@
 ﻿
 namespace Aspose.Pdf.Examples.CSharp.AsposePDF.StampsWatermarks
 {
-    public class ImageandPageNumberinHeaderFootersection
+    public class ImageAndPageNumberinHeaderFooterSection
     {
         public static void Run()
         {

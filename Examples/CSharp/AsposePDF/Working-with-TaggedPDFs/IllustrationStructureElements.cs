@@ -21,7 +21,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Working_with_TaggedPDFs
             // Get Content for work with TaggedPdf
             ITaggedContent taggedContent = document.TaggedContent;
 
-            // Set Title and Language for Documnet
+            // Set Title and Language for Document
             taggedContent.SetTitle("Tagged Pdf Document");
             taggedContent.SetLanguage("en-US");
 
@@ -31,7 +31,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Working_with_TaggedPDFs
             figure1.AlternativeText = "Figure One";
             figure1.Title = "Image 1";
             figure1.SetTag("Fig1");
-            figure1.SetImage("image.png");
+            figure1.SetImage(dataDir + "image.jpg");
 
             // Save Tagged Pdf Document
             document.Save(dataDir + "IllustrationStructureElements.pdf");

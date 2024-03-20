@@ -1,7 +1,6 @@
 using System.IO;
 using System.Collections.Generic;
-using Aspose.Pdf;
-using System.Drawing.Printing;
+using Aspose.Pdf.Printing;
 using Aspose.Pdf.Facades;
 
 namespace Aspose.Pdf.Examples.CSharp.AsposePDFFacades.Printing
@@ -14,7 +13,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDFFacades.Printing
             public int ToPage { get; set; }
             public int FromPage { get; set; }
             public string OutputFile { get; set; }
-            public System.Drawing.Printing.Duplex Mode { get; set; }
+            public Duplex Mode { get; set; }
         }
         // ExEnd:PrintingJobSettings
         public static void Run()
@@ -70,9 +69,9 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDFFacades.Printing
             ps.Duplex = printingJobs[printingJobIndex].Mode;
             ps.PrintRange = PrintRange.SomePages;
 
-            pgs.PaperSize = new System.Drawing.Printing.PaperSize("A4", 827, 1169);
+            pgs.PaperSize = new Aspose.Pdf.Printing.PaperSize("A4", 827, 1169);
             ps.DefaultPageSettings.PaperSize = pgs.PaperSize;
-            pgs.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
+            pgs.Margins = new Aspose.Pdf.Devices.Margins(0, 0, 0, 0);
             viewer.EndPrint += (sender, args) =>
             {
                 if (++printingJobIndex < printingJobs.Count)
@@ -87,7 +86,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDFFacades.Printing
 
             viewer.PrintDocumentWithSettings(pgs, ps);
             // ExEnd:PrintPages
-        }    
+        }
 
 
     }

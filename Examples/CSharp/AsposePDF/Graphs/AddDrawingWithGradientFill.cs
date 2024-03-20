@@ -16,7 +16,7 @@ namespace Aspose.Pdf.Examples.CSharp.AsposePDF.Graphs
 
             Document doc = new Document();
             Page page = doc.Pages.Add();
-            Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300, 300);
+            Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300.0, 300.0);
             page.Paragraphs.Add(graph);
             Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(0, 0, 300, 300);
             graph.Shapes.Add(rect);
