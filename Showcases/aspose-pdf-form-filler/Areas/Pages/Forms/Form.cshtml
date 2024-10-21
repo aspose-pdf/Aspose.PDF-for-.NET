@@ -1,0 +1,79 @@
+﻿@using Aspose.App.UI.Utils
+
+@model Aspose.PDF.FormFiller.Models.FormViewModel
+
+@{
+    Layout = "~/Areas/Pages/Shared/Layout.cshtml";
+}
+
+
+@section styles
+{
+    <link defer rel="stylesheet"  href="/pdf/form-filler/content/css/form.min.css"/>
+    <link defer type="text/css" rel="stylesheet" href="/pdf/form-filler/content/css/AsposePtyLtdMenu.css" />
+    <style>
+        .otherapps-panel-expand{
+            display:none
+        }
+    </style>
+}
+
+@section scripts
+{
+    @if (Model.IsDevelop)
+    {
+        <script defer type="text/javascript" src="/pdf/form-filler/content/js/lang.js" as="script" asp-append-version="false"></script>
+        <script defer type="text/javascript" src="/pdf/form-filler/content/js/Form.js" asp-append-version="true"></script>
+    }
+    else
+    {
+        <script defer type="text/javascript" src="/pdf/form-filler/content/js/lang.min.js" as="script" asp-append-version="false"></script>
+        <script defer type="text/javascript" src="/pdf/form-filler/content/js/Form.min.js" asp-append-version="true"></script>
+    }
+}
+
+
+
+<div ng-controller="EditorController" class="blue-bg">
+    <div class="container">
+        <div class="row">
+            <div>
+                <h1 id="ProductTitle">@Html.Raw(Model.Title)</h1>
+                <h2 id="ProductTitleSub">@Html.Raw(Model.TitleSub)</h2>
+                <div style="text-align:center">
+                    <a href="@Html.Raw(Model.AppURL)" class="btn title-links">
+                        @Html.Raw(Model["AnotherFile"]) &nbsp;
+                        <svg class="icon icon-refresh frame0" viewBox="0 -2 32 32"><path d="M26.982 18.857q0 0.089-0.018 0.125-1.143 4.786-4.786 7.759t-8.536 2.973q-2.607 0-5.045-0.982t-4.348-2.804l-2.304 2.304q-0.339 0.339-0.804 0.339t-0.804-0.339-0.339-0.804v-8q0-0.464 0.339-0.804t0.804-0.339h8q0.464 0 0.804 0.339t0.339 0.804-0.339 0.804l-2.446 2.446q1.268 1.179 2.875 1.821t3.339 0.643q2.393 0 4.464-1.161t3.321-3.196q0.196-0.304 0.946-2.089 0.143-0.411 0.536-0.411h3.429q0.232 0 0.402 0.17t0.17 0.402zM27.429 4.571v8q0 0.464-0.339 0.804t-0.804 0.339h-8q-0.464 0-0.804-0.339t-0.339-0.804 0.339-0.804l2.464-2.464q-2.643-2.446-6.232-2.446-2.393 0-4.464 1.161t-3.321 3.196q-0.196 0.304-0.946 2.089-0.143 0.411-0.536 0.411h-3.554q-0.232 0-0.402-0.17t-0.17-0.402v-0.125q1.161-4.786 4.821-7.759t8.571-2.973q2.607 0 5.071 0.991t4.375 2.795l2.321-2.304q0.339-0.339 0.804-0.339t0.804 0.339 0.339 0.804z"></path></svg>
+                    </a>
+                    <a rel="nofollow noreferrer" class="btn title-links" target="_blank" href="https://products.aspose.cloud/pdf/family">
+                        @Html.Raw(Model["TryCloudAPIFree"]) &nbsp;
+                        <svg class="icon icon-cloud frame0" viewBox="0 -4 34 32"><path d="M34.286 20.571q0 2.839-2.009 4.848t-4.848 2.009h-19.429q-3.304 0-5.652-2.348t-2.348-5.652q0-2.357 1.268-4.313t3.339-2.92q-0.036-0.5-0.036-0.768 0-3.786 2.679-6.464t6.464-2.679q2.821 0 5.116 1.571t3.348 4.107q1.25-1.107 2.964-1.107 1.893 0 3.232 1.339t1.339 3.232q0 1.339-0.732 2.464 2.304 0.536 3.804 2.402t1.5 4.277z"></path></svg>
+                    </a>
+                </div>
+                <div  style="width:100%;min-height:44px;margin-top:10px;margin-bottom:-40px">
+                    <div id="processing" class="loading hidden" style="width:100%;margin-left:auto;margin-right:auto;">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <div class="form">
+                    @Html.Partial("FormControls.cshtml")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<partial name="~/Areas/Pages/Shared/FooterProduct.cshtml" for="@Model" />
+<div id='DynabicMenuFooter'></div>
+
+<script>
+        var o = @Html.Raw(Model.JSOptions);
+        window.asposeViewerAPI = '/pdf/@Html.Raw(Model.AppName.ToRouteName())/api/';
+        window.fileName = '@Html.Raw(Model.FileName)';
+        window.productName = '@Html.Raw(Model.Product)';
+        window.fileDownloadLink = '@Html.Raw(Model.FileDownloadLink)';
+        window.sample = @Html.Raw(Model.Sample.ToString().ToLower());
+</script>

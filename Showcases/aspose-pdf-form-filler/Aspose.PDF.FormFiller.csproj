@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+    <UserSecretsId>1a049a5f-16ce-4bdb-b995-ee52169c6838</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Pages\Editor\**" />
+    <Content Remove="Areas\Pages\Editor\**" />
+    <EmbeddedResource Remove="Areas\Pages\Editor\**" />
+    <None Remove="Areas\Pages\Editor\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Forms\CVTemplate.pdf" />
+    <None Remove="Resources\Forms\Durable-Financial-Power-of-Attorney-FormTemplate.pdf" />
+    <None Remove="Resources\Forms\Eviction-Notice-to-Quit-FormTemplate.pdf" />
+    <None Remove="Resources\Forms\InvoiceTemplate.pdf" />
+    <None Remove="Resources\Forms\Medical-Power-of-AttorneyTemplate.pdf" />
+    <None Remove="Resources\Forms\Month-to-Month-Lease-AgreementTemplate.pdf" />
+    <None Remove="Resources\Forms\Motor-Vehicle-Bill-of-SaleTemplate.pdf" />
+    <None Remove="Resources\Forms\Standard-Residential-Lease-Agreement-FormTemplate.pdf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Forms\CVTemplate.pdf" />
+    <EmbeddedResource Include="Resources\Forms\Durable-Financial-Power-of-Attorney-FormTemplate.pdf" />
+    <EmbeddedResource Include="Resources\Forms\Eviction-Notice-to-Quit-FormTemplate.pdf" />
+    <EmbeddedResource Include="Resources\Forms\InvoiceTemplate.pdf" />
+    <EmbeddedResource Include="Resources\Forms\Medical-Power-of-AttorneyTemplate.pdf" />
+    <EmbeddedResource Include="Resources\Forms\Month-to-Month-Lease-AgreementTemplate.pdf" />
+    <EmbeddedResource Include="Resources\Forms\Motor-Vehicle-Bill-of-SaleTemplate.pdf" />
+    <EmbeddedResource Include="Resources\Forms\Standard-Residential-Lease-Agreement-FormTemplate.pdf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aspose.PDF.OptionsShared\Aspose.PDF.OptionsShared.csproj" />
+    <ProjectReference Include="..\Aspose.PDF.RazorShared\Aspose.PDF.RazorShared.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition=" '$(OS)' == 'Windows_NT' ">
+    <Exec Command="dir /B $(ProjectDir)\Resources\Forms &gt; $(ProjectDir)\..\Aspose.PDF.UI\Configuration\FormFiller\Forms.txt  " />
+  </Target>
+
+</Project>

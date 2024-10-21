@@ -1,0 +1,89 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[latin1]{inputenc} 
+\usepackage[pdftex]{hyperref}
+\usepackage{amsmath}
+\usepackage{color,pxfonts,fix-cm}
+\usepackage{latexsym}
+\usepackage[mathletters]{ucs}
+\DeclareUnicodeCharacter{32}{$\ $}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{pict2e}
+\usepackage{wasysym}
+\usepackage[english]{babel}
+\usepackage{tikz}
+\pagestyle{empty}
+\usepackage[margin=0.5in,paperwidth=612pt,paperheight=792pt]{geometry}
+
+\newdimen\longline
+\longline=\textwidth\advance\longline-4cm
+
+\def\LayoutTextField#1#2{#2} % override default in hyperref
+
+\def\lbl#1{\hbox to 4cm{#1\dotfill\strut}}%
+\def\labelline#1#2{\lbl{#1}\vbox{\hbox{\TextField[name=#1,width=#2]{\null}}\kern2pt\hrule}}
+
+\def\q#1{\hbox to \hsize{\labelline{#1}{\longline}}\vskip1.4ex}
+
+\begin{document}
+\definecolor{color_29791}{rgb}{0,0,0}
+
+\TextField[name = NameSurname,
+           bordercolor={},
+           ,width=15em,
+           value = {Name Surname},
+           charsize = 18pt]
+          {Name Surname}
+\par\bigskip
+  \begin{Form}
+        \begin{tabular}{ l l }
+        Age &  \mbox{\TextField[bordercolor={}, width=5em]{Age}} \\
+        Mail &  \mbox{\TextField[bordercolor={}, width=15em]{Mail}} \\
+        LinkedIn &  \mbox{\TextField[bordercolor={}, width=25em]{LinkedIn}} \\
+        Phone &  \mbox{\TextField[bordercolor={}, width=10em]{Phone}} \\
+        \end{tabular}
+        \medbreak
+        \medbreak
+        \medbreak
+        \begin{large}  
+        \caption{Work experience}\\
+        \end{large}
+        \medbreak
+        \begin{tabular}{ l l l l}
+        \mbox{\TextField[bordercolor={}, width=15em, value = {Job Role}]{JobTitle1}} & & Period & \mbox{\TextField[bordercolor={}, width=10em]{JobPeriod1}}\\
+        \multicolumn{4}{l}{\TextField[multiline=true,height=3em, bordercolor={}, width=31.2em, value = {Job Description}]{JobDescription1}}\\
+        \multicolumn{4}{l}{\TextField[multiline=true,height=5em,bordercolor={}, width=31.2em, value = {Your Achievements}]{JobAchievements1}}\\
+         \multicolumn{3}{l}{Technologies}\\
+         \multicolumn{4}{l}{\TextField[multiline=true,height=2em,bordercolor={}, width=31.2em]{JobTechnologies1}}\\
+        \end{tabular}
+        \par\bigskip
+        \medbreak
+        \begin{tabular}{ l l l l}
+        \mbox{\TextField[bordercolor={}, width=15em, value = {Job Role}]{JobTitle1}} & & Period & \mbox{\TextField[bordercolor={}, width=10em]{JobPeriod2}}\\
+        \multicolumn{4}{l}{\TextField[multiline=true,height=3em, bordercolor={}, width=31.2em, value = {Job Description}]{JobDescription2}}\\
+        \multicolumn{4}{l}{\TextField[multiline=true,height=5em,bordercolor={}, width=31.2em, value = {Your Achievements}]{JobAchievements2}}\\
+         \multicolumn{3}{l}{Technologies}\\
+         \multicolumn{4}{l}{\TextField[multiline=true,height=2em,bordercolor={}, width=31.2em]{JobTechnologies2}}\\
+        \end{tabular}
+        \par\bigskip
+        \medbreak
+        \begin{large}  
+        \caption{Education}\\
+        \end{large}
+        \medbreak
+        \begin{tabular}{ l l l }
+        \multicolumn{3}{l}{\TextField[multiline=true,height=4em, bordercolor={}, width=31.2em, value = {Education/course name}]{EducationTitle}}\\
+        \mbox{\TextField[bordercolor={}, width=15em, value = {Organization}]{EducationOrg}} & \mbox{\TextField[bordercolor={}, width=15em, value = {City}]{EducationCity}}\\
+        \mbox{\TextField[bordercolor={}, , value = {Period}, width=10em]{EducationPeriod}}\\
+        \end{tabular}
+        \par\bigskip
+        \medbreak
+        \begin{large}  
+        \caption{Hobby and interests}\\
+        \end{large}
+        \medbreak
+        \begin{tabular}{ l }
+        \TextField[multiline=true,height=3em, bordercolor={}, width=31.2em, value = {Describe yourself}]{Hobby}\\
+        \end{tabular}
+   \end{Form}
+   \end{document}

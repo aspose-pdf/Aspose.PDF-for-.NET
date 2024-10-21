@@ -1,0 +1,78 @@
+﻿@using Aspose.App.UI.Models.PDF.Partials
+@using Aspose.App.UI.Models
+@using Aspose.App.UI.Resources.InlineImages.pdf
+@using Aspose.App.UI.Utils
+@model Aspose.App.UI.Models.PdfAppsViewModel
+
+@Html.Partial("~/Areas/Pages/Shared/Menu.cshtml", Model)
+@*<partial name="~/Areas/Pages/Shared/Menu.cshtml"/>*@
+
+<div id='languageControl' style="background-color: #2871e6; padding-top: 0; position: inherit">
+    <div class="language" style="text-align: -webkit-right">
+        <button type="button" onclick="openLng()" class="lngTopBtn">
+            <div class="language-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path d="M12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4ZM11.619 15.428L8.57155 15.4289C8.9774 16.7012 9.60471 17.924 10.4358 19.0678C10.8198 19.1532 11.2151 19.2073 11.6191 19.2282L11.619 15.428ZM15.4284 15.4289L12.38 15.428L12.3809 19.2282C12.7849 19.2073 13.1802 19.1532 13.5641 19.0687C14.3953 17.924 15.0226 16.7012 15.4284 15.4289ZM18.3762 15.4285L16.0984 15.4284C15.7811 16.5746 15.31 17.6754 14.703 18.7169C16.2768 18.0829 17.5774 16.9109 18.3762 15.4285ZM7.90159 15.4284L5.62381 15.4285C6.42258 16.9109 7.72324 18.0829 9.29827 18.717C8.69002 17.6754 8.21891 16.5746 7.90159 15.4284ZM7.4355 12.3803L4.77175 12.3809C4.81342 13.1846 4.98617 13.9535 5.26904 14.6669L7.71488 14.6666C7.55555 13.9205 7.46086 13.1572 7.4355 12.3803ZM15.9653 12.3808L12.38 12.38V14.666L15.6434 14.6671C15.8277 13.9178 15.9362 13.1537 15.9653 12.3808ZM19.2282 12.3809L16.5645 12.3803C16.5391 13.1572 16.4444 13.9205 16.2851 14.6666L18.731 14.6669C19.0138 13.9535 19.1866 13.1846 19.2282 12.3809ZM11.619 12.38L8.03469 12.3808C8.06384 13.1537 8.17229 13.9178 8.35656 14.6671L11.619 14.666V12.38ZM7.78068 8.95226L5.43294 8.95224C5.05284 9.76985 4.82095 10.6703 4.77175 11.6191L7.4329 11.6194C7.45634 10.71 7.57476 9.81899 7.78068 8.95226ZM15.5678 8.95239L12.38 8.952V11.619H15.968L15.9673 11.5875C15.9382 10.6945 15.8033 9.81313 15.5678 8.95239ZM18.5671 8.95224L16.2193 8.95226C16.4252 9.81899 16.5437 10.71 16.5671 11.6194L19.2282 11.6191C19.1791 10.6703 18.9472 9.76985 18.5671 8.95224ZM11.619 8.952L8.43217 8.95239C8.16446 9.93108 8.02667 10.9364 8.02667 11.9553L8.031 11.619H11.619V8.952ZM9.22964 5.31048L9.02453 5.39982C7.70745 5.99451 6.60023 6.97185 5.84458 8.19011L7.98594 8.19044C8.28727 7.19147 8.70587 6.2283 9.22964 5.31048ZM12.3809 4.77175L12.38 8.19L15.3312 8.18991C14.9387 7.06132 14.371 5.97399 13.6406 4.949C13.2322 4.85405 12.8116 4.79408 12.3809 4.77175ZM14.7693 5.31058L14.9321 5.60148C15.3809 6.43124 15.7444 7.2965 16.0141 8.19044L18.1554 8.19011C17.3607 6.9088 16.177 5.89399 14.7693 5.31058ZM10.5701 4.90311L10.3594 4.949C9.629 5.97399 9.06128 7.06132 8.66884 8.18991L11.619 8.19L11.6191 4.77175C11.262 4.79027 10.9117 4.83467 10.5701 4.90311Z"></path>
+                </svg>
+            </div>
+            <span class="lang-description">
+                @Html.Raw(Model.CurrentLanguage.Description)
+            </span>
+            <span class="lang-id">
+                @Html.Raw(Model.CurrentLanguage.Id.ToUpper())
+            </span>
+        </button>
+    </div>
+</div>
+
+<div id="dvTitle" class="container-main blue">
+    <div class="dvTitle-container">
+        <h1 id="ProductTitle">@Html.Raw(Model.Title)</h1>
+        <h2 id="ProductTitleSubDiv" class="p-text">@Html.Raw(Model.TitleSub)</h2>
+    </div>
+</div>
+
+
+<div id="WorkPlaceHolder" class="container-main blue">
+    @RenderBody()
+
+    <div class="convertbtn btn-group mobile-buttons">
+        <div class="btn-right">
+            <div id="mobilePromo">
+                <a href="https://apps.apple.com/us/app/aspose-pdf-pdf-tools/id1580359566" target="_blank" rel="noopener" data-label="Aspose.PDF – PDF Tools"
+                   style="background-image: url(/pdf/@(Model.RouteAppName.ToRouteName())/content/img/app-store-badge.png);background-size: 90pt;"> </a>
+            </div>
+            <div id="mobilePromo">
+                <a href="https://play.google.com/store/apps/details?id=cloud.aspose.pdf.app" target="_blank" rel="noopener" data-label="Aspose.PDF – Convert, Split, Merge & Rotate PDF" data-bg="@("/pdf/" + Model.RouteAppName.ToRouteName())/content/img/google-play-badge.png"
+                   style="background-image: url(/pdf/@(Model.RouteAppName.ToRouteName())/content/img/google-play-badge.png);background-size: 105pt;"> </a>
+            </div>
+            <div id="mobilePromo">
+                <a class="devApiButton" href="https://downloads.aspose.com/pdf/net" target="_blank" rel="noopener">
+                    <div style="background-color: white; color: black; width: 90pt; margin-left: 29pt; font-size: 10pt; border-radius: 2pt; height: 24pt;">
+                        <img src="@ImageInline.AsposePdfForNetImage.DataSourcePng" alt="Aspose.PDF Download" width="20" height="20" style="margin-top: 4pt; vertical-align: sub">
+                        <span style="margin-left: 4px; font-size: 10pt">Developer API</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        @*<div id="developerPromo" class="promo terms-area" data-nosnippet>
+                <a data-label="API Cloud" class="btn btn-primary" href="https://products.aspose.cloud/pdf/family/" rel="noopener nofollow" target="_blank"> Cloud API </a>
+                <p style="font-size: 11px!important;margin: inherit;">Powered by <a data-label="API PoweredBy" target="_blank" rel="noopener nofollow" href="https://products.aspose.com/pdf">Aspose.PDF</a></p>
+            </div>*@
+    </div>
+</div>
+
+<div id="alertPlaceHolder" class="container-main blue">
+    <p id="alertMessage" class="alert-danger hidden"></p>
+    <p id="alertSuccess" class="alert-success hidden"></p>
+</div>
+
+<div id="expander" class="container blue" style="flex-direction: row; justify-content:center; padding-bottom: 10px; flex-wrap:wrap;">
+    <a class="btn-link" href="@("/pdf" + Model.UrlClearLocale + "/conversion/pdf-to-doc")">@Html.Raw(Model["ConversionAPPName"]) @Html.Raw(Model.Localize("ConversionTitle2", "PDF", "Word"))</a>
+    <a class="btn-link" href="@("/pdf" + Model.UrlClearLocale + "/conversion/pdf-to-jpg")">@Html.Raw(Model["ConversionAPPName"]) @Html.Raw(Model.Localize("ConversionTitle2", "PDF", "JPG"))</a>
+    <a class="btn-link" href="@("/pdf" + Model.UrlClearLocale + "/merger/pdf")">@Html.Raw(Model["MergerAPPName"]) @Html.Raw(Model.Localize("ConversionTitle2", "PDFs", "PDF"))</a>
+    <a class="btn-link" href="@("/pdf" + Model.UrlClearLocale + "/merger/jpg-to-pdf")">@Html.Raw(Model["MergerAPPName"]) @Html.Raw(Model.Localize("ConversionTitle2", "JPGs", "PDF"))</a>
+</div>
+
+@Html.Partial("~/Areas/Pages/Shared/OtherAppsPanel.cshtml", new PdfOtherAppsViewModel(Model.LocalizationProvider, Model.AppName, Model.OtherApps, Model.OtherAppsPanel))
+

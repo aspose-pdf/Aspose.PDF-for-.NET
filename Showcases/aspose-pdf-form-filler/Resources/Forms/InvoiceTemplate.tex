@@ -1,0 +1,112 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[latin1]{inputenc} 
+\usepackage[pdftex]{hyperref}
+\usepackage{amsmath}
+\usepackage{color,pxfonts,fix-cm}
+\usepackage{latexsym}
+\usepackage[mathletters]{ucs}
+\DeclareUnicodeCharacter{32}{$\ $}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{pict2e}
+\usepackage{wasysym}
+\usepackage[english]{babel}
+\usepackage{tikz}
+\pagestyle{empty}
+\usepackage[margin=0.5in,paperwidth=612pt,paperheight=792pt]{geometry}
+
+\newdimen\longline
+\longline=\textwidth\advance\longline-4cm
+
+\def\LayoutTextField#1#2{#2} % override default in hyperref
+
+\def\lbl#1{\hbox to 4cm{#1\dotfill\strut}}%
+\def\labelline#1#2{\lbl{#1}\vbox{\hbox{\TextField[name=#1,width=#2]{\null}}\kern2pt\hrule}}
+
+\def\q#1{\hbox to \hsize{\labelline{#1}{\longline}}\vskip1.4ex}
+
+\begin{document}
+\definecolor{color_29791}{rgb}{0,0,0}
+
+\begin{center}
+\begin{LARGE}  
+{Invoice\\}   
+\end{LARGE}
+\end{center}
+\medbreak
+  \begin{Form}
+        \begin{tabular}{ l l l l }
+        Number &  \mbox{\TextField[bordercolor={}, width=10em]{Number}} & Date & \mbox{\TextField[bordercolor={},width=10em]{Date}}\\
+        Payment terms & \mbox{\TextField[bordercolor={},width=10em]{Payment terms}}
+        \end{tabular}
+        \medbreak
+        \medbreak
+        \medbreak
+        \begin{large}  
+        \caption{Ship to}\\
+        \end{large}
+        \medbreak
+        \begin{tabular}{ l l l l }
+        Business Name & \mbox{\TextField[bordercolor={},width=10em]{Business Name}} & Bank Name & \mbox{\TextField[bordercolor={},width=10em]{Bank Name}}\\
+        Address & \mbox{\TextField[bordercolor={},width=10em]{Address}} & SWIFT & \mbox{\TextField[bordercolor={},width=10em]{SWIFT}}\\
+        City & \mbox{\TextField[bordercolor={},width=10em]{City}} & Address & \mbox{\TextField[bordercolor={},width=10em]{Bank Address}}\\
+        State & \mbox{\TextField[bordercolor={},width=10em]{State}} & Account Name & \mbox{\TextField[bordercolor={},width=10em]{Account Name}}\\
+        Postal Code & \mbox{\TextField[bordercolor={},width=10em]{Postal Code}} & Account Number & \mbox{\TextField[bordercolor={},width=10em]{Account Number}}\\
+         ~ & ~ & Reference & \mbox{\TextField[bordercolor={},width=10em]{Reference}}\\
+         ~ & ~ & Address & \mbox{\TextField[bordercolor={},width=10em]{Correspondent Bank Address}}\\
+         ~ & ~ & SWIFT & \mbox{\TextField[bordercolor={},width=10em]{Correspondent Bank SWIFT}}\\
+        \end{tabular}
+        \medbreak
+        \medbreak
+        \begin{large}  
+        \caption{Bill to}\\
+        \end{large}
+        \medbreak
+        \begin{tabular}{ l l }
+        Client Name & \mbox{\TextField[bordercolor={},width=10em]{Client Name}}\\
+        Clint Registration & \mbox{\TextField[bordercolor={},width=10em]{Clint Registration}}\\
+        Address & \mbox{\TextField[bordercolor={},width=10em]{Clint Address}}\\
+        City & \mbox{\TextField[bordercolor={},width=10em]{Clint City}}\\
+        State & \mbox{\TextField[bordercolor={},width=10em]{Clint State}}\\
+        Postal Code & \mbox{\TextField[bordercolor={},width=10em]{Postal Code}}\\
+        \end{tabular}
+        \medbreak
+        \medbreak
+        \begin{large}  
+        \caption{Service}\\
+        \end{large}
+        \medbreak
+        \begin{tabular}
+            {
+                |p{100mm}|p{10mm}|p{10mm}|p{20mm}|
+            }
+            \hline
+            Description & Hours & Rate & Amount\\
+            \hline
+            \mbox{\TextField[bordercolor={},width=100mm]{d1}} & \mbox{\TextField[bordercolor={},width=10mm]{h1}} & \mbox{\TextField[bordercolor={},width=10mm]{r1}} &
+            \mbox{\TextField[bordercolor={},width=20mm]{a1}}\\ \hline
+            \mbox{\TextField[bordercolor={},width=100mm]{d2}} & \mbox{\TextField[bordercolor={},width=10mm]{h2}} & \mbox{\TextField[bordercolor={},width=10mm]{r2}} &
+            \mbox{\TextField[bordercolor={},width=20mm]{a2}}\\ \hline
+            \mbox{\TextField[bordercolor={},width=100mm]{d3}} & \mbox{\TextField[bordercolor={},width=10mm]{h3}} & \mbox{\TextField[bordercolor={},width=10mm]{r3}} &
+            \mbox{\TextField[bordercolor={},width=20mm]{a3}}\\ \hline
+            \mbox{\TextField[bordercolor={},width=100mm]{d4}} & \mbox{\TextField[bordercolor={},width=10mm]{h4}} & \mbox{\TextField[bordercolor={},width=10mm]{r4}} &
+            \mbox{\TextField[bordercolor={},width=20mm]{a4}}\\ \hline
+            \mbox{\TextField[bordercolor={},width=100mm]{d5}} & \mbox{\TextField[bordercolor={},width=10mm]{h5}} & \mbox{\TextField[bordercolor={},width=10mm]{r5}} &
+            \mbox{\TextField[bordercolor={},width=20mm]{a5}}\\ \hline
+            \mbox{\TextField[bordercolor={},width=100mm]{d6}} & \mbox{\TextField[bordercolor={},width=10mm]{h6}} & \mbox{\TextField[bordercolor={},width=10mm]{r6}} &
+            \mbox{\TextField[bordercolor={},width=20mm]{a6}}\\ \hline
+            \mbox{\TextField[bordercolor={},width=100mm]{d7}} & \mbox{\TextField[bordercolor={},width=10mm]{h7}} & \mbox{\TextField[bordercolor={},width=10mm]{r7}} &
+            \mbox{\TextField[bordercolor={},width=20mm]{a7}}\\ \hline
+            \mbox{\TextField[bordercolor={},width=100mm]{d8}} & \mbox{\TextField[bordercolor={},width=10mm]{h8}} & \mbox{\TextField[bordercolor={},width=10mm]{r8}} &
+            \mbox{\TextField[bordercolor={},width=20mm]{a8}}\\ \hline
+            \mbox{\TextField[bordercolor={},width=100mm]{d9}} & \mbox{\TextField[bordercolor={},width=10mm]{h9}} & \mbox{\TextField[bordercolor={},width=10mm]{r9}} &
+            \mbox{\TextField[bordercolor={},width=20mm]{a9}}\\ \hline
+            \mbox{\TextField[bordercolor={},width=100mm]{d10}} & \mbox{\TextField[bordercolor={},width=10mm]{h10}} & \mbox{\TextField[bordercolor={},width=10mm]{r10}} &
+            \mbox{\TextField[bordercolor={},width=20mm]{a10}}\\ \hline
+        \end{tabular}
+        \medbreak
+        \begin{tabular}{ l l }
+        Total to pay & \TextField[bordercolor={},width=10em]{Total to pay}
+        \end{tabular}\par\bigskip
+   \end{Form}
+   \end{document}

@@ -1,0 +1,105 @@
+﻿@using Aspose.App.UI.Utils
+
+@model Aspose.PDF.FormFiller.Models.FormViewModel
+
+@{
+    Layout = "~/Areas/Pages/Forms/FormLayout.cshtml";
+}
+
+<!-- Modal -->
+<div class="modal hidden" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="fileUploadDialogLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="fileUploadDialogLabel">File Upload Dialog</h4>
+            </div>
+            <div class="modal-body">
+
+                <label for="fileToUpload">Select a File to Upload</label><br />
+                <input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();" accept="application/pdf, image/png, image/jpg, image/jpeg, image/gif" />
+
+            </div>
+            <div class="modal-footer">
+
+                <div class="progress">
+                    <div class="progress progress-striped active">
+                        <div class="progress-bar progress-bar-success" style="width: 0%"></div>
+                    </div>
+                </div>
+                <input id="hdnOpp" type="hidden" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="alert alert-success" style="display:none" id="savingModal">
+    Files successfully saved!
+</div>
+
+<div class="well well-sm">
+
+    <!-- Single button -->
+
+    <button onclick="javascript:GeneralSetup('Save');SavePdf();return false;" class="btn btn-default btn-lg" id="btnSave" data-toggle="tooltip" data-placement="top" title="Save Pdf File" disabled="disabled">
+        <svg style="vertical-align:middle" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve" width="26px" height="26px">
+<g id="Floppy-disk">
+        <path d="M35.2673988,6.0411h-7.9999981v10h7.9999981V6.0411z M33.3697014,14.1434002h-4.2046013V7.9387999h4.2046013V14.1434002z" />
+        <path d="M41,47.0410995H21c-0.5527992,0-1,0.4472008-1,1c0,0.5527,0.4472008,1,1,1h20c0.5527,0,1-0.4473,1-1
+		C42,47.4883003,41.5527,47.0410995,41,47.0410995z" />
+        <path d="M41,39.0410995H21c-0.5527992,0-1,0.4472008-1,1c0,0.5527,0.4472008,1,1,1h20c0.5527,0,1-0.4473,1-1
+		C42,39.4883003,41.5527,39.0410995,41,39.0410995z" />
+        <path d="M12,56.0410995h38v-26H12V56.0410995z M14,32.0410995h34v22H14V32.0410995z" />
+        <path d="M49.3811989,0.0411L49.3610992,0H7C4.7908001,0,3,1.7909,3,4v56c0,2.2092018,1.7908001,4,4,4h50
+		c2.2090988,0,4-1.7907982,4-4V11.6962996L49.3811989,0.0411z M39.9604988,2.0804999v17.9211006H14.0394001V2.0804999H39.9604988z
+		 M59,60c0,1.1027985-0.8972015,2-2,2H7c-1.1027999,0-2-0.8972015-2-2V4c0-1.1027999,0.8972001-2,2-2h5v20.0410995h30V2h6.5099983
+		L59,12.5228996V60z" />
+</g>
+            </svg>
+    </button>
+
+    <button onclick="javascript:GeneralSetup('Previous');Previous();$('#divDel').css('visibility', 'hidden');return false;" class="btn btn-default btn-lg" data-toggle="tooltip" id="btnPrevious" data-placement="top" title="Previous Page" disabled="disabled">
+        <svg  style="vertical-align:middle" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 490.4 490.4" style="enable-background:new 20 20 490.4 490.4;" xml:space="preserve"  width="26px" height="26px">
+<g>
+        <g>
+        <path d="M245.2,490.4c135.2,0,245.2-110,245.2-245.2S380.4,0,245.2,0S0,110,0,245.2C0,380.4,110,490.4,245.2,490.4z M245.2,24.5
+			c121.7,0,220.7,99,220.7,220.7s-99,220.7-220.7,220.7s-220.7-99-220.7-220.7S123.5,24.5,245.2,24.5z" />
+        <path d="M198.9,322.8c2.4,2.4,5.5,3.6,8.7,3.6s6.3-1.2,8.7-3.6c4.8-4.8,4.8-12.5,0-17.3l-48-48h183.4c6.8,0,12.3-5.5,12.3-12.3
+			s-5.5-12.3-12.3-12.3H168.3l48-48c4.8-4.8,4.8-12.5,0-17.3s-12.5-4.8-17.3,0l-68.9,68.9c-4.8,4.8-4.8,12.5,0,17.3L198.9,322.8z" />
+	</g>
+</g>
+            </svg>
+    </button>
+    <button class="btn btn-default btn-lg" data-toggle="tooltip" data-placement="top" id="lblPages" disabled="disabled">Page 0 Of 0</button>
+    <button onclick="javascript:GeneralSetup('Next');Next();$('#divDel').css('visibility', 'hidden');return false;" class="btn btn-default btn-lg" id="btnNext" data-toggle="tooltip" data-placement="top" title="Next Page" disabled="disabled">
+        <svg  style="vertical-align:middle" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 490.4 490.4" style="enable-background:new 0 0 490.4 490.4;" xml:space="preserve"   width="26px" height="26px">
+<g>
+        <g>
+        <path d="M245.2,490.4c135.2,0,245.2-110,245.2-245.2S380.4,0,245.2,0S0,110,0,245.2S110,490.4,245.2,490.4z M245.2,24.5
+			c121.7,0,220.7,99,220.7,220.7s-99,220.7-220.7,220.7s-220.7-99-220.7-220.7S123.5,24.5,245.2,24.5z" />
+        <path d="M138.7,257.5h183.4l-48,48c-4.8,4.8-4.8,12.5,0,17.3c2.4,2.4,5.5,3.6,8.7,3.6s6.3-1.2,8.7-3.6l68.9-68.9
+			c4.8-4.8,4.8-12.5,0-17.3l-68.9-68.9c-4.8-4.8-12.5-4.8-17.3,0s-4.8,12.5,0,17.3l48,48H138.7c-6.8,0-12.3,5.5-12.3,12.3
+			C126.4,252.1,131.9,257.5,138.7,257.5z" />
+	</g>
+</g>
+            </svg>
+    </button>
+
+
+</div>
+
+
+
+<div id="container">
+    <canvas id="imageView" width="1138" height="760" style="z-index: 5; background-color: GrayText;">
+        <p>
+            Unfortunately, your browser is currently unsupported by our web
+            application.  We are sorry for the inconvenience. Please use one of the
+            supported browsers listed below, or draw the image you want using an offline tool.
+        </p>
+    </canvas>
+</div>

@@ -1,0 +1,14 @@
+﻿@model Aspose.PDF.FormFiller.Models.FormFillerViewModel
+
+@{
+    Layout = "~/Areas/Pages/Shared/Layout.cshtml";
+}
+
+<partial name="@Model.ControlsView" />
+<partial name="~/Areas/Pages/Shared/FooterProduct.cshtml" for="@Model" />
+
+@section scripts {
+    <script type="text/javascript">
+        var o = @Html.Raw(Model.JSOptions);
+    </script>
+}

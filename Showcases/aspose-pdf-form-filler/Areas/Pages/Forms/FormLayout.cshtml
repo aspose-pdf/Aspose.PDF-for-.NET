@@ -1,0 +1,13 @@
+﻿@using Aspose.App.UI.Utils
+@using Aspose.App.UI.Models.PDF.Partials
+@using Aspose.App.UI.Models
+
+@model Aspose.PDF.FormFiller.Models.FormViewModel
+@Html.Partial("~/Areas/Pages/Shared/Menu.cshtml", Model)
+
+<div ng-app="AsposeEditorApp">
+    @RenderBody()
+</div>
+
+@Html.Partial("~/Areas/Pages/Shared/OtherAppsPanel.cshtml", new PdfOtherAppsViewModel(Model.LocalizationProvider, Model.AppName, Model.OtherApps, Model.OtherAppsPanel))
+<script preload src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
