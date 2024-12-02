@@ -91,4 +91,22 @@ pfile.Save(dir + "output.pptx", Aspose.Pdf.SaveFormat.Pptx);
 pfile.Save(dir + "output.html", Aspose.Pdf.SaveFormat.Html);
 ```
 
+# Create an issue User Guidelines
+
+## Be Specific
+
+- Use clear, concise titles that immediately convey the problem.
+- Provide detailed steps to reproduce the issue.
+- Include relevant environment details (OS, version, browser, etc.).
+- Attach screenshots or screen recordings when applicable.
+- Don't create issues with titles like "Something is broken".
+- Prevent generic, non-descriptive language.
+- Attach sample source/output files when issue is file specific.
+
+## Checklist
+- [ ] Search existing issues to prevent duplicates.
+- [ ] Gather all relevant information.
+- [ ] Determine appropriate labels.
+- [ ] Identify impacted components.
+
 [Home](https://www.aspose.com/) | [Product Page](https://products.aspose.com/pdf/net) | [Docs](https://docs.aspose.com/pdf/net/) | [Demos](https://products.aspose.app/pdf/family) | [API Reference](https://apireference.aspose.com/pdf/net) | [Examples](https://github.com/aspose-pdf/Aspose.Pdf-for-.NET) | [Blog](https://blog.aspose.com/category/pdf/) | [Search](https://search.aspose.com/) | [Free Support](https://forum.aspose.com/c/pdf) |  [Temporary License](https://purchase.aspose.com/temporary-license)
