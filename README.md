@@ -23,18 +23,18 @@ Directory | Description
 ## PDF Processing via .NET
 
 - [Generate PDF documents](https://docs.aspose.com/pdf/net/create-document/) on the fly through the API or via XML templates.
-- Supports 14 core, Type 1, TruType, Type 3, CJK & Unicode fonts.
-- [Extract text](https://docs.aspose.com/pdf/net/extract-text-from-pdf/) from PDF pages or search for particular text segment using regular expressions.
+- Supports 14 core, Type 1, TrueType, Type 3, CJK & Unicode fonts.
+- [Extract text](https://docs.aspose.com/pdf/net/extract-text-from-pdf/) from PDF pages or search for particular text segments using regular expressions.
 - Add or extract text & images to & from PDF documents.
 - [Concatenate](https://docs.aspose.com/pdf/net/concatenate-pdf-files/) or split PDF files.
 - Linearization of PDF documents for web optimization.
 - Validation support for PDF/A-1a, PDF/A-1b & PDF/A-2a.
-- Manage [PDF tables](https://docs.aspose.com/pdf/net/working-with-tables/) & [graphs](https://docs.aspose.com/pdf/net/working-with-graphs/) using easy to understand object model.
-- Convert PDF documents to Office, web, image & PS formats with highest visual fidelity.
-- Manipulate PDF files to manage bookmarks, hyperlinks, watermarks, attachments & annotation.
+- Manage [PDF tables](https://docs.aspose.com/pdf/net/working-with-tables/) & [graphs](https://docs.aspose.com/pdf/net/working-with-graphs/) using easy to understand object models.
+- Convert PDF documents to Office, web, image & PS formats with the highest visual fidelity.
+- Manipulate PDF files to manage bookmarks, hyperlinks, watermarks, attachments & annotations.
 - Encrypt or decrypt PDF documents as well as set document privileges or modify passwords.
 - Manage PDF forms to add, delete, move, flatten or decorate form fields. Developers may also import or export XML, FDF or XFDF data.
-- Digitally sign PDF documents or remove signatures. Also, verify if PDF is signed and signature is valid.
+- Digitally sign PDF documents or remove signatures. Also, verify if the PDF is signed and the signature is valid.
 - Print PDF documents to physical or virtual printers with or without print dialog.
 - Set document viewer preferences as well as manipulate document information & XMP metadata.
 
