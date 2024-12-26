@@ -629,5 +629,10 @@ namespace Aspose.Pdf.Examples.CSharp
             }
             return Path.Combine(startDirectory, "Data\\");
         }
+
+        public static string GetDataDir_AsposePdf_DocumentCompare()
+        {
+            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/DocumentCompare/");
+        }
     }
 }
