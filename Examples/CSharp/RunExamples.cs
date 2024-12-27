@@ -634,5 +634,10 @@ namespace Aspose.Pdf.Examples.CSharp
         {
             return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/DocumentCompare/");
         }
+
+        public static string GetDataDir_AsposePdfFacades_Concatenate()
+        {
+            return Path.GetFullPath(GetDataDir_Data() + "AsposePdfFacades/Concatenate/");
+        }
     }
 }
