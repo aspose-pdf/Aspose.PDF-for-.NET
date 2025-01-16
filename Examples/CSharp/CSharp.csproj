@@ -328,6 +328,7 @@
     <Compile Include="AsposePDF\DocumentConversion\AddAttachmentToPDFA.cs" />
     <Compile Include="AsposePDF\DocumentConversion\PDFToPDFA3b.cs" />
     <Compile Include="AsposePDF\DocumentConversion\PDFToPDFA.cs" />
+    <Compile Include="AsposePDF\DocumentConversion\PDFToPDFX4.cs" />
     <Compile Include="AsposePDF\DocumentConversion\PDFToTeX.cs" />
     <Compile Include="AsposePDF\DocumentConversion\PDFToXML.cs" />
     <Compile Include="AsposePDF\DocumentConversion\SVGToPDF.cs" />
