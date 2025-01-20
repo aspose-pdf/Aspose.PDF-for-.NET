@@ -644,5 +644,10 @@ namespace Aspose.Pdf.Examples.CSharp
         {
             return Path.GetFullPath(GetDataDir_Data() + "AsposePdfFacades/Pages/PageBreak/");
         }
+
+        public static string GetDataDir_AsposePdf_AI()
+        {
+            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/AI/");
+        }
     }
 }
