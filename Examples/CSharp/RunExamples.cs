@@ -649,5 +649,10 @@ namespace Aspose.Pdf.Examples.CSharp
         {
             return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/AI/");
         }
+
+        public static object GetDataDir_AsposePdf_HeaderFooter()
+        {
+            return Path.GetFullPath(GetDataDir_Data() + "AsposePDF/HeaderFooter/");
+        }
     }
 }
